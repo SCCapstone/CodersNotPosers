@@ -66,7 +66,7 @@ Explain how to run the automated tests.
 # Authors
 
 Vidhee Patel vidhee@email.sc.edu
-Kylie Gore
-Jack 
-Nick
-Siona
+Kylie Gore 
+Jack Hempstead
+Nicholas Garofalo
+Siona Ravi
