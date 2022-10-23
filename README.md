@@ -62,7 +62,7 @@ Explain how to run the automated tests.
 # Authors
 
 Vidhee Patel vidhee@email.sc.edu.
-Kylie Gore goreka@email.sc.edu  
+Kylie Gore goreka@email.sc.edu. 
 Jack Hempstead. 
 Nicholas Garofalo. 
-Siona Ravi. 
+Siona Ravi aravi@email.sc.edu.
