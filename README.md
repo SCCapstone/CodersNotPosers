@@ -15,6 +15,7 @@ In order to build this project you first have to install:
 * [Node.js](https://nodejs.org/en/)
 
 If you have a mac:
+
 * [XCode](https://developer.apple.com/xcode/)
 
 If you have a windows, use a VM
@@ -42,6 +43,7 @@ Mobile apps will also sometimes need some instructions on how to build a
 "release" version, maybe how to sign it, and how to run that binary in an
 emulator or in a physical phone.
 
+
 # Testing - 492
 
 In 492 you will write automated tests. When you do you will need to add a 
@@ -62,7 +64,11 @@ Explain how to run the automated tests.
 # Authors
 
 Vidhee Patel vidhee@email.sc.edu.
+
 Kylie Gore goreka@email.sc.edu. 
+
 Jack Hempstead hempstej@email.sc.edu.
+
 Nicholas Garofalo. 
+
 Siona Ravi aravi@email.sc.edu.
