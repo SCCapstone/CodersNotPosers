@@ -31,7 +31,7 @@ In order to build this project you will need Node, Watchman, the React Native co
 
 ## Running
 
-Specify the commands for a developer to run the app from the cloned repo.
+Open ios folder in Xcode and run the project.
 
 # Deployment
 
