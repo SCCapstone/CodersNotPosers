@@ -69,6 +69,6 @@ Kylie Gore goreka@email.sc.edu.
 
 Jack Hempstead hempstej@email.sc.edu.
 
-Nicholas Garofalo. 
+Nicholas Garofalo Garofaln@email.sc.edu. 
 
 Siona Ravi aravi@email.sc.edu.
