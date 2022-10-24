@@ -6,6 +6,8 @@ faculty will be delivered by students or faculty, and potentially allows more pe
 is more convenient for kids who have class to place an order instead of having to go out of their way to find a dining 
 location.
 
+The environment we are implementing this application on is found below.
+
 [Full Description](https://github.com/SCCapstone/CodersNotPosers/wiki/Project-Description)
 
 ## External Requirements
