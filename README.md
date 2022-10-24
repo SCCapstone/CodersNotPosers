@@ -10,24 +10,26 @@ location.
 
 ## External Requirements
 
-In order to build this project you first have to install:
+In order to build this project you will need Node, Watchman, the React Native command line interface, a Ruby version manager, Xcode and CocoaPods.
 
-* [Node.js](https://nodejs.org/en/)
+* Install Node and Watchman using Homebrew.
 
-If you have a mac:
+brew install node
+brew install watchman
 
-* [XCode](https://developer.apple.com/xcode/)
+* React Native uses 2.7.6 of Ruby. Update your .ruby-version using Ruby version manager like rbenv,RVM,chruby.
 
-If you have a windows, use a VM
+Installation of rbenv on macOs can be done through homebrew:
+brew install rbenv ruby-build
+rbenv install 2.7.6
 
-## Setup
+* Install bundle using:
+ "bundle install" command
 
-Here you list all the one-time things the developer needs to do after cloning
-your repo. Sometimes there is no need for this section, but some apps require
-some first-time configuration from the developer, for example: setting up a
-database for running your webapp locally.
-
--- Need to fill out --
+* Install Xcode from appstore.
+* Install Command line tools in Xcode. Xcode->Preferences->Locations->Command Line Tools.
+* Install CocoaPods using homebrew
+brew install cocoapods.
 
 ## Running
 
