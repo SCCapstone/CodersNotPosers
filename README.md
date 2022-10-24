@@ -13,9 +13,8 @@ location.
 In order to build this project you will need Node, Watchman, the React Native command line interface, a Ruby version manager, Xcode and CocoaPods.
 
 * Install Node and Watchman using Homebrew.
-
-brew install node
-brew install watchman
+    brew install node.
+    brew install watchman
 
 * React Native uses 2.7.6 of Ruby. Update your .ruby-version using Ruby version manager like rbenv,RVM,chruby.
 
