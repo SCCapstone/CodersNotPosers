@@ -67,7 +67,7 @@ Vidhee Patel vidhee@email.sc.edu.
 
 Kylie Gore goreka@email.sc.edu. 
 
-Jack Hempstead. 
+Jack Hempstead hempstej@email.sc.edu.
 
 Nicholas Garofalo. 
 
