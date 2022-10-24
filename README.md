@@ -6,8 +6,6 @@ faculty will be delivered by students or faculty, and potentially allows more pe
 is more convenient for kids who have class to place an order instead of having to go out of their way to find a dining 
 location.
 
-The environment we are implementing this application on is found below.
-
 [Full Description](https://github.com/SCCapstone/CodersNotPosers/wiki/Project-Description)
 
 ## External Requirements
@@ -33,7 +31,7 @@ In order to build this project you will need Node, Watchman, the React Native co
 
 ## Running
 
-Open ios folder in Xcode and run the project.
+Open the IOS folder in Xcode and run the project.
 
 # Deployment
 
@@ -44,6 +42,8 @@ Internet. These should be detailed enough so anyone can re-deploy if needed
 Mobile apps will also sometimes need some instructions on how to build a
 "release" version, maybe how to sign it, and how to run that binary in an
 emulator or in a physical phone.
+
+
 
 
 # Testing - 492
