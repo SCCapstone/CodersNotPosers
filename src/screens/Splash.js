@@ -10,6 +10,8 @@ export default class Splash extends screens {
                 source={require('./images/logo.png')}
                 />
 
+                <Text>Welcome</Text>
+
                 
             </View>
         )
