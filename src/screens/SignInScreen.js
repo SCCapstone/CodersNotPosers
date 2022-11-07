@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
-Image,Text} from 'react-native';
-import logo from './images/logo.png';
+import React, { useState } from 'react'
+import 
+  {
+    SafeAreaView,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    TextuseColorScheme,
+    View,
+    TextInput,
+    TouchableOpacity,
+    Image,
+    Text} from 'react-native';
+import SignUpScreen from './src/screens/SignUpScreen';
+/* import logo from './images/logo.png';
 import ellipsepink from './images/ellipsepink.png';
-import ellipsegrey from './images/ellipsegrey.png';
+import ellipsegrey from './images/ellipsegrey.png'; */
 
 const SignInScreen =  () => {
-const onPressLogin = () => {
+const onPressLogin = () => { <SignUpScreen/>
 // Do something about login operation
 };
 const onPressForgotPassword = () => {
@@ -23,12 +34,12 @@ return (
 <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
 
 <View style={styles.container}>
-<Image source={ellipsepink} 
+ {/* <Image source={ellipsepink} 
 style={{position: 'absolute',
 left: 2,
-top: 1,}} />
-<Image source={logo} 
-style={{ width: 120, height: 120 }} />
+top: 1,}} />  */}
+{/* <Image source={logo}  
+style={{ width: 120, height: 120 }} />  */}
 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
   <Text>   </Text>
 </View>
@@ -46,12 +57,11 @@ secureTextEntry
 placeholder="Password"
 placeholderTextColor="#ccc"
 onChangeText={text => setState({password:text})}/>
-
-<Image source={ellipsegrey} 
+ {/* <Image source={ellipsegrey} 
 style={{position: 'absolute',
 right:-60,
-bottom:-420}}/>
-
+bottom:-420}}/> 
+ */}
 </View>
 <TouchableOpacity
 onPress = {onPressForgotPassword}>
