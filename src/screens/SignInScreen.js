@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
 Image,Text} from 'react-native';
-import logo from './images/logo.png';
-import ellipsepink from './images/ellipsepink.png';
-import ellipsegrey from './images/ellipsegrey.png';
+import logo from './../../images/logo.png';
+import ellipsepink from './../../images/ellipsepink.png';
+import ellipsegrey from './../../images/ellipsegrey.png';
 
 const SignInScreen =  () => {
 const onPressLogin = () => {

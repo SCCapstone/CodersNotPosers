@@ -8,20 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* CampusEatsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CampusEatsTests.m */; };
+		0C80B921A6F3F58F76C31292 /* libPods-CampusEats.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-CampusEats.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6DDFD99906D82A5B55C96296 /* libPods-CampusEats-CampusEatsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F641EA6EF39CA3B44395F3 /* libPods-CampusEats-CampusEatsTests.a */; };
+		7699B88040F8A987B510C191 /* libPods-CampusEats-CampusEatsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-CampusEats-CampusEatsTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		B93A0BEF290F6C7600E4AEC3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B93A0BEE290F6C7600E4AEC3 /* FirebaseAnalytics */; };
-		B93A0BF1290F6C7600E4AEC3 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = B93A0BF0290F6C7600E4AEC3 /* FirebaseAnalyticsOnDeviceConversion */; };
-		B93A0BF3290F6C7600E4AEC3 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B93A0BF2290F6C7600E4AEC3 /* FirebaseAnalyticsSwift */; };
-		B93A0BF5290F6C7600E4AEC3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B93A0BF4290F6C7600E4AEC3 /* FirebaseAuth */; };
-		B93A0BF7290F6C7600E4AEC3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B93A0BF6290F6C7600E4AEC3 /* FirebaseDatabase */; };
-		B93A0BF9290F6C7600E4AEC3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B93A0BF8290F6C7600E4AEC3 /* FirebaseFirestore */; };
-		B93A0BFB290F6C7600E4AEC3 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B93A0BFA290F6C7600E4AEC3 /* FirebaseFirestoreCombine-Community */; };
-		B93A0BFD290F6F7700E4AEC3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B93A0BFC290F6F7700E4AEC3 /* GoogleService-Info.plist */; };
-		EE86695AD27F10AFFF6D5FD8 /* libPods-CampusEats.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2C613F43399D55B5D52301 /* libPods-CampusEats.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,20 +30,19 @@
 		00E356EE1AD99517003FC87E /* CampusEatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampusEatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* CampusEatsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusEatsTests.m; sourceTree = "<group>"; };
-		04F641EA6EF39CA3B44395F3 /* libPods-CampusEats-CampusEatsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CampusEats-CampusEatsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* CampusEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CampusEats/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = CampusEats/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CampusEats/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CampusEats/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CampusEats/main.m; sourceTree = "<group>"; };
-		36A6A2B1B0D5BDB28B48C634 /* Pods-CampusEats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusEats.debug.xcconfig"; path = "Target Support Files/Pods-CampusEats/Pods-CampusEats.debug.xcconfig"; sourceTree = "<group>"; };
-		46DAF1F5FAE4DF9C74F9B695 /* Pods-CampusEats-CampusEatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusEats-CampusEatsTests.release.xcconfig"; path = "Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests.release.xcconfig"; sourceTree = "<group>"; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-CampusEats-CampusEatsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CampusEats-CampusEatsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4392A12AC88292D35C810B /* Pods-CampusEats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusEats.debug.xcconfig"; path = "Target Support Files/Pods-CampusEats/Pods-CampusEats.debug.xcconfig"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-CampusEats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusEats.release.xcconfig"; path = "Target Support Files/Pods-CampusEats/Pods-CampusEats.release.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-CampusEats-CampusEatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusEats-CampusEatsTests.debug.xcconfig"; path = "Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-CampusEats.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CampusEats.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CampusEats/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		963405EB475EC78803081F91 /* Pods-CampusEats-CampusEatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusEats-CampusEatsTests.debug.xcconfig"; path = "Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B93A0BFC290F6F7700E4AEC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "CampusEats/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BF2C613F43399D55B5D52301 /* libPods-CampusEats.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CampusEats.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C93AC4C248DB1B5E309EC7A5 /* Pods-CampusEats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusEats.release.xcconfig"; path = "Target Support Files/Pods-CampusEats/Pods-CampusEats.release.xcconfig"; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-CampusEats-CampusEatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusEats-CampusEatsTests.release.xcconfig"; path = "Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -60,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DDFD99906D82A5B55C96296 /* libPods-CampusEats-CampusEatsTests.a in Frameworks */,
+				7699B88040F8A987B510C191 /* libPods-CampusEats-CampusEatsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,14 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B93A0BF7290F6C7600E4AEC3 /* FirebaseDatabase in Frameworks */,
-				B93A0BFB290F6C7600E4AEC3 /* FirebaseFirestoreCombine-Community in Frameworks */,
-				B93A0BF3290F6C7600E4AEC3 /* FirebaseAnalyticsSwift in Frameworks */,
-				B93A0BF5290F6C7600E4AEC3 /* FirebaseAuth in Frameworks */,
-				B93A0BEF290F6C7600E4AEC3 /* FirebaseAnalytics in Frameworks */,
-				B93A0BF1290F6C7600E4AEC3 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
-				EE86695AD27F10AFFF6D5FD8 /* libPods-CampusEats.a in Frameworks */,
-				B93A0BF9290F6C7600E4AEC3 /* FirebaseFirestore in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* libPods-CampusEats.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +86,6 @@
 		13B07FAE1A68108700A75B9A /* CampusEats */ = {
 			isa = PBXGroup;
 			children = (
-				B93A0BFC290F6F7700E4AEC3 /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -117,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				BF2C613F43399D55B5D52301 /* libPods-CampusEats.a */,
-				04F641EA6EF39CA3B44395F3 /* libPods-CampusEats-CampusEatsTests.a */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-CampusEats.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-CampusEats-CampusEatsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,10 +140,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				36A6A2B1B0D5BDB28B48C634 /* Pods-CampusEats.debug.xcconfig */,
-				C93AC4C248DB1B5E309EC7A5 /* Pods-CampusEats.release.xcconfig */,
-				963405EB475EC78803081F91 /* Pods-CampusEats-CampusEatsTests.debug.xcconfig */,
-				46DAF1F5FAE4DF9C74F9B695 /* Pods-CampusEats-CampusEatsTests.release.xcconfig */,
+				3B4392A12AC88292D35C810B /* Pods-CampusEats.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-CampusEats.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-CampusEats-CampusEatsTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-CampusEats-CampusEatsTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -172,12 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CampusEatsTests" */;
 			buildPhases = (
-				D7B1C83DD1791D6DED48EA28 /* [CP] Check Pods Manifest.lock */,
+				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				0DD731BDE064B8B476854272 /* [CP] Embed Pods Frameworks */,
-				A2A6687BE899F4B1C8F95DAF /* [CP] Copy Pods Resources */,
+				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
+				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,29 +176,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CampusEats" */;
 			buildPhases = (
-				F1B20CAEC790FD80D90A8D47 /* [CP] Check Pods Manifest.lock */,
+				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				3455F12BD83F65FBD1001924 /* [CP] Embed Pods Frameworks */,
-				AA9BFC16F4C35CBFE9A9331A /* [CP] Copy Pods Resources */,
+				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
+				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CampusEats;
-			packageProductDependencies = (
-				B93A0BEE290F6C7600E4AEC3 /* FirebaseAnalytics */,
-				B93A0BF0290F6C7600E4AEC3 /* FirebaseAnalyticsOnDeviceConversion */,
-				B93A0BF2290F6C7600E4AEC3 /* FirebaseAnalyticsSwift */,
-				B93A0BF4290F6C7600E4AEC3 /* FirebaseAuth */,
-				B93A0BF6290F6C7600E4AEC3 /* FirebaseDatabase */,
-				B93A0BF8290F6C7600E4AEC3 /* FirebaseFirestore */,
-				B93A0BFA290F6C7600E4AEC3 /* FirebaseFirestoreCombine-Community */,
-			);
 			productName = CampusEats;
 			productReference = 13B07F961A680F5B00A75B9A /* CampusEats.app */;
 			productType = "com.apple.product-type.application";
@@ -246,9 +220,6 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
-			packageReferences = (
-				B93A0BED290F6C7600E4AEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -273,7 +244,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				B93A0BFD290F6F7700E4AEC3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,24 +266,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		0DD731BDE064B8B476854272 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3455F12BD83F65FBD1001924 /* [CP] Embed Pods Frameworks */ = {
+		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,41 +283,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampusEats/Pods-CampusEats-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A2A6687BE899F4B1C8F95DAF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA9BFC16F4C35CBFE9A9331A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampusEats/Pods-CampusEats-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampusEats/Pods-CampusEats-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampusEats/Pods-CampusEats-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D7B1C83DD1791D6DED48EA28 /* [CP] Check Pods Manifest.lock */ = {
+		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -386,7 +305,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F1B20CAEC790FD80D90A8D47 /* [CP] Check Pods Manifest.lock */ = {
+		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -406,6 +325,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampusEats/Pods-CampusEats-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampusEats/Pods-CampusEats-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampusEats/Pods-CampusEats-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampusEats-CampusEatsTests/Pods-CampusEats-CampusEatsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -460,7 +430,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 963405EB475EC78803081F91 /* Pods-CampusEats-CampusEatsTests.debug.xcconfig */;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-CampusEats-CampusEatsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -487,7 +457,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46DAF1F5FAE4DF9C74F9B695 /* Pods-CampusEats-CampusEatsTests.release.xcconfig */;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-CampusEats-CampusEatsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -511,14 +481,13 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36A6A2B1B0D5BDB28B48C634 /* Pods-CampusEats.debug.xcconfig */;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-CampusEats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CampusEats/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,13 +507,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C93AC4C248DB1B5E309EC7A5 /* Pods-CampusEats.release.xcconfig */;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-CampusEats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = CampusEats/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,7 +562,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -628,7 +596,6 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -666,7 +633,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -692,7 +659,6 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -729,55 +695,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B93A0BED290F6C7600E4AEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B93A0BEE290F6C7600E4AEC3 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B93A0BED290F6C7600E4AEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		B93A0BF0290F6C7600E4AEC3 /* FirebaseAnalyticsOnDeviceConversion */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B93A0BED290F6C7600E4AEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsOnDeviceConversion;
-		};
-		B93A0BF2290F6C7600E4AEC3 /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B93A0BED290F6C7600E4AEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
-		B93A0BF4290F6C7600E4AEC3 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B93A0BED290F6C7600E4AEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		B93A0BF6290F6C7600E4AEC3 /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B93A0BED290F6C7600E4AEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		B93A0BF8290F6C7600E4AEC3 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B93A0BED290F6C7600E4AEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		B93A0BFA290F6C7600E4AEC3 /* FirebaseFirestoreCombine-Community */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B93A0BED290F6C7600E4AEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseFirestoreCombine-Community";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
