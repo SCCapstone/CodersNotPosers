@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react'
 import 
   {
@@ -15,6 +16,14 @@ import SignUpScreen from './src/screens/SignUpScreen';
 /* import logo from './images/logo.png';
 import ellipsepink from './images/ellipsepink.png';
 import ellipsegrey from './images/ellipsegrey.png'; */
+=======
+import React, { useState } from 'react';
+import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
+Image,Text} from 'react-native';
+import logo from './../../images/logo.png';
+import ellipsepink from './../../images/ellipsepink.png';
+import ellipsegrey from './../../images/ellipsegrey.png';
+>>>>>>> origin/main
 
 const SignInScreen =  () => {
 const onPressLogin = () => { <SignUpScreen/>

@@ -1,8 +1,25 @@
+<<<<<<< HEAD
 import React from 'react'
+=======
+import *  as React from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+>>>>>>> origin/main
 import SignInScreen from './src/screens/SignInScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+const App = () => {
     return (
-            <SignInScreen/>
+        <NavigationContainer>{
+            <Stack.Navigator
+                screenOptions={{
+                    headerShown: false
+                }}
+            >
+                    <Stack.Screen name="SignIn"
+                        component={SignInScreen} />
+                </Stack.Navigator>
+        }</NavigationContainer>
     );
-}
+};
+export default App;
