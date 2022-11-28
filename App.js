@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import React from 'react'
-=======
 import *  as React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
->>>>>>> origin/main
 import SignInScreen from './src/screens/SignInScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
