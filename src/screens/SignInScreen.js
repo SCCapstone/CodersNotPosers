@@ -26,13 +26,14 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 >>>>>>> origin/main
 
 const SignInScreen =  () => {
-const onPressLogin = () => { <SignUpScreen/>
+const onPressLogin = () => { 
 // Do something about login operation
 };
 const onPressForgotPassword = () => {
 // Do something about forgot password operation
-};
-const onPressSignUp = () => {
+    };
+    const onPressSignUp = () => {
+        <SignUpScreen/>
 // Do something about signup operation
 };
 const [state,setState] = useState({

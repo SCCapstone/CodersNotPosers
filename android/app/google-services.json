@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "211076056192",
+    "project_id": "campuseats-f4f0d",
+    "storage_bucket": "campuseats-f4f0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211076056192:android:3837fdd493387c88a25265",
+        "android_client_info": {
+          "package_name": "com.campuseats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211076056192-khe0ibm1b1fhppa47ej4k4fnss96p03l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzUMjr-jQfS9WnDq13BbhtHTwY3867SkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211076056192-khe0ibm1b1fhppa47ej4k4fnss96p03l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "211076056192-hu7spng9nqk33udif42h0adg7au4rtac.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.CampusEats"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
