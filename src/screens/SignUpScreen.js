@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
-Image,Text} from 'react-native';
+Image,Text, Alert} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
@@ -16,8 +16,28 @@ lname: '',
 email: '',
 phone: '',
 password: '',
-confirmPassword: ''
+confirmPassword: '',
+isLoading: false
 })
+registerUser = () => {
+  if(this.state.email == '' && this.state.password =='')
+  {
+    Alert.alert('Enter detailes to signup!')
+  } else {
+    this.setState({
+      isLoading:true,
+    }) 
+  }
+  if(this.state.password != this.state.confirmPassword)
+  {
+    Alert.alert('Password does not match')
+  } else {
+    this.setState({
+      isLoading:true,
+    })
+  }
+  }
+}
 return (
 
 <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
