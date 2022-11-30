@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
 Image,Text} from 'react-native';
-import logo from './images/logo.png';
-import ellipsepink from './images/ellipsepink.png';
-import leftarrow from './images/leftarrow.png';
-import ellipsegrey from './images/ellipsegrey.png';
+import logo from './../../images/logo.png';
+import ellipsepink from './../../images/ellipsepink.png';
+import leftarrow from './../../images/leftarrow.png';
+import ellipsegrey from './../../images/ellipsegrey.png';
 
 const SignUpScreen =  () => {
-const onPressLogin = () => {
-// Do something about login operation
-};
-const onPressForgotPassword = () => {
-// Do something about forgot password operation
-};
 const onPressSignUp = () => {
 // Do something about signup operation
 };
@@ -21,8 +15,8 @@ fname: '',
 lname: '',
 email: '',
 phone: '',
-dob: '',
-password: ''
+password: '',
+confirmPassword: ''
 })
 return (
 
@@ -33,30 +27,43 @@ return (
 style={{position: 'absolute',
 left: 2,
 top: -55}} />
+</View>
 
+<View style = {styles.container}>
 <Image source={logo} 
-style={{ width: 109, 
+style={{ position: 'absolute',
+    width: 109, 
 height: 109,
-top: -250 }} />
+top:-280 }} />
+</View>
 
 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
   <Text>   </Text>
 </View>
+
 <View style={styles.fView}>
-<TextInput
+<TextInput id='firstName'
 style={styles.inputText}
 placeholder="First Name"
 placeholderTextColor="#ccc"
 onChangeText={text => setState({fname:text})}/>
 </View>
+
 <View style={styles.lView}>
-<TextInput
+<TextInput id='lastName'
 style={styles.inputText}
-secureTextEntry
 placeholder="Last Name"
 placeholderTextColor="#ccc"
 onChangeText={text => setState({lname:text})}/>
+</View>
 
+<View style= {styles.phoneView}>
+<TextInput
+style={styles.inputText}
+placeholder="Phone"
+placeholderTextColor="#ccc"
+onChangeText={text => setState({phone:text})}/>
+</View>
 
 <View style= {styles.emailView}>
 <TextInput
@@ -66,27 +73,25 @@ placeholderTextColor="#ccc"
 onChangeText={text => setState({email:text})}/>
 </View>
 
-<View style= {styles.dobView}>
-<TextInput
-style={styles.inputText}
-placeholder="DOB"
-placeholderTextColor="#ccc"
-onChangeText={text => setState({dob:text})}/>
-</View>
-
-<View style= {styles.phoneView}>
-<TextInput
-style={styles.inputText}
-placeholder="Phone"
-placeholderTextColor="#ccc"
-onChangeText={text => setState({phone:text})}/>
-
 <View style= {styles.passwordView}>
 <TextInput
 style={styles.inputText}
-placeholder="USC ID"
+secureTextEntry
+placeholder="Password"
 placeholderTextColor="#ccc"
 onChangeText={text => setState({password:text})}/>
+</View>
+
+<View style= {styles.confirmPasswordView}>
+<TextInput
+style={styles.inputText}
+secureTextEntry
+placeholder="Confirm Password"
+placeholderTextColor="#ccc"
+onChangeText={text => setState({password:text})}/>
+</View>
+
+<View>
 <TouchableOpacity
 onPress = {onPressSignUp}
 style={styles.signupBtn}>
@@ -97,19 +102,16 @@ style={styles.signupBtn}>
 <Image source={leftarrow} 
 style={{ width: 50, 
 height: 50,
-top: 220,
-left: -30 }} />
+top:-10,
+left:10}} />
 </TouchableOpacity>
 
 <Image source={ellipsegrey} 
 style={{position: 'absolute',
-right: -30,
-bottom:-295}}/>
+right:0,
+bottom:0}}/>
+</View>
 
-</View>
-</View>
-</View>
-</View>
 </SafeAreaView>
 );
 }
@@ -147,10 +149,10 @@ lView:{
   padding:20
 },
 
-emailView:{
+phoneView:{
   position: 'absolute',
-  left: -175,
-  top: 85,
+  left: 30,
+  top: 260,
   width:330,
   backgroundColor:"#FFFFFF",
   borderRadius:25,
@@ -160,24 +162,11 @@ emailView:{
   padding:20
 },
 
-phoneView:{
+emailView:{
   position: 'absolute',
-  left: -175,
-  top: 175,
-  width:"135%",
-  backgroundColor:"#FFFFFF",
-  borderRadius:25,
-  height:50,
-  marginBottom:20,
-  justifyContent:"center",
-  padding:20
-},
-
-dobView:{
-  position: 'absolute',
-  left: -2,
-  top: 175,
-  width:153,
+  left:30,
+  top:326,
+  width:330,
   backgroundColor:"#FFFFFF",
   borderRadius:25,
   height:50,
@@ -188,8 +177,8 @@ dobView:{
 
 passwordView:{
   position: 'absolute',
-  left: 0,
-  top: 85,
+  left:30,
+  top:390,
   width:330,
   backgroundColor:"#FFFFFF",
   borderRadius:25,
@@ -199,6 +188,20 @@ passwordView:{
   padding:20
 },
 
+confirmPasswordView:{
+  position: 'absolute',
+  left: 30,
+  top:455,
+  width:330,
+  backgroundColor:"#FFFFFF",
+  borderRadius:25,
+  height:50,
+  marginBottom:20,
+  justifyContent:"center",
+  padding:20
+}, 
+
+
 inputText:{
 height:50,
 color:"black"
@@ -206,9 +209,9 @@ color:"black"
 
 signupBtn:{
   position: "absolute",
-  left: 45,
-  top: 100,
-  width:"80%",
+  right:145,
+  top:-200, 
+  width:115,
   backgroundColor:"#884E7D",
   borderRadius:25,
   height:50,
