@@ -4,6 +4,7 @@ Image,Text} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
+import SignUpScreen from './SignUpScreen';
 
 const SignInScreen =  () => {
 const onPressLogin = () => {
@@ -12,7 +13,7 @@ const onPressLogin = () => {
 const onPressForgotPassword = () => {
 // Do something about forgot password operation
 };
-const onPressSignUp = () => {
+const onPressSignUp = () => { <SignUpScreen/>
 // Do something about signup operation
 };
 const [state,setState] = useState({
