@@ -4,6 +4,10 @@ Image,Text} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
+import {auth} from '@react-native-firebase/auth';
+import {app} from '@react-native-firebase/app';
+import {createUserWithEmailAndPassword} from '@react-native-firebase/auth';
+
 
 const SignUpScreen =  () => 
 {
@@ -56,16 +60,15 @@ return (
     placeholder="Confirm Password"
     placeholderTextColor="#ccc"
     onChangeText={text => setState({password:text})}/>
-    
     <Image source={ellipsegrey} 
     style={{position: 'absolute',
     right:-60,
-    bottom:-420}}/>
+    bottom:-300}}/>
     </View>
     <TouchableOpacity
-    onPress = {onPressSignUp}
+    //onPress = {onPressSignUp}
     style={styles.signupBtn}>
-    <Text style={styles.forgotAndSignUpText}>Sign Up</Text>
+    <Text style={styles.SignUpText}>Sign Up</Text>
     </TouchableOpacity>
     </View>
     </SafeAreaView>
@@ -92,25 +95,9 @@ return (
     height:50,
     color:"black"
     },
-    
-    loginText:{
+    SignUpText:{
     color:"white",
     fontSize:16
-    },
-    
-    forgotAndSignUpText:{
-    color:"white",
-    fontSize:16
-    },
-    loginBtn:{
-    width:"80%",
-    backgroundColor:"#884E7D",
-    borderRadius:25,
-    height:50,
-    alignItems:"center",
-    justifyContent:"center",
-    marginTop:40,
-    marginBottom:10
     },
     
     signupBtn:{
