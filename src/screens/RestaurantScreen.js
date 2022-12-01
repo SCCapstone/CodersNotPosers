@@ -62,7 +62,7 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                        <Text style = {styles.buttonText}> Restaurant1 </Text>
+                    <Text style = {styles.buttonText}> Restaurant1 </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
@@ -89,6 +89,45 @@ const pressRestaurant = () => {
                                 marginTop:20,
                                 marginBottom:20}}>
                     <Text style = {styles.buttonText}> Restaurant3 </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress = {pressRestaurant}
+                    style = {{width:350,
+                                backgroundColor:"WHITE",
+                                borderRadius:25,
+                                borderColor:"BLACK",
+                                height:100,
+                                alignItems:"center",
+                                justifyContent:"center",
+                                marginTop:20,
+                                marginBottom:20}}>
+                    <Text style = {styles.buttonText}> Restaurant4 </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress = {pressRestaurant}
+                    style = {{width:350,
+                                backgroundColor:"WHITE",
+                                borderRadius:25,
+                                borderColor:"BLACK",
+                                height:100,
+                                alignItems:"center",
+                                justifyContent:"center",
+                                marginTop:20,
+                                marginBottom:20}}>
+                    <Text style = {styles.buttonText}> Restaurant5 </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress = {pressRestaurant}
+                    style = {{width:350,
+                                backgroundColor:"WHITE",
+                                borderRadius:25,
+                                borderColor:"BLACK",
+                                height:100,
+                                alignItems:"center",
+                                justifyContent:"center",
+                                marginTop:20,
+                                marginBottom:20}}>
+                    <Text style = {styles.buttonText}> Restaurant6 </Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
