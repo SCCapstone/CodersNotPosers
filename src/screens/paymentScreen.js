@@ -5,7 +5,7 @@ import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 
-export default function paymentScreen() {
+export default function PaymentScreen() {
   const [name, setName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [expDate, setExpDate] = useState("");
