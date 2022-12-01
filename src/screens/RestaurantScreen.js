@@ -62,9 +62,7 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> <Image source = {CFALogo}
-                                                                style = {{position:"relative",
-                                                                            alignContent:"center"}}>  </Image> </Text>
+                        <Text style = {styles.buttonText}> Restaurant1 </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
@@ -77,9 +75,20 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> <Image source = {CFALogo}
-                                                                style = {{position:"relative",
-                                                                            alignContent:"center"}}>  </Image> </Text>
+                    <Text style = {styles.buttonText}> Restaurant2 </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress = {pressRestaurant}
+                    style = {{width:350,
+                                backgroundColor:"WHITE",
+                                borderRadius:25,
+                                borderColor:"BLACK",
+                                height:100,
+                                alignItems:"center",
+                                justifyContent:"center",
+                                marginTop:20,
+                                marginBottom:20}}>
+                    <Text style = {styles.buttonText}> Restaurant3 </Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
