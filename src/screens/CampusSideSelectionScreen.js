@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
 
     campusSelectionButtons:{
         width:350,
-        backgroundColor:"WHITE",
+        backgroundColor:"#884E7D",
         borderRadius:10,
         borderColor:"BLACK",
         height:100,
