@@ -6,8 +6,8 @@ import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 
-const SignUpScreen =  () => {
-const onPressSignUp = () => {
+const SignUpScreen =  ({navigation}) => {
+const onPressSignUp = () => {navigation.navigate('Restauraunts')
 // Do something about signup operation
 };
 const [state,setState] = useState({
@@ -98,7 +98,7 @@ style={styles.signupBtn}>
 <Text style={styles.forgotAndSignUpText}>Sign Up</Text>
 </TouchableOpacity>
 
-<TouchableOpacity onPress={()=>navigation.naviagte('SignInScreen')}>
+<TouchableOpacity onPress={()=>navigation.pop()}>
 <Image source={leftarrow} 
 style={{ width: 50, 
 height: 50,
