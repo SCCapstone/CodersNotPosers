@@ -19,8 +19,8 @@ const DriverSignUpScreen =  () => {
 
     const onPressSignUp = () => {
         if (passwordDriver == confirmPasswordDriver) {
-            // go to driver homepage
-        } else {
+            navigation.navigate('DriverHomePage')
+                } else {
             // text pop up that says passwords do not match, try again
             <View style = {styles.container}>
                 <Text style = {styles.passwordsDontMatchTxt}>

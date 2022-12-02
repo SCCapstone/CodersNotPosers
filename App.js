@@ -8,10 +8,12 @@ import PaymentScreen from './src/screens/PaymentScreen';
 import CampusSideSelectionScreen from './src/screens/CampusSideSelectionScreen';
 import RussellHouseRestaurantScreen from './src/screens/RussellHouseRestaurantScreen';
 import ChickfilAPage from './src/screens/ChickfilAPage';
+import DriverHomePage from './src/screens/DriverHomePage';
 import DriverSignUpScreen from './src/screens/DriverSignUpScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StripeProvider } from '@stripe/stripe-react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -49,6 +51,7 @@ const App = () => {
                         <Stack.Screen name="RussellHouse" component={RussellHouseRestaurantScreen}/>
                         <Stack.Screen name="CFA" component={ChickfilAPage}/>
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
+                        <Stack.Screen name="DriverHomePage" component={DriverHomePage}/>
                         <Stack.Screen name="Payment" component={PaymentScreen}/>
                         </Stack.Navigator>
             }</NavigationContainer> 
@@ -74,6 +77,7 @@ const App = () => {
                         <Stack.Screen name="RussellHouse" component={RussellHouseRestaurantScreen}/>
                         <Stack.Screen name="CFA" component={ChickfilAPage}/>
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
+                        <Stack.Screen name="DriverHomePage" component={DriverHomePage}/>
                         <Stack.Screen name="Payment" component={PaymentScreen}/>
                     
                        </Stack.Navigator>
