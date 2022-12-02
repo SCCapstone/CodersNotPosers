@@ -10,7 +10,7 @@ location.
 
 ## External Requirements
 
-In order to build this project you will need Node, Watchman, the React Native command line interface, a Ruby version manager, Xcode and CocoaPods.
+In order to build this project you will need Node, Watchman, the React Native command line interface, Android Studio and CocoaPods/Chocolatey.
 
 * Install Node and Watchman using Homebrew.<br/>
     brew install node <br/>
