@@ -53,81 +53,43 @@ const pressFoodItem = () => {
                 </Image>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant1 </Text>
+                    style = {styles.leftFoodButtons}>
+                    <Text style = {styles.buttonText}> "1. Chicken Sandwich" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant2 </Text>
+                    style = {styles.rightFoodButtons}>
+                    <Text style = {styles.buttonText}> "2. Spicy Chicken Sandwich" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant3 </Text>
+                    style = {styles.leftFoodButtons}>
+                    <Text style = {styles.buttonText}> "3. Chicken Nuggets " </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant4 </Text>
+                    style = {styles.rightFoodButtons}>
+                    <Text style = {styles.buttonText}> "4. Soda" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant5 </Text>
+                    style = {styles.leftFoodButtons}>
+                    <Text style = {styles.buttonText}> "5. Sides" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant6 </Text>
+                    style = {styles.rightFoodButtons}>
+                    <Text style = {styles.buttonText}> "6. Desserts" </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress = {pressFoodItem}
+                    style = {styles.leftFoodButtons}>
+                    <Text style = {styles.buttonText}> "7. Lemonades and Sweet Teas" </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress = {pressFoodItem}
+                    style = {styles.rightFoodButtons}>
+                    <Text style = {styles.buttonText}> "8. Water" </Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
@@ -140,29 +102,25 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    
-    inputView:{
-        width:"80%",
-        backgroundColor:"#FFFFFF",
-        borderRadius:25,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
-    },
 
-    inputText:{
-        height:50,
-        color:"black"
-    },
-
-    restaurantButtons:{
-        width:350,
+    leftFoodButtons:{
+        width:125,
         backgroundColor:"#884E7D",
         borderRadius:25,
-        height:100,
-        alignItems:"center",
-        justifyContent:"center",
+        height:125,
+        alignItems:"left",
+        justifyContent:"space-between",
+        marginTop:40,
+        marginBottom:10
+    },
+
+    rightFoodButtons:{
+        width:125,
+        backgroundColor:"#884E7D",
+        borderRadius:25,
+        height:125,
+        alignItems:"right",
+        justifyContent:"space-between",
         marginTop:40,
         marginBottom:10
     },

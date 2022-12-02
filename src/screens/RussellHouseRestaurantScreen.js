@@ -5,7 +5,8 @@ import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import CFALogo from './../../images/CFALogo.png';
-//import restaurantJSON from './../../Restaurant.json';
+import ChickfilAPage from './ChickfilAPage';
+//import restaurantJSON from './../../restaurants.json';
 
 {/* <RelativeLayout
     xmlns:android = 'https://schemas.android.com/apk/res/android'
@@ -32,7 +33,7 @@ import CFALogo from './../../images/CFALogo.png';
 
 </RelativeLayout> */}
 
-const RestaurantScreen = () => {
+const RussellHouseRestaurantScreen = () => {
 
 const pressRestaurant = () => {
     //move to specified restaurant screen
@@ -52,17 +53,17 @@ const pressRestaurant = () => {
                     bottom:-420}}>
                 </Image>
                 <TouchableOpacity
-                    onPress = {pressRestaurant}
+                    onPress = {() => navigation.navigate(ChickfilAPage)}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
                                 borderColor:"BLACK",
                                 height:100,
                                 alignItems:"center",
-                                justifyContent:"center",
+                                justifyContent:"space-between",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant1 </Text>
+                    <Text style = {styles.buttonText}> "Chick-Fil-A" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
@@ -75,7 +76,7 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant2 </Text>
+                    <Text style = {styles.buttonText}> "Panera" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
@@ -88,7 +89,7 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant3 </Text>
+                    <Text style = {styles.buttonText}> "Panda Express" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
@@ -101,7 +102,7 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant4 </Text>
+                    <Text style = {styles.buttonText}> "Twisted Taco" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
@@ -114,7 +115,7 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant5 </Text>
+                    <Text style = {styles.buttonText}> "Einstein Bros. Bagels" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
@@ -162,7 +163,7 @@ const styles = StyleSheet.create({
         borderRadius:25,
         height:100,
         alignItems:"center",
-        justifyContent:"center",
+        justifyContent:"space-between",
         marginTop:40,
         marginBottom:10
     },
@@ -173,4 +174,4 @@ const styles = StyleSheet.create({
         backgroundColor:"White"
     }
 })
-export default RestaurantScreen;
+export default RussellHouseRestaurantScreen;
