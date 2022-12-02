@@ -5,6 +5,10 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
 import NorthCampus from './NorthCampus';
+import EastCampus from './EastCampus';
+import WestCampus from './WestCampus';
+import SouthCampus from './SouthCampus';
+import FoodTrucks from './FoodTrucks';
 
 const CampusSideSelectionScreen = ({navigation}) => {
 
@@ -48,7 +52,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     <Text style = {styles.buttonText}> "North Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressFoodItem}
+                    onPress = {() => navigation.navigate(EastCampus)}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -61,7 +65,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     <Text style = {styles.buttonText}> "East Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressFoodItem}
+                    onPress = {() => navigation.navigate(SouthCampus)}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -74,7 +78,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     <Text style = {styles.buttonText}> "South Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressFoodItem}
+                    onPress = {() => navigation.navigate(WestCampus)}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -87,7 +91,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     <Text style = {styles.buttonText}> "West Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressFoodItem}
+                    onPress = {() =>navigation.navigate(FoodTrucks)}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
