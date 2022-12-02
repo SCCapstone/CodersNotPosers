@@ -27,80 +27,32 @@ const CampusSideSelectionScreen = ({navigation}) => {
                 </Image>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate(RussellHouseRestaurantScreen)}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
+                    style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> Russell House </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate(NorthCampus)}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
+                    style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> "North Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate(EastCampus)}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
+                    style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> "East Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate(SouthCampus)}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
+                    style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> "South Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate(WestCampus)}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
+                    style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> "West Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() =>navigation.navigate(FoodTrucks)}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
+                    style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> "Food Trucks" </Text>
                 </TouchableOpacity>
             </View>
@@ -126,10 +78,11 @@ const styles = StyleSheet.create({
         width:350,
         backgroundColor:"WHITE",
         borderRadius:25,
+        borderColor:"BLACK",
         height:100,
         alignItems:"center",
-        justifyContent:"space-between",
-        marginTop:40,
+        justifyContent:"center",
+        marginTop:10,
         marginBottom:10
     },
 
