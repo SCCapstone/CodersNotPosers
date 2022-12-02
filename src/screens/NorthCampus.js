@@ -4,12 +4,41 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
-import NorthCampus from './NorthCampus';
+import CFALogo from './../../images/CFALogo.png';
+//import restaurantJSON from './../../restaurants.json';
 
-const CampusSideSelectionScreen = () => {
+{/* <RelativeLayout
+    xmlns:android = 'https://schemas.android.com/apk/res/android'
+    xmlns:tools = 'https://schema.android.com/tools'
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent"
+    android:paddingLeft = "16dp"
+    android:paddingRight = "16dp"
+    android:paddingTop = "16dp"
+    android:paddingBottom = "16dp" tools:context = ".Activity1" >
 
-    return (
+    <ScrollView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_below = "@+id/button"
+        android:layout_centerHorizontal = "true" >
+        <TextView
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:textAppearance = "?android:attr/textAppearanceLarge"
+            android:text = "@string/long_string"
+            android:id = "@+id/textView" />
+    </ScrollView>
+
+</RelativeLayout> */}
+
+const NorthCampus = () => {
+
+const pressRestaurant = () => {
+    //move to specified restaurant screen
+}
+
+    return(
         <SafeAreaView style = {styles.container}>
             <View style = {styles.container}>
                 <Image source={ellipsepink} 
@@ -23,20 +52,20 @@ const CampusSideSelectionScreen = () => {
                     bottom:-420}}>
                 </Image>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate(RussellHouseRestaurantScreen)}
+                    onPress = {() => navigation.navigate(ChickfilAPage)}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
                                 borderColor:"BLACK",
                                 height:100,
                                 alignItems:"center",
-                                justifyContent:"center",
+                                justifyContent:"space-between",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Russell House </Text>
+                    <Text style = {styles.buttonText}> "Chick-Fil-A" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate(NorthCampus)}
+                    onPress = {pressRestaurant}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -46,10 +75,10 @@ const CampusSideSelectionScreen = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "North Campus" </Text>
+                    <Text style = {styles.buttonText}> "Panera" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressFoodItem}
+                    onPress = {pressRestaurant}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -59,10 +88,10 @@ const CampusSideSelectionScreen = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "East Campus" </Text>
+                    <Text style = {styles.buttonText}> "Panda Express" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressFoodItem}
+                    onPress = {pressRestaurant}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -72,10 +101,10 @@ const CampusSideSelectionScreen = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "South Campus" </Text>
+                    <Text style = {styles.buttonText}> "Twisted Taco" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressFoodItem}
+                    onPress = {pressRestaurant}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -85,10 +114,10 @@ const CampusSideSelectionScreen = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "West Campus" </Text>
+                    <Text style = {styles.buttonText}> "Einstein Bros. Bagels" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressFoodItem}
+                    onPress = {pressRestaurant}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -98,14 +127,12 @@ const CampusSideSelectionScreen = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "Food Trucks" </Text>
+                    <Text style = {styles.buttonText}> Restaurant6 </Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
     )
-
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -113,13 +140,23 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    
+    inputView:{
+        width:"80%",
+        backgroundColor:"#FFFFFF",
+        borderRadius:25,
+        height:50,
+        marginBottom:20,
+        justifyContent:"center",
+        padding:20
+    },
 
-    text:{
+    inputText:{
         height:50,
         color:"black"
     },
 
-    campusSelectionButtons:{
+    restaurantButtons:{
         width:350,
         backgroundColor:"#884E7D",
         borderRadius:25,
@@ -136,5 +173,4 @@ const styles = StyleSheet.create({
         backgroundColor:"White"
     }
 })
-
-export default CampusSideSelectionScreen;
+export default NorthCampus;

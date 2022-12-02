@@ -63,7 +63,7 @@ const pressRestaurant = () => {
                                 justifyContent:"space-between",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "Chick-Fil-A" </Text>
+                    <Text style = {styles.buttonText}> Chick-Fil-A </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
