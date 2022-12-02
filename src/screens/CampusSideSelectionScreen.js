@@ -11,8 +11,8 @@ const CampusSideSelectionScreen = ({navigation}) => {
             <View style = {styles.container}>
                 <Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: 0,
-                    top: 1,}}>
+                    left: -20,
+                    top: -45,}}>
                 </Image>
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
@@ -50,6 +50,13 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     <Text style = {styles.buttonText}> Food Trucks </Text>
                 </TouchableOpacity>
             </View>
+            <View>
+            <Image source={ellipsegrey} 
+                style={{position: 'absolute',
+                right:-200,
+                bottom:0}}/>
+            </View>
+
         </SafeAreaView>
     )
 
