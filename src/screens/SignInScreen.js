@@ -4,11 +4,12 @@ Image,Text} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
+import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 const SignInScreen =  ({navigation}) => {
-const onPressLogin = () => {
+const onPressLogin = ({navigation}) => {
   alert('You are signed in to your account')
-// Do something about login operation
+  navigation.navigate(CampusSideSelectionScreen)
 };
 const onPressForgotPassword = () => {
 // Do something about forgot password operation
