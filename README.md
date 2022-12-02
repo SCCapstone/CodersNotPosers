@@ -1,6 +1,6 @@
 # Campus Eats
 
-Campus Eats is an IOS app which is designed to allow student and falculty to place orders for food from campus dining 
+Campus Eats is an android app which is designed to allow student and falculty to place orders for food from campus dining 
 locations no matter where they are on campus. It gives students options for jobs, as the food ordered by students or 
 faculty will be delivered by students or faculty, and potentially allows more people to order food than normal since it
 is more convenient for kids who have class to place an order instead of having to go out of their way to find a dining 
@@ -24,14 +24,14 @@ In order to build this project you will need Node, Watchman, the React Native co
 * Install bundle using:
  	"bundle install" command
 
-* Install Xcode from appstore.
-* Install Command line tools in Xcode. Xcode->Preferences->Locations->Command Line Tools.
+* Install Android Studio.
+* Install Command line tools in Terminal.
 * Install CocoaPods using homebrew<br/>
 	brew install cocoapods.
 
 ## Running
 
-Open the IOS folder in Xcode and run the project.
+Open the Android folder in Android and run the project, from either a terminal or Android Studio itself.
 
 # Deployment
 
