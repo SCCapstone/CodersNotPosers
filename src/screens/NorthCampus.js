@@ -1,10 +1,8 @@
 import React, { useState } from 'react'; 
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
     Image,Text, Button} from 'react-native';
-import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import CFALogo from './../../images/CFALogo.png';
 //import restaurantJSON from './../../restaurants.json';
 
 {/* <RelativeLayout
@@ -52,7 +50,7 @@ const pressRestaurant = () => {
                     bottom:-420}}>
                 </Image>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate(ChickfilAPage)}
+                    onPress = {pressRestaurant}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -62,7 +60,7 @@ const pressRestaurant = () => {
                                 justifyContent:"space-between",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "Chick-Fil-A" </Text>
+                    <Text style = {styles.buttonText}> Counselor's Cafe </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
@@ -75,59 +73,7 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "Panera" </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "Panda Express" </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "Twisted Taco" </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> "Einstein Bros. Bagels" </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant6 </Text>
+                    <Text style = {styles.buttonText}> Hampton St. Cafe </Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>

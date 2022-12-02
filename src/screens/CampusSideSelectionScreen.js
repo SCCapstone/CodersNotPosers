@@ -1,7 +1,6 @@
 import React, { useState } from 'react'; 
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
     Image,Text, Button} from 'react-native';
-import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';

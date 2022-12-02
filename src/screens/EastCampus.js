@@ -32,7 +32,7 @@ import ChickfilAPage from './ChickfilAPage';
 
 </RelativeLayout> */}
 
-const RussellHouseRestaurantScreen = () => {
+const EastCampus = () => {
 
 const pressRestaurant = () => {
     //move to specified restaurant screen
@@ -52,7 +52,7 @@ const pressRestaurant = () => {
                     bottom:-420}}>
                 </Image>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate(ChickfilAPage)}
+                    onPress = {pressRestaurant}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -173,4 +173,4 @@ const styles = StyleSheet.create({
         backgroundColor:"White"
     }
 })
-export default RussellHouseRestaurantScreen;
+export default EastCampus;
