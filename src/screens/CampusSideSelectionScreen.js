@@ -17,7 +17,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
             <View style = {styles.container}>
                 <Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: 2,
+                    left: 0,
                     top: 1,}}>
                 </Image>
                 <Image source={ellipsegrey} 
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
 
     campusSelectionButtons:{
         width:350,
-        backgroundColor:"#884E7D",
+        backgroundColor:"WHITE",
         borderRadius:25,
         height:100,
         alignItems:"center",
