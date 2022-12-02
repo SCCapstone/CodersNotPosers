@@ -51,7 +51,7 @@ const pressRestaurant = () => {
                     bottom:-420}}>
                 </Image>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate('ChickfilAPage')}
+                    onPress = {() => navigation.navigate('CFA')}
                     style = {styles.restaurantButtons}>
                     <Text style = {styles.buttonText}> Chick-Fil-A </Text>
                 </TouchableOpacity>
