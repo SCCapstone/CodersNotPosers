@@ -25,27 +25,27 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     <Text style = {styles.buttonText}> Russell House </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate(NorthCampus)}
+                    onPress = {() => navigation.navigate('NorthCampus')}
                     style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> North Campus </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate(EastCampus)}
+                    onPress = {() => navigation.navigate('EastCampus')}
                     style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> East Campus </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate(SouthCampus)}
+                    onPress = {() => navigation.navigate('SouthCampus')}
                     style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> South Campus </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate(WestCampus)}
+                    onPress = {() => navigation.navigate('WestCampus')}
                     style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> West Campus </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {() =>navigation.navigate(FoodTrucks)}
+                    onPress = {() =>navigation.navigate('FoodTrucks')}
                     style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> Food Trucks </Text>
                 </TouchableOpacity>
