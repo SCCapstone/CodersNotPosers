@@ -5,6 +5,7 @@ import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
+import { CardStyleInterpolators } from 'react-navigation-stack';
 
 const DriverSignUpScreen =  () => {
     const [state,setState] = useState({
@@ -15,6 +16,20 @@ const DriverSignUpScreen =  () => {
         passwordDriver: '',
         confirmPasswordDriver: ''
     })
+
+    const onPressSignUp = () => {
+        if (passwordDriver == confirmPasswordDriver) {
+            // go to driver homepage
+        } else {
+            // text pop up that says passwords do not match, try again
+            <View style = {styles.container}>
+                <Text style = {styles.passwordsDontMatchTxt}>
+                    Your passwords do not match. Please enter your information and try again.
+                </Text>
+            </View>
+        }
+    }
+
     return (
 
     <SafeAreaView style = {styles.container}>
@@ -103,18 +118,18 @@ const DriverSignUpScreen =  () => {
             </TouchableOpacity>
 
         <TouchableOpacity onPress={()=>navigation.naviagte('SignInScreen')}>
-        <Image source={leftarrow} 
-        style={{ width: 50, 
-        height: 50,
-        top:-10,
-        left:10}} />
+            <Image source={leftarrow} 
+                    style={{ width: 50, 
+                    height: 50,
+                    top:-10,
+                    left:10}} />
         </TouchableOpacity>
 
         <Image source={ellipsegrey} 
-        style={{position: 'absolute',
-        right:0,
-        bottom:0}}/>
-    </View>
+                style={{position: 'absolute',
+                right:0,
+                bottom:0}}/>
+        </View>
 
     </SafeAreaView>
     );
@@ -235,5 +250,12 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
     },
+
+    passwordsDontMatchTxt:{
+        height:60,
+        color:"black",
+        backgroundColor:"White",
+        textAlign:"center"
+    }
 });
 export default DriverSignUpScreen;

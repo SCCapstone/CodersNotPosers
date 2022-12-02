@@ -4,41 +4,12 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import CFALogo from './../../images/CFALogo.png';
-//import restaurantJSON from './../../Restaurant.json';
+import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
+import NorthCampus from './NorthCampus';
 
-{/* <RelativeLayout
-    xmlns:android = 'https://schemas.android.com/apk/res/android'
-    xmlns:tools = 'https://schema.android.com/tools'
-    android:layout_width = "match_parent"
-    android:layout_height = "match_parent"
-    android:paddingLeft = "16dp"
-    android:paddingRight = "16dp"
-    android:paddingTop = "16dp"
-    android:paddingBottom = "16dp" tools:context = ".Activity1" >
+const CampusSideSelectionScreen = () => {
 
-    <ScrollView
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@+id/button"
-        android:layout_centerHorizontal = "true" >
-        <TextView
-            android:layout_width = "wrap_content"
-            android:layout_height = "wrap_content"
-            android:textAppearance = "?android:attr/textAppearanceLarge"
-            android:text = "@string/long_string"
-            android:id = "@+id/textView" />
-    </ScrollView>
-
-</RelativeLayout> */}
-
-const RestaurantScreen = () => {
-
-const pressRestaurant = () => {
-    //move to specified restaurant screen
-}
-
-    return(
+    return (
         <SafeAreaView style = {styles.container}>
             <View style = {styles.container}>
                 <Image source={ellipsepink} 
@@ -52,7 +23,7 @@ const pressRestaurant = () => {
                     bottom:-420}}>
                 </Image>
                 <TouchableOpacity
-                    onPress = {pressRestaurant}
+                    onPress = {() => navigation.navigate(RussellHouseRestaurantScreen)}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -62,10 +33,10 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant1 </Text>
+                    <Text style = {styles.buttonText}> Russell House </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressRestaurant}
+                    onPress = {() => navigation.navigate(NorthCampus)}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -75,10 +46,10 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant2 </Text>
+                    <Text style = {styles.buttonText}> "North Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressRestaurant}
+                    onPress = {pressFoodItem}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -88,10 +59,10 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant3 </Text>
+                    <Text style = {styles.buttonText}> "East Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressRestaurant}
+                    onPress = {pressFoodItem}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -101,10 +72,10 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant4 </Text>
+                    <Text style = {styles.buttonText}> "South Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressRestaurant}
+                    onPress = {pressFoodItem}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -114,10 +85,10 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant5 </Text>
+                    <Text style = {styles.buttonText}> "West Campus" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress = {pressRestaurant}
+                    onPress = {pressFoodItem}
                     style = {{width:350,
                                 backgroundColor:"WHITE",
                                 borderRadius:25,
@@ -127,12 +98,14 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Restaurant6 </Text>
+                    <Text style = {styles.buttonText}> "Food Trucks" </Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
     )
+
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -140,29 +113,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    
-    inputView:{
-        width:"80%",
-        backgroundColor:"#FFFFFF",
-        borderRadius:25,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
-    },
 
-    inputText:{
+    text:{
         height:50,
         color:"black"
     },
 
-    restaurantButtons:{
+    campusSelectionButtons:{
         width:350,
         backgroundColor:"#884E7D",
         borderRadius:25,
         height:100,
         alignItems:"center",
-        justifyContent:"center",
+        justifyContent:"space-between",
         marginTop:40,
         marginBottom:10
     },
@@ -173,4 +136,5 @@ const styles = StyleSheet.create({
         backgroundColor:"White"
     }
 })
-export default RestaurantScreen;
+
+export default CampusSideSelectionScreen;

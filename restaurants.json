@@ -1,0 +1,722 @@
+{
+    "Russell House": [
+        {
+            "Chick-Fil-A": [
+                {
+                    "id": 1,
+                    "location": "1400 Greene Street",
+                    "hours": [
+                        {
+                            "monday": [730, 2300],
+                            "tuesday": [730, 2300],
+                            "wednesday": [730, 2300],
+                            "thursday": [730, 2300],
+                            "friday": [730, 2200],
+                            "saturday": [900, 2200],
+                            "sunday": [0, 0]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": ["Chicken Sandwich", "Spicy Chicken Sandwich", "Spicy Deluxe Sandwich", "Grilled Chicken Sandwich", "Grilled Chicken Club Sandwich", "8-Count Nuggets", "12-Count Nuggets"],
+                                    "prices": [4.79, 5.15, 5.45, 6.39, 7.79, 4.79, 6.75]
+                                }
+                            ],
+                            "meals": [
+                                {
+                                    "items": ["Sandwich Meal", "Spicy Sandwich Meal", "Nuggets Meal"],
+                                    "prices":[8.49, 8.95, 8.49]
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": ["Greek Yogurt Parfait with Granola","Greek Yogurt Parfait with Cookie Crumbs", "Fruit Cup", "Potato Chips", "Fries"],
+                                    "prices":[4.69, 4.69, 3.99, 1.99, 2.35]
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": ["Soft Drink - Medium", "Soft Drink - Large", "Lemonade - Medium", "Lemonade - Large", "Diet Lemonade - Medium", "Diet Lemonade - Large", "Sunjoy", "Coffee", "Decaf Coffee"],
+                                    "prices":[2.19, 2.59, 2.55, 3.05, 2.39, 2.89, 2.55, 2.19, 2.09]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Panera": [
+                {
+                    "id": 2,
+                    "location": "1400 Greene Street",
+                    "hours": [
+                        {
+                            "monday": [730, 2100],
+                            "tuesday": [730, 2100],
+                            "wednesday": [730, 2100],
+                            "thursday": [730, 2100],
+                            "friday": [730, 2100],
+                            "saturday": [1030, 2100],
+                            "sunday": [1030, 2100]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Panda Express": [
+                {
+                    "id": 3,
+                    "location": "1400 Greene Street",
+                    "hours": [
+                        {
+                            "monday": [1030, 1500, 1600, 2100],
+                            "tuesday": [1030, 1500, 1600, 2100],
+                            "wednesday": [1030, 1500, 1600, 2100],
+                            "thursday": [1030, 1500, 1600, 2100],
+                            "friday": [1030, 1500, 1600, 2100],
+                            "saturday": [1100, 1500, 1600, 2100],
+                            "sunday": [1100, 1500, 1600, 2100]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Twisted Taco": [
+                {
+                    "id": 4,
+                    "location": "1400 Greene Street",
+                    "hours": [
+                        {
+                            "monday": [1030, 2300],
+                            "tuesday": [1030, 2300],
+                            "wednesday": [1030, 2300],
+                            "thursday": [1030, 2300],
+                            "friday": [1030, 2300],
+                            "saturday": [1100, 2300],
+                            "sunday": [1100, 2300]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Einstein Bros. Bagels": [
+                {
+                    "id": 5,
+                    "location": "1400 Greene Street",
+                    "hours": [
+                        {
+                            "monday": [700, 1430],
+                            "tuesday": [700, 1430],
+                            "wednesday": [700, 1430],
+                            "thursday": [700, 1430],
+                            "friday": [700, 1430],
+                            "saturday": [830, 1430],
+                            "sunday": [830, 1430]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Carolina Creamery": [
+                {
+                    "id": 6,
+                    "location": "1400 Greene Street",
+                    "hours": [
+                        {
+                            "monday": [1100,0],
+                            "tuesday": [1100, 0],
+                            "wednesday": [1100, 0],
+                            "thursday": [1100, 0],
+                            "friday": [1100, 0],
+                            "saturday": [1600, 0],
+                            "sunday": [1600, 0]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "North Campus":
+    [
+        {
+            "Counselor's Cafe": [
+                {
+                    "id": 7,
+                    "location": "1525 Senate Street",
+                    "hours": [
+                        {
+                            "monday": [730, 1400],
+                            "tuesday": [730, 1400],
+                            "wednesday": [730, 1400],
+                            "thursday": [730, 1400],
+                            "friday": [0, 0],
+                            "saturday": [0, 0],
+                            "sunday": [0, 0]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Hampton St Cafe": [
+                {
+                    "id": 8,
+                    "location": "1600 Hampton Street",
+                    "hours": [
+                        {
+                            "monday": [730, 1430],
+                            "tuesday": [730, 1430],
+                            "wednesday": [730, 1430],
+                            "thursday": [730, 1430],
+                            "friday": [730, 1430],
+                            "saturday": [0, 0],
+                            "sunday": [0, 0]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "East Campus":
+    [
+        {
+            "Colloquium Cafe": [
+                {
+                    "id": 9,
+                    "location": "817 Henderson Street",
+                    "hours": [
+                        {
+                            "monday": [1030, 1930],
+                            "tuesday": [1030, 1930],
+                            "wednesday": [1030, 1930],
+                            "thursday": [1030, 1700],
+                            "friday": [1030, 1430],
+                            "saturday": [0, 0],
+                            "sunday": [0, 0]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Horseshoe Deli": [
+                {
+                    "id": 10,
+                    "location": "J. Welsh Humanities Office Building",
+                    "hours": [
+                        {
+                            "monday": [900, 2000],
+                            "tuesday": [900, 2000],
+                            "wednesday": [900, 2000],
+                            "thursday": [900, 2000],
+                            "friday": [900, 1700],
+                            "saturday": [0, 0],
+                            "sunday": [1700, 2100]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Starbucks - Humanities": [
+                {
+                    "id": 11,
+                    "location": "817 Henderson Street",
+                    "hours": [
+                        {
+                            "monday": [700, 1800],
+                            "tuesday": [700, 1800],
+                            "wednesday": [700, 1800],
+                            "thursday": [700, 1800],
+                            "friday": [700, 1600],
+                            "saturday": [0, 0],
+                            "sunday": [0, 0]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Village Juice & Kitchen": [
+                {
+                    "id": 12,
+                    "location": "1705 College Street",
+                    "hours": [
+                        {
+                            "monday": [700, 1430],
+                            "tuesday": [700, 1430],
+                            "wednesday": [700, 1430],
+                            "thursday": [700, 1430],
+                            "friday": [700, 1430],
+                            "saturday": [830, 1430],
+                            "sunday": [830, 1430]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "South Campus":
+    [
+        {
+            "Cafe Verde": [
+                {
+                    "id": 13,
+                    "location": "421 Sumter Street",
+                    "hours": [
+                        {
+                            "monday": [1100, 2300],
+                            "tuesday": [1100, 2300],
+                            "wednesday": [1100, 2300],
+                            "thursday": [1100, 2300],
+                            "friday": [0, 0],
+                            "saturday": [0, 0],
+                            "sunday": [1700, 2300]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Wired Cafe": [
+                {
+                    "id": 14,
+                    "location": "301 Main Street",
+                    "hours": [
+                        {
+                            "monday": [800, 1500],
+                            "tuesday": [800, 1500],
+                            "wednesday": [800, 1500],
+                            "thursday": [800, 1500],
+                            "friday": [800, 1500],
+                            "saturday": [0, 0],
+                            "sunday": [0, 0]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "breakfast": [
+                                {
+                                    "items": ["Egg and Cheddar", "Bacon, Egg and Cheese", "Bagel", "Muffins", "Fruit Cup", "Strawberry Yogurt Parfait"],
+                                    "prices": [4.29, 4.79, 2.49, 3.19, 3.39, 3.89]
+                                }
+                            ],
+                            "entrees": [
+                                {
+                                    "sandwiches":[
+                                        {
+                                            "items": ["The Slide Rule", "The Fortran", "The Wyle E. Coyote", "The Force 10", "B There or T Square"],
+                                            "prices": [7.49, 7.49, 7.49, 7.49, 6.49]
+                                        }
+                                    ],
+                                    "salads":[
+                                        {
+                                            "items": ["Chicken Ceaser Salad", "Greek Salad", "Chef Salad", "Ceaser Salad"],
+                                            "prices": [8.99, 8.99, 8.99, 7.99]
+                                        }
+                                    ],
+                                    "flatbreads":[
+                                        {
+                                            "items": ["MeatLovers", "BBQ Chicken", "Chicken Pesto", "Tomato, Basil and Cheese"],
+                                            "prices": [9.99, 7.99, 7.99, 6.99]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": ["Chips", "Cookie", "Cheesecake"],
+                                    "prices": [1.39,1.99,3.59]
+                                }
+                            ]     
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "West Campus":
+    [
+        {
+            "Starbucks - Thomas Cooper": [
+                {
+                    "id": 15,
+                    "location": "1322 Greene Street",
+                    "hours": [
+                        {
+                            "monday": [730, 2300],
+                            "tuesday": [730, 2300],
+                            "wednesday": [730, 2300],
+                            "thursday": [730, 2300],
+                            "friday": [730, 1800],
+                            "saturday": [1100, 1600],
+                            "sunday": [1300, 2300]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": [],
+                                    "prices": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Food Trucks":
+    [
+        {
+            "The Coop": [
+                {
+                    "id": 16,
+                    "location": "1400 Greene Street",
+                    "hours": [
+                        {
+                            "monday": [1100, 1400],
+                            "tuesday": [1100, 1400],
+                            "wednesday": [1100, 1400],
+                            "thursday": [1100, 1400],
+                            "friday": [1100, 1400],
+                            "saturday": [0, 0],
+                            "sunday": [0, 0]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": ["All American Burger", "BBQ Trail", "The Spurs Up", "The Hot Spot", "The Bistro"],
+                                    "prices": [6.49,7.49,7.69,7.69,7.89]
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": ["Fries", "Sweet Potato Fries"],
+                                    "prices": [2.49, 2.89]
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": ["Canned Soda"],
+                                    "prices": [1.49]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Nacho Papi's": [
+                {
+                    "id": 17,
+                    "location": "1400 Greene Street",
+                    "hours": [
+                        {
+                            "monday": [1100, 1400],
+                            "tuesday": [1100, 1400],
+                            "wednesday": [1100, 1400],
+                            "thursday": [1100, 1400],
+                            "friday": [1100, 1400],
+                            "saturday": [0, 0],
+                            "sunday": [0, 0]
+                        }
+                    ],
+                    "food": [
+                        {
+                            "entrees": [
+                                {
+                                    "items": ["Chicken Barbacoa Tacos", "Beef Tacos", "Pork Carnitas Tacos", "Green Chili Quesadilla", "Nacho Papi"],
+                                    "prices": [7.59,7.99,8.19,7.99,7.59]
+                                }
+                            ],
+                            "sides": [
+                                {
+                                    "items": ["Tortilla Chips", "Sofrito Rice", "Braised Beans"],
+                                    "prices": [1.29, 1.29, 1.39]
+                                }
+                            ],
+                            "beverages" : [
+                                {
+                                    "items": ["Canned Soda"],
+                                    "prices": [1.49]
+                                }
+                            ],
+                            "extras": [
+                                {
+                                    "items": ["Pico De Gallo", "Salsa Verde", "Lillie's Salsa", "Salsa Picante", "Chili Lime Ranch", "Chipotle Lime Crema", "Sour Cream", "Avocado", "Spicy Queso", "Queso Fresco", "Guacamole"],
+                                    "prices": [0.99,0.99,0.99,0.99,0.99, 1.09, 1.09, 1.29, 1.59, 1.59, 1.59]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ] 
+        }
+    ]
+}
