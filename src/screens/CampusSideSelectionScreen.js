@@ -3,12 +3,6 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
     Image,Text, Button} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
-import NorthCampus from './NorthCampus';
-import EastCampus from './EastCampus';
-import WestCampus from './WestCampus';
-import SouthCampus from './SouthCampus';
-import FoodTrucks from './FoodTrucks';
 
 const CampusSideSelectionScreen = ({navigation}) => {
 
@@ -26,34 +20,34 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     bottom:-420}}>
                 </Image>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate(RussellHouseRestaurantScreen)}
+                    onPress = {() => navigation.navigate('RussellHouse')}
                     style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> Russell House </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate(NorthCampus)}
                     style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> "North Campus" </Text>
+                    <Text style = {styles.buttonText}> North Campus </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate(EastCampus)}
                     style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> "East Campus" </Text>
+                    <Text style = {styles.buttonText}> East Campus </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate(SouthCampus)}
                     style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> "South Campus" </Text>
+                    <Text style = {styles.buttonText}> South Campus </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate(WestCampus)}
                     style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> "West Campus" </Text>
+                    <Text style = {styles.buttonText}> West Campus </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() =>navigation.navigate(FoodTrucks)}
                     style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> "Food Trucks" </Text>
+                    <Text style = {styles.buttonText}> Food Trucks </Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
@@ -88,8 +82,7 @@ const styles = StyleSheet.create({
 
     buttonText:{
         color:"Black",
-        fontSize:16,
-        backgroundColor:"White"
+        fontSize:16
     }
 })
 
