@@ -7,7 +7,7 @@ import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 
 const SignUpScreen =  ({navigation}) => {
-const onPressSignUp = () => {navigation.navigate('Restauraunts')
+const onPressSignUp = () => {navigation.navigate('RussellHouse')
 // Do something about signup operation
 };
 const [state,setState] = useState({
