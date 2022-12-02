@@ -32,7 +32,7 @@ import myJSON from './../../restaurants.json';
 
 </RelativeLayout> */}
 
-const ChickfilAPage = () => {
+const ChickfilAPage = (navigation) => {
 
 const pressFoodItem = () => {
     //move to specified restaurant screen

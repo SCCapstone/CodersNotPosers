@@ -32,7 +32,7 @@ import ChickfilAPage from './ChickfilAPage';
 
 </RelativeLayout> */}
 
-const RussellHouseRestaurantScreen = () => {
+const RussellHouseRestaurantScreen = (navigation) => {
 
 const pressRestaurant = () => {
     //move to specified restaurant screen
