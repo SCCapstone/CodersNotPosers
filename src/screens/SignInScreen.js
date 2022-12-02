@@ -1,23 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
 Image,Text} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
+import { AuthContext } from '../../navigation/AuthProvider';
 
 const SignInScreen =  ({navigation}) => {
-const onPressLogin = () => {
-  alert('You are signed in to your account')
-// Do something about login operation
-};
-const onPressForgotPassword = () => {
-// Do something about forgot password operation
-};
-const [state,setState] = useState({
-email: '',
-password: '',
-})
-return (
+  
+  const [email,setEmail] = useState();
+  const[password,setPassword] = useState();
+
+  //const {login} = useContext(AuthContext);
+  return (
 <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
 
 <View style={styles.container}>
@@ -38,7 +33,7 @@ keyboardType='email-address'
 autoCapitalize='none'
 autoCorrect={false}
 placeholderTextColor="#ccc"
-onChangeText={text => setState({email:text})}/>
+onChangeText={(userEmail) => setEmail(userEmail)}/>
 </View>
 <View style={styles.inputView}>
 <TextInput
@@ -46,20 +41,18 @@ style={styles.inputText}
 secureTextEntry={true}
 placeholder="Password"
 placeholderTextColor="#ccc"
-onChangeText={text => setState({password:text})}/>
-
+onChangeText={(userPassword) => setPassword(userPassword)}/>
 <Image source={ellipsegrey} 
 style={{position: 'absolute',
 right:-60,
 bottom:-420}}/>
 
 </View>
-<TouchableOpacity
-onPress = {onPressForgotPassword}>
+<TouchableOpacity>
 <Text style={styles.forgotAndSignUpText}>Forgot Password?</Text>
 </TouchableOpacity>
 <TouchableOpacity
-onPress = {onPressLogin}
+onPress = {alert('a') }
 style={styles.loginBtn}>
 <Text style={styles.loginText}>Sign In</Text>
 </TouchableOpacity>
@@ -127,4 +120,3 @@ signupBtn:{
   marginBottom:10
   },
 });
-

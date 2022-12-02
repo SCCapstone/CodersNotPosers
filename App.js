@@ -1,4 +1,12 @@
-import *  as React from 'react';
+  import *  as React from 'react';
+/*  import Providers from './navigation';
+
+const App = () => {
+    console.log("hello");
+    return <Providers />;
+}
+export default App; */
+ 
 import { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import OnboardingScreen from './src/screens/OnboardingScreen';
@@ -37,15 +45,15 @@ const App = () => {
                         headerShown: false
                     }}
                 >
-                {/* /*
+                {/* 
                     <StripeProvider
                         publishableKey="pk_test_51M9ueME2kyK6I5WPJO8bYnghkiEiicrytMc9587Yr"
                         </StripeProvider>
-                */ }
-                        {/* <Stack.Screen name="OnBoarding" component={OnboardingScreen} />
-                         */}<Stack.Screen name="SignIn" component={SignInScreen} />
+                */}
+                        <Stack.Screen name="OnBoarding" component={OnboardingScreen} />
+                        <Stack.Screen name="SignIn" component={SignInScreen} />
                         <Stack.Screen name="SignUp" component={SignUpScreen} />
-                       <Stack.Screen name="CampusSelect" component={CampusSideSelectionScreen}/>
+                        <Stack.Screen name="CampusSelect" component={CampusSideSelectionScreen}/>
                         <Stack.Screen name="RussellHouse" component={RussellHouseRestaurantScreen}/>
                         <Stack.Screen name="CFA" component={ChickfilAPage}/>
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
@@ -62,11 +70,11 @@ const App = () => {
                         headerShown: false
                     }}
                 >
-                {/* /*
+                {/* 
                     <StripeProvider
                         publishableKey="pk_test_51M9ueME2kyK6I5WPJO8bYnghkiEiicrytMc9587Yr"
                         </StripeProvider>
-                */ }
+                */}
                         <Stack.Screen name="SignIn" component={SignInScreen} />
                         <Stack.Screen name="SignUp" component={SignUpScreen} />
                         <Stack.Screen name="Payment" component={PaymentScreen}/>
@@ -74,7 +82,6 @@ const App = () => {
                         <Stack.Screen name="RussellHouse" component={RussellHouseRestaurantScreen}/>
                         <Stack.Screen name="CFA" component={ChickfilAPage}/>
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
-                        <Stack.Screen name="Payment" component={PaymentScreen}/>
                     
                        </Stack.Navigator>
             }</NavigationContainer> 
