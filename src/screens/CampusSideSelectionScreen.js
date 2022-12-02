@@ -6,7 +6,7 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
 import NorthCampus from './NorthCampus';
 
-const CampusSideSelectionScreen = (navigation) => {
+const CampusSideSelectionScreen = ({navigation}) => {
 
     return (
         <SafeAreaView style = {styles.container}>

@@ -30,7 +30,7 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 
 </RelativeLayout> */}
 
-const NorthCampus = () => {
+const NorthCampus = ({navigation}) => {
 
 const pressRestaurant = () => {
     //move to specified restaurant screen

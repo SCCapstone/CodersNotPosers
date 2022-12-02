@@ -32,7 +32,7 @@ import ChickfilAPage from './ChickfilAPage';
 
 </RelativeLayout> */}
 
-const EastCampus = () => {
+const WestCampus = ({navigation}) => {
 
 const pressRestaurant = () => {
     //move to specified restaurant screen
@@ -108,4 +108,4 @@ const styles = StyleSheet.create({
         backgroundColor:"White"
     }
 })
-export default EastCampus;
+export default WestCampus;
