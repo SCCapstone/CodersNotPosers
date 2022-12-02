@@ -4,17 +4,14 @@ Image,Text} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import SignUpScreen from './SignUpScreen';
 
-const SignInScreen =  () => {
+const SignInScreen =  ({navigation}) => {
 const onPressLogin = () => {
+  alert('You are signed in to your account')
 // Do something about login operation
 };
 const onPressForgotPassword = () => {
 // Do something about forgot password operation
-};
-const onPressSignUp = () => { <SignUpScreen/>
-// Do something about signup operation
 };
 const [state,setState] = useState({
 email: '',
@@ -37,13 +34,16 @@ style={{ width: 120, height: 120 }} />
 <TextInput
 style={styles.inputText}
 placeholder="Email"
+keyboardType='email-address'
+autoCapitalize='none'
+autoCorrect={false}
 placeholderTextColor="#ccc"
 onChangeText={text => setState({email:text})}/>
 </View>
 <View style={styles.inputView}>
 <TextInput
 style={styles.inputText}
-secureTextEntry
+secureTextEntry={true}
 placeholder="Password"
 placeholderTextColor="#ccc"
 onChangeText={text => setState({password:text})}/>
@@ -64,7 +64,7 @@ style={styles.loginBtn}>
 <Text style={styles.loginText}>Sign In</Text>
 </TouchableOpacity>
 <TouchableOpacity
-onPress = {onPressSignUp}
+onPress = {() => navigation.navigate('SignUp')}
 style={styles.signupBtn}>
 <Text style={styles.forgotAndSignUpText}>Sign Up</Text>
 </TouchableOpacity>
@@ -72,6 +72,8 @@ style={styles.signupBtn}>
 </SafeAreaView>
 );
 }
+export default SignInScreen;
+
 const styles = StyleSheet.create({
 container: {
 flex: 1,
@@ -125,4 +127,4 @@ signupBtn:{
   marginBottom:10
   },
 });
-export default SignInScreen;
+
