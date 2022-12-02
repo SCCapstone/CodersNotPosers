@@ -5,7 +5,7 @@ import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import CFALogo from './../../images/CFALogo.png';
-//import myJSON from './../../restaurants.json';
+import myJSON from './../../restaurants.json';
 
 {/* <RelativeLayout
     xmlns:android = 'https://schemas.android.com/apk/res/android'

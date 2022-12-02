@@ -62,46 +62,7 @@ const pressRestaurant = () => {
                                 justifyContent:"space-between",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Colloquium Cafe </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Horshoe Deli </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Starbucks - Humanities </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Village Juice & Kitchen </Text>
+                    <Text style = {styles.buttonText}> Starbucks - Thomas Cooper </Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
