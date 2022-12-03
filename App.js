@@ -77,14 +77,19 @@ const App = () => {
                         publishableKey="pk_test_51M9ueME2kyK6I5WPJO8bYnghkiEiicrytMc9587Yr"
                         </StripeProvider>
                 */ }
+                
+                        <Stack.Screen name="CampusSelect" component={CampusSideSelectionScreen}/>
                         <Stack.Screen name="SignIn" component={SignInScreen} />
                         <Stack.Screen name="SignUp" component={SignUpScreen} />
                         <Stack.Screen name="Payment" component={PaymentScreen}/>
-                        <Stack.Screen name="CampusSelect" component={CampusSideSelectionScreen}/>
                         <Stack.Screen name="RussellHouse" component={RussellHouseRestaurantScreen}/>
                         <Stack.Screen name="CFA" component={ChickfilAPage}/>
+                        <Stack.Screen name="EastCampus" component={EastCampus}/>
+                        <Stack.Screen name="WestCampus" component={WestCampus}/>
+                        <Stack.Screen name="NorthCampus" component={NorthCampus}/>
+                        <Stack.Screen name="SouthCampus" component={SouthCampus}/>
+                        <Stack.Screen name="FoodTrucks" component={FoodTrucks}/>
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
-                        <Stack.Screen name="Payment" component={PaymentScreen}/>
                     
                        </Stack.Navigator>
             }</NavigationContainer> 

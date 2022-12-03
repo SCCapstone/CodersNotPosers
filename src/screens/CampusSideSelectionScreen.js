@@ -36,13 +36,13 @@ const CampusSideSelectionScreen = ({navigation}) => {
             <View style = {styles.container}>
                 <Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: 0,
-                    top: 1,}}>
+                    left: -20,
+                    top: -45,}}>
                 </Image>
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
                     right:-60,
-                    bottom:-420}}>
+                    bottom:0}}>
                 </Image>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate('RussellHouse')}
@@ -75,6 +75,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     <Text style = {styles.buttonText}> Food Trucks </Text>
                 </TouchableOpacity>
             </View>
+
         </SafeAreaView>
     )
 
@@ -102,12 +103,12 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         marginTop:10,
-        marginBottom:10
+        marginBottom:10,
     },
 
     buttonText:{
         color:"Black",
-        fontSize:16
+        fontSize:16,
     }
 })
 
