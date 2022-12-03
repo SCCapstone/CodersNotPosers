@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+/* import React, {useState} from 'react';
 import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
@@ -173,4 +173,4 @@ top: -55}} />
       marginTop: 25,
       backgroundColor: "#FBEBEB",
     },
-  });
+  }); */

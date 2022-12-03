@@ -5,7 +5,7 @@ import OnboardingScreen from './src/screens/OnboardingScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import AddressScreen from './src/screens/AddressScreen';
-import PaymentScreen from './src/screens/paymentScreen';
+//import PaymentScreen from './src/screens/paymentScreen';
 import CampusSideSelectionScreen from './src/screens/CampusSideSelectionScreen';
 import RussellHouseRestaurantScreen from './src/screens/RussellHouseRestaurantScreen';
 import ChickfilAPage from './src/screens/ChickfilAPage';
@@ -51,7 +51,6 @@ const App = () => {
                         <Stack.Screen name="RussellHouse" component={RussellHouseRestaurantScreen}/>
                         <Stack.Screen name="CFA" component={ChickfilAPage}/>
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
-                        <Stack.Screen name="Payment" component={PaymentScreen}/>
                         </Stack.Navigator>
             }</NavigationContainer> 
         );
@@ -77,8 +76,7 @@ const App = () => {
                         <Stack.Screen name="RussellHouse" component={RussellHouseRestaurantScreen}/>
                         <Stack.Screen name="CFA" component={ChickfilAPage}/>
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
-                        <Stack.Screen name="Payment 2" component={PaymentScreen}/>
-                    
+                        
                        </Stack.Navigator>
             }</NavigationContainer> 
         );
