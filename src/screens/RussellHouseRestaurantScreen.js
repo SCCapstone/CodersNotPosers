@@ -42,13 +42,13 @@ const pressRestaurant = () => {
             <View style = {styles.container}>
                 <Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: 0,
-                    top: 1,}}>
+                    left: -100,
+                    top: -45,}}>
                 </Image>
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
-                    right:-60,
-                    bottom:-420}}>
+                    right:-100,
+                    bottom:0}}>
                 </Image>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate('CFA')}
