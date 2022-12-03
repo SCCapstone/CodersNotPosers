@@ -41,15 +41,15 @@ const pressFoodItem = () => {
     return(
         <SafeAreaView style = {styles.container}>
             <View style = {styles.container}>
-                <Image source={ellipsepink} 
+            <Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: 2,
-                    top: 1,}}>
+                    left:-135,
+                    top: -45,}}>
                 </Image>
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
-                    right:-60,
-                    bottom:-420}}>
+                    right:-135,
+                    bottom:0}}>
                 </Image>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
