@@ -6,6 +6,7 @@ import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, set, onValue} from "firebase/database";
+import auth from '@react-native-firebase/auth';
  // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBijFau4g9NJAkNebhthYn4mopsN5HBTmA",
@@ -84,8 +85,8 @@ top: -55}} />
     );
   }
   function saveCard(name, cardNumber, expDate, cvc) {
-    var newUserEntry = userEntry;
-        newUserEntry.push({
+    var savingard = userEntry;
+        userEntry.push({
             name: name,
             cardNumber: cardNumber,
             expDate:expDate,
