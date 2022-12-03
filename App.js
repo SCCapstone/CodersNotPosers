@@ -13,7 +13,7 @@ import DriverSignUpScreen from './src/screens/DriverSignUpScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StripeProvider } from '@stripe/stripe-react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import AddressScreen from './src/screens/AddressScreen';
+//import AddressScreen from './src/screens/AddressScreen';
 
 const Stack = createNativeStackNavigator();
 const App = () => {

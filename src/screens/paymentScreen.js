@@ -20,12 +20,9 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const ref = db.ref('server/saving-data/fireblog');
+//const ref = db.ref('server/saving-data/fireblog');
 export default function PaymentScreen() {
-  const [name, setName] = useState("");
-  const [cardNumber, setCardNumber] = useState("");
-  const [expDate, setExpDate] = useState("");
-  const [cvc, setCVC] = useState("");
+
   return (
 
 <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
@@ -44,7 +41,7 @@ top: -55}} />
             style={styles.inputText}
             placeholder="Cardholder Name"
             placeholderTextColor="#884e7d"
-            onChangeText={(name) => setName(name)}
+            onChangeText={(fullName) => setName(fullName)}
           />
         </View>
    
@@ -85,17 +82,18 @@ top: -55}} />
       </SafeAreaView>
     );
   }
-  function saveCard(name, cardNumber, expDate, cvc) {
-    var savingard = userEntry;
+  function saveCard(fullName, cardNumber, expDate, cvc) {
+    return (
         userEntry.push({
-            name: name,
+          fullName: fullName,
             cardNumber: cardNumber,
             expDate:expDate,
             cvc:cvc
-        });
+        }));
   }
+  saveCard(fullName, cardNumber, expDate, cvc);
   const usersRef = ref.child('users cards');
-  usersRef.push().set({name, cardNumber, expDate, cvc});
+  usersRef.push().set({fullName, cardNumber, expDate, cvc});
   const styles = StyleSheet.create({
     container: {
     flex: 1,
