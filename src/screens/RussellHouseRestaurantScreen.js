@@ -81,7 +81,7 @@ const pressRestaurant = () => {
                 <TouchableOpacity
                     onPress = {pressRestaurant}
                     style = {styles.restaurantButtons}>
-                    <Text style = {styles.buttonText}> Restaurant6 </Text>
+                    <Text style = {styles.buttonText}> Carolina Creamery </Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>navigation.pop()}>
 <Image source={leftarrow} 
