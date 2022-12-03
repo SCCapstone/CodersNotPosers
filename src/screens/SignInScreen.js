@@ -31,8 +31,7 @@ const SignInScreen =  ({navigation}) => {
     try {
       let response = await auth().signInWithEmailAndPassword(email,password)
       if (response && response.user) {
-        Alert.alert('yey')
-        //navigation.navigate('CampusSelect')
+        navigation.navigate('CampusSelect')
       }
     }
     catch(e) {
