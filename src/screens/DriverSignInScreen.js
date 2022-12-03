@@ -6,7 +6,7 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
-const SignInScreen =  ({navigation}) => {
+const DriverSignInScreen =  ({navigation}) => {
 const onPressLogin = ({navigation}) => {
   alert('You are signed in to your account')
   navigation.navigate('DriversOrderScreen')
@@ -73,59 +73,59 @@ return (
     </SafeAreaView>
 );
 }
-export default SignInScreen;
+export default DriverSignInScreen;
 
 const styles = StyleSheet.create({
-container: {
-flex: 1,
-backgroundColor: '#B6B7E5',
-alignItems: 'center',
-justifyContent: 'center',
-},
+    container: {
+    flex: 1,
+    backgroundColor: '#B6B7E5',
+    alignItems: 'center',
+    justifyContent: 'center',
+    },
 
-inputView:{
-width:"80%",
-backgroundColor:"#FFFFFF",
-borderRadius:25,
-height:50,
-marginBottom:20,
-justifyContent:"center",
-padding:20
-},
-inputText:{
-height:50,
-color:"black"
-},
+    inputView:{
+    width:"80%",
+    backgroundColor:"#FFFFFF",
+    borderRadius:25,
+    height:50,
+    marginBottom:20,
+    justifyContent:"center",
+    padding:20
+    },
+    inputText:{
+    height:50,
+    color:"black"
+    },
 
-loginText:{
-color:"white",
-fontSize:16
-},
+    loginText:{
+    color:"white",
+    fontSize:16
+    },
 
-forgotAndSignUpText:{
-color:"white",
-fontSize:16
-},
-loginBtn:{
-width:"80%",
-backgroundColor:"#884E7D",
-borderRadius:25,
-height:50,
-alignItems:"center",
-justifyContent:"center",
-marginTop:40,
-marginBottom:10
-},
+    forgotAndSignUpText:{
+    color:"white",
+    fontSize:16
+    },
+    loginBtn:{
+    width:"80%",
+    backgroundColor:"#884E7D",
+    borderRadius:25,
+    height:50,
+    alignItems:"center",
+    justifyContent:"center",
+    marginTop:40,
+    marginBottom:10
+    },
 
-signupBtn:{
-  width:"80%",
-  backgroundColor:"#884E7D",
-  borderRadius:25,
-  height:50,
-  alignItems:"center",
-  justifyContent:"center",
-  marginTop:40,
-  marginBottom:10
-  },
+    signupBtn:{
+    width:"80%",
+    backgroundColor:"#884E7D",
+    borderRadius:25,
+    height:50,
+    alignItems:"center",
+    justifyContent:"center",
+    marginTop:40,
+    marginBottom:10
+    },
 });
 
