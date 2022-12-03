@@ -63,22 +63,22 @@
                     ],
                     "food": [
                         {
-                            "entrees": [
+                            "salads": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Half Green Goddess Cobb with Chicken Salad", "Whole Green Goddess Cobb with Chicken Salad", "Half Fuji Apple with Chicken Salad", "Whole Fuji Apple with Chicken Salad"],
+                                    "prices": [8.69, 11.99, 7.89, 11.59]
                                 }
                             ],
-                            "sides": [
+                            "soups": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Cup Cream of Chicken & Wild Rice Soup", "Bowl Cream of Chicken & Wild Rice Soup", "Cup Creamy Tomato Soup", "Bowl Creamy Tomato Soup", "Cup Turkey Chili", "Bowl Turkey Chili", "Cup Homestyle Chicken Noodle Soup", "Bowl Homestyle Chicken Noodle Soup", "Cup Bistro French Onion Soup",  "Bowl Bistro French Onion Soup"],
+                                    "prices": [6.59, 7.89, 6.59, 7.89, 7.29, 8.59, 6.49, 7.99, 6.49, 7.99]
                                 }
                             ],
-                            "beverages" : [
+                            "mac and cheese" : [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Cup Bacon Mac & Cheese", "Bowl Bacon Mac & Cheese", "Cup Mac & Cheese", "Bowl Mac & Cheese", "Cup Broccoli Mac & Cheese", "Bowl Broccoli Mac & Cheese"],
+                                    "prices": [6.79, 10.69, 6.79, 10.69, 6.79, 10.69]
                                 }
                             ]
                         }
@@ -102,22 +102,28 @@
                     ],
                     "food": [
                         {
+                            "appetizers" : [
+                                {
+                                    "items": ["Small Chicken Egg Roll", "Large Chicken Egg Roll", "Small Vegetable Egg Rolls", "Large Vegetable Egg Rolls", "Small Cream Cheese Rangoons", "Large Cream Cheese Rangoons"],
+                                    "prices": [2.00, 8.40, 2.00, 8.40, 2.00, 8.40]
+                                }
+                            ],
                             "entrees": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Small The Original Orange Chicken", "Medium The Original Orange Chicken", "Large The Original Orange Chicken", "Small Grilled Teriyaki Chicken", "Medium Grilled Teriyaki Chicken", "Large Grilled Teriyaki Chicken", "Small Broccoli Beef", "Medium Broccoli Beef", "Large Broccoli Beef", "Small Beijing Beef", "Medium Beijing Beef", "Large Beijing Beef", "Small Kung Pao Chicken", "Medium Kung Pao Chicken", "Large Kung Pao Chicken", "Small String Bean Chicken Breast", "Medium String Bean Chicken Breast", "Large String Bean Chicken Breast", "Small Shanghai Angus Steak", "Medium Shanghai Angus Steak", "Large Shanghai Angus Steak", "Small Beyond Orange Chicken", "Medium Beyond Orange Chicken", "Large Beyond Orange Chicken", "Small Honey Walnut Shrimp", "Medium Honey Walnut Shrimp", "Large Honey Walnut Shrimp", "Small Honey Sesame Chicken", "Medium Honey Sesame Chicken", "Large Honey Sesame Chicken", "Small Black Pepper Chicken", "Medium Black Pepper Chicken", "Large Black Pepper Chicken"],
+                                    "prices": [4.90, 8.20, 10.90, 4.90, 8.20, 10.90, 4.90, 8.20, 10.90, 4.90, 8.20, 10.90, 4.90,8.20,10.90, 4.90,8.20,10.90, 4.90,8.20,10.90, 6.15,10.70,14.65, 6.15,10.70,14.65, 4.90,8.20,10.90, 4.90,8.20,10.90]
                                 }
                             ],
-                            "sides": [
+                            "bowls and plates": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Bowl", "2 Entree Plate", "3 Entree Plate"],
+                                    "prices": [7.80, 9.30, 10.80]
                                 }
                             ],
-                            "beverages" : [
+                            "sides" : [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Medium Chow Main", "Large Chow Main", "Medium Fried Rice", "Large Fried Rice", "Medium White Steamed Rice", "Large White Steamed Rice", "Medium Super Greens", "Large Super Greens"],
+                                    "prices": [4.40, 5.40, 4.40, 5.40, 4.40, 5.40, 4.40, 5.40]
                                 }
                             ]
                         }
@@ -141,22 +147,29 @@
                     ],
                     "food": [
                         {
-                            "entrees": [
+                            "tacos": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Chicken Taco", "Beef Taco", "Seafood Taco", "Veggie Taco", "Taco Combo", "Taco Meal"],
+                                    "prices": [3.59, 3.89, 3.89, 3.39, 7.29, 8.29]
                                 }
                             ],
                             "sides": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Black Beans", "Rice", "Sour Cream", "Guacamole", "Queso", "Churro", "Bag of Chips", "Salsa Verde", "Pico De Gallo", "House Salsa"],
+                                    "prices": [1.29, 1.29, 0.99, 1.69, 1.69, 2.09, 0.99, 0.99, 0.99, 0.99]
                                 }
                             ],
-                            "beverages" : [
+                            "chips and dip": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Traditional Queso", "Twisted Queso", "Fresh Guacamole", "Chips and Salsa"],
+                                    "prices": [5.09, 5.49, 5.89, 2.19]
+                                }
+                            ],
+                            "burrito, bowls, and nachos" : [
+                                {
+                                    "options":["Burrito", "Bowl", "Nachos"],
+                                    "items": ["Vegetarian", "Tofu", "Chicken and Ground Beef", "Steak"],
+                                    "prices": [6.29, 6.79, 7.29, 8.29]
                                 }
                             ]
                         }
@@ -180,22 +193,46 @@
                     ],
                     "food": [
                         {
-                            "entrees": [
+                            "bagels and toppings": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Bagel with Cream Cheese", "Bagel with PB&J", "Bagel with Butter", "Bagel with Preserves", "Bagel with Peanut Butter", "Avocado Toast"],
+                                    "prices": [3.39, 3.59, 2.29, 2.29, 3.39, 4.19]
                                 }
                             ],
-                            "sides": [
+                            "egg sandwiches": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Bacon & Cheddar Egg Sandwich", "Cheddar & Egg Sandwich", "Applewood Bacon & Cheddar Egg Sandwich", "Farmhouse", "Ham & Swiss", "Santa Fe", "All Nighter"],
+                                    "prices": [5.89, 5.49, 5.89, 6.19, 5.89, 5.69, 6.89]
                                 }
                             ],
-                            "beverages" : [
+                            "sandwiches" : [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Turkey & Cheddar Deli Sandwich", "Ham & Swiss Deli Sandwich", "Tasty Turkey", "Turkey, Bacon & Avocado", "Pizza Bagel"],
+                                    "prices": [6.79, 6.79, 7.19, 7.19, 5.99]
+                                }
+                            ],
+                            "cold drinks" : [
+                                {
+                                    "items": ["Cold Brew", "Vanilla Cream", "Caramel Cream", "Chocolate Cream", "Milk", "Lemonade", "Bottled Beverage", "Iced Americano", "Iced Mocha", "Iced Tea", "Iced Latte", "Iced Chai Tea Latte", "Fountain Beverage"],
+                                    "prices": [3.19, 3.79, 3.79, 3.79, 1.99, 2.09, 2.49, 2.49, 4.19, 2.19, 3.49, 3.49, 2.29]
+                                }
+                            ],
+                            "hot drinks" : [
+                                {
+                                    "items": ["Regular Brewed Coffee", "Large Brewed Coffee"],
+                                    "prices": [2.49, 2.89]
+                                }
+                            ],
+                            "bulk" : [
+                                {
+                                    "items": ["Bakers Dozen Bagels Only", "Half Dozen Bagels Only"],
+                                    "prices": [12.99, 7.99]
+                                }
+                            ],
+                            "sweets" : [
+                                {
+                                    "items": ["Blueberry Muffin", "Chocolate Chip Cookie", "Strawberry Cream Strudel", "Apple Pie Pastry", "Cinnamon Roll"],
+                                    "prices": [2.39, 1.89, 2.99, 1.39, 3.99]
                                 }
                             ]
                         }
@@ -219,22 +256,17 @@
                     ],
                     "food": [
                         {
-                            "entrees": [
+                            "ice cream and extras": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Original 1 Scoop", "Original 2 Scoop", "Original 3 Scoop", "Cocky's Favorite 1 Scoop", "Cocky's Favorite 2 Scoop", "Cocky's Favorite 3 Scoop", "Float", "Shake", "Ice Cream Sandwich", "Cookie", "Brownie", "Waffle Cone or Bowl", "Beverage"],
+                                    "prices": [3.19, 4.19, 5.19, 3.59, 4.59, 5.59, 5.59, 5.59, 5.59, 2.69, 2.19, 0.99, 1.89],
+                                    "toppings": ["Twix", "Reese's", "Rainbow Sprinkles", "Chocolate Chips", "Gummy Bears", "Gummy Worms", "Oreo Crumbles", "M&Ms", "Graham Cracker Crumbs"]
                                 }
                             ],
-                            "sides": [
+                            "smoothies" : [
                                 {
-                                    "items": [],
-                                    "prices": []
-                                }
-                            ],
-                            "beverages" : [
-                                {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Strawberry Banana", "Green Orchard", "Orange Creamsicle", "Chocolate Peanut Butter", "Just Peachy"],
+                                    "prices": [4.99, 4.99, 4.99, 4.99, 4.99]
                                 }
                             ]
                         }
@@ -265,20 +297,35 @@
                         {
                             "entrees": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Create Your Own Salad With Chicken", "Create Your Own Salad Without Chicken", "Philly Cheesesteak", "Chicken Philly Cheesesteak", "Buffalo Chicken Wrap", "Chicken Caprese Sandwich", "Vegetable & Hummus Wrap"],
+                                    "prices": [9.29,7.69, 8.99, 8.99, 7.99, 7.99, 6.29],
+                                    "salad options": [
+                                        {
+                                            "base": ["Romaine", "Spring Mix"],
+                                            "cheese": ["Parmesan", "Cheddar", "Blue Cheese"],
+                                            "toppings": ["Bacon Bits", "Cucumber", "Carrot", "Hummus", "Red Onion", "Tomato", "Banana Pepper", "Black Olives", "Avocado", "Broccoli", "Roasted Beets", "Dried Cranberries", "Crutons"],
+                                            "dressing": ["Oil and Vinegar", "Ranch", "Ceaser", "Honey Mustard"]
+                                        }
+                                    ]
                                 }
                             ],
                             "sides": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Soup"],
+                                    "prices": [4.09]
                                 }
                             ],
-                            "beverages" : [
+                            "all day breakfast": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Breakfast Sandwich"],
+                                    "prices": [4.79],
+                                    "breakfast sandwich": ["Sausage Biscuit", "Sausage, Egg & Cheese Bagel", "Sausage, Egg & Cheese Croissant", "Bacon, Egg & Cheese Biscuit"]
+                                }
+                            ],
+                            "flatbread" : [
+                                {
+                                    "items": ["Meat Lover's", "BBQ Chicken", "Chicken Pesto", "Veggie", "Tomato, Basil and Cheese"],
+                                    "prices": [9.99, 7.99, 7.99, 6.99, 6.99]
                                 }
                             ]
                         }
@@ -302,22 +349,38 @@
                     ],
                     "food": [
                         {
-                            "entrees": [
+                            "all day breakfast": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Breakfast Sandwich", "Grits Bowl"],
+                                    "prices": [4.79, 3.99],
+                                    "breakfast sandwich": ["Sausage Biscuit", "Sausage, Egg & Cheese Bagel", "Sausage, Egg & Cheese Croissant", "Bacon, Egg & Cheese Biscuit"]
                                 }
                             ],
                             "sides": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Soup"],
+                                    "prices": [4.09]
                                 }
                             ],
-                            "beverages" : [
+                            "salads and sandwiches" : [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Create Your Own Salad", "Buffalo Chicken Wrap", "Chicken Caprese Sandwich", "Hot Dogs"],
+                                    "prices": [7.69, 7.99, 7.99, 3.29],
+                                    "salad options": [
+                                        {
+                                            "base": ["Romaine", "Spinach"],
+                                            "protein":["Turkey", "Ham", "Bacon", "Hard Boiled Egg"],
+                                            "cheese": ["Parmesan", "Cheese Blend"],
+                                            "toppings": ["Tomato", "Onion", "Cucumber", "Carrots", "Mushrooms", "Crutons"],
+                                            "dressing": ["Ranch", "Ceaser", "Honey Mustard", "Blue Cheese", "Italian", "Balsamic", "Lite Raspberry Vinaigrette"]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "flatbread" : [
+                                {
+                                    "items": ["Meat Lover's", "BBQ Chicken", "Chicken Pesto", "Veggie", "Tomato, Basil and Cheese"],
+                                    "prices": [9.99, 7.99, 7.99, 6.99, 6.99]
                                 }
                             ]
                         }
@@ -346,22 +409,35 @@
                     ],
                     "food": [
                         {
-                            "entrees": [
+                            "patio grill" : [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Marinated Chicken Breast", "Hamburger", "Marinated Portobello", "Chips", "Aquafina", "Soda"],
+                                    "prices": [6.79, 6.29, 6.49, 1.59, 1.89, 1.99],
+                                    "toppings": ["Sliced Cheddar", "Grilled Onions", "Relish", "Lettuce", "Tomato", "Mushrooms", "Coleslaw", "Texas Pete Chili", "Spice Mustard", "Yellow Mustard", "Mayonnaise", "Ketchup"]
                                 }
                             ],
-                            "sides": [
+                            "chicken": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["3 Piece Tenders", "5 Piece Tenders", "Tenders Sandwich", "Chicken Ceaser Salad", "Southwest Chicken Salad", "Buffalo Chicken Salad"],
+                                    "prices": [4.99, 7.19, 6.49, 8.99, 8.99, 8.99],
+                                    "sides": [
+                                        {
+                                            "items": ["Side Garden Salad", "Coleslaw", "Fries"],
+                                            "prices": [3.29, 2.19, 2.19]
+                                        }
+                                    ]
                                 }
                             ],
-                            "beverages" : [
+                            "acai": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Strawberry Banana", "Tropical", "Ultimate Berry", "Peanut Butter and Jelly"],
+                                    "prices": [7.99, 7.99, 7.99, 7.99]
+                                }
+                            ],
+                            "dessert" : [
+                                {
+                                    "items": ["Chocolate Chip Cookie", "Brownie"],
+                                    "prices": [2.99, 2.39]
                                 }
                             ]
                         }
@@ -385,22 +461,39 @@
                     ],
                     "food": [
                         {
+                            "breakfast" : [
+                                {
+                                    "items": ["Bacon & Egg Breakfast Burrito", "Sausage, Egg and Cheddar Muffin", "Egg, Ham and Cheddar Croissant", "Strawberry Yogurt Parfait", "Fresh Fruit Cup", "Cinnamon Roll", "Apple Fritter", "Assorted Muffins"],
+                                    "prices": [4.79, 4.79, 4.79, 3.89, 3.39, 3.19, 3.19, 3.19]
+                                }
+                            ],
                             "entrees": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "sandwiches" : [
+                                        {
+                                            "items": ["Small", "Large"],
+                                            "prices": [7.49, 12.79],
+                                            "options": ["Buffalo Chicken Wrap", "Turkey Club", "Turkey Pesto Ciabatta", "Chicken Bacon Melt"]
+                                        }
+                                    ],
+                                    "flatbread" : [
+                                        {
+                                            "items": ["Meat Lover's", "BBQ Chicken", "Chicken Pesto", "Tomato, Basil and Cheese"],
+                                            "prices": [9.99, 7.99, 7.99, 6.99]
+                                        }
+                                    ]
                                 }
                             ],
                             "sides": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Assorted Chips", "Whole Fruit", "Cookies", "Soup"],
+                                    "prices": [1.39, 1.39, 2.69, 4.09]
                                 }
                             ],
                             "beverages" : [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Fountain Beverage"],
+                                    "prices": [2.19]
                                 }
                             ]
                         }
@@ -424,22 +517,22 @@
                     ],
                     "food": [
                         {
-                            "entrees": [
+                            "coffee, tea and more": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Freshly Brewed Coffee", "London Fog Tea Latte", "Chai Latte", "Custom Tea Latte", "Royal English Breakfast Tea Latte", "Matcha Green Tea Latte", "Matcha Soymilk Latte", "Vanilla Cream", "Cinnamon Dolce Cream", "White Hot Chocolate", "Hot Chocolate", "Steamed Milk", "Caramel Apple Spice"],
+                                    "prices": [2.65, 2.95, 4.25, 4.25, 4.25, 4.25, 4.25 , 3.45, 3.45, 4.25, 3.45, 2.95, 4.25]
                                 }
                             ],
-                            "sides": [
+                            "refreshers": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Mango Dragonfruit Refresher", "Strawberry Acai Refresher", "Pink Drink", "Paradise Drink Refresher", "Pineapple Passionfruit Refresher", "Pineapple Passionfruit Lemonade Refresher"],
+                                    "prices": [3.95, 3.95, 4.65, 4.65, 3.95, 4.65]
                                 }
                             ],
-                            "beverages" : [
+                            "frappucinos" : [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Cafe Espresso Frappucino", "Matcha Coconut Milk Green Tea Frappucino", "Caramel Ribon Crunch Frappucino", "Espresso Frappucino", "White Chocolate Creme Frappucino", "Mocha Cookie Crumble Frappucino"],
+                                    "prices": [4.25, 4.45, 5.25, 5.55, 5.45, 5.25]
                                 }
                             ]
                         }
@@ -463,22 +556,40 @@
                     ],
                     "food": [
                         {
-                            "entrees": [
+                            "smoothies": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Mocha Nana", "Pinky Swear", "Sunset", "Curious George", "Green Coco", "Super Blue"],
+                                    "prices": [8.45, 9.45, 9.45, 9.45, 10.45, 10.45]
                                 }
                             ],
-                            "sides": [
+                            "breakfast bowls": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Pinky Swear Bowl", "Sunset Bowl", "Acai Bowl", "Overnight Oats"],
+                                    "prices": [10.45, 11.45, 12.45, 9.45]
                                 }
                             ],
-                            "beverages" : [
+                            "toasts and wraps" : [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Nut Butter & Banana", "Avo Vegan", "Basil, Bacon & Tomato", "Quit Your Job", "Chicken Bacon & Avocado"],
+                                    "prices": [10.45, 10.45, 10.45, 10.45, 11.45]
+                                }
+                            ],
+                            "salad and grain bowls" : [
+                                {
+                                    "items": ["Village Cobb", "Tropical Chicken", "Southwest", "Farmer's Daughter", "Mediterranean"],
+                                    "prices": [14.45, 13.45, 11.45, 11.45, 11.45]
+                                }
+                            ],
+                            "cold-pressed juices" : [
+                                {
+                                    "items": ["Great Hydrator", "Pipe Dreams", "Game Changer", "Reboot", "Orchard", "Black Magic", "Sting Shot"],
+                                    "prices": [10.50, 10.50, 10.50, 11.00, 10.50, 8.50, 8.50]
+                                }
+                            ],
+                            "desserts and snacks" : [
+                                {
+                                    "items": ["Boss Bar", "OMG Bar", "Blondie Bar", "Nanaimo (Matcha) Bar", "Nanaimo (Tumeric) Bar", "Assorted Muffins", "Assorted Cheesecake"],
+                                    "prices": [6.25, 6.00, 6.25, 5.75, 5.75, 6.25, 8.00]
                                 }
                             ]
                         }
@@ -490,45 +601,6 @@
     "South Campus":
     [
         {
-            "Cafe Verde": [
-                {
-                    "id": 13,
-                    "location": "421 Sumter Street",
-                    "hours": [
-                        {
-                            "monday": [1100, 2300],
-                            "tuesday": [1100, 2300],
-                            "wednesday": [1100, 2300],
-                            "thursday": [1100, 2300],
-                            "friday": [0, 0],
-                            "saturday": [0, 0],
-                            "sunday": [1700, 2300]
-                        }
-                    ],
-                    "food": [
-                        {
-                            "entrees": [
-                                {
-                                    "items": [],
-                                    "prices": []
-                                }
-                            ],
-                            "sides": [
-                                {
-                                    "items": [],
-                                    "prices": []
-                                }
-                            ],
-                            "beverages" : [
-                                {
-                                    "items": [],
-                                    "prices": []
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
             "Wired Cafe": [
                 {
                     "id": 14,
@@ -568,7 +640,7 @@
                                     ],
                                     "flatbreads":[
                                         {
-                                            "items": ["MeatLovers", "BBQ Chicken", "Chicken Pesto", "Tomato, Basil and Cheese"],
+                                            "items": ["Meat Lovers", "BBQ Chicken", "Chicken Pesto", "Tomato, Basil and Cheese"],
                                             "prices": [9.99, 7.99, 7.99, 6.99]
                                         }
                                     ]
@@ -606,22 +678,22 @@
                     ],
                     "food": [
                         {
-                            "entrees": [
+                            "coffee, tea and more": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Freshly Brewed Coffee", "London Fog Tea Latte", "Chai Latte", "Custom Tea Latte", "Royal English Breakfast Tea Latte", "Matcha Green Tea Latte", "Matcha Soymilk Latte", "Vanilla Cream", "Cinnamon Dolce Cream", "White Hot Chocolate", "Hot Chocolate", "Steamed Milk", "Caramel Apple Spice"],
+                                    "prices": [2.65, 2.95, 4.25, 4.25, 4.25, 4.25, 4.25 , 3.45, 3.45, 4.25, 3.45, 2.95, 4.25]
                                 }
                             ],
-                            "sides": [
+                            "refreshers": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Mango Dragonfruit Refresher", "Strawberry Acai Refresher", "Pink Drink", "Paradise Drink Refresher", "Pineapple Passionfruit Refresher", "Pineapple Passionfruit Lemonade Refresher"],
+                                    "prices": [3.95, 3.95, 4.65, 4.65, 3.95, 4.65]
                                 }
                             ],
-                            "beverages" : [
+                            "frappucinos" : [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Cafe Espresso Frappucino", "Matcha Coconut Milk Green Tea Frappucino", "Caramel Ribon Crunch Frappucino", "Espresso Frappucino", "White Chocolate Creme Frappucino", "Mocha Cookie Crumble Frappucino"],
+                                    "prices": [4.25, 4.45, 5.25, 5.55, 5.45, 5.25]
                                 }
                             ]
                         }
