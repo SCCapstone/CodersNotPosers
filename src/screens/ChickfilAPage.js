@@ -104,10 +104,10 @@ const styles = StyleSheet.create({
     },
 
     leftFoodButtons:{
-        width:125,
+        width:200,
         backgroundColor:"#884E7D",
         borderRadius:25,
-        height:125,
+        height:50,
         alignItems:"flex-start",
         justifyContent:"space-between",
         marginTop:40,
@@ -115,9 +115,8 @@ const styles = StyleSheet.create({
     },
 
     buttonText:{
-        color:"Black",
-        fontSize:16,
-        backgroundColor:"White"
+        color:"white",
+        fontSize:20
     }
 })
 export default ChickfilAPage;
