@@ -9,7 +9,7 @@ import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 const SignInScreen =  ({navigation}) => {
 const onPressLogin = ({navigation}) => {
   alert('You are signed in to your account')
-  navigation.navigate(CampusSideSelectionScreen)
+  navigation.navigate('DriversOrderScreen')
 };
 const onPressForgotPassword = () => {
 // Do something about forgot password operation

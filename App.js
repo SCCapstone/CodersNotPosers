@@ -14,9 +14,11 @@ import WestCampus from './src/screens/WestCampus';
 import SouthCampus from './src/screens/SouthCampus';
 import NorthCampus from './src/screens/NorthCampus';
 import FoodTrucks from './src/screens/FoodTrucks';
+import DriverSignInScreen from './src/screens/DriverSignInScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StripeProvider } from '@stripe/stripe-react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import DriverOrderScreen from './src/screens/DriversOrderScreen';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -59,6 +61,8 @@ const App = () => {
                         <Stack.Screen name="FoodTrucks" component={FoodTrucks}/>
                         <Stack.Screen name="CFA" component={ChickfilAPage}/>
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
+                        <Stack.Screen name="DriverSignInScreen" component={DriverSignInScreen}/>
+                        <Stack.Screen name="DriversOrderScreen" component={DriverOrderScreen}/>
                         <Stack.Screen name="Payment" component={PaymentScreen}/>
                         </Stack.Navigator>
             }</NavigationContainer> 
