@@ -58,7 +58,7 @@ const pressFoodItem = () => {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
-                    style = {styles.rightFoodButtons}>
+                    style = {styles.leftFoodButtons}>
                     <Text style = {styles.buttonText}> "2. Spicy Chicken Sandwich" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -68,7 +68,7 @@ const pressFoodItem = () => {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
-                    style = {styles.rightFoodButtons}>
+                    style = {styles.leftFoodButtons}>
                     <Text style = {styles.buttonText}> "4. Soda" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -78,7 +78,7 @@ const pressFoodItem = () => {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
-                    style = {styles.rightFoodButtons}>
+                    style = {styles.leftFoodButtons}>
                     <Text style = {styles.buttonText}> "6. Desserts" </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -88,7 +88,7 @@ const pressFoodItem = () => {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
-                    style = {styles.rightFoodButtons}>
+                    style = {styles.leftFoodButtons}>
                     <Text style = {styles.buttonText}> "8. Water" </Text>
                 </TouchableOpacity>
             </View>
@@ -108,18 +108,7 @@ const styles = StyleSheet.create({
         backgroundColor:"#884E7D",
         borderRadius:25,
         height:125,
-        alignItems:"left",
-        justifyContent:"space-between",
-        marginTop:40,
-        marginBottom:10
-    },
-
-    rightFoodButtons:{
-        width:125,
-        backgroundColor:"#884E7D",
-        borderRadius:25,
-        height:125,
-        alignItems:"right",
+        alignItems:"flex-start",
         justifyContent:"space-between",
         marginTop:40,
         marginBottom:10

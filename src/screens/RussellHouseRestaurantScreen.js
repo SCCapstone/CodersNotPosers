@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
 
     buttonText:{
         color:"#FFFFFF",
-        fontSize:32
+        fontSize:18
     }
 })
 export default RussellHouseRestaurantScreen;
