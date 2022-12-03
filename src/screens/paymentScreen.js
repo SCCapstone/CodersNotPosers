@@ -4,7 +4,21 @@ import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, set, onValue} from "firebase/database";
+ // TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBijFau4g9NJAkNebhthYn4mopsN5HBTmA",
+  authDomain: "campuseats-847ff.firebaseapp.com",
+  // The value of `databaseURL` depends on the location of the database
+  projectId: "campuseats-847ff",
+  storageBucket: "campuseats-847ff.appspot.com",
+  //messagingSenderId: "SENDER_ID",
+  appId: "1:279146890630:android:d88cba5e317a2da614d807",
+  databaseURL: "https://campuseats-847ff-default-rtdb.firebaseio.com/E.firebaseio.com",
+};
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 export default function PaymentScreen() {
   const [name, setName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
@@ -69,7 +83,15 @@ top: -55}} />
       </SafeAreaView>
     );
   }
-   
+  function saveCard(name, cardNumber, expDate, cvc) {
+    var newUserEntry = userEntry;
+        newUserEntry.push({
+            name: name,
+            cardNumber: cardNumber,
+            expDate:expDate,
+            cvc:cvc
+        });
+  }
   const styles = StyleSheet.create({
     container: {
     flex: 1,
