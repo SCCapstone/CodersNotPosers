@@ -5,7 +5,7 @@ import OnboardingScreen from './src/screens/OnboardingScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import AddressScreen from './src/screens/AddressScreen';
-import PaymentScreen from './src/screens/PaymentScreen';
+import PaymentScreen from './src/screens/paymentScreen';
 import CampusSideSelectionScreen from './src/screens/CampusSideSelectionScreen';
 import RussellHouseRestaurantScreen from './src/screens/RussellHouseRestaurantScreen';
 import ChickfilAPage from './src/screens/ChickfilAPage';
