@@ -134,6 +134,7 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
+
     defaultConfig {
         applicationId "com.campuseats"
         minSdkVersion rootProject.ext.minSdkVersion
