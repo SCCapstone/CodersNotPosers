@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     },
 
     orderButtons:{
-        width:350,
+        width:200,
         backgroundColor:"#884E7D",
         borderRadius:25,
         height:100,
