@@ -6,17 +6,13 @@ import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 
-const SignUpScreen =  ({navigation}) => {
-const onPressSignUp = () => {navigation.navigate('RussellHouse')
-// Do something about signup operation
+const AddressScreen =  ({navigation}) => {
+const onPressSignUp = () => {navigation.navigate('Restauraunts')
 };
 const [state,setState] = useState({
-fname: '',
-lname: '',
-email: '',
-phone: '',
-password: '',
-confirmPassword: ''
+street: '',
+city: '',
+zipcode: '',
 })
 return (
 
@@ -42,53 +38,27 @@ top:-280 }} />
 </View>
 
 <View style={styles.fView}>
-<TextInput id='firstName'
+<TextInput id='street'
 style={styles.inputText}
-placeholder="First Name"
+placeholder="Street"
 placeholderTextColor="#ccc"
 onChangeText={text => setState({fname:text})}/>
 </View>
 
 <View style={styles.lView}>
-<TextInput id='lastName'
+<TextInput id='city'
 style={styles.inputText}
-placeholder="Last Name"
+placeholder="City"
 placeholderTextColor="#ccc"
 onChangeText={text => setState({lname:text})}/>
 </View>
 
 <View style= {styles.phoneView}>
-<TextInput
+<TextInput id= 'zip'
 style={styles.inputText}
-placeholder="Phone"
+placeholder="Zip Code"
 placeholderTextColor="#ccc"
 onChangeText={text => setState({phone:text})}/>
-</View>
-
-<View style= {styles.emailView}>
-<TextInput
-style={styles.inputText}
-placeholder="Email"
-placeholderTextColor="#ccc"
-onChangeText={text => setState({email:text})}/>
-</View>
-
-<View style= {styles.passwordView}>
-<TextInput
-style={styles.inputText}
-secureTextEntry
-placeholder="Password"
-placeholderTextColor="#ccc"
-onChangeText={text => setState({password:text})}/>
-</View>
-
-<View style= {styles.confirmPasswordView}>
-<TextInput
-style={styles.inputText}
-secureTextEntry
-placeholder="Confirm Password"
-placeholderTextColor="#ccc"
-onChangeText={text => setState({password:text})}/>
 </View>
 
 <View>
@@ -123,7 +93,7 @@ alignItems: 'center',
 justifyContent: 'center',
 },
 
-fView:{
+streetView:{
 position: 'absolute',
 left: 30,
 top: 194,
@@ -136,7 +106,7 @@ justifyContent:"center",
 padding:20
 },
 
-lView:{
+cityView:{
   position: 'absolute',
   left: 207,
   top: 194,
@@ -149,7 +119,7 @@ lView:{
   padding:20
 },
 
-phoneView:{
+zipView:{
   position: 'absolute',
   left: 30,
   top: 260,
@@ -162,44 +132,8 @@ phoneView:{
   padding:20
 },
 
-emailView:{
-  position: 'absolute',
-  left:30,
-  top:326,
-  width:330,
-  backgroundColor:"#FFFFFF",
-  borderRadius:25,
-  height:50,
-  marginBottom:20,
-  justifyContent:"center",
-  padding:20
-},
 
-passwordView:{
-  position: 'absolute',
-  left:30,
-  top:390,
-  width:330,
-  backgroundColor:"#FFFFFF",
-  borderRadius:25,
-  height:50,
-  marginBottom:20,
-  justifyContent:"center",
-  padding:20
-},
 
-confirmPasswordView:{
-  position: 'absolute',
-  left: 30,
-  top:455,
-  width:330,
-  backgroundColor:"#FFFFFF",
-  borderRadius:25,
-  height:50,
-  marginBottom:20,
-  justifyContent:"center",
-  padding:20
-}, 
 
 
 inputText:{
@@ -207,7 +141,7 @@ height:50,
 color:"black"
 },
 
-signupBtn:{
+saveAddressButton:{
   position: "absolute",
   right:145,
   top:-200, 
@@ -219,4 +153,4 @@ signupBtn:{
   justifyContent:"center",
   },
 });
-export default SignUpScreen;
+export default AddressScreen;
