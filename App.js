@@ -53,6 +53,7 @@ const App = () => {
                         <Stack.Screen name="SignUp" component={SignUpScreen} />
                         <Stack.Screen name="CampusSelect" component={CampusSideSelectionScreen}/>
                         <Stack.Screen name="RussellHouse" component={RussellHouseRestaurantScreen}/>
+                        <Stack.Screen name="CFA" component={ChickfilAPage}/>
                         <Stack.Screen name="EastCampus" component={EastCampus}/>
                         <Stack.Screen name="WestCampus" component={WestCampus}/>
                         <Stack.Screen name="NorthCampus" component={NorthCampus}/>

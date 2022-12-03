@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
     Image,Text, Button} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
+import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import CFALogo from './../../images/CFALogo.png';
 import ChickfilAPage from './ChickfilAPage';
@@ -76,6 +77,13 @@ const pressRestaurant = () => {
                                 marginTop:20,
                                 marginBottom:20}}>
                     <Text style = {styles.buttonText}> Wired Cafe </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.pop()}>
+                    <Image source={leftarrow} 
+                    style={{ width: 50, 
+                    height: 50,
+                    top:200,
+                    left:-170}} />
                 </TouchableOpacity>
             </View>
         </SafeAreaView>

@@ -5,6 +5,8 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import CFALogo from './../../images/CFALogo.png';
 import ChickfilAPage from './ChickfilAPage';
+
+import leftarrow from './../../images/leftarrow.png';
 //import restaurantJSON from './../../restaurants.json';
 
 {/* <RelativeLayout
@@ -102,6 +104,13 @@ const pressRestaurant = () => {
                                 marginTop:20,
                                 marginBottom:20}}>
                     <Text style = {styles.buttonText}> Village Juice & Kitchen </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.pop()}>
+                    <Image source={leftarrow} 
+                    style={{ width: 50, 
+                    height: 50,
+                    top:60,
+                    left:-170}} />
                 </TouchableOpacity>
             </View>
         </SafeAreaView>

@@ -6,6 +6,8 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import CFALogo from './../../images/CFALogo.png';
 import myJSON from './../../restaurants.json';
+import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
+import leftarrow from './../../images/leftarrow.png';
 
 {/* <RelativeLayout
     xmlns:android = 'https://schemas.android.com/apk/res/android'
@@ -91,6 +93,14 @@ const pressFoodItem = () => {
                     style = {styles.leftFoodButtons}>
                     <Text style = {styles.buttonText}> "8. Water" </Text>
                 </TouchableOpacity>
+                <TouchableOpacity 
+                    onPress={() => navigation.navigate('RussellHouse')}>
+                    <Image source={leftarrow} 
+                    style={{ width: 50, 
+                    height: 50,
+                    top:20,
+                    left:-170}} />
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )
@@ -104,19 +114,22 @@ const styles = StyleSheet.create({
     },
 
     leftFoodButtons:{
-        width:200,
+        width:250,
         backgroundColor:"#884E7D",
         borderRadius:25,
-        height:50,
-        alignItems:"flex-start",
-        justifyContent:"space-between",
-        marginTop:40,
+        height:60,
+        justifyContent:"center",
+        marginTop:10,
         marginBottom:10
     },
 
     buttonText:{
         color:"white",
-        fontSize:20
+        fontSize:20,
+        padding:2,
+        alignItems:'center',
+        justifyContent: 'center'
+        
     }
 })
 export default ChickfilAPage;

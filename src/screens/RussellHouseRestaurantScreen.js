@@ -3,7 +3,10 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
     Image,Text, Button} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
+
+import leftarrow from './../../images/leftarrow.png';
 import CFALogo from './../../images/CFALogo.png';
+
 //import restaurantJSON from './../../restaurants.json';
 
 // {<RelativeLayout
@@ -51,7 +54,7 @@ const pressRestaurant = () => {
                     bottom:0}}>
                 </Image>
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate('CFA')}
+                    onPress = {pressRestaurant}
                     style = {styles.restaurantButtons}>
                     <Text style = {styles.buttonText}> Chick-Fil-A </Text>
                 </TouchableOpacity>
@@ -80,6 +83,14 @@ const pressRestaurant = () => {
                     style = {styles.restaurantButtons}>
                     <Text style = {styles.buttonText}> Restaurant6 </Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.pop()}>
+<Image source={leftarrow} 
+style={{ width: 50, 
+height: 50,
+top:80,
+left:-170}} />
+</TouchableOpacity>
+
             </View>
         </SafeAreaView>
     )
