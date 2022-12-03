@@ -6,30 +6,30 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 import CFALogo from './../../images/CFALogo.png';
 //import restaurantJSON from './../../restaurants.json';
 
-{<RelativeLayout
-    xmlns:android = 'https://schemas.android.com/apk/res/android'
-    xmlns:tools = 'https://schema.android.com/tools'
-    android:layout_width = "match_parent"
-    android:layout_height = "match_parent"
-    android:paddingLeft = "16dp"
-    android:paddingRight = "16dp"
-    android:paddingTop = "16dp"
-    android:paddingBottom = "16dp" tools:context = ".Activity1" >
+// {<RelativeLayout
+//     xmlns:android = 'https://schemas.android.com/apk/res/android'
+//     xmlns:tools = 'https://schema.android.com/tools'
+//     android:layout_width = "match_parent"
+//     android:layout_height = "match_parent"
+//     android:paddingLeft = "16dp"
+//     android:paddingRight = "16dp"
+//     android:paddingTop = "16dp"
+//     android:paddingBottom = "16dp" tools:context = ".Activity1" >
 
-    <ScrollView
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@+id/button"
-        android:layout_centerHorizontal = "true" >
-        <TextView
-            android:layout_width = "wrap_content"
-            android:layout_height = "wrap_content"
-            android:textAppearance = "?android:attr/textAppearanceLarge"
-            android:text = "@string/long_string"
-            android:id = "@+id/textView" />
-    </ScrollView>
+//     <ScrollView
+//         android:layout_width = "wrap_content"
+//         android:layout_height = "wrap_content"
+//         android:layout_below = "@+id/button"
+//         android:layout_centerHorizontal = "true" >
+//         <TextView
+//             android:layout_width = "wrap_content"
+//             android:layout_height = "wrap_content"
+//             android:textAppearance = "?android:attr/textAppearanceLarge"
+//             android:text = "@string/long_string"
+//             android:id = "@+id/textView" />
+//     </ScrollView>
 
-</RelativeLayout>}
+// </RelativeLayout>}
 
 const RussellHouseRestaurantScreen = ({navigation}) => {
 
@@ -108,10 +108,10 @@ const styles = StyleSheet.create({
     },
 
     restaurantButtons:{
-        width:350,
+        width:200,
         backgroundColor:"#884E7D",
         borderRadius:25,
-        height:100,
+        height:75,
         alignItems:"center",
         justifyContent:"space-between",
         marginTop:5,
@@ -119,9 +119,8 @@ const styles = StyleSheet.create({
     },
 
     buttonText:{
-        color:"Black",
-        fontSize:16,
-        backgroundColor:"White"
+        color:"#FFFFFF",
+        fontSize:32
     }
 })
 export default RussellHouseRestaurantScreen;
