@@ -16,7 +16,6 @@ import NorthCampus from './src/screens/NorthCampus';
 import FoodTrucks from './src/screens/FoodTrucks';
 import DriverSignInScreen from './src/screens/DriverSignInScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StripeProvider } from '@stripe/stripe-react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DriverOrderScreen from './src/screens/DriversOrderScreen';
 
