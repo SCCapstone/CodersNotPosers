@@ -20,6 +20,7 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+const ref = db.ref('server/saving-data/fireblog');
 export default function PaymentScreen() {
   const [name, setName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
@@ -93,6 +94,8 @@ top: -55}} />
             cvc:cvc
         });
   }
+  const usersRef = ref.child('users cards');
+  usersRef.push().set({name, cardNumber, expDate, cvc});
   const styles = StyleSheet.create({
     container: {
     flex: 1,
