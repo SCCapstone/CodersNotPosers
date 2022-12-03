@@ -6,7 +6,7 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 import CFALogo from './../../images/CFALogo.png';
 //import restaurantJSON from './../../restaurants.json';
 
-{/* <RelativeLayout
+{<RelativeLayout
     xmlns:android = 'https://schemas.android.com/apk/res/android'
     xmlns:tools = 'https://schema.android.com/tools'
     android:layout_width = "match_parent"
@@ -29,7 +29,7 @@ import CFALogo from './../../images/CFALogo.png';
             android:id = "@+id/textView" />
     </ScrollView>
 
-</RelativeLayout> */}
+</RelativeLayout>}
 
 const RussellHouseRestaurantScreen = ({navigation}) => {
 
