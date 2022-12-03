@@ -19,11 +19,15 @@ const SignUpScreen =  ({navigation}) => {
 //const {register}  = useContext(AuthContext);
   const register = () => {
     if(!email) {
-      Alert.alert("enter email");
+      Alert.alert("Please enter email");
       return
     }
     else if (!password) {
-      Alert.alert("enter password");
+      Alert.alert("Please enter password");
+      return
+    }
+    else if (password != confirmPassword) {
+      Alert.alert("Passwords does not match");
       return
     }
     registerUser(email,password)
@@ -33,7 +37,7 @@ const SignUpScreen =  ({navigation}) => {
     try {
         let response = await auth().createUserWithEmailAndPassword(email,password)
         if(response && response.user) {
-          Alert.alert("Account created")
+          navigation.navigate('CampusSelect')
         }
     }
     catch(e) {
