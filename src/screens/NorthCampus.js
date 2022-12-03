@@ -109,8 +109,8 @@ const styles = StyleSheet.create({
         height:100,
         alignItems:"center",
         justifyContent:"space-between",
-        marginTop:40,
-        marginBottom:10
+        marginTop:5,
+        marginBottom:5
     },
 
     buttonText:{
