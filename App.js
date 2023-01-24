@@ -12,7 +12,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import OnboardingScreen from './src/screens/OnboardingScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
-import PaymentScreen from './src/screens/PaymentScreen';
+//import PaymentScreen from './src/screens/PaymentScreen';
 import CampusSideSelectionScreen from './src/screens/CampusSideSelectionScreen';
 import RussellHouseRestaurantScreen from './src/screens/RussellHouseRestaurantScreen';
 import ChickfilAPage from './src/screens/ChickfilAPage';
@@ -71,7 +71,7 @@ const App = () => {
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
                         <Stack.Screen name="DriverSignInScreen" component={DriverSignInScreen}/>
                         <Stack.Screen name="DriversOrderScreen" component={DriverOrderScreen}/>
-                        <Stack.Screen name="Payment" component={PaymentScreen}/>
+                        {/* //<Stack.Screen name="Payment" component={PaymentScreen}/> */}
                         </Stack.Navigator>
             }</NavigationContainer> 
         );
@@ -102,7 +102,7 @@ const App = () => {
                         <Stack.Screen name="SouthCampus" component={SouthCampus}/>
                         <Stack.Screen name="FoodTrucks" component={FoodTrucks}/>
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
-                        <Stack.Screen name="Payment" component={PaymentScreen}/>
+                        {/* <Stack.Screen name="Payment" component={PaymentScreen}/> */}
                     
                        </Stack.Navigator>
             }</NavigationContainer> 
