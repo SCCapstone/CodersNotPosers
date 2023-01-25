@@ -71,7 +71,7 @@ const App = () => {
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
                         <Stack.Screen name="DriverSignInScreen" component={DriverSignInScreen}/>
                         <Stack.Screen name="DriversOrderScreen" component={DriverOrderScreen}/>
-                        <Stack.Screen name="Payment" component={PaymentScreen}/>
+                        {/* //<Stack.Screen name="Payment" component={PaymentScreen}/> */}
                         </Stack.Navigator>
             }</NavigationContainer> 
         );
@@ -102,7 +102,7 @@ const App = () => {
                         <Stack.Screen name="SouthCampus" component={SouthCampus}/>
                         <Stack.Screen name="FoodTrucks" component={FoodTrucks}/>
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
-                        <Stack.Screen name="Payment" component={PaymentScreen}/>
+                        {/* <Stack.Screen name="Payment" component={PaymentScreen}/> */}
                     
                        </Stack.Navigator>
             }</NavigationContainer> 
