@@ -4,9 +4,8 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import CFALogo from './../../images/CFALogo.png';
-import ChickfilAPage from './ChickfilAPage';
-
 import leftarrow from './../../images/leftarrow.png';
+import ChickfilAPage from './ChickfilAPage';
 //import restaurantJSON from './../../restaurants.json';
 
 {/* <RelativeLayout
@@ -34,7 +33,7 @@ import leftarrow from './../../images/leftarrow.png';
 
 </RelativeLayout> */}
 
-const EastCampus = ({navigation}) => {
+const FoodTrucks = ({navigation}) => {
 
 const pressRestaurant = () => {
     //move to specified restaurant screen
@@ -64,7 +63,7 @@ const pressRestaurant = () => {
                                 justifyContent:"space-between",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Colloquium Cafe </Text>
+                    <Text style = {styles.buttonText}> The Coop </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
@@ -77,39 +76,13 @@ const pressRestaurant = () => {
                                 justifyContent:"center",
                                 marginTop:20,
                                 marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Horshoe Deli </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Starbucks - Humanities </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Village Juice & Kitchen </Text>
+                    <Text style = {styles.buttonText}> Nacho Papi's </Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>navigation.pop()}>
                     <Image source={leftarrow} 
                     style={{ width: 50, 
                     height: 50,
-                    top:60,
+                    top:200,
                     left:-170}} />
                 </TouchableOpacity>
             </View>
@@ -156,4 +129,4 @@ const styles = StyleSheet.create({
         backgroundColor:"White"
     }
 })
-export default EastCampus;
+export default FoodTrucks;

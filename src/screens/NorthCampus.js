@@ -3,6 +3,7 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
     Image,Text, Button} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
+import leftarrow from './../../images/leftarrow.png';
 //import restaurantJSON from './../../restaurants.json';
 
 {/* <RelativeLayout
@@ -30,7 +31,7 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 
 </RelativeLayout> */}
 
-const NorthCampus = () => {
+const NorthCampus = ({navigation}) => {
 
 const pressRestaurant = () => {
     //move to specified restaurant screen
@@ -39,15 +40,15 @@ const pressRestaurant = () => {
     return(
         <SafeAreaView style = {styles.container}>
             <View style = {styles.container}>
-                <Image source={ellipsepink} 
+            <Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: 2,
-                    top: 1,}}>
+                    left: -20,
+                    top: -45,}}>
                 </Image>
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
                     right:-60,
-                    bottom:-420}}>
+                    bottom:0}}>
                 </Image>
                 <TouchableOpacity
                     onPress = {pressRestaurant}
@@ -74,6 +75,13 @@ const pressRestaurant = () => {
                                 marginTop:20,
                                 marginBottom:20}}>
                     <Text style = {styles.buttonText}> Hampton St. Cafe </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.pop()}>
+                    <Image source={leftarrow} 
+                    style={{ width: 50, 
+                    height: 50,
+                    top:200,
+                    left:-170}} />
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
@@ -109,8 +117,8 @@ const styles = StyleSheet.create({
         height:100,
         alignItems:"center",
         justifyContent:"space-between",
-        marginTop:40,
-        marginBottom:10
+        marginTop:5,
+        marginBottom:5
     },
 
     buttonText:{

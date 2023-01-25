@@ -1,23 +1,45 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
-Image,Text} from 'react-native';
+Image,Text, Alert} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
+import auth from '@react-native-firebase/auth';
+import { AuthContext } from '../../navigation/AuthProvider';
 
 const SignInScreen =  ({navigation}) => {
-const onPressLogin = () => {
-  alert('You are signed in to your account')
-// Do something about login operation
-};
-const onPressForgotPassword = () => {
-// Do something about forgot password operation
-};
-const [state,setState] = useState({
-email: '',
-password: '',
-})
-return (
+  
+  const [email,setEmail] = useState();
+  const[password,setPassword] = useState();
+
+
+  const LoginComponent = () => {
+    if(!email) {
+      Alert.alert('Enter Email')
+      return
+    } else if (!password && password.trim()) {
+      Alert.alert('Enter password')
+      return
+    } 
+    let signInRequestData = {
+      email,password
+    }
+    doSignIn(email,password);
+  };
+
+  const doSignIn = async (email,password) => {
+    try {
+      let response = await auth().signInWithEmailAndPassword(email,password)
+      if (response && response.user) {
+        navigation.navigate('CampusSelect')
+      }
+    }
+    catch(e) {
+      console.error(e.message)
+    }
+  }
+  //const {login} = useContext(AuthContext);
+  return (
 <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
 
 <View style={styles.container}>
@@ -38,7 +60,7 @@ keyboardType='email-address'
 autoCapitalize='none'
 autoCorrect={false}
 placeholderTextColor="#ccc"
-onChangeText={text => setState({email:text})}/>
+onChangeText={text => setEmail(text)}/>
 </View>
 <View style={styles.inputView}>
 <TextInput
@@ -46,20 +68,18 @@ style={styles.inputText}
 secureTextEntry={true}
 placeholder="Password"
 placeholderTextColor="#ccc"
-onChangeText={text => setState({password:text})}/>
-
+onChangeText={text => setPassword(text)}/>
 <Image source={ellipsegrey} 
 style={{position: 'absolute',
 right:-60,
 bottom:-420}}/>
 
 </View>
-<TouchableOpacity
-onPress = {onPressForgotPassword}>
+<TouchableOpacity>
 <Text style={styles.forgotAndSignUpText}>Forgot Password?</Text>
 </TouchableOpacity>
 <TouchableOpacity
-onPress = {onPressLogin}
+onPress = {LoginComponent}
 style={styles.loginBtn}>
 <Text style={styles.loginText}>Sign In</Text>
 </TouchableOpacity>
@@ -127,4 +147,3 @@ signupBtn:{
   marginBottom:10
   },
 });
-
