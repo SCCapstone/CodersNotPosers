@@ -122,6 +122,7 @@ const SignUpScreen =  ({navigation}) => {
           style={styles.signupBtn}
           onPress= {register}>
           <Text style={styles.forgotAndSignUpText}>Sign Up</Text>
+           testId="signupBtn"
       </TouchableOpacity>
 
       <TouchableOpacity onPress={()=>navigation.pop()}>
@@ -130,6 +131,7 @@ const SignUpScreen =  ({navigation}) => {
             height: 50,
             top:-10,
             left:10}} />
+            testId="arrowBtn"
       </TouchableOpacity>
 
       <Image source={ellipsegrey} 
