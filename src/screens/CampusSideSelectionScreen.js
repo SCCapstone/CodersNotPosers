@@ -1,8 +1,11 @@
 import React, { useState } from 'react'; 
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
     Image,Text, Button} from 'react-native';
+import { DrawerActions } from '@react-navigation/native';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
+import hamburger from './../../images/hamburger.png';
+import Drawer from './../../navigation/drawer.js';
 
 // {<RelativeLayout
 //     xmlns:android = 'https://schemas.android.com/apk/res/android'
@@ -36,7 +39,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
             <View style = {styles.container}>
                 <Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: -20,
+                    left: -40,
                     top: -45,}}>
                 </Image>
                 <Image source={ellipsegrey} 
@@ -44,6 +47,16 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     right:-60,
                     bottom:0}}>
                 </Image>
+                <TouchableOpacity onPress={() => {navigation.dispatch(DrawerActions.toggleDrawer());
+                                                    navigation.navigate(Drawer);}}>
+                    <Image source={hamburger}
+                    style={{position:'absolute',
+                    left:-200,
+                    width:30,
+                    height:30,
+                    top: -75}}>
+                        </Image>
+                </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {() => navigation.navigate('RussellHouse')}
                     style = {styles.campusSelectionButtons}>
