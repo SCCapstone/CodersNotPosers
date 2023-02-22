@@ -53,11 +53,7 @@ const App = () => {
                         headerShown: false
                     }}
                 >
-                {/* 
-                    <StripeProvider
-                        publishableKey="pk_test_51M9ueME2kyK6I5WPJO8bYnghkiEiicrytMc9587Yr"
-                        </StripeProvider>
-                */}
+              
                         <Stack.Screen name="OnBoarding" component={OnboardingScreen} />
                         <Stack.Screen name="SignIn" component={SignInScreen} />
                         <Stack.Screen name="SignUp" component={SignUpScreen} />
@@ -86,11 +82,6 @@ const App = () => {
                         headerShown: false
                     }}
                 >
-                {/* 
-                    <StripeProvider
-                        publishableKey="pk_test_51M9ueME2kyK6I5WPJO8bYnghkiEiicrytMc9587Yr"
-                        </StripeProvider>
-                */ }
                         <Stack.Screen name="AddressScreen" component={AddressScreen} />
                         <Stack.Screen name="OnBoarding" component={OnboardingScreen} />
                         <Stack.Screen name="SignIn" component={SignInScreen} />
