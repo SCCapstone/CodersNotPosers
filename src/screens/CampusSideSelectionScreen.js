@@ -1,64 +1,38 @@
 import React, { useState } from 'react'; 
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
-    Image,Text, Button} from 'react-native';
-import { DrawerActions } from '@react-navigation/native';
+import {StyleSheet,View,TouchableOpacity,
+    Image,Text, Pressable} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import hamburger from './../../images/hamburger.png';
-import Drawer from './../../navigation/drawer.js';
+import HomeHeader from './HomeHeader';
+import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
 
-// {<RelativeLayout
-//     xmlns:android = 'https://schemas.android.com/apk/res/android'
-//     xmlns:tools = 'https://schema.android.com/tools'
-//     android:layout_width = "match_parent"
-//     android:layout_height = "match_parent"
-//     android:paddingLeft = "16dp"
-//     android:paddingRight = "16dp"
-//     android:paddingTop = "16dp"
-//     android:paddingBottom = "16dp" tools:context = ".Activity1" >
 
-//     <ScrollView
-//         android:layout_width = "wrap_content"
-//         android:layout_height = "wrap_content"
-//         android:layout_below = "@+id/button"
-//         android:layout_centerHorizontal = "true" >
-//         <TextView
-//             android:layout_width = "wrap_content"
-//             android:layout_height = "wrap_content"
-//             android:textAppearance = "?android:attr/textAppearanceLarge"
-//             android:text = "@string/long_string"
-//             android:id = "@+id/textView" />
-//     </ScrollView>
-
-// </RelativeLayout>}
 
 const CampusSideSelectionScreen = ({navigation}) => {
 
+    
     return (
-        <SafeAreaView style = {styles.container}>
             <View style = {styles.container}>
                 <Image source={ellipsepink} 
                     style={{position: 'absolute',
                     left: -40,
-                    top: -45,}}>
+                    top: -45,
+                    scaleX:-1}}>
                 </Image>
+                <View style = {styles.header}>
+                <HomeHeader navigation = {navigation}/>
+                </View> 
+                
+
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
                     right:-60,
                     bottom:0}}>
                 </Image>
-                <TouchableOpacity onPress={() => {navigation.dispatch(DrawerActions.toggleDrawer());
-                                                    navigation.navigate(Drawer);}}>
-                    <Image source={hamburger}
-                    style={{position:'absolute',
-                    left:-200,
-                    width:30,
-                    height:30,
-                    top: -75}}>
-                        </Image>
-                </TouchableOpacity>
+
+             
                 <TouchableOpacity
-                    onPress = {() => navigation.navigate('RussellHouse')}
+                    onPress = {() => navigation.navigate('RussellHouseRestaurantScreen')}
                     style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> Russell House </Text>
                 </TouchableOpacity>
@@ -86,10 +60,11 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     onPress = {() =>navigation.navigate('FoodTrucks')}
                     style = {styles.campusSelectionButtons}>
                     <Text style = {styles.buttonText}> Food Trucks </Text>
-                </TouchableOpacity>
+                </TouchableOpacity> 
+                
             </View>
 
-        </SafeAreaView>
+       
     )
 
 }
@@ -122,7 +97,12 @@ const styles = StyleSheet.create({
     buttonText:{
         color:"white",
         fontSize:32,
-    }
+    },
+
+    header:{
+        top:-63 
+    },
+
 })
 
 export default CampusSideSelectionScreen;

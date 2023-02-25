@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const Profile = () => {
+const Favorites = () => {
   return (
     <View style={{ flex: 1 }}>
       <Text>Hello </Text> 
@@ -9,4 +9,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Favorites;

@@ -3,36 +3,10 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
     Image,Text, Button} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-
+import ChickfilAPage from './ChickfilAPage';
 import leftarrow from './../../images/leftarrow.png';
 import CFALogo from './../../images/CFALogo.png';
 
-//import restaurantJSON from './../../restaurants.json';
-
-// {<RelativeLayout
-//     xmlns:android = 'https://schemas.android.com/apk/res/android'
-//     xmlns:tools = 'https://schema.android.com/tools'
-//     android:layout_width = "match_parent"
-//     android:layout_height = "match_parent"
-//     android:paddingLeft = "16dp"
-//     android:paddingRight = "16dp"
-//     android:paddingTop = "16dp"
-//     android:paddingBottom = "16dp" tools:context = ".Activity1" >
-
-//     <ScrollView
-//         android:layout_width = "wrap_content"
-//         android:layout_height = "wrap_content"
-//         android:layout_below = "@+id/button"
-//         android:layout_centerHorizontal = "true" >
-//         <TextView
-//             android:layout_width = "wrap_content"
-//             android:layout_height = "wrap_content"
-//             android:textAppearance = "?android:attr/textAppearanceLarge"
-//             android:text = "@string/long_string"
-//             android:id = "@+id/textView" />
-//     </ScrollView>
-
-// </RelativeLayout>}
 
 const RussellHouseRestaurantScreen = ({navigation}) => {
 
@@ -54,7 +28,7 @@ const pressRestaurant = () => {
                     bottom:0}}>
                 </Image>
                 <TouchableOpacity
-                    onPress = {pressRestaurant}
+                    onPress = {ChickfilAPage}
                     style = {styles.restaurantButtons}>
                     <Text style = {styles.buttonText}> Chick-Fil-A </Text>
                 </TouchableOpacity>
