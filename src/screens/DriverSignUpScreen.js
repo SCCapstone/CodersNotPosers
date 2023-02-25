@@ -7,7 +7,7 @@ import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import { CardStyleInterpolators } from 'react-navigation-stack';
 
-const DriverSignUpScreen =  () => {
+const DriverSignUpScreen =  ({navigation}) => {
     const [state,setState] = useState({
         fnameDriver: '',
         lnameDriver: '',

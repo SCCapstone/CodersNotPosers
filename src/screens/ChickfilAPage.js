@@ -4,43 +4,18 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import CFALogo from './../../images/CFALogo.png';
-import myJSON from './../../restaurants.json';
-import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
+
 import leftarrow from './../../images/leftarrow.png';
+import HomeHeader from './HomeHeader';
 
-{/* <RelativeLayout
-    xmlns:android = 'https://schemas.android.com/apk/res/android'
-    xmlns:tools = 'https://schema.android.com/tools'
-    android:layout_width = "match_parent"
-    android:layout_height = "match_parent"
-    android:paddingLeft = "16dp"
-    android:paddingRight = "16dp"
-    android:paddingTop = "16dp"
-    android:paddingBottom = "16dp" tools:context = ".Activity1" >
-
-    <ScrollView
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@+id/button"
-        android:layout_centerHorizontal = "true" >
-        <TextView
-            android:layout_width = "wrap_content"
-            android:layout_height = "wrap_content"
-            android:textAppearance = "?android:attr/textAppearanceLarge"
-            android:text = "@string/long_string"
-            android:id = "@+id/textView" />
-    </ScrollView>
-
-</RelativeLayout> */}
 
 const ChickfilAPage = (navigation) => {
 
 const pressFoodItem = () => {
     //move to specified restaurant screen
 }
-
     return(
+        <HomeHeader/>,
         <SafeAreaView style = {styles.container}>
             <View style = {styles.container}>
             <Image source={ellipsepink} 
