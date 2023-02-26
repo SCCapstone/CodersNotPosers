@@ -54,7 +54,7 @@ const pressFoodItem = () => {
                     bottom:0}}>
                 </Image>
                 <TouchableOpacity
-                    onPress = {pressFoodItem}
+                    onPress = {() => navigation.navigate("FoodDetails")}
                     style = {styles.leftFoodButtons}>
                     <Text style = {styles.buttonText}> "1. Chicken Sandwich" </Text>
                 </TouchableOpacity>
