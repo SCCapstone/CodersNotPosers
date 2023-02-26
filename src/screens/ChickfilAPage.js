@@ -3,10 +3,14 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
     Image,Text, Button} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
-import ellipsegrey from './../../images/ellipsegrey.png';
-
+import ratingstar from './../../images/ratingstar.png';
+import CFALogo from './../../images/CFALogo.png';
+import myJSON from './../../restaurants.json';
+import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
 import leftarrow from './../../images/leftarrow.png';
+import RatingScreenCFA from './RatingScreenCFA';
 import HomeHeader from './HomeHeader';
+
 
 
 const ChickfilAPage = (navigation) => {
@@ -15,19 +19,24 @@ const pressFoodItem = () => {
     //move to specified restaurant screen
 }
     return(
-        <HomeHeader/>,
-        <SafeAreaView style = {styles.container}>
             <View style = {styles.container}>
             <Image source={ellipsepink} 
                     style={{position: 'absolute',
                     left:-135,
                     top: -45,}}>
                 </Image>
-                <Image source={ellipsegrey} 
+                <View style = {styles.header}>
+                <HomeHeader navigation = {navigation}/>
+                </View> 
+                <TouchableOpacity
+                  onPress={()=> navigation.naviagte(RatingScreenCFA)}>
+                <Image source={ratingstar} 
                     style={{position: 'absolute',
-                    right:-135,
-                    bottom:0}}>
-                </Image>
+                    height:38,
+                    width: 42,
+                    left:270,
+                    bottom:16}}/>
+                </TouchableOpacity>
                 <TouchableOpacity
                     onPress = {pressFoodItem}
                     style = {styles.leftFoodButtons}>
@@ -71,13 +80,22 @@ const pressFoodItem = () => {
                 <TouchableOpacity 
                     onPress={() => navigation.navigate('RussellHouse')}>
                     <Image source={leftarrow} 
-                    style={{ width: 50, 
+                     style={{ width: 52, 
                     height: 50,
-                    top:20,
-                    left:-170}} />
+                    top:160,
+                    alignSelf:'flex-start'}} />
                 </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('RatingScreenCFA')}>      
+                <Image source={ratingstar} style={{
+                    height:35,
+                    width:42 ,
+                    top:121,
+                    alignSelf:'flex-end'}}/>
+                </TouchableOpacity> 
             </View>
-        </SafeAreaView>
+        
     )
 }
 const styles = StyleSheet.create({
@@ -103,8 +121,10 @@ const styles = StyleSheet.create({
         fontSize:20,
         padding:2,
         alignItems:'center',
-        justifyContent: 'center'
-        
-    }
+        justifyContent: 'center' 
+    },
+    header:{
+        top:-63 
+    },
 })
 export default ChickfilAPage;
