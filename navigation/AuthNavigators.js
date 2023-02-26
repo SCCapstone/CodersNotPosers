@@ -12,6 +12,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import RussellHouseRestaurantScreen from "../src/screens/RussellHouseRestaurantScreen";
 import NorthCampus from "../src/screens/NorthCampus";
 import SignUpScreen from "../src/screens/SignUpScreen";
+import ChickfilAPage from "../src/screens/ChickfilAPage";
+import RatingScreenCFA from "../src/screens/RatingScreenCFA";
 
 const Auth = createNativeStackNavigator();
 
@@ -91,6 +93,21 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
+            <Auth.Screen
+                name= "ChickfilAPage"
+                component = {ChickfilAPage}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "RatingScreenCFA"
+                component = {RatingScreenCFA}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            
         </Auth.Navigator>
         </NavigationContainer>
     )
