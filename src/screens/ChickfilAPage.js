@@ -9,6 +9,7 @@ import myJSON from './../../restaurants.json';
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
 import leftarrow from './../../images/leftarrow.png';
 import RatingScreenCFA from './RatingScreenCFA';
+import HomeHeader from './HomeHeader';
 
 
 
@@ -18,16 +19,17 @@ const pressFoodItem = () => {
     //move to specified restaurant screen
 }
     return(
-        <HomeHeader/>,
-        <SafeAreaView style = {styles.container}>
             <View style = {styles.container}>
             <Image source={ellipsepink} 
                     style={{position: 'absolute',
                     left:-135,
                     top: -45,}}>
                 </Image>
+                <View style = {styles.header}>
+                <HomeHeader navigation = {navigation}/>
+                </View> 
                 <TouchableOpacity
-                  onPress={()=> navigation.naviagte('RatingScreenCFA')}>
+                  onPress={()=> navigation.naviagte(RatingScreenCFA)}>
                 <Image source={ratingstar} 
                     style={{position: 'absolute',
                     height:38,
@@ -93,7 +95,7 @@ const pressFoodItem = () => {
                     alignSelf:'flex-end'}}/>
                 </TouchableOpacity> 
             </View>
-        </SafeAreaView>
+        
     )
 }
 const styles = StyleSheet.create({
@@ -119,8 +121,10 @@ const styles = StyleSheet.create({
         fontSize:20,
         padding:2,
         alignItems:'center',
-        justifyContent: 'center'
-        
-    }
+        justifyContent: 'center' 
+    },
+    header:{
+        top:-63 
+    },
 })
 export default ChickfilAPage;
