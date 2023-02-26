@@ -1,28 +1,15 @@
-/* import React, {useState} from 'react';
+import React, {useState} from 'react';
 import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set, onValue} from "firebase/database";
-import auth from '@react-native-firebase/auth';
- // TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBijFau4g9NJAkNebhthYn4mopsN5HBTmA",
-  authDomain: "campuseats-847ff.firebaseapp.com",
-  // The value of `databaseURL` depends on the location of the database
-  projectId: "campuseats-847ff",
-  storageBucket: "campuseats-847ff.appspot.com",
-  //messagingSenderId: "SENDER_ID",
-  appId: "1:279146890630:android:d88cba5e317a2da614d807",
-  databaseURL: "https://campuseats-847ff-default-rtdb.firebaseio.com/E.firebaseio.com",
-};
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-//const ref = db.ref('server/saving-data/fireblog');
-export default function PaymentScreen() {
 
+export default function PaymentScreen() {
+  const [name, setName] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [expDate, setExpDate] = useState("");
+  const [cvc, setCVC] = useState("");
   return (
 
 <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
@@ -41,7 +28,7 @@ top: -55}} />
             style={styles.inputText}
             placeholder="Cardholder Name"
             placeholderTextColor="#884e7d"
-            onChangeText={(fullName) => setName(fullName)}
+            onChangeText={(name) => setName(name)}
           />
         </View>
    
@@ -82,18 +69,7 @@ top: -55}} />
       </SafeAreaView>
     );
   }
-  function saveCard(fullName, cardNumber, expDate, cvc) {
-    return (
-        userEntry.push({
-          fullName: fullName,
-            cardNumber: cardNumber,
-            expDate:expDate,
-            cvc:cvc
-        }));
-  }
-  saveCard(fullName, cardNumber, expDate, cvc);
-  const usersRef = ref.child('users cards');
-  usersRef.push().set({fullName, cardNumber, expDate, cvc});
+   
   const styles = StyleSheet.create({
     container: {
     flex: 1,
@@ -173,4 +149,4 @@ top: -55}} />
       marginTop: 25,
       backgroundColor: "#FBEBEB",
     },
-  }); */
+  });

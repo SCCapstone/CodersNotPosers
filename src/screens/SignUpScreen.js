@@ -7,7 +7,7 @@ import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import { AuthContext } from '../../navigation/AuthProvider';
+import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 const SignUpScreen =  ({navigation}) => {
   const [email, setEmail] = useState("");
@@ -37,7 +37,7 @@ const SignUpScreen =  ({navigation}) => {
     try {
         let response = await auth().createUserWithEmailAndPassword(email,password)
         if(response && response.user) {
-          navigation.navigate('CampusSelect')
+          navigation.navigate(CampusSideSelectionScreen)
         }
     }
     catch(e) {
