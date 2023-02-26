@@ -6,8 +6,6 @@ import cfa from './../../images/cfa.png';
 import leftarrow from './../../images/leftarrow.png';
 import ChickfilAPage from './ChickfilAPage';
 
-
-
 const RatingScreenCFA = () => {
   // To set the default Star Selected
   const [defaultRating, setDefaultRating] = useState(2);
@@ -76,7 +74,7 @@ const RatingScreenCFA = () => {
             Rate
           </Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity 
             onPress={() => navigation.navigate('ChickfilAPage')}>
              <Image source={leftarrow} 
