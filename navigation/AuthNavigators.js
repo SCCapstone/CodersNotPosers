@@ -11,6 +11,7 @@ import FoodTrucks from "../src/screens/FoodTrucks";
 import { NavigationContainer } from "@react-navigation/native";
 import RussellHouseRestaurantScreen from "../src/screens/RussellHouseRestaurantScreen";
 import NorthCampus from "../src/screens/NorthCampus";
+import SignUpScreen from "../src/screens/SignUpScreen";
 
 const Auth = createNativeStackNavigator();
 
@@ -30,6 +31,14 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
+             <Auth.Screen
+                name= "SignUpScreen"
+                component = {SignUpScreen}
+                options = {{
+                    headerShown: false
+                }}
+            />
+
             <Auth.Screen
                 name= "DrawerNavigation"
                 component = {DrawerNavigation}
