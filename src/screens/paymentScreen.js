@@ -26,14 +26,14 @@ export default function PaymentScreen() {
   //   }
   // }
   const saveCard = () => {
-    const userCard = firebase.database().ref('User Card').push();
+    const userCard = firebase.firestore().collection('New Card');
     const usersCard = {
       name,
       cardNumber,
       expDate,
       cvc
     };
-    userRef.set(usersCard);
+    userCard.set(usersCard);
     setName('');
     setCardNumber('');
     setExpDate('');
