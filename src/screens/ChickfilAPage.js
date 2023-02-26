@@ -8,6 +8,7 @@ import CFALogo from './../../images/CFALogo.png';
 import myJSON from './../../restaurants.json';
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
 import leftarrow from './../../images/leftarrow.png';
+import RatingScreenCFA from './RatingScreenCFA';
 
 
 {/* <RelativeLayout

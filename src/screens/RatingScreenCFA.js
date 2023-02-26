@@ -4,6 +4,8 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import cfa from './../../images/cfa.png';
 import leftarrow from './../../images/leftarrow.png';
+import ChickfilAPage from './ChickfilAPage';
+
 
 
 const RatingScreenCFA = () => {

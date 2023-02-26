@@ -28,7 +28,7 @@ import DriverSignInScreen from './src/screens/DriverSignInScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DriverOrderScreen from './src/screens/DriversOrderScreen';
-import RatingScreenCFA from './src/sccreens/DriversOrdersScreen';
+import RatingScreenCFA from './src/screens/RatingScreenCFA';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
