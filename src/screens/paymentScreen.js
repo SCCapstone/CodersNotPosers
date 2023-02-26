@@ -57,7 +57,7 @@ top: -55}} />
             style={styles.inputText}
             placeholder="Cardholder Name"
             placeholderTextColor="#884e7d"
-            onChangeText={(name) => setName(name)}
+            onChangeText={(text) => setName(text)}
           />
         </View>
    
@@ -66,7 +66,7 @@ top: -55}} />
             style={styles.inputText}
             placeholder="Card Number"
             placeholderTextColor="#884e7d"
-            onChangeText={(cardNumber) => setCardNumber(cardNumber)}
+            onChangeText={(text) => setCardNumber(text)}
           />
         </View>
 
@@ -75,7 +75,7 @@ top: -55}} />
             style={styles.inputText}
             placeholder="MM/YYYY"
             placeholderTextColor="#884e7d"
-            onChangeText={(expDate) => setExpDate(expDate)}
+            onChangeText={(text) => setExpDate(text)}
           />
         </View>
 
@@ -85,13 +85,13 @@ top: -55}} />
             placeholder="CVC"
             placeholderTextColor="#884e7d"
             secureTextEntry={true}
-            onChangeText={(cvc) => setCVC(cvc)}
+            onChangeText={(text) => setCVC(text)}
           />
         </View>
    
         <TouchableOpacity 
           style={styles.saveCardButton}
-          onPress={() => alert("Card was saved")}>
+          onPress={saveCard}>
           <Text style={styles.loginText}>Save Card</Text>
         </TouchableOpacity>
       </View>
