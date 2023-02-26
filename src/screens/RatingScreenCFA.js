@@ -53,7 +53,7 @@ const RatingScreenCFA = () => {
       <Image source={ellipsepink} style={{position: 'absolute',left: 2,top: 1,}} />
       <Image source={ellipsegrey} style={{position: 'absolute',right:-60, bottom:-420}}/>
       <Image style={styles.cfaimage}
-      source={cfa} />
+      source={cfa}/>
 
         <Text style={styles.textStyle}>
           How was your experience with us
@@ -76,13 +76,14 @@ const RatingScreenCFA = () => {
             Rate
           </Text>
         </TouchableOpacity>
+        
         <TouchableOpacity 
             onPress={() => navigation.navigate('ChickfilAPage')}>
              <Image source={leftarrow} 
                 style={{ width: 52, 
                 height: 50,
                 top:120,
-                alignSelf:'flex-start'}} />
+                alignSelf:'flex-start'}}/>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
