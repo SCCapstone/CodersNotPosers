@@ -28,6 +28,7 @@ import DriverSignInScreen from './src/screens/DriverSignInScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DriverOrderScreen from './src/screens/DriversOrderScreen';
+import RatingScreenCFA from './src/sccreens/DriversOrdersScreen';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -73,6 +74,7 @@ const App = () => {
                         <Stack.Screen name="DriverSignUp" component={DriverSignUpScreen}/>
                         <Stack.Screen name="DriverSignInScreen" component={DriverSignInScreen}/>
                         <Stack.Screen name="DriversOrderScreen" component={DriverOrderScreen}/>
+                        <Stack.Screen name="RatingScreenCFA" component={RatingScreenCFA}/>
                         {/* //<Stack.Screen name="Payment" component={PaymentScreen}/> */}
                         </Stack.Navigator>
             }</NavigationContainer> 
@@ -98,6 +100,7 @@ const App = () => {
                         <Stack.Screen name="CampusSelect" component={CampusSideSelectionScreen}/>
                         <Stack.Screen name="RussellHouse" component={RussellHouseRestaurantScreen}/>
                         <Stack.Screen name="CFA" component={ChickfilAPage}/>
+                        <Stack.Screen name="RatingScreenCFA" component={RatingScreenCFA}/>
                         <Stack.Screen name="EastCampus" component={EastCampus}/>
                         <Stack.Screen name="WestCampus" component={WestCampus}/>
                         <Stack.Screen name="NorthCampus" component={NorthCampus}/>
