@@ -38,6 +38,7 @@ const pressFoodItem = () => {
                     bottom:16}}/>
                 </TouchableOpacity>
                 <TouchableOpacity
+                    //navigate to details about chicken sandwich
                     onPress = {() => navigation.navigate("FoodDetails")}
                     style = {styles.leftFoodButtons}>
                     <Text style = {styles.buttonText}> "1. Chicken Sandwich" </Text>
