@@ -1,13 +1,16 @@
 import React, { useContext, useState } from 'react';
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
-Image,Text, Alert} from 'react-native';
+import {SafeAreaView,ScrollView,StatusBar,StyleSheet,View,TextInput,TouchableOpacity,
+Image,Text, Alert, Keyboard} from 'react-native';
 import auth from '@react-native-firebase/auth';
+import {getdatabase, ref, set} from "firebase/database";
+import { firebase } from '@react-native-firebase/firestore';
 
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+import DrawerNavigation from '../../navigation/DrawerNavigation';
+
 
 const SignUpScreen =  ({navigation}) => {
   const [email, setEmail] = useState("");
@@ -17,6 +20,26 @@ const SignUpScreen =  ({navigation}) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 //const {register}  = useContext(AuthContext);
+  const todoRef = firebase.firestore().collection('newData');
+  const addData= () => {
+    const data = {
+    Useremail: email,
+    FirstName: fname,
+    LastName: lname,
+    PhoneNumber: phone,
+    Password: password,
+    };
+    todoRef.add(data).then(() => {setEmail('');
+                                  setFirstName('');
+                                  setLastName('');
+                                  setPhoneNumber('');
+                                  setPassword('');
+                                Keyboard.dismiss();})
+                                .catch ((error) => {
+                                  alert(error);
+                                  console.log(error);                                
+                                })
+}
   const register = () => {
     if(!email) {
       Alert.alert("Please enter email");
@@ -30,14 +53,15 @@ const SignUpScreen =  ({navigation}) => {
       Alert.alert("Passwords does not match");
       return
     }
-    registerUser(email,password)
+    registerUser(email,password);
+    //addData();
   }
 
   const registerUser = async (email,password) => {
     try {
         let response = await auth().createUserWithEmailAndPassword(email,password)
         if(response && response.user) {
-          navigation.navigate(CampusSideSelectionScreen)
+          navigation.navigate(DrawerNavigation)
         }
     }
     catch(e) {
@@ -122,7 +146,7 @@ const SignUpScreen =  ({navigation}) => {
           style={styles.signupBtn}
           onPress= {register}>
           <Text style={styles.forgotAndSignUpText}>Sign Up</Text>
-           testId="signupBtn"
+           
       </TouchableOpacity>
 
       <TouchableOpacity onPress={()=>navigation.pop()}>
@@ -131,7 +155,7 @@ const SignUpScreen =  ({navigation}) => {
             height: 50,
             top:-10,
             left:10}} />
-            testId="arrowBtn"
+           
       </TouchableOpacity>
 
       <Image source={ellipsegrey} 
