@@ -16,6 +16,7 @@ import ChickfilAPage from "../src/screens/ChickfilAPage";
 import RatingScreenCFA from "../src/screens/RatingScreenCFA";
 import DriverSignUpScreen from "../src/screens/DriverSignUpScreen";
 import DriverSignInScreen from "../src/screens/DriverSignInScreen";
+import FoodDetail from "../src/screens/FoodDetail";
 
 const Auth = createNativeStackNavigator();
 
@@ -119,6 +120,13 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "DriverSignUpScreen"
                 component = {DriverSignUpScreen}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "FoodDetail"
+                component = {FoodDetail}
                 options = {{
                     headerShown: false
                 }}
