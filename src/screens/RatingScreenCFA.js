@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import {SafeAreaView,StyleSheet,View,Text,Image,TouchableOpacity,} from 'react-native';
+import {SafeAreaView,StyleSheet,View,Text,Image,TouchableOpacity,Alert} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import cfa from './../../images/cfa.png';
 import leftarrow from './../../images/leftarrow.png';
 import ChickfilAPage from './ChickfilAPage';
 
-const RatingScreenCFA = () => {
+const RatingScreenCFA = ({navigation}) => {
   // To set the default Star Selected
   const [defaultRating, setDefaultRating] = useState(2);
   // To set the max number of Stars
@@ -68,7 +68,7 @@ const RatingScreenCFA = () => {
         <TouchableOpacity
           activeOpacity={0.7}
           style={styles.buttonStyle}
-          onPress={() => alert("Thank you for your rating.")}>
+          onPress={() => Alert.alert("Thank you for your rating.")}>
           {/* Clicking on button will show the rating as an alert */}
           <Text style={styles.buttonTextStyle}>
             Rate
@@ -76,7 +76,7 @@ const RatingScreenCFA = () => {
         </TouchableOpacity>
 
         <TouchableOpacity 
-            onPress={() => navigation.navigate('ChickfilAPage')}>
+            onPress={() => navigation.navigate(ChickfilAPage)}>
              <Image source={leftarrow} 
                 style={{ width: 52, 
                 height: 50,

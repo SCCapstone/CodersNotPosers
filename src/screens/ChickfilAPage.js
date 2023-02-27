@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
+import {SafeAreaView,StyleSheet,View,TouchableOpacity,
     Image,Text, Button} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
@@ -9,11 +9,10 @@ import myJSON from './../../restaurants.json';
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
 import leftarrow from './../../images/leftarrow.png';
 import RatingScreenCFA from './RatingScreenCFA';
-import HomeHeader from './HomeHeader';
 
 
 
-const ChickfilAPage = (navigation) => {
+const ChickfilAPage = ({navigation}) => {
 
     const pressFoodItem = () => {
         //move to specified restaurant screen
@@ -70,14 +69,13 @@ const ChickfilAPage = (navigation) => {
     
                     <TouchableOpacity
                         style = {styles.ratebtn}
-                        onPress={() => navigation.navigate('RatingScreenCFA')}>
+                        onPress={() => navigation.navigate(RatingScreenCFA)}>
                         <Text style = {styles.rbtnText}> Rate us </Text>
                     </TouchableOpacity>
                     
-                    
-    
+
                     <TouchableOpacity 
-                        onPress={() => navigation.navigate('RussellHouse')}>
+                        onPress={() => navigation.navigate(RussellHouseRestaurantScreen)}>
                         <Image source={leftarrow} 
                         style={{ width: 50, 
                         height: 50,
