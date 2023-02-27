@@ -102,11 +102,7 @@ top: -55}} />
    
         <TouchableOpacity 
           style={styles.saveCardButton}
-<<<<<<< HEAD
           onPress={() => {Alert.alert("Card was saved"); navigtion.navigate("AddressScreen")}}>
-=======
-          onPress={saveCard}>
->>>>>>> origin/payment-work
           <Text style={styles.loginText}>Save Card</Text>
         </TouchableOpacity>
       </View>
