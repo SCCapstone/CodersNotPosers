@@ -17,7 +17,7 @@ const DriverSignUpScreen =  ({navigation}) => {
     const [passwordDriver, setPasswordDriver] = useState("");
     const [confirmPasswordDriver, setConfirmPasswordDriver] = useState("");
     
-    const register = () => {
+    const apply = () => {
         if(!emailDriver) {
           Alert.alert("Please enter email");
           return
@@ -30,10 +30,10 @@ const DriverSignUpScreen =  ({navigation}) => {
           Alert.alert("Passwords does not match");
           return
         }
-        registerDriver(emailDriver,passwordDriver, phoneDriver)
+        registerDriver(emailDriver,passwordDriver)
     }
     
-    const registerDriver = async (emailDriver,passwordDriver, phoneDriver) => {
+    const registerDriver = async (emailDriver,passwordDriver) => {
     try {
         let response = await auth().createDriverWithEmailAndPassword(emailDriver,passwordDriver);
         //store phone number of driver here
@@ -55,7 +55,7 @@ const DriverSignUpScreen =  ({navigation}) => {
         <View style={styles.container}>
             <Image source={ellipsepink} 
                 style={{position: 'absolute',
-                left: 2,
+                left: -210,
                 top: -55}} />
         </View>
 
@@ -121,18 +121,13 @@ const DriverSignUpScreen =  ({navigation}) => {
                 onChangeText={(text) => setConfirmPasswordDriver(text)}/>
         </View>
 
-        <View>
-            <TouchableOpacity 
-                onPress={onPressLicenseUpload}
-                style = {styles.uploadDriversLicenseButton}>
-            </TouchableOpacity>
-        </View>
+       
 
         <View>
             <TouchableOpacity
-                onPress = {register}
+                onPress = {apply}
                 style={styles.signupBtn}>
-                <Text style={styles.forgotAndSignUpText}>Sign Up</Text>
+                <Text style={styles.forgotAndSignUpText}>Submit Application</Text>
             </TouchableOpacity>
 
         <TouchableOpacity onPress={()=>navigation.naviagte("DriverSignInScreen")}>
@@ -140,12 +135,12 @@ const DriverSignUpScreen =  ({navigation}) => {
                     style={{ width: 50, 
                     height: 50,
                     top:-10,
-                    left:10}} />
+                    left:-180}} />
         </TouchableOpacity>
 
         <Image source={ellipsegrey} 
                 style={{position: 'absolute',
-                right:0,
+                right:-200,
                 bottom:0}}/>
         </View>
 
@@ -259,8 +254,8 @@ const styles = StyleSheet.create({
 
     signupBtn:{
         position: "absolute",
-        right:145,
-        top:-300, 
+        right:5,
+        top:-30, 
         width:115,
         backgroundColor:"#884E7D",
         borderRadius:25,

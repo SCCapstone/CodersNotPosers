@@ -11,6 +11,9 @@ const onPressLogin = ({navigation}) => {
   alert('You are signed in to your account')
   navigation.navigate('DriversOrderScreen')
 };
+const onPressApplication = ({navigation}) => {
+    navigation.navigate('DriverSignUpScreen')
+}
 const onPressForgotPassword = () => {
 // Do something about forgot password operation
 };
@@ -22,9 +25,10 @@ return (
     <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
 
         <View style={styles.container}>
+            <Text> Driver Sign In </Text>
             <Image source={ellipsepink} 
                 style={{position: 'absolute',
-                left: 0,
+                left: 30,
                 top: 1,}} />
             <Image source={logo} 
                 style={{ width: 120, height: 120 }} />
@@ -65,10 +69,11 @@ return (
                 <Text style={styles.loginText}>Sign In</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                onPress = {() => navigation.navigate('SignUp')}
-                style={styles.signupBtn}>
-                <Text style={styles.forgotAndSignUpText}>Sign Up</Text>
+                onPress = {onPressApplication}
+                style={styles.loginBtn}>
+                <Text style={styles.loginText}>Apply to be a Driver?</Text>
             </TouchableOpacity>
+
         </View>
     </SafeAreaView>
 );

@@ -42,7 +42,7 @@ export const AuthProvider = ({children}) => {
                     console.log(e);
                 }
             },
-            registerDriver: async(emailDriver,passwordDriver, phoneDriver) => {
+            registerDriver: async(emailDriver,passwordDriver) => {
                 try {
                     await auth().createDriverWithEmailAndPassword(emailDriver,passwordDriver);
                     //figure out how to store phone number

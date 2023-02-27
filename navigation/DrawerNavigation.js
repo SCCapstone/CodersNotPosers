@@ -55,7 +55,7 @@ export default function DrawerNavigation() {
         }}
       />
       <Drawer.Screen
-        name="Driver Sign In"
+        name="DriverSignInScreen"
         component={DriverSignInScreen}
         options={{
           title: 'Driver SignIn',
