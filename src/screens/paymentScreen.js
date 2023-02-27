@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity} from 'react-native';
+import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity, Alert} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
@@ -62,7 +62,7 @@ top: -55}} />
    
         <TouchableOpacity 
           style={styles.saveCardButton}
-          onPress={() => alert("Card was saved")}>
+          onPress={() => Alert.alert("Card was saved")}>
           <Text style={styles.loginText}>Save Card</Text>
         </TouchableOpacity>
       </View>

@@ -9,6 +9,7 @@ import { Header } from "react-navigation-stack";
 import {SwipeListView} from 'react-native-swipe-list-view';
 import { render } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod";
 import { Colors } from "react-native/Libraries/NewAppScreen";
+import { LinearGradient } from "react-native-svg";
 
 const MyCart = ({navigation}) => {
     const [myCartList, setMyCartList] = React.useState(data.myCart)
@@ -18,6 +19,16 @@ const MyCart = ({navigation}) => {
     function updateQuantityHandler(newQty, id) {
         const newMyCartList = myCartList.map(cl => (cl.id === id ? {...cl, qty: newQty } : cl 
         ))
+
+        setMyCartList(newMyCartList)
+    }
+
+    function removeMyCartHandler(id){
+        let newMyCartList = [...myCartList]
+
+        const index = newMyCartList.findIndex(cart => cart.id === id )
+
+        newMyCartList.splice(index, 1)
 
         setMyCartList(newMyCartList)
     }
@@ -133,6 +144,53 @@ const MyCart = ({navigation}) => {
         >
             {renderHeader()}
             {renderCartList()}
+
+            <LinearGradient 
+                start={{ x:0, y:0 }}
+                end = {{ x:0, y:1}}
+                color={{ }}
+                style = {{
+                    position:'absolute',
+                    top: -15,
+                    left: 0,
+                    right: 0,
+                    height: Platform.OS === 'android' ? 200 : 50,
+                    borderTopLeftRadius: 15,
+                    borderTopRightRadius: 15
+                }}
+            />
+            <View 
+                style = {{
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20
+                }}
+            >
+                //Subtotal
+                <View
+                    style = {{flexDirection: 'row'}}
+                >
+                    <Text> Subtotal </Text>
+                    <Text> 7.99 </Text>
+                </View>
+                //Line
+                //linedivider
+                //Total
+                <View
+                    style = {{flexDirection: 'row'}}
+                >
+                    <Text> Total </Text>
+                    <Text> 7.99  </Text>
+                </View>
+                //Button
+                <TextButton
+                   buttonContainerStyle= {{
+                        height: 60,
+                        backgroundColor: "#00000"
+                   }} 
+                   label="Place your Order"
+                   onPress={()=>navigation.navigate("paymentScreen")}
+                />
+            </View>
         </View>
     )
 }
