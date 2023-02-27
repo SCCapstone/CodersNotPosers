@@ -31,6 +31,32 @@ export const AuthProvider = ({children}) => {
                     console.log(e);
                 }
             },   
+        }}
+        drivers = {{
+            driver,
+            setDriver,
+            loginDriver: async (emailDriver,passwordDriver) => {
+                try {
+                    await auth().signInWithEmailAndPasswordDriver(emailDriver,passwordDriver);
+                } catch(e) {
+                    console.log(e);
+                }
+            },
+            registerDriver: async(emailDriver,passwordDriver, phoneDriver) => {
+                try {
+                    await auth().createDriverWithEmailAndPassword(emailDriver,passwordDriver);
+                    //figure out how to store phone number
+                } catch(e) {
+                    console.log(e);
+                }
+            },
+            logoutDriver: async() => {
+                try {
+                    await auth().signOut();
+                } catch(e) {
+                    console.log(e);
+                }
+            }
         }}>
         {children}
     </AuthContext.Provider>
