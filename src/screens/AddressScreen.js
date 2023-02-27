@@ -1,21 +1,20 @@
 import React, {useState} from 'react';
-import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity, Alert} from 'react-native';
-import logo from './../../images/logo.png';
+import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import auth from '@react-native-firebase/auth';
-import firebase from '../config';
+// import firebase from '../config';
 import firebase from 'firebase';
 import { Keyboard } from 'react-native';
 
 
-export default function PaymentScreen() {
-  const userCard = firebase.firestore().collection('New Card');
-  const [name, setName] = useState("");
-  const [cardNumber, setCardNumber] = useState("");
-  const [expDate, setExpDate] = useState("");
-  const [cvc, setCVC] = useState("");
+export default function AddressScreen() {
+  const address = firebase.firestore().collection('New Address');
+  const [street, setStreet] = useState("");
+  const [town, setTown] = useState("");
+  const [state, setState] = useState("");
+  const [zipCode, setZipCode] = useState("");
   // const registerCard = async (name,cardNumber, expDate, cvc) => {
   //   try {
   //       let response = await auth().createUserWithEmailAndPassword(email,password)
@@ -27,23 +26,22 @@ export default function PaymentScreen() {
   //     console.error(e.message)
   //   }
   // }
-  const saveCard = () => {
-    const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-    const usersCard = {
-     name: name,
-     cardNumber: cardNumber,
-     expDate: expDate,
-     cvc: cvc,
-     orderedAt: timestamp
+  const saveAddress = () => {
+    //const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+    const usersAddress = {
+     street: street,
+     town: town,
+     state: state,
+     zipCode: zipCode,
     };
-    userCard
-      .add(usersCard)
+    address
+      .add(usersAddress)
       .then(() => {
     // userCard.set(usersCard);
-    setName('');
-    setCardNumber('');
-    setExpDate('');
-    setCVC('');
+    setStreet('');
+    setTown('');
+    setState('');
+    setZipCode('');
     Keyboard.dismiss();
   })
   .catch((error) => {
@@ -66,48 +64,44 @@ top: -55}} />
         <View style={styles.CardHolderName}>
           <TextInput
             style={styles.inputText}
-            placeholder="Cardholder Name"
+            placeholder="street"
             placeholderTextColor="#884e7d"
-            onChangeText={(name) => setName(name)}
-          />
-        </View>
-   
-        <View style={styles.CardNumber}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="Card Number"
-            placeholderTextColor="#884e7d"
-            onChangeText={(cardNumber) => setCardNumber(cardNumber)}
+            onChangeText={(street) => setStreet(street)}
           />
         </View>
 
-        <View style={styles.CardExpiration}>
+        <View style={styles.CardNumber}>
           <TextInput
             style={styles.inputText}
-            placeholder="MM/YYYY"
+            placeholder="Town"
             placeholderTextColor="#884e7d"
-            onChangeText={(expDate) => setExpDate(expDate)}
+            onChangeText={(town) => setTown(town)}
+          />
+        </View>
+
+        <View style={styles.CardNumber}>
+          <TextInput
+            style={styles.inputText}
+            placeholder="State"
+            placeholderTextColor="#884e7d"
+            onChangeText={(state) => setState(state)}
           />
         </View>
 
         <View style={styles.CVCcolor}>
           <TextInput
             style={styles.inputText}
-            placeholder="CVC"
+            placeholder="ZIP"
             placeholderTextColor="#884e7d"
             secureTextEntry={true}
-            onChangeText={(cvc) => setCVC(cvc)}
+            onChangeText={(zipCode) => setZipCode(zipCode)}
           />
         </View>
    
         <TouchableOpacity 
           style={styles.saveCardButton}
-<<<<<<< HEAD
-          onPress={() => {Alert.alert("Card was saved"); navigtion.navigate("AddressScreen")}}>
-=======
-          onPress={saveCard}>
->>>>>>> origin/payment-work
-          <Text style={styles.loginText}>Save Card</Text>
+          onPress={saveAddress}>
+          <Text style={styles.loginText}>Save Address</Text>
         </TouchableOpacity>
       </View>
       </SafeAreaView>
