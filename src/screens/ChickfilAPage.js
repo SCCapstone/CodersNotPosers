@@ -9,6 +9,7 @@ import myJSON from './../../restaurants.json';
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
 import leftarrow from './../../images/leftarrow.png';
 import RatingScreenCFA from './RatingScreenCFA';
+import FoodDetail from './FoodDetail';
 
 
 
@@ -27,32 +28,37 @@ const ChickfilAPage = ({navigation}) => {
                         top: -45,}}>
                     </Image>
                     <TouchableOpacity
-                        onPress = {pressFoodItem}
+                        onPress = {() => navigation.navigate(FoodDetail)}
                         style = {styles.leftFoodButtons}>
                         <Text style = {styles.buttonText}> "1. Chicken Sandwich" </Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress = {pressFoodItem}
+                       
+                       onPress = {() => navigation.navigate(FoodDetails)}
                         style = {styles.leftFoodButtons}>
                         <Text style = {styles.buttonText}> "2. Spicy Chicken Sandwich" </Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress = {pressFoodItem}
+                        
+                        onPress = {() => navigation.navigate(FoodDetails)}
                         style = {styles.leftFoodButtons}>
                         <Text style = {styles.buttonText}> "3. Chicken Nuggets " </Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress = {pressFoodItem}
+                        
+                        onPress = {() => navigation.navigate(FoodDetails)}
                         style = {styles.leftFoodButtons}>
                         <Text style = {styles.buttonText}> "4. Soda" </Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress = {pressFoodItem}
+                        
+                        onPress = {() => navigation.navigate(FoodDetails)}
                         style = {styles.leftFoodButtons}>
                         <Text style = {styles.buttonText}> "5. Sides" </Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress = {pressFoodItem}
+                        
+                        onPress = {() => navigation.navigate(FoodDetails)}
                         style = {styles.leftFoodButtons}>
                         <Text style = {styles.buttonText}> "6. Desserts" </Text>
                     </TouchableOpacity>

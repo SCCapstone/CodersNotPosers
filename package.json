@@ -26,6 +26,7 @@
     "@rneui/themed": "^4.0.0-rc.7",
     "@stripe/stripe-react-native": "^0.21.0",
     "firebase": "^9.14.0",
+    "fix-path": "^4.0.0",
     "react": "18.1.0",
     "react-native": "0.70.5",
     "react-native-elements": "^3.4.3",
