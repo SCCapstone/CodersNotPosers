@@ -14,6 +14,11 @@ import NorthCampus from "../src/screens/NorthCampus";
 import SignUpScreen from "../src/screens/SignUpScreen";
 import ChickfilAPage from "../src/screens/ChickfilAPage";
 import RatingScreenCFA from "../src/screens/RatingScreenCFA";
+//import MyCart from "../src/screens/MyCart";
+//import FoodDetail from "../src/screens/FoodDetail";
+//import PaymentScreen from "../src/screens/PaymentScreen";
+//import AddressScreen from "../src/screens/AddressScreen";
+
 
 const Auth = createNativeStackNavigator();
 

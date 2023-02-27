@@ -188,7 +188,7 @@ const MyCart = ({navigation}) => {
                         backgroundColor: "#00000"
                    }} 
                    label="Place your Order"
-                   onPress={()=>navigation.navigate("paymentScreen")}
+                   onPress={()=>navigation.navigate("PaymentScreen")}
                 />
             </View>
         </View>
