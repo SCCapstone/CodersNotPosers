@@ -5,9 +5,9 @@ import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import auth from '@react-native-firebase/auth';
-import firebase from '../config';
-import firebase from 'firebase';
+import firebase from '@react-native-firebase/app';
 import { Keyboard } from 'react-native';
+import AddressScreen from './AddressScreen';
 
 
 export default function PaymentScreen() {

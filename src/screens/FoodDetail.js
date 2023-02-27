@@ -7,54 +7,60 @@ import {
     SafeAreaView,
     StatusBar,
     StyleSheet,
-    TextuseColorScheme,
+    useColorScheme,
     TextInput,
     TouchableOpacity,
     Button
 } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { SafeAreaView } from 'react-navigation';
+
 import leftarrow from './../../images/leftarrow.png';
+import MyCart from './MyCart';
+import paymentScreen from './paymentScreen';
 
 const FoodDetail = ({navigation}) => {
+    const isDarkMode = useColorScheme() === 'dark';
+    
     return (
         <SafeAreaView style = {styles.container}>
-        <View
-            style={{
-                flex: 1, 
-                justifyContent: 'center',
-                backgroundColor:'#B6B7E5'
-            }}
-        >
-            {/*Header*/}
-            {/*Body*/} 
-            {/*Footer*/}
-            <TouchableOpacity onPress={()=>navigation.pop()}>
+            <View
+                style={{
+                    flex: 1, 
+                    justifyContent: 'center',
+                    backgroundColor:'#B6B7E5'
+                }}
+            >
+                {/*Header*/}
+                {/*Body*/} 
+                {/*Footer*/}
+                <TouchableOpacity onPress={()=>navigation.pop()}>
                     <Image source={leftarrow} 
                     style={{ width: 50, 
                     height: 50,
                     top:60,
                     left:-170}} />
-            </TouchableOpacity>
+                </TouchableOpacity>
 
-            <TextButton
-               buttonContainerStyle = {{
-                    flex: 1,
-                    flexDirection: 'row',
-                    height: 60,
-                    marginLeft: SIZES.raidus,
-                    marginLeft: SIZES.raidus,
-                    marginLeft: SIZES.raidus,
-                    backgroundColor: '#884E7D'
-               }}
-               label = "Buy Now"
-               label2 = "Meal Swipe"  
-               onPress = {() => navigation.navigate("MyCart")}
-            />
-        </View>
+                <TouchableOpacity
+                   style = {{
+                        flex: 1,
+                        flexDirection: 'row',
+                        height: 60,
+                        backgroundColor: '#884E7D',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        paddingHorizontal: 20
+                   }}
+                   //onPress = {() => navigation.navigate('')}
+                >
+                    <Text style = {{color: 'white'}}>Buy Now</Text>
+                    <Text style = {{color: 'white'}}>Meal Swipe</Text>
+                </TouchableOpacity>
+            </View>
         </SafeAreaView>
     )
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -84,7 +90,6 @@ const styles = StyleSheet.create({
         fontSize:16,
         backgroundColor:"White"
     }
-})
-
+});
 
 export default FoodDetail;

@@ -10,6 +10,7 @@ import {SwipeListView} from 'react-native-swipe-list-view';
 import { render } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { LinearGradient } from "react-native-svg";
+import PaymentScreen from './paymentScreen';
 
 const MyCart = ({navigation}) => {
     const [myCartList, setMyCartList] = React.useState(data.myCart)
