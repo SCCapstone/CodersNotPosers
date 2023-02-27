@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
-Image,Text} from 'react-native';
+Image,Text,Alert} from 'react-native';
+
+import auth from '@react-native-firebase/auth';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
@@ -8,27 +10,43 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 import { CardStyleInterpolators } from 'react-navigation-stack';
 
 const DriverSignUpScreen =  ({navigation}) => {
-    const [state,setState] = useState({
-        fnameDriver: '',
-        lnameDriver: '',
-        emailDriver: '',
-        phoneDriver: '',
-        passwordDriver: '',
-        confirmPasswordDriver: ''
-    })
-
-    const onPressSignUp = () => {
-        if (passwordDriver == confirmPasswordDriver) {
-            // go to driver homepage
-        } else {
-            // text pop up that says passwords do not match, try again
-            <View style = {styles.container}>
-                <Text style = {styles.passwordsDontMatchTxt}>
-                    Your passwords do not match. Please enter your information and try again.
-                </Text>
-            </View>
+    const [fnameDriver, setFirstNameDriver] = useState("");
+    const [lnameDriver, setLastNameDriver] = useState("");
+    const [emailDriver, setEmailDriver] = useState("");
+    const [phoneDriver, setPhoneDriver] = useState("");
+    const [passwordDriver, setPasswordDriver] = useState("");
+    const [confirmPasswordDriver, setConfirmPasswordDriver] = useState("");
+    
+    const register = () => {
+        if(!emailDriver) {
+          Alert.alert("Please enter email");
+          return
+        }
+        else if (!passwordDriver) {
+          Alert.alert("Please enter password");
+          return
+        }
+        else if (passwordDriver != confirmPasswordDriver) {
+          Alert.alert("Passwords does not match");
+          return
+        }
+        registerDriver(emailDriver,passwordDriver, phoneDriver)
+    }
+    
+    const registerDriver = async (emailDriver,passwordDriver, phoneDriver) => {
+    try {
+        let response = await auth().createDriverWithEmailAndPassword(emailDriver,passwordDriver);
+        //store phone number of driver here
+        if(response && response.user) {
+            navigation.navigate("DriverSignInScreen")
         }
     }
+    catch(e) {
+        console.error(e.message);
+    }
+    }
+
+    
 
     return (
 
@@ -58,7 +76,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 style={styles.inputText}
                 placeholder="First Name"
                 placeholderTextColor="#ccc"
-                onChangeText={text => setState({fnameDriver:text})}/>
+                onChangeText={text => setFirstNameDriver(text)}/>
         </View>
 
         <View style={styles.lView}>
@@ -66,7 +84,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 style={styles.inputText}
                 placeholder="Last Name"
                 placeholderTextColor="#ccc"
-                onChangeText={text => setState({lnameDriver:text})}/>
+                onChangeText={(text) => setLastNameDriver(text)}/>
         </View>
 
         <View style= {styles.phoneView}>
@@ -74,7 +92,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 style={styles.inputText}
                 placeholder="Phone"
                 placeholderTextColor="#ccc"
-                onChangeText={text => setState({phoneDriver:text})}/>
+                onChangeText={(text) => setPhoneDriver(text)}/>
         </View>
 
         <View style= {styles.emailView}>
@@ -82,7 +100,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 style={styles.inputText}
                 placeholder="Email"
                 placeholderTextColor="#ccc"
-                onChangeText={text => setState({emailDriver:text})}/>
+                onChangeText={(text) => setEmailDriver(text)}/>
         </View>
 
         <View style= {styles.passwordView}>
@@ -91,7 +109,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 secureTextEntry
                 placeholder="Password"
                 placeholderTextColor="#ccc"
-                onChangeText={text => setState({passwordDriver:text})}/>
+                onChangeText={(text) => setPasswordDriver(text)}/>
         </View>
 
         <View style= {styles.confirmPasswordView}>
@@ -100,7 +118,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 secureTextEntry
                 placeholder="Confirm Password"
                 placeholderTextColor="#ccc"
-                onChangeText={text => setState({confirmPasswordDriver:text})}/>
+                onChangeText={(text) => setConfirmPasswordDriver(text)}/>
         </View>
 
         <View>
@@ -112,12 +130,12 @@ const DriverSignUpScreen =  ({navigation}) => {
 
         <View>
             <TouchableOpacity
-                onPress = {onPressSignUp}
+                onPress = {register}
                 style={styles.signupBtn}>
                 <Text style={styles.forgotAndSignUpText}>Sign Up</Text>
             </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>navigation.naviagte('SignInScreen')}>
+        <TouchableOpacity onPress={()=>navigation.naviagte("DriverSignInScreen")}>
             <Image source={leftarrow} 
                     style={{ width: 50, 
                     height: 50,
