@@ -4,12 +4,41 @@ import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
+import auth from '@react-native-firebase/auth';
+import firebase from '../config';
+import firebase from 'firebase';
+
 
 export default function PaymentScreen() {
   const [name, setName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [expDate, setExpDate] = useState("");
   const [cvc, setCVC] = useState("");
+  // const registerCard = async (name,cardNumber, expDate, cvc) => {
+  //   try {
+  //       let response = await auth().createUserWithEmailAndPassword(email,password)
+  //       if(response && response.user) {
+  //         navigation.navigate(CampusSideSelectionScreen)
+  //       }
+  //   }
+  //   catch(e) {
+  //     console.error(e.message)
+  //   }
+  // }
+  const saveCard = () => {
+    const userCard = firebase.database().ref('User Card').push();
+    const usersCard = {
+      name,
+      cardNumber,
+      expDate,
+      cvc
+    };
+    userRef.set(usersCard);
+    setName('');
+    setCardNumber('');
+    setExpDate('');
+    setCVC('');
+  };
   return (
 
 <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
