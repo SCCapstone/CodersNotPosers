@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity} from 'react-native';
-import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import auth from '@react-native-firebase/auth';
-import firebase from '../config';
+// import firebase from '../config';
 import firebase from 'firebase';
 import { Keyboard } from 'react-native';
 
