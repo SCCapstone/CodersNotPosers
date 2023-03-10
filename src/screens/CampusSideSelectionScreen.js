@@ -1,108 +1,125 @@
-import React, { useState } from 'react'; 
+import React, { useState , useEffect} from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
-    Image,Text, Pressable} from 'react-native';
+    Image,Text, FlatList} from 'react-native';
+
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
+
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
+import NorthCampus from './NorthCampus';
+import FoodTrucks from './FoodTrucks';
+import EastCampus from './EastCampus';
+import WestCampus from './WestCampus';
+import SouthCampus from './SouthCampus';
 
-
+const buttonData = require('./../../data/CampusSelection.json') 
 
 const CampusSideSelectionScreen = ({navigation}) => {
 
+    const getimageSource = (id) => {
+        switch (id) {
+          case 1:
+            return require('./../../images/russellHouse.png');
+          case 2:
+            return require('./../../images/counselorsCafe.png');
+          case 3:
+            return require('./../../images/cafeVerde.png');
+          case 4:
+            return require('./../../images/colloquimCafe.png');
+          case 5:
+            return require('./../../images/starbucks.png');
+          case 6:
+            return require('./../../images/tcoop.png');
+          default:
+            return null;
+        }
+      };
+      const handleButtonClick = (item) => {
+        switch(item.id) {
+            case 1:
+                return navigation.navigate(RussellHouseRestaurantScreen);
+            case 2: 
+                return navigation.navigate(NorthCampus);
+            case 3:
+                return navigation.navigate(SouthCampus);
+            case 4: 
+                return navigation.navigate(EastCampus);
+            case 5: 
+                return navigation.navigate(WestCampus);
+            case 6:
+                return navigation.navigate(FoodTrucks);
+        }
+      };
+      const renderItem = ({item}) => {
+        const imageSource = getimageSource(item.id);
     
-    return (
-            <View style = {styles.container}>
-                <Image source={ellipsepink} 
+        return (
+            <TouchableOpacity
+              onPress={() => handleButtonClick(item)}
+              style={{flex: 1, margin: 5}}>
+              <View style={styles.item}>
+                <Image source={imageSource} style={styles.image} />
+                <Text style={styles.text}>{item.name}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        };
+      
+        return (
+          <View style= {styles.container}>
+            <Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: -40,
+                    left: -30,
                     top: -45,
                     scaleX:-1}}>
                 </Image>
-                <View style = {styles.header}>
                 <HomeHeader navigation = {navigation}/>
-                </View> 
                 
-
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
-                    right:-60,
+                    right:-40,
                     bottom:0}}>
                 </Image>
+            <FlatList
+              data={buttonData}
+              renderItem={renderItem}
+              keyExtractor={(item) => item.id}
+              contentContainerStyle={styles.list}
+              numColumns = {2}
+            />
+          </View>
+        );
+      };
+    const styles = StyleSheet.create({
+        container: {
+          backgroundColor: '#B6B7E5',
+        },
+        item: {
+          marginTop:33,
+          alignItems: 'center',
+          padding: 10,
+          borderRadius: 10,
+        },
+        text: {
+          fontSize: 20,
+          marginTop:10,
+          fontWeight: 'bold',
+        },
+        selectedIcon: {
+          width: 15,
+          height: 15,
+        },
+        list: {
+          padding: 10,
+        },
+        image: {
+            width: 110,
+            height: 110,
+            borderRadius:15,
 
-             
-                <TouchableOpacity
-                    onPress = {() => navigation.navigate('RussellHouseRestaurantScreen')}
-                    style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> Russell House </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {() => navigation.navigate('NorthCampus')}
-                    style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> North Campus </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {() => navigation.navigate('EastCampus')}
-                    style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> East Campus </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {() => navigation.navigate('SouthCampus')}
-                    style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> South Campus </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {() => navigation.navigate('WestCampus')}
-                    style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> West Campus </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {() =>navigation.navigate('FoodTrucks')}
-                    style = {styles.campusSelectionButtons}>
-                    <Text style = {styles.buttonText}> Food Trucks </Text>
-                </TouchableOpacity> 
-                
-            </View>
-
-       
-    )
-
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#B6B7E5',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-
-    text:{
-        height:50,
-        color:"black"
-    },
-
-    campusSelectionButtons:{
-        width:350,
-        backgroundColor:"#884E7D",
-        borderRadius:10,
-        borderColor:"BLACK",
-        height:75,
-        alignItems:"center",
-        justifyContent:"center",
-        marginTop:5,
-        marginBottom:5,
-    },
-
-    buttonText:{
-        color:"white",
-        fontSize:32,
-    },
-
-    header:{
-        top:-63 
-    },
-
-})
+        }
+      });
 
 export default CampusSideSelectionScreen;
+    

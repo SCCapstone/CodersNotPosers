@@ -5,7 +5,7 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import ChickfilAPage from './ChickfilAPage';
 import leftarrow from './../../images/leftarrow.png';
-import CFALogo from './../../images/CFALogo.png';
+//import CFALogo from './../../images/CFALogo.png';
 
 
 const RussellHouseRestaurantScreen = ({navigation}) => {

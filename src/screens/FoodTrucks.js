@@ -3,7 +3,7 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
     Image,Text, Button} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import CFALogo from './../../images/CFALogo.png';
+//import CFALogo from './../../images/CFALogo.png';
 import leftarrow from './../../images/leftarrow.png';
 import ChickfilAPage from './ChickfilAPage';
 //import restaurantJSON from './../../restaurants.json';

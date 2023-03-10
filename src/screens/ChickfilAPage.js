@@ -4,7 +4,7 @@ import {SafeAreaView,StyleSheet,View,TouchableOpacity,
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ratingstar from './../../images/ratingstar.png';
-import CFALogo from './../../images/CFALogo.png';
+//import CFALogo from './../../images/CFALogo.png';
 import myJSON from './../../restaurants.json';
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
 import leftarrow from './../../images/leftarrow.png';

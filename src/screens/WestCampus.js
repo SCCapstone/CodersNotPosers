@@ -4,7 +4,7 @@ import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,Tex
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import leftarrow from './../../images/leftarrow.png';
-import CFALogo from './../../images/CFALogo.png';
+//import CFALogo from './../../images/CFALogo.png';
 import ChickfilAPage from './ChickfilAPage';
 //import restaurantJSON from './../../restaurants.json';
 
