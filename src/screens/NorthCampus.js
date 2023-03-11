@@ -1,130 +1,123 @@
-import React, { useState } from 'react'; 
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
-    Image,Text, Button} from 'react-native';
+import React, { useState , useEffect} from 'react'; 
+import {StyleSheet,View,TouchableOpacity,
+    Image,Text, FlatList} from 'react-native';
+
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import leftarrow from './../../images/leftarrow.png';
-//import restaurantJSON from './../../restaurants.json';
+import HomeHeader from './HomeHeader';
+import leftarrow  from './../../images/leftarrow.png';
 
-{/* <RelativeLayout
-    xmlns:android = 'https://schemas.android.com/apk/res/android'
-    xmlns:tools = 'https://schema.android.com/tools'
-    android:layout_width = "match_parent"
-    android:layout_height = "match_parent"
-    android:paddingLeft = "16dp"
-    android:paddingRight = "16dp"
-    android:paddingTop = "16dp"
-    android:paddingBottom = "16dp" tools:context = ".Activity1" >
 
-    <ScrollView
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@+id/button"
-        android:layout_centerHorizontal = "true" >
-        <TextView
-            android:layout_width = "wrap_content"
-            android:layout_height = "wrap_content"
-            android:textAppearance = "?android:attr/textAppearanceLarge"
-            android:text = "@string/long_string"
-            android:id = "@+id/textView" />
-    </ScrollView>
-
-</RelativeLayout> */}
+const buttonData = require('./../../data/NorthCampus.json') 
 
 const NorthCampus = ({navigation}) => {
 
-const pressRestaurant = () => {
-    //move to specified restaurant screen
-}
-
-    return(
-        <SafeAreaView style = {styles.container}>
-            <View style = {styles.container}>
+    const getimageSource = (id) => {
+        switch (id) {
+          case 1:
+            return require('./../../images/NorthCampus/CounselorCafe.png');
+          case 2:
+            return require('./../../images/NorthCampus/Hamptons.png');
+          default:
+            return null;
+        }
+      };
+      const handleButtonClick = (item) => {
+        /* switch(item.id) {
+            case 1:
+                return navigation.navigate(RussellHouseRestaurantScreen);
+            case 2: 
+                return navigation.navigate(NorthCampus);
+            case 3:
+                return navigation.navigate(SouthCampus);
+            case 4: 
+                return navigation.navigate(EastCampus);
+            case 5: 
+                return navigation.navigate(WestCampus);
+            case 6:
+                return navigation.navigate(FoodTrucks);
+        } */
+      };
+      const renderItem = ({item}) => {
+        const imageSource = getimageSource(item.id);
+    
+        return (
+            <TouchableOpacity
+              onPress={() => handleButtonClick(item)}
+              style={{flex: 1, margin: 5}}>
+              <View style={styles.item}>
+                <Image source={imageSource} style={styles.image} />
+                <Text style={styles.text}>{item.name}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        };
+      
+        return (
+          <View style= {styles.container}>
             <Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: -20,
-                    top: -45,}}>
+                    left: -30,
+                    top: -45,
+                    scaleX:-1}}>
                 </Image>
+                <HomeHeader navigation = {navigation}/>
+                
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
-                    right:-60,
+                    right:-40,
                     bottom:0}}>
                 </Image>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"space-between",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Counselor's Cafe </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {{width:350,
-                                backgroundColor:"WHITE",
-                                borderRadius:25,
-                                borderColor:"BLACK",
-                                height:100,
-                                alignItems:"center",
-                                justifyContent:"center",
-                                marginTop:20,
-                                marginBottom:20}}>
-                    <Text style = {styles.buttonText}> Hampton St. Cafe </Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>navigation.pop()}>
-                    <Image source={leftarrow} 
-                    style={{ width: 50, 
-                    height: 50,
-                    top:200,
-                    left:-170}} />
-                </TouchableOpacity>
-            </View>
-        </SafeAreaView>
-    )
-}
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#B6B7E5',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    
-    inputView:{
-        width:"80%",
-        backgroundColor:"#FFFFFF",
-        borderRadius:25,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
-    },
+            <FlatList
+              data={buttonData}
+              renderItem={renderItem}
+              keyExtractor={(item) => item.id}
+              contentContainerStyle={styles.list}
+              numColumns = {1}
+            />
+            <TouchableOpacity onPress={()=>navigation.pop()}>
+                <Image source={leftarrow} 
+                style={{ width: 50, 
+                height: 50,
+                right:-9,
+                bottom:25
 
-    inputText:{
-        height:50,
-        color:"black"
-    },
+                }} />
+            </TouchableOpacity>
+          </View>
+        );
+      };
+    const styles = StyleSheet.create({
+        container: {
+          backgroundColor: '#B6B7E5',
+          alignContent: 'center'
+        },
+        item: {
+          marginTop:60,
+          marginBottom: 60,
+          alignItems: 'center',
+          padding: 10,
+          borderRadius: 10,
+        },
+        text: {
+          fontSize: 20,
+          marginTop:10,
+          fontWeight: 'bold',
+        },
+        selectedIcon: {
+          width: 15,
+          height: 15,
+        },
+        list: {
+          padding: 10,
+        },
+        image: {
+            width: 110,
+            height: 110,
+            borderRadius:15,
 
-    restaurantButtons:{
-        width:350,
-        backgroundColor:"#884E7D",
-        borderRadius:25,
-        height:100,
-        alignItems:"center",
-        justifyContent:"space-between",
-        marginTop:5,
-        marginBottom:5
-    },
+        }
+      });
 
-    buttonText:{
-        color:"Black",
-        fontSize:16,
-        backgroundColor:"White"
-    }
-})
 export default NorthCampus;
+    

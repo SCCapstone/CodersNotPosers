@@ -1,111 +1,129 @@
-import React, { useState } from 'react'; 
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
-    Image,Text, Button} from 'react-native';
+import React, { useState , useEffect} from 'react'; 
+import {StyleSheet,View,TouchableOpacity,
+    Image,Text, FlatList} from 'react-native';
+
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import ChickfilAPage from './ChickfilAPage';
-import leftarrow from './../../images/leftarrow.png';
-//import CFALogo from './../../images/CFALogo.png';
+import HomeHeader from './HomeHeader';
+import leftarrow  from './../../images/leftarrow.png';
 
+
+const buttonData = require('./../../data/RussellHouse.json') 
 
 const RussellHouseRestaurantScreen = ({navigation}) => {
 
-const pressRestaurant = () => {
-    //move to specified restaurant screen
-}
-
-    return(
-        <SafeAreaView style = {styles.container}>
-            <View style = {styles.container}>
-                <Image source={ellipsepink} 
+    const getimageSource = (id) => {
+        switch (id) {
+          case 1:
+            return require('./../../images/RussellHouse/Chick.png');
+          case 2:
+            return require('./../../images/RussellHouse/panera.png');
+          case 3:
+            return require('./../../images/RussellHouse/panda.png');
+          case 4:
+            return require('./../../images/RussellHouse/twisted.png');
+          case 5:
+            return require('./../../images/RussellHouse/Einstein.png');
+          case 6:
+            return require('./../../images/RussellHouse/creamery.png');
+          default:
+            return null;
+        }
+      };
+      const handleButtonClick = (item) => {
+        /* switch(item.id) {
+            case 1:
+                return navigation.navigate(RussellHouseRestaurantScreen);
+            case 2: 
+                return navigation.navigate(NorthCampus);
+            case 3:
+                return navigation.navigate(SouthCampus);
+            case 4: 
+                return navigation.navigate(EastCampus);
+            case 5: 
+                return navigation.navigate(WestCampus);
+            case 6:
+                return navigation.navigate(FoodTrucks);
+        } */
+      };
+      const renderItem = ({item}) => {
+        const imageSource = getimageSource(item.id);
+    
+        return (
+            <TouchableOpacity
+              onPress={() => handleButtonClick(item)}
+              style={{flex: 1, margin: 5}}>
+              <View style={styles.item}>
+                <Image source={imageSource} style={styles.image} />
+                <Text style={styles.text}>{item.name}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        };
+      
+        return (
+          <View style= {styles.container}>
+            <Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: -100,
-                    top: -45,}}>
+                    left: -30,
+                    top: -45,
+                    scaleX:-1}}>
                 </Image>
+                <HomeHeader navigation = {navigation}/>
+                
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
-                    right:-100,
+                    right:-40,
                     bottom:0}}>
                 </Image>
-                <TouchableOpacity
-                    onPress = {()=>{navigation.navigate(ChickfilAPage)}}
-                    style = {styles.restaurantButtons}>
-                    <Text style = {styles.buttonText}> Chick-Fil-A </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {styles.restaurantButtons}>
-                    <Text style = {styles.buttonText}> "Panera" </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {styles.restaurantButtons}>
-                    <Text style = {styles.buttonText}> "Panda Express" </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {styles.restaurantButtons}>
-                    <Text style = {styles.buttonText}> "Twisted Taco" </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {styles.restaurantButtons}>
-                    <Text style = {styles.buttonText}> "Einstein Bros. Bagels" </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress = {pressRestaurant}
-                    style = {styles.restaurantButtons}>
-                    <Text style = {styles.buttonText}> Carolina Creamery </Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>navigation.pop()}>
-<Image source={leftarrow} 
-style={{ width: 50, 
-height: 50,
-top:80,
-left:-170}} />
-</TouchableOpacity>
+            <FlatList
+              data={buttonData}
+              renderItem={renderItem}
+              keyExtractor={(item) => item.id}
+              contentContainerStyle={styles.list}
+              numColumns = {2}
+            />
+            <TouchableOpacity onPress={()=>navigation.pop()}>
+                <Image source={leftarrow} 
+                style={{ width: 50, 
+                height: 50,
+                right:-9,
+                bottom:25
 
-            </View>
-        </SafeAreaView>
-    )
-}
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#B6B7E5',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    
-    inputView:{
-        width:"80%",
-        backgroundColor:"#FFFFFF",
-        borderRadius:25,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
-    },
+                }} />
+            </TouchableOpacity>
+          </View>
+        );
+      };
+    const styles = StyleSheet.create({
+        container: {
+          backgroundColor: '#B6B7E5',
+        },
+        item: {
+          marginTop:14,
+          alignItems: 'center',
+          padding: 10,
+          borderRadius: 10,
+        },
+        text: {
+          fontSize: 20,
+          marginTop:10,
+          fontWeight: 'bold',
+        },
+        selectedIcon: {
+          width: 15,
+          height: 15,
+        },
+        list: {
+          padding: 10,
+        },
+        image: {
+            width: 110,
+            height: 110,
+            borderRadius:15,
 
-    inputText:{
-        height:50,
-        color:"black"
-    },
+        }
+      });
 
-    restaurantButtons:{
-        width:200,
-        backgroundColor:"#884E7D",
-        borderRadius:25,
-        height:75,
-        alignItems:"center",
-        justifyContent:"space-between",
-        marginTop:5,
-        marginBottom:5
-    },
-
-    buttonText:{
-        color:"#FFFFFF",
-        fontSize:18
-    }
-})
 export default RussellHouseRestaurantScreen;
+    
