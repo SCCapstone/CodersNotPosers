@@ -51,7 +51,7 @@ const FoodDetail = ({navigation}) => {
                         justifyContent: 'space-between',
                         paddingHorizontal: 20
                    }}
-                   //onPress = {() => navigation.navigate('')}
+                   onPress = {() => navigation.navigate('MyCart')}
                 >
                     <Text style = {{color: 'white'}}>Buy Now</Text>
                     <Text style = {{color: 'white'}}>Meal Swipe</Text>
