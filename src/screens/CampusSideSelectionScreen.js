@@ -7,6 +7,8 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
 
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
+
+import ChickfilA from './RussellHouse/ChickfilA';
 import NorthCampus from './NorthCampus';
 import FoodTrucks from './FoodTrucks';
 import EastCampus from './EastCampus';
