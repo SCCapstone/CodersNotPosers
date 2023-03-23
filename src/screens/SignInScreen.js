@@ -78,6 +78,7 @@ const SignInScreen =  ({navigation}) => {
         </TouchableOpacity>
         <TouchableOpacity onPress={LoginComponent} style={styles.loginBtn}>
           <Text style={styles.loginText}>Sign In</Text>
+          
         </TouchableOpacity>
 <TouchableOpacity
 onPress = {() => navigation.navigate(SignUp)}

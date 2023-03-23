@@ -12,7 +12,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import RussellHouseRestaurantScreen from "../src/screens/RussellHouseRestaurantScreen";
 import NorthCampus from "../src/screens/NorthCampus";
 import SignUpScreen from "../src/screens/SignUpScreen";
-import ChickfilAPage from "../src/screens/ChickfilAPage";
+import ChickfilA from "../src/screens/RussellHouse/ChickfilA";
 import RatingScreenCFA from "../src/screens/RatingScreenCFA";
 import DriverSignUpScreen from "../src/screens/DriverSignUpScreen";
 import DriverSignInScreen from "../src/screens/DriverSignInScreen";
@@ -100,8 +100,8 @@ export default function AuthStack() {
                 }}
             />
             <Auth.Screen
-                name= "ChickfilAPage"
-                component = {ChickfilAPage}
+                name= "ChickfilA"
+                component = {ChickfilA}
                 options = {{
                     headerShown: false
                 }}

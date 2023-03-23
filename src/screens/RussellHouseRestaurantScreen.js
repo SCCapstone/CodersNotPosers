@@ -6,7 +6,7 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
 import leftarrow  from './../../images/leftarrow.png';
-
+import ChickfilA from './RussellHouse/ChickfilA';
 
 const buttonData = require('./../../data/RussellHouse.json') 
 
@@ -31,9 +31,9 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
         }
       };
       const handleButtonClick = (item) => {
-        /* switch(item.id) {
-            case 1:
-                return navigation.navigate(RussellHouseRestaurantScreen);
+         switch(item.id) {
+             case 1:
+                return navigation.navigate(ChickfilA);
             case 2: 
                 return navigation.navigate(NorthCampus);
             case 3:
@@ -44,7 +44,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
                 return navigation.navigate(WestCampus);
             case 6:
                 return navigation.navigate(FoodTrucks);
-        } */
+        }  
       };
       const renderItem = ({item}) => {
         const imageSource = getimageSource(item.id);
@@ -124,6 +124,4 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
 
         }
       });
-
-export default RussellHouseRestaurantScreen;
-    
+    export default RussellHouseRestaurantScreen;
