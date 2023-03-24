@@ -5,6 +5,9 @@ import ellipsepink from './../../../images/ellipsepink.png';
 import ellipsegrey from './../../../images/ellipsegrey.png';
 import HomeHeader from './../HomeHeader';
 import leftarrow  from './../../../images/leftarrow.png';
+import mycart from './../../../images/mycart.png';
+
+import MyCart from './../MyCart.js';
 const menuData = require('./../../../data/RussellHouseRestaurants/ChickfilA.json') 
 
 export const addToCart = (item,cart,setCart) => {
@@ -108,12 +111,19 @@ const ChickfilA = ({navigation}) => {
         {renderCategory()}
       </View>
       
-      <View style={{position: 'absolute', bottom: 4, left:5}}>
+      <View style={{position: 'absolute', bottom: 14, left:10}}>
       <TouchableOpacity onPress={()=>navigation.pop()}>
                 <Image source={leftarrow} 
                 style={{ width: 50}} />
             </TouchableOpacity>
             </View>
+            <View style = {{ position:'absolute', bottom: 14, right:10}}>
+            <TouchableOpacity onPress={() => navigation.navigate(MyCart)}>
+                    <Image source = {mycart}
+                    style = {{width:50, height:45, borderRadius:20, backgroundColor: '#884E7D',}}>
+                 </Image>
+                </TouchableOpacity>
+                </View>
             </View>
     
   );
