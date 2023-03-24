@@ -11,15 +11,74 @@ export const addToCart = (item,cart,setCart) => {
   setCart([...cart, item]);
 }; 
 const ChickfilA = ({navigation}) => {
+ 
+  const [menuType, setMenuType] = useState('Entrees');
+  
+  const renderCategory = () => {
+    switch (menuType) {
+      case 'Entrees':
+        return (
+          <FlatList
+            data={menuData.entrees[0].items.map((item, index) => ({
+              item,
+              price: menuData.entrees[0].prices[index],
+            }))}
+            keyExtractor={(item) => item.item}
+            renderItem={renderItem}
+            
+          />
+        );
+      case 'Meals':
+        return (
+          <FlatList
+            data={menuData.meals[0].items.map((item, index) => ({
+              item,
+              price: menuData.meals[0].prices[index],
+            }))}
+            keyExtractor={(item) => item.item}
+            renderItem={renderItem}
+            
+          />
+        );
+      case 'Sides':
+        return (
+          <FlatList
+            data={menuData.sides[0].items.map((item, index) => ({
+              item,
+              price: menuData.sides[0].prices[index],
+            }))}
+            keyExtractor={(item) => item.item}
+            renderItem={renderItem}
+            
+          />
+        );
+      case 'Beverages':
+        return (
+          <FlatList
+            data={menuData.beverages[0].items.map((item, index) => ({
+              item,
+              price: menuData.beverages[0].prices[index],
+            }))}
+            keyExtractor={(item) => item.item}
+            renderItem={renderItem}
+            
+          />
+        );
+      default:
+        return null;
+    }
+  };
 
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>
-      <Text style={styles.itemText}>{"\n"}${item.price}</Text>
+      <Text style={styles.itemText}>${item.price}</Text>
       <TouchableOpacity style={styles.addButton} onPress={() => addToCart(item,cart,setCart)}>
         <Text style={styles.addButtonText}>+</Text>
       </TouchableOpacity>
-    </View>
+      </View>
+      
+   
   );
 
   return (
@@ -38,77 +97,32 @@ const ChickfilA = ({navigation}) => {
                     bottom:0}}>
                 </Image>
     <View style = {{flexDirection:'row'}}>
-      <Text style={styles.category}>Entrees</Text>
-      <Text style={styles.category}>Meals</Text>
-      <Text style={styles.category}>Sides</Text>
-      <Text style={styles.category}>Beverages</Text>
+     
+    <TouchableOpacity onPress={() => setMenuType("Entrees")}><Text style={styles.category} >Entrees</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => setMenuType("Meals")}><Text style={styles.category}>Meals</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => setMenuType("Sides")}><Text style={styles.category}>Sides</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => setMenuType("Beverages")}><Text style={styles.category}>Beverages</Text></TouchableOpacity>
+      
       </View>
       <View>
-      <FlatList
-        data={menuData.entrees[0].items.map((item, index) => ({
-          item,
-          price: menuData.entrees[0].prices[index],
-        }))}
-        keyExtractor={(item) => item.item}
-        renderItem={renderItem}
-        horizontal
-      />
+        {renderCategory()}
+      </View>
       
-      <FlatList
-        data={menuData.meals[0].items.map((item, index) => ({
-          item,
-          price: menuData.meals[0].prices[index],
-        }))}
-        keyExtractor={(item) => item.item}
-        renderItem={renderItem}
-        horizontal
-      />
-      <FlatList
-        data={menuData.sides[0].items.map((item, index) => ({
-          item,
-          price: menuData.sides[0].prices[index],
-        }))}
-        keyExtractor={(item) => item.item}
-        renderItem={renderItem}
-        horizontal
-      />
-      <FlatList
-        data={menuData.beverages[0].items.map((item, index) => ({
-          item,
-          price: menuData.beverages[0].prices[index],
-        }))}
-        keyExtractor={(item) => item.item}
-        renderItem={renderItem}
-        horizontal
-      />
+      <View style={{position: 'absolute', bottom: 4, left:5}}>
       <TouchableOpacity onPress={()=>navigation.pop()}>
                 <Image source={leftarrow} 
-                style={{ width: 50, 
-                height: 50,
-                right:-9,
-                bottom:25
-
-                }} />
+                style={{ width: 50}} />
             </TouchableOpacity>
-      {/* <Text style={styles.category}>Cart</Text>
-      <FlatList
-        data={cart}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <View style={styles.cartItem}>
-            <Text style={styles.cartItemText}>{item.item}</Text>
-            <Text style={styles.cartItemText}>${item.price}</Text>
-          </View>
-        )}
-      /> */}
-    </View>
-    </View>
+            </View>
+            </View>
+    
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#B6B7E5',
+    flex:1
   },
   category: {
     fontSize: 20,
@@ -118,16 +132,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'grey',
     padding: 10,
     marginHorizontal:7,
-    borderRadius:20
+    borderRadius:20,
   },
   item: {
-    marginHorizontal: 5,
-    padding: 10,
-    backgroundColor: '#eee',
-    borderRadius: 5,
+    marginHorizontal: 11,
+    padding: 3,
+    marginVertical: 10,
+    backgroundColor: 'white',
+    borderRadius: 15,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+
   },
   itemText: {
     alignContent:'center',
@@ -137,12 +153,17 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   addButton: {
-    backgroundColor: '#007aff',
-    borderRadius: 5,
+    backgroundColor: '#884E7D',
+    borderRadius:9,
     padding: 5,
+    marginRight:3,
+    width:30,
+    alignItems:'center',
   },
   addButtonText: {
-    color: "black"
+    color: "black",
+    fontSize: 15,
+    fontWeight:'bold',
   }});
 
 
