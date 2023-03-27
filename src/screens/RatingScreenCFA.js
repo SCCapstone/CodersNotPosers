@@ -4,7 +4,6 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import cfa from './../../images/cfa.png';
 import leftarrow from './../../images/leftarrow.png';
-import ChickfilAPage from './ChickfilAPage';
 
 const RatingScreenCFA = ({navigation}) => {
   // To set the default Star Selected
@@ -76,7 +75,7 @@ const RatingScreenCFA = ({navigation}) => {
         </TouchableOpacity>
 
         <TouchableOpacity 
-            onPress={() => navigation.navigate(ChickfilAPage)}>
+            onPress={() => navigation.navigate()}>
              <Image source={leftarrow} 
                 style={{ width: 52, 
                 height: 50,

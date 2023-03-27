@@ -6,13 +6,13 @@ import ellipsegrey from './../../../images/ellipsegrey.png';
 import HomeHeader from './../HomeHeader';
 import leftarrow  from './../../../images/leftarrow.png';
 import mycart from './../../../images/mycart.png';
+import MyCart from './../MyCart';
+import Cart from './../Cart';
 
-import MyCart from './../MyCart.js';
+
 const menuData = require('./../../../data/RussellHouseRestaurants/ChickfilA.json') 
 
-export const addToCart = (item,cart,setCart) => {
-  setCart([...cart, item]);
-}; 
+
 const ChickfilA = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Entrees');
@@ -76,8 +76,8 @@ const ChickfilA = ({navigation}) => {
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>
       <Text style={styles.itemText}>${item.price}</Text>
-      <TouchableOpacity style={styles.addButton} onPress={() => addToCart(item,cart,setCart)}>
-        <Text style={styles.addButtonText}>+</Text>
+      <TouchableOpacity style={styles.addButton} onPress={() => MyCart.addToCart(item)}>
+      <Text style={styles.addButtonText}>+</Text>
       </TouchableOpacity>
       </View>
       
@@ -118,7 +118,7 @@ const ChickfilA = ({navigation}) => {
             </TouchableOpacity>
             </View>
             <View style = {{ position:'absolute', bottom: 14, right:10}}>
-            <TouchableOpacity onPress={() => navigation.navigate(MyCart)}>
+            <TouchableOpacity onPress={() => navigation.navigate(Cart)}>
                     <Image source = {mycart}
                     style = {{width:50, height:45, borderRadius:20, backgroundColor: '#884E7D',}}>
                  </Image>

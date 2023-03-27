@@ -18,7 +18,7 @@ import DriverSignUpScreen from "../src/screens/DriverSignUpScreen";
 import DriverSignInScreen from "../src/screens/DriverSignInScreen";
 import FoodDetail from "../src/screens/FoodDetail";
 import AddressScreen from "../src/screens/AddressScreen";
-import MyCart from "../src/screens/MyCart";
+import Cart from "../src/screens/Cart";
 import paymentScreen from "../src/screens/paymentScreen";
 
 const Auth = createNativeStackNavigator();
@@ -134,13 +134,13 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
-            <Auth.Screen
-                name= "MyCart"
-                component = {MyCart}
+             <Auth.Screen
+                name= "Cart"
+                component = {Cart}
                 options = {{
                     headerShown: false
                 }}
-            />
+            /> 
             <Auth.Screen
                 name= "paymentScreen"
                 component = {paymentScreen}
