@@ -15,7 +15,7 @@ export default function HomeHeader({navigation}){
                 </TouchableOpacity>
             <TouchableWithoutFeedback style = {{flexDirection:'row'}}>
               
-            < Image source = {search} style= {{width :20,height:25,marginRight:5,marginTop:5}} />
+            < Image source = {search} style= {{width :20,height:25,marginRight:10,marginTop:5}} />
             
             <Text style = {{fontSize:15,marginRight:120,marginTop:5}}>
                 What are you looking for ?
@@ -23,11 +23,16 @@ export default function HomeHeader({navigation}){
             
             </TouchableWithoutFeedback>
            
+            
+
                 <TouchableOpacity>
                     <Image source = {tune}
                     style = {{width:35, height:35}}>
                  </Image>
                 </TouchableOpacity>
+
+                
+
         </View>
     )
 }

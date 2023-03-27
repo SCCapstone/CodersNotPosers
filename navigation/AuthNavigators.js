@@ -12,13 +12,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import RussellHouseRestaurantScreen from "../src/screens/RussellHouseRestaurantScreen";
 import NorthCampus from "../src/screens/NorthCampus";
 import SignUpScreen from "../src/screens/SignUpScreen";
-import ChickfilAPage from "../src/screens/ChickfilAPage";
+import ChickfilA from "../src/screens/RussellHouse/ChickfilA";
 import RatingScreenCFA from "../src/screens/RatingScreenCFA";
 import DriverSignUpScreen from "../src/screens/DriverSignUpScreen";
 import DriverSignInScreen from "../src/screens/DriverSignInScreen";
 import FoodDetail from "../src/screens/FoodDetail";
 import AddressScreen from "../src/screens/AddressScreen";
-import MyCart from "../src/screens/MyCart";
+import Cart from "../src/screens/Cart";
 import paymentScreen from "../src/screens/paymentScreen";
 
 const Auth = createNativeStackNavigator();
@@ -100,8 +100,8 @@ export default function AuthStack() {
                 }}
             />
             <Auth.Screen
-                name= "ChickfilAPage"
-                component = {ChickfilAPage}
+                name= "ChickfilA"
+                component = {ChickfilA}
                 options = {{
                     headerShown: false
                 }}
@@ -134,13 +134,13 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
-            <Auth.Screen
-                name= "MyCart"
-                component = {MyCart}
+             <Auth.Screen
+                name= "Cart"
+                component = {Cart}
                 options = {{
                     headerShown: false
                 }}
-            />
+            /> 
             <Auth.Screen
                 name= "paymentScreen"
                 component = {paymentScreen}
