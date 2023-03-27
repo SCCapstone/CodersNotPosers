@@ -63,22 +63,69 @@
                     ],
                     "food": [
                         {
-                            "entrees": [
+                            "mac-and-cheeses": [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Bacon Mac & Cheese", "Mac & Cheese"],
+                                    "cup-prices": [6.89, 6.89],
+                                    "bowl-prices": [10.89, 10.89]
                                 }
                             ],
+                            "soups": [
+                                {
+                                    "items": ["Homestyle Chicken Noodle Soup", "Cream of Chicken & Wild Rice Soup", "Ten Vegetable Soup", "Creamy Tomato Soup", "Bistro French Onion Soup", "Turkey Chili", "Thai Chicken Soup"],
+                                    "cup-prices": [6.69, 6.69, 6.69, 6.69, 6.69, 7.39, 7.39],
+                                    "bowl-prices": [7.99, 7.99, 7.99, 7.99, 7.99, 8.99, 8.99]
+                                }
+                            ],
+                            "salads": [
+                                {
+                                    "items": ["Green Goddess Cobb with Chicken Salad", "Caesar Salad", "Caesar with Chicken Salad", "Fuji Apple with Chicken Salad", "Greek Salad", "Greek Salad with Chicken"],
+                                    "half-prices": [9.19, 6.99, 8.09, 8.09, 6.99, 8.09],
+                                    "full-prices": [12.29, 10.99, 12.09, 12.09, 10.99, 12.09]
+                                }
+                            ],
+                            "flatbread-pizzas": [
+                                {
+                                    "items": ["Sausage & Pepperoni Flatbread Pizza", "PEpperoni Flatbread Pizza", "Chipotle Chicken & Bacon Flatbread Pizza"],
+                                    "prices": [10.29, 10.29, 10.29]
+                                }
+                            ],
+                            "sandwiches": [
+                                {
+                                    "items": ["Toasted Steak & White Cheddar Sandwich", "Bacon Turkey Bravo Sandwich", "Roasted Turkey & Avocado BLT Sandwich", "Grilled Mac & Cheese Sandwich", "Chipotle Chicken Avocado Melt Sandwich", "Toasted Frontage Chicken Sandwich", "Napa Almond Chicken Salad Sandwich", "Toasted Smokehouse BBQ Chicken", "Tuna Salad Sandwich", "Deli Turkey Sandwich", "Classic Grilled Cheese Sandwich", "Mediterranean Veggie Sandwich", "The Signature Take", "The Spicy Take"],
+                                    "prices": [8.69, 8.09, 8.69, 8.09, 8.09, 7.99, 7.99, 7.99, 7.99, 7.99, 6.19, 6.19, 11.59, 11.59]
+                                }
+                            ]
                             "sides": [
                                 {
                                     "items": [],
                                     "prices": []
                                 }
                             ],
-                            "beverages" : [
+                            "coffees-and-tees" : [
                                 {
-                                    "items": [],
-                                    "prices": []
+                                    "items": ["Hot Coffee", "Hot Tea", "Iced Coffee", "Cold Brew", "Madagascar Vanilla Cream Cold Brew", "Madagascar Vanilla Almond Cold Brew"],
+                                    "small-prices": [2.39, 2.59, 2.59, 3.99, 3.59, 3.59],
+                                    "medium-prices": [2.59, 2.59, 2.89, 4.09, 3.89, 3.89],
+                                    "large-prices": [2.99, 2.59, 3.39, 4.59, 4.19, 4.19]
+                                }
+                            ],
+                            "hot-specialty-beverages": [
+                                {
+                                    "items": ["Caramel Latte", "Madagascar Vanilla Latte", "Chai Tea Latte", "Caffe Latte", "Cappuccino", "Espresso", "Americano"],
+                                    "prices": [4.89, 4.89, 4.89, 4.89, 4.89, 2.99, 3.39]
+                                }
+                            ],
+                            "iced-specialty-beverages": [
+                                {
+                                    "items": ["Iced Caramel Latte", "Iced Madagascar Vanilla Latte", "Iced Chai Tea Latte", "Iced Caffe Latte", "Iced Cappucino", "Iced Americano"],
+                                    "prices": [4.99, 4.99, 4.99, 4.79, 4.79, 3.29]
+                                }
+                            ],
+                            "frozen-and-cold-drinks": [
+                                {
+                                    "items": ["Mango Greek Yogurt Smoothie", "Passion Papaya Iced Green Tea", "Strawberry Banana Greek Yogurt Smoothie", "Strawberry Greek Yogurt Smoothie", "Green Passion Non-Dairy Smoothi", "Frozen Caramel Cold Brew", "Unsweetened Black Tea", "Agave Lemonade", "Soft Drinks", "Orange Juice", "Charged Lemonade", "Bottled Water"],
+                                    "prices": [5.79, 2.59, 5.79, 5.79, 5.79, 5.49, 2.59, 2.59, 2.89, 2.69, 4.09, 2.89]
                                 }
                             ]
                         }
