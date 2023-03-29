@@ -7,6 +7,7 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
 import leftarrow  from './../../images/leftarrow.png';
 import ChickfilA from './RussellHouse/ChickfilA';
+import Panda from './RussellHouse/Panda';
 
 const buttonData = require('./../../data/RussellHouse.json') 
 
@@ -37,7 +38,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
             case 2: 
                 return navigation.navigate(NorthCampus);
             case 3:
-                return navigation.navigate(SouthCampus);
+                return navigation.navigate(Panda);
             case 4: 
                 return navigation.navigate(EastCampus);
             case 5: 

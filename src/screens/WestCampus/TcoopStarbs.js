@@ -16,6 +16,11 @@ const menuData = require('./../../../data/WestCampusRestaurants/TCoopStarbucks.j
 const TcoopStarbs = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Coffee Tea and More');
+  const menuItems = [
+    { type: "Coffee Tea and More" },
+    { type: "Refreshers" },
+    { type: "Frappucinos" },
+  ];
   
   const renderCategory = () => {
     switch (menuType) {
@@ -88,11 +93,15 @@ const TcoopStarbs = ({navigation}) => {
                     bottom:0}}>
                 </Image>
     <View style = {{flexDirection:'row'}}>
-     
-    <TouchableOpacity onPress={() => setMenuType("Coffee Tea and More")}><Text style={styles.category} >Coffee Tea and More</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Refreshers")}><Text style={styles.category}>Refreshers</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Frappucinos")}><Text style={styles.category}>Frappucinos</Text></TouchableOpacity>
-      
+        <FlatList
+        data={menuItems}
+        horizontal={true}
+        renderItem={({item}) => (
+            <TouchableOpacity onPress={() => setMenuType(item.type)}>
+            <Text style={styles.category}>{item.type}</Text>
+            </TouchableOpacity>
+        )}
+        />
       </View>
       <View>
         {renderCategory()}
