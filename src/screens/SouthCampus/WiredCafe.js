@@ -10,7 +10,7 @@ import MyCart from './../MyCart';
 import Cart from './../Cart';
 
 
-const menuData = require('./../../../data/RussellHouseRestaurants/WiredCafe.json') 
+const menuData = require('./../../../data/SouthCampus/WiredCafe.json') 
 
 
 const WiredCafe = ({navigation}) => {
@@ -113,10 +113,11 @@ const WiredCafe = ({navigation}) => {
                 </Image>
     <View style = {{flexDirection:'row'}}>
      
-    <TouchableOpacity onPress={() => setMenuType("Entrees")}><Text style={styles.category} >Entrees</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Meals")}><Text style={styles.category}>Meals</Text></TouchableOpacity>
+    <TouchableOpacity onPress={() => setMenuType("Breakfast")}><Text style={styles.category} >Entrees</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => setMenuType("Sandwiches")}><Text style={styles.category}>Sandwiches</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => setMenuType("Salads")}><Text style={styles.category}>Salads</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => setMenuType("Flatbreads")}><Text style={styles.category}>Flatbreads</Text></TouchableOpacity>
       <TouchableOpacity onPress={() => setMenuType("Sides")}><Text style={styles.category}>Sides</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Beverages")}><Text style={styles.category}>Beverages</Text></TouchableOpacity>
       
       </View>
       <View>

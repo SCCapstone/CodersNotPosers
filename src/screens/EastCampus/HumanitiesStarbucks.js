@@ -10,7 +10,7 @@ import MyCart from './../MyCart';
 import Cart from './../Cart';
 
 
-const menuData = require('./../../../data/RussellHouseRestaurants/HumanitiesStarbucks.json') 
+const menuData = require('./../../../data/EastCampus/HumanitiesStarbucks.json') 
 
 
 const HumanitiesStarbucks = ({navigation}) => {
@@ -89,10 +89,9 @@ const HumanitiesStarbucks = ({navigation}) => {
                 </Image>
     <View style = {{flexDirection:'row'}}>
      
-    <TouchableOpacity onPress={() => setMenuType("Entrees")}><Text style={styles.category} >Entrees</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Meals")}><Text style={styles.category}>Meals</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Sides")}><Text style={styles.category}>Sides</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Beverages")}><Text style={styles.category}>Beverages</Text></TouchableOpacity>
+    <TouchableOpacity onPress={() => setMenuType("Coffee, Tea, & More")}><Text style={styles.category} >Coffee, Tee, & More</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => setMenuType("Refreshers")}><Text style={styles.category}>Refreshers</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => setMenuType("Frappucinos")}><Text style={styles.category}>Frappucinos</Text></TouchableOpacity>
       
       </View>
       <View>
