@@ -21,6 +21,7 @@ import AddressScreen from "../src/screens/AddressScreen";
 import Cart from "../src/screens/Cart";
 //import paymentScreen from "../src/screens/paymentScreen";
 import Panda from "../src/screens/RussellHouse/Panda";
+import Creamery from "../src/screens/RussellHouse/Creamery"
 
 const Auth = createNativeStackNavigator();
 
@@ -149,6 +150,13 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             /> 
+            <Auth.Screen
+                name= "Creamery"
+                component = {Creamery}
+                options = {{
+                    headerShown: false
+                }}
+            />
            {/*  <Auth.Screen
                 name= "paymentScreen"
                 component = {paymentScreen}

@@ -8,6 +8,7 @@ import HomeHeader from './HomeHeader';
 import leftarrow  from './../../images/leftarrow.png';
 import ChickfilA from './RussellHouse/ChickfilA';
 import Panda from './RussellHouse/Panda';
+import CarolinaCreamery from './RussellHouse/Creamery'
 
 const buttonData = require('./../../data/RussellHouse.json') 
 
@@ -44,7 +45,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
             case 5: 
                 return navigation.navigate(WestCampus);
             case 6:
-                return navigation.navigate(FoodTrucks);
+                return navigation.navigate(CarolinaCreamery);
         }  
       };
       const renderItem = ({item}) => {
