@@ -16,40 +16,26 @@ import leftarrow from "./../../images/leftarrow.png";
 import ellipsegrey from "./../../images/ellipsegrey.png";
 import { app } from "../../firebase";
 import firebase from "firebase/app";
-import "firebase/auth";
-import { getDatabase, ref, onValue, set, update } from "firebase/database";
-import firestore from "firebase/firestore";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import firestore from '@react-native-firebase/firestore';
 
-const database = getDatabase(app);
-const db = getFirestore(app);
 
 export default function Payment() {
   const [name, setName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [expDate, setExpDate] = useState("");
   const [cvc, setCVC] = useState("");
-
-  const saveCard = () => {
-    //const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-    const usersCard = {
-      name: name,
-      cardNumber: cardNumber,
-      expDate: expDate,
-      cvc: cvc,
-      //orderedAt: timestamp,
-    };
-    addDoc(collection(db, "SavedCards"), usersCard)
-      .then(() => {
-        setName("");
-        setCardNumber("");
-        setExpDate("");
-        setCVC("");
-      })
-      .catch((error) => {
-        alert(error);
-      });
+  const saveCard = async () => { // added async keyword to enable using await
+   console.log("in saved card funtcion");
+   firestore().collection('SavedCards').add({
+    name: name,
+    orderAt: new Date(),
+    cardNumber: cardNumber,
+    expDate: expDate,
+    cvc : cvc,
+   })
+   .then( () => {console.log('User added!');});
   };
+  
   return (
 
 <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
