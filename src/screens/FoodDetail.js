@@ -16,7 +16,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 import leftarrow from './../../images/leftarrow.png';
 import MyCart from './MyCart';
-import paymentScreen from './paymentScreen';
+// import paymentScreen from './paymentScreen';
 
 const FoodDetail = ({navigation}) => {
     const isDarkMode = useColorScheme() === 'dark';

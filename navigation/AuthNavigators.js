@@ -13,13 +13,14 @@ import RussellHouseRestaurantScreen from "../src/screens/RussellHouseRestaurantS
 import NorthCampus from "../src/screens/NorthCampus";
 import SignUpScreen from "../src/screens/SignUpScreen";
 import ChickfilA from "../src/screens/RussellHouse/ChickfilA";
+import TcoopStarbs from "../src/screens/WestCampus/TcoopStarbs";
 import RatingScreenCFA from "../src/screens/RatingScreenCFA";
 import DriverSignUpScreen from "../src/screens/DriverSignUpScreen";
 import DriverSignInScreen from "../src/screens/DriverSignInScreen";
 import FoodDetail from "../src/screens/FoodDetail";
 import AddressScreen from "../src/screens/AddressScreen";
 import Cart from "../src/screens/Cart";
-import paymentScreen from "../src/screens/paymentScreen";
+// import paymentScreen from "../src/screens/paymentScreen";
 
 const Auth = createNativeStackNavigator();
 
@@ -113,6 +114,13 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
+            <Auth.Screen
+                name= "TcoopStarbs"
+                component = {TcoopStarbs}
+                options = {{
+                    headerShown: false
+                }}
+            />
              <Auth.Screen
                 name= "DriverSignInScreen"
                 component = {DriverSignInScreen}
@@ -141,13 +149,13 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             /> 
-            <Auth.Screen
+            {/* <Auth.Screen
                 name= "paymentScreen"
                 component = {paymentScreen}
                 options = {{
                     headerShown: false
                 }}
-            />
+            /> */}
             <Auth.Screen
                 name= "AddressScreen"
                 component = {AddressScreen}
