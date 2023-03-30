@@ -263,11 +263,11 @@ const SignUpScreen =  ({navigation}) => {
     signupBtn:{
       position: "absolute",
       right:145,
-      top:-150, 
+      top:-110, 
       width:115,
       backgroundColor:"#884E7D",
       borderRadius:25,
-      height:50,
+      height:55,
       alignItems:"center",
       justifyContent:"center",
       },
