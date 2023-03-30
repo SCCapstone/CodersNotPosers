@@ -15,7 +15,14 @@ const menuData = require('./../../../data/EastCampus/ColloquiumCafe.json')
 
 const ColloquiumCafe = ({navigation}) => {
  
-  const [menuType, setMenuType] = useState('Entrees');
+  const [menuType, setMenuType] = useState('Patio Grill');
+  const menuItems = [
+    { type: "Patio Grill" },
+    { type: "Chicken" },
+    { type: "Acai" },
+    { type: "Sides" },
+    { type: "Dessert" },
+  ];
   
   const renderCategory = () => {
     switch (menuType) {
@@ -113,12 +120,15 @@ const ColloquiumCafe = ({navigation}) => {
                 </Image>
     <View style = {{flexDirection:'row'}}>
      
-    <TouchableOpacity onPress={() => setMenuType("Patio Grill")}><Text style={styles.category} >Patio Grill</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Chicken")}><Text style={styles.category}>Chicken</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Acai")}><Text style={styles.category}>Acai</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Sides")}><Text style={styles.category}>Sides</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Dessert")}><Text style={styles.category}>Dessert</Text></TouchableOpacity>
-      
+    <FlatList
+      data={menuItems}
+      horizontal={true}
+      renderItem={({item}) => (
+        <TouchableOpacity onPress={() => setMenuType(item.type)}>
+          <Text style={styles.category}>{item.type}</Text>
+        </TouchableOpacity>
+      )}
+    />
       </View>
       <View>
         {renderCategory()}

@@ -15,7 +15,15 @@ const menuData = require('./../../../data/EastCampus/VillageJuiceAndKitchen.json
 
 const VillageJuiceAndKitchen = ({navigation}) => {
  
-  const [menuType, setMenuType] = useState('Entrees');
+  const [menuType, setMenuType] = useState('Smoothies');
+  const menuItems = [
+    { type: "Smoothies" },
+    { type: "Breakfast Bowls" },
+    { type: "Toasts & Wraps" },
+    { type: "Salads & Grain Bowls" },
+    { type: "Cold-Pressed Juices" },
+    { type: "Desserts & Snacks"},
+  ];
   
   const renderCategory = () => {
     switch (menuType) {
@@ -125,13 +133,15 @@ const VillageJuiceAndKitchen = ({navigation}) => {
                 </Image>
     <View style = {{flexDirection:'row'}}>
      
-    <TouchableOpacity onPress={() => setMenuType("Smoothies")}><Text style={styles.category} >Smoothies</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Breakfast Bowls")}><Text style={styles.category}>Breakfast Bowls</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Toasts & Wraps")}><Text style={styles.category}>Toasts & Wraps</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Salads & Grain Bowls")}><Text style={styles.category}>Salads & Grain Bowls</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Cold-Pressed Juices")}><Text style={styles.category}>Cold-Pressed Juices</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Desserts & Snacks")}><Text style={styles.category}>Desserts & Snacks</Text></TouchableOpacity>
-
+    <FlatList
+      data={menuItems}
+      horizontal={true}
+      renderItem={({item}) => (
+        <TouchableOpacity onPress={() => setMenuType(item.type)}>
+          <Text style={styles.category}>{item.type}</Text>
+        </TouchableOpacity>
+      )}
+    />
       </View>
       <View>
         {renderCategory()}

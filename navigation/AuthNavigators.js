@@ -29,6 +29,13 @@ import Coop from "../src/screens/FoodTrucks/Coop";
 import Panera from "../src/screens/RussellHouse/Panera";
 import Creamery from "../src/screens/RussellHouse/Creamery"
 import CafeVerde from "../src/screens/SouthCampus/CafeVerde";
+import WiredCafe from "../src/screens/SouthCampus/WiredCafe";
+import CounselorsCafe from "../src/screens/NorthCampus/CounselorsCafe";
+import HamptonStCafe from "../src/screens/NorthCampus/HamptonStCafe";
+import ColloquiumCafe from "../src/screens/EastCampus/ColloquiumCafe.js";
+import HorseshoeDeli from "../src/screens/EastCampus/HorshoeDeli";
+import HumanitiesStarbucks from "../src/screens/EastCampus/HumanitiesStarbucks";
+import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKitchen";
 
 const Auth = createNativeStackNavigator();
 
@@ -223,6 +230,55 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "CafeVerde"
                 component = {CafeVerde}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "WiredCafe"
+                component = {WiredCafe}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "CounselorsCafe"
+                component = {CounselorsCafe}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "HamptonStCafe"
+                component = {HamptonStCafe}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "VillageJuiceAndKitchen"
+                component = {VillageJuiceAndKitchen}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "HumanitiesStarbucks"
+                component = {HumanitiesStarbucks}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "HorseshoeDeli"
+                component = {HorseshoeDeli}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "ColloquiumCafe"
+                component = {ColloquiumCafe}
                 options = {{
                     headerShown: false
                 }}

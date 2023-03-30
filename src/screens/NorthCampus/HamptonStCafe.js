@@ -15,7 +15,14 @@ const menuData = require('./../../../data/NorthCampus/HamptonStCafe.json')
 
 const HamptonStCafe = ({navigation}) => {
  
-  const [menuType, setMenuType] = useState('Entrees');
+  const [menuType, setMenuType] = useState('Salads And Sandwiches');
+  const menuItems = [
+    { type: "Salads And Sandwiches" },
+    { type: "All Day Breakfast" },
+    { type: "Sides" },
+    { type: "Flatbreads" },
+    { type: "Beverages" },
+  ];
   
   const renderCategory = () => {
     switch (menuType) {
@@ -113,12 +120,15 @@ const HamptonStCafe = ({navigation}) => {
                 </Image>
     <View style = {{flexDirection:'row'}}>
      
-    <TouchableOpacity onPress={() => setMenuType("Salads And Sandwiches")}><Text style={styles.category} >Salads And Sandwiches</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("All Day Breakfast")}><Text style={styles.category}>All Day Breakfast</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Sides")}><Text style={styles.category}>Sides</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Flatbreads")}><Text style={styles.category}>Flatbreads</Text></TouchableOpacity>
-      <TouchableOpacity onPress={() => setMenuType("Beverages")}><Text style={styles.category}>Beverages</Text></TouchableOpacity>
-      
+    <FlatList
+      data={menuItems}
+      horizontal={true}
+      renderItem={({item}) => (
+        <TouchableOpacity onPress={() => setMenuType(item.type)}>
+          <Text style={styles.category}>{item.type}</Text>
+        </TouchableOpacity>
+      )}
+    />
 
       </View>
       <View>
