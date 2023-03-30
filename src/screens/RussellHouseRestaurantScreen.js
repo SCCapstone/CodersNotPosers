@@ -8,6 +8,8 @@ import HomeHeader from './HomeHeader';
 import leftarrow  from './../../images/leftarrow.png';
 import ChickfilA from './RussellHouse/ChickfilA';
 import Panda from './RussellHouse/Panda';
+import TwistedTaco from './RussellHouse/TwistedTaco';
+import Einstein from './RussellHouse/Einstein';
 
 const buttonData = require('./../../data/RussellHouse.json') 
 
@@ -40,9 +42,9 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
             case 3:
                 return navigation.navigate(Panda);
             case 4: 
-                return navigation.navigate(EastCampus);
+                return navigation.navigate(TwistedTaco);
             case 5: 
-                return navigation.navigate(WestCampus);
+                return navigation.navigate(Einstein);
             case 6:
                 return navigation.navigate(FoodTrucks);
         }  

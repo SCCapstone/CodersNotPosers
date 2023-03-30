@@ -10,27 +10,28 @@ import MyCart from './../MyCart';
 import Cart from './../Cart';
 
 
-const menuData = require('./../../../data/FoodTrucks/NachoPapis.json') 
+const menuData = require('./../../../data/RussellHouseRestaurants/TwistedTaco.json') 
 
 
-const NachoPapis = ({navigation}) => {
+const TwistedTaco = ({navigation}) => {
  
-  const [menuType, setMenuType] = useState('Entrees');
+  const [menuType, setMenuType] = useState('Tacos');
   const menuItems = [
-    { type: "Entrees" },
+    { type: "Tacos" },
     { type: "Sides" },
+    { type: "Chips and Dip" },
+    { type: "Burrito Bowls and Nachos" },
     { type: "Beverages" },
-    { type: "Extras" },
   ];
   
   const renderCategory = () => {
     switch (menuType) {
-      case 'Entrees':
+      case 'Tacos':
         return (
           <FlatList
-            data={menuData.entrees[0].items.map((item, index) => ({
+            data={menuData.tacos[0].items.map((item, index) => ({
               item,
-              price: menuData.entrees[0].prices[index],
+              price: menuData.tacos[0].prices[index],
             }))}
             keyExtractor={(item) => item.item}
             renderItem={renderItem}
@@ -49,24 +50,36 @@ const NachoPapis = ({navigation}) => {
             
           />
         );
-      case 'Beverages':
+      case 'Chips and Dip':
         return (
           <FlatList
-            data={menuData.beverages[0].items.map((item, index) => ({
+            data={menuData.chipsanddip[0].items.map((item, index) => ({
               item,
-              price: menuData.beverages[0].prices[index],
+              price: menuData.chipsanddip[0].prices[index],
             }))}
             keyExtractor={(item) => item.item}
             renderItem={renderItem}
             
           />
         );
-      case 'Extras':
+      case 'Burrito Bowls and Nachos':
         return (
           <FlatList
-            data={menuData.extras[0].items.map((item, index) => ({
+            data={menuData.burritobowlsandnachos[0].items.map((item, index) => ({
               item,
-              price: menuData.extras[0].prices[index],
+              price: menuData.burritobowlsandnachos[0].prices[index],
+            }))}
+            keyExtractor={(item) => item.item}
+            renderItem={renderItem}
+              
+          />
+        );
+        case 'Beverages':
+        return (
+          <FlatList
+            data={menuData.beverages[0].items.map((item, index) => ({
+              item,
+              price: menuData.beverages[0].prices[index],
             }))}
             keyExtractor={(item) => item.item}
             renderItem={renderItem}
@@ -186,4 +199,4 @@ const styles = StyleSheet.create({
   }});
 
 
-  export default NachoPapis;
+  export default TwistedTaco;

@@ -22,6 +22,10 @@ import AddressScreen from "../src/screens/AddressScreen";
 import Cart from "../src/screens/Cart";
 //import paymentScreen from "../src/screens/paymentScreen";
 import Panda from "../src/screens/RussellHouse/Panda";
+import TwistedTaco from "../src/screens/RussellHouse/TwistedTaco";
+import Einstein from "../src/screens/RussellHouse/Einstein";
+import NachoPapis from "../src/screens/FoodTrucks/NachoPapis";
+import Coop from "../src/screens/FoodTrucks/Coop";
 
 const Auth = createNativeStackNavigator();
 
@@ -116,6 +120,20 @@ export default function AuthStack() {
                 }}
             />
             <Auth.Screen
+                name= "TwistedTaco"
+                component = {TwistedTaco}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "Einstein"
+                component = {Einstein}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
                 name= "RatingScreenCFA"
                 component = {RatingScreenCFA}
                 options = {{
@@ -125,6 +143,20 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "TcoopStarbs"
                 component = {TcoopStarbs}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "NachoPapis"
+                component = {NachoPapis}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "Coop"
+                component = {Coop}
                 options = {{
                     headerShown: false
                 }}

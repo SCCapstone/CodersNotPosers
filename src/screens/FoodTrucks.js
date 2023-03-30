@@ -6,6 +6,8 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
 import leftarrow  from './../../images/leftarrow.png';
+import Coop from './FoodTrucks/Coop';
+import NachoPapis from './FoodTrucks/NachoPapis';
 
 
 const buttonData = require('./../../data/FoodTrucks.json') 
@@ -23,12 +25,12 @@ const FoodTrucks = ({navigation}) => {
         }
       };
       const handleButtonClick = (item) => {
-        /* switch(item.id) {
+        switch(item.id) {
             case 1:
-                return navigation.navigate(RussellHouseRestaurantScreen);
+                return navigation.navigate(Coop);
             case 2: 
-                return navigation.navigate(NorthCampus);
-        } */
+                return navigation.navigate(NachoPapis);
+        }
       };
       const renderItem = ({item}) => {
         const imageSource = getimageSource(item.id);
