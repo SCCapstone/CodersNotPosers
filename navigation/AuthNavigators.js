@@ -26,6 +26,8 @@ import TwistedTaco from "../src/screens/RussellHouse/TwistedTaco";
 import Einstein from "../src/screens/RussellHouse/Einstein";
 import NachoPapis from "../src/screens/FoodTrucks/NachoPapis";
 import Coop from "../src/screens/FoodTrucks/Coop";
+import Panera from "../src/screens/RussellHouse/Panera";
+import Creamery from "../src/screens/RussellHouse/Creamery"
 
 const Auth = createNativeStackNavigator();
 
@@ -189,6 +191,20 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             /> 
+            <Auth.Screen
+                name= "Creamery"
+                component = {Creamery}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "Panera"
+                component = {Panera}
+                options = {{
+                    headerShown: false
+                }}
+            />
            {/*  <Auth.Screen
                 name= "paymentScreen"
                 component = {paymentScreen}

@@ -10,6 +10,8 @@ import ChickfilA from './RussellHouse/ChickfilA';
 import Panda from './RussellHouse/Panda';
 import TwistedTaco from './RussellHouse/TwistedTaco';
 import Einstein from './RussellHouse/Einstein';
+import CarolinaCreamery from './RussellHouse/Creamery';
+import Panera from './RussellHouse/Panera';
 
 const buttonData = require('./../../data/RussellHouse.json') 
 
@@ -38,7 +40,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
              case 1:
                 return navigation.navigate(ChickfilA);
             case 2: 
-                return navigation.navigate(NorthCampus);
+                return navigation.navigate(Panera);
             case 3:
                 return navigation.navigate(Panda);
             case 4: 
@@ -46,7 +48,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
             case 5: 
                 return navigation.navigate(Einstein);
             case 6:
-                return navigation.navigate(FoodTrucks);
+                return navigation.navigate(CarolinaCreamery);
         }  
       };
       const renderItem = ({item}) => {
