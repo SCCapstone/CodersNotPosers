@@ -38,8 +38,9 @@ export default function Payment() {
           cardNumber: cardNumber,
           expDate: expDate,
           cvc : cvc,
+        })
         // Save logic here when switch is enabled
-      }) 
+      }
     };   
   const useCard = async () => { // added async keyword to enable using await
    console.log("in used card funtcion");
@@ -52,6 +53,7 @@ export default function Payment() {
    })
    .then( () => {console.log('User added!');});
   };
+  }
   
   return (
 
