@@ -105,7 +105,7 @@ top: -55}} />
           />
         </View>
         <View>
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View style={styles.saveCardButton}>
         <Switch
           trackColor={{ false: '#767577', true: '#81b0ff' }}
           thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
@@ -120,7 +120,7 @@ top: -55}} />
       </TouchableOpacity>
     </View> 
         <TouchableOpacity 
-          style={styles.saveCardButton}
+          style={styles.useCardButton}
           onPress={useCard}>
           <Text style={styles.loginText}>Place Order</Text>
         </TouchableOpacity>
@@ -198,8 +198,17 @@ top: -55}} />
         justifyContent:"center",
         padding:20
         },
-   
     saveCardButton: {
+          width: "70%",
+          borderRadius: 25,
+          height: 50,
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: 10,
+          backgroundColor: "#FBEBEB",
+    },
+   
+    useCardButton: {
       width: "70%",
       borderRadius: 25,
       height: 50,
