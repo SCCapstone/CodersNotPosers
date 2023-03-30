@@ -28,6 +28,7 @@ import NachoPapis from "../src/screens/FoodTrucks/NachoPapis";
 import Coop from "../src/screens/FoodTrucks/Coop";
 import Panera from "../src/screens/RussellHouse/Panera";
 import Creamery from "../src/screens/RussellHouse/Creamery"
+import CafeVerde from "../src/screens/SouthCampus/CafeVerde";
 
 const Auth = createNativeStackNavigator();
 
@@ -215,6 +216,13 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "AddressScreen"
                 component = {AddressScreen}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "CafeVerde"
+                component = {CafeVerde}
                 options = {{
                     headerShown: false
                 }}
