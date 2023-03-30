@@ -53,81 +53,83 @@ export default function Payment() {
    })
    .then( () => {console.log('User added!');});
   };
-  }
+
   
   return (
 
-<SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
+<SafeAreaView style={{ flex: 1, justifyContent: 'center', backgroundColor: '#B6B7E5' }}>
+  <View style={styles.container}>
+    <Image source={ellipsepink} style={{ position: 'absolute', left: 2, top: -55 }} />
+  </View>
 
-<View style={styles.container}>
-<Image source={ellipsepink} 
-style={{position: 'absolute',
-left: 2,
-top: -55}} />
-</View>
+  <View style={styles.container}>
+    <StatusBar style="auto" />
+    <View style={styles.CardHolderName}>
+      <TextInput
+        style={styles.inputText}
+        placeholder="Cardholder Name"
+        placeholderTextColor="#884e7d"
+        onChangeText={(name) => setName(name)}
+      />
+    </View>
 
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <View style={styles.CardHolderName}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="Cardholder Name"
-            placeholderTextColor="#884e7d"
-            onChangeText={(name) => setName(name)}
-          />
-        </View>
-   
-        <View style={styles.CardNumber}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="Card Number"
-            placeholderTextColor="#884e7d"
-            onChangeText={(cardNumber) => setCardNumber(cardNumber)}
-          />
-        </View>
 
-        <View style={styles.CardExpiration}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="MM/YYYY"
-            placeholderTextColor="#884e7d"
-            onChangeText={(expDate) => setExpDate(expDate)}
-          />
-        </View>
+  <View style={styles.CardNumber}>
+    <TextInput
+      style={styles.inputText}
+      placeholder="Card Number"
+      placeholderTextColor="#884e7d"
+      onChangeText={(cardNumber) => setCardNumber(cardNumber)}
+    />
+  </View>
 
-        <View style={styles.CVCcolor}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="CVC"
-            placeholderTextColor="#884e7d"
-            secureTextEntry={true}
-            onChangeText={(cvc) => setCVC(cvc)}
-          />
-        </View>
-        <View>
-      <View style={styles.saveCardButton}>
-        <Switch
-          trackColor={{ false: '#767577', true: '#81b0ff' }}
-          thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-          ios_backgroundColor="#3e3e3e"
-          onValueChange={toggleSwitch}
-          value={isEnabled}
-        />
-        <Text>{isEnabled ? 'Save Enabled' : 'Save Disabled'}</Text>
-      </View>
-      <TouchableOpacity onPress={saveCard}>
-        <Text>Save</Text>
-      </TouchableOpacity>
-    </View> 
-        <TouchableOpacity 
-          style={styles.useCardButton}
-          onPress={useCard}>
-          <Text style={styles.loginText}>Place Order</Text>
-        </TouchableOpacity>
-      </View>
-      </SafeAreaView>
-    );
-  }
+  <View style={styles.CardExpiration}>
+    <TextInput
+      style={styles.inputText}
+      placeholder="MM/YYYY"
+      placeholderTextColor="#884e7d"
+      onChangeText={(expDate) => setExpDate(expDate)}
+    />
+  </View>
+
+  <View style={styles.CVCcolor}>
+    <TextInput
+      style={styles.inputText}
+      placeholder="CVC"
+      placeholderTextColor="#884e7d"
+      secureTextEntry={true}
+      onChangeText={(cvc) => setCVC(cvc)}
+    />
+  </View>
+
+  <View>
+    <View style={styles.saveCardButton}>
+      <Switch
+        trackColor={{ false: '#767577', true: '#81b0ff' }}
+        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+      />
+      <Text>{isEnabled ? 'Save Enabled' : 'Save Disabled'}</Text>
+    </View>
+
+    <TouchableOpacity onPress={saveCard}>
+      <Text>Save</Text>
+    </TouchableOpacity>
+  </View>
+
+  <TouchableOpacity 
+  style={styles.useCardButton} 
+  onPress={useCard}>
+    <Text style={styles.loginText}>Place Order</Text>
+  </TouchableOpacity>
+  </View>
+</SafeAreaView>
+
+  );
+}
+}
    
   const styles = StyleSheet.create({
     container: {
