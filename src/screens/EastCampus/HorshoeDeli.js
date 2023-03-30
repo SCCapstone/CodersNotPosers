@@ -10,7 +10,7 @@ import MyCart from './../MyCart';
 import Cart from './../Cart';
 
 
-const menuData = require('./../../../data/EastCampus/HorshoeDeli.json') 
+const menuData = require('./../../../data/EastCampus/HorseshoeDeli.json')
 
 
 const HorshoeDeli = ({navigation}) => {
