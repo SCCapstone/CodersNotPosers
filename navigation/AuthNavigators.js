@@ -33,7 +33,7 @@ import WiredCafe from "../src/screens/SouthCampus/WiredCafe";
 import CounselorsCafe from "../src/screens/NorthCampus/CounselorsCafe";
 import HamptonStCafe from "../src/screens/NorthCampus/HamptonStCafe";
 import ColloquiumCafe from "../src/screens/EastCampus/ColloquiumCafe.js";
-import HorseshoeDeli from "../src/screens/EastCampus/HorshoeDeli";
+import HorshoeDeli from "../src/screens/EastCampus/HorshoeDeli";
 import HumanitiesStarbucks from "../src/screens/EastCampus/HumanitiesStarbucks";
 import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKitchen";
 
@@ -270,8 +270,8 @@ export default function AuthStack() {
                 }}
             />
             <Auth.Screen
-                name= "HorseshoeDeli"
-                component = {HorseshoeDeli}
+                name= "HorshoeDeli"
+                component = {HorshoeDeli}
                 options = {{
                     headerShown: false
                 }}

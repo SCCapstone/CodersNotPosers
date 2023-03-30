@@ -9,7 +9,7 @@ import leftarrow  from './../../images/leftarrow.png';
 import HorshoeDeli from './EastCampus/HorshoeDeli';
 import HumanitiesStarbucks from './EastCampus/HumanitiesStarbucks';
 import VillageJuiceAndKitchen from './EastCampus/VillageJuiceAndKitchen';
-import ColloquimCafe from './EastCampus/ColloquiumCafe';
+import ColloquiumCafe from './EastCampus/ColloquiumCafe';
 
 
 const buttonData = require('./../../data/EastCampus.json') 
