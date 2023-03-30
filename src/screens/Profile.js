@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 //import Icon from 'react-native-vector-icons/FontAwesome';
 //import ImagePicker from 'react-native-image-picker';
 import firebase from '@react-native-firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import leftarrow  from './../../images/leftarrow.png';
 
 const Profile = ({navigation }) => {
   const [userData, setUserData] = useState(null);
