@@ -3,6 +3,7 @@ import {
   StyleSheet,
   StatusBar,
   Text,
+  Switch,
   View,
   SafeAreaView,
   Image,
@@ -24,9 +25,25 @@ export default function Payment() {
   const [cardNumber, setCardNumber] = useState("");
   const [expDate, setExpDate] = useState("");
   const [cvc, setCVC] = useState("");
-  const saveCard = async () => { // added async keyword to enable using await
-   console.log("in saved card funtcion");
-   firestore().collection('SavedCards').add({
+  const SaveButton = () => {
+    const [isEnabled, setIsEnabled] = useState(false);
+  
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  
+    const saveCard = async () => {
+      if(isEnabled) {
+        firestore().collection('SavedCards').add({
+          name: name,
+          orderAt: new Date(),
+          cardNumber: cardNumber,
+          expDate: expDate,
+          cvc : cvc,
+        // Save logic here when switch is enabled
+      }) 
+    };   
+  const useCard = async () => { // added async keyword to enable using await
+   console.log("in used card funtcion");
+   firestore().collection('UsedCards').add({
     name: name,
     orderAt: new Date(),
     cardNumber: cardNumber,
@@ -85,11 +102,25 @@ top: -55}} />
             onChangeText={(cvc) => setCVC(cvc)}
           />
         </View>
-   
+        <View>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Switch
+          trackColor={{ false: '#767577', true: '#81b0ff' }}
+          thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+          ios_backgroundColor="#3e3e3e"
+          onValueChange={toggleSwitch}
+          value={isEnabled}
+        />
+        <Text>{isEnabled ? 'Save Enabled' : 'Save Disabled'}</Text>
+      </View>
+      <TouchableOpacity onPress={saveCard}>
+        <Text>Save</Text>
+      </TouchableOpacity>
+    </View> 
         <TouchableOpacity 
           style={styles.saveCardButton}
-          onPress={saveCard}>
-          <Text style={styles.loginText}>Save Card</Text>
+          onPress={useCard}>
+          <Text style={styles.loginText}>Place Order</Text>
         </TouchableOpacity>
       </View>
       </SafeAreaView>
