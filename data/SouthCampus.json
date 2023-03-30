@@ -2,6 +2,7 @@
     {
         "name": "Cafe Verde",
         "id" : 1,
+        "isfavorite" : false,
         "location": "421 Sumter Street",
                     "hours": [
                         {
@@ -18,6 +19,7 @@
     {
         "name" :"Wired Cafe",
         "id" : 2,
+        "isfavorite" : false,
         "location": "301 Main Street",
                     "hours": [
                         {
