@@ -6,7 +6,25 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
 
-const buttonData = require('./../../data/RussellHouse.json') 
+const restaurants1 = require('./../../data/RussellHouse.json')
+const restaurants2 = require('./../../data/EastCampus.json')
+const restaurants3 = require('./../../data/EastCampus.json')
+const restaurants4 = require('./../../data/EastCampus.json')
+const restaurants5 = require('./../../data/EastCampus.json')
+const restaurants6 = require('./../../data/EastCampus.json')
+const buttonData = restaurants1.concat(restaurants2).concat(restaurants3).concat(restaurants4).concat(restaurants5).concat(restaurants6);
+<RestaurantsList restaurants = {buttonData} />
+
+const RestaurantsList = ({ restaurants }) => {
+  return (
+    <View>
+      {restaurants.map(restaurant => (
+        <RestaurantItem key={restaurant.id} restaurant={restaurant} />
+      ))}
+    </View>
+  );
+};
+
 
 
 const Favorites = ({navigation}) => {
