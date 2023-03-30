@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import ImagePicker from 'react-native-image-picker';
-import firebase from 'firebase/app';
+//import Icon from 'react-native-vector-icons/FontAwesome';
+//import ImagePicker from 'react-native-image-picker';
+import firebase from '@react-native-firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 
@@ -45,34 +45,29 @@ const Profile = ({navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-          <Icon name="arrow-left" size={24} color="#884e7d" />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>Profile</Text>
+      <View style={{ position: 'absolute', bottom: 14, left: 10 }}>
+              <TouchableOpacity onPress={() => navigation.pop()}>
+                  <Image source={leftarrow}
+                      style={{ width: 50 }} />
+              </TouchableOpacity>
       </View>
       <View style={styles.userDetails}>
         <TouchableOpacity style={styles.profileImageContainer} onPress={() => console.log('Profile image clicked')}>
-          <Icon name="user-circle-o" size={100} color="#fff" />
           <Text style={styles.nameText}>Jessica Bricker</Text>
         </TouchableOpacity>
         <Text style={styles.userName}>{userData ? userData.name : ''}</Text>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={handleEditProfile}>
-          <Icon name="edit" size={24} color="white" />
           <Text style={styles.buttonText}>Edit Profile</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={handleOrderHistory}>
-          <Icon name="history" size={24} color="white" />
           <Text style={styles.buttonText}>Order History</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={handlePaymentDetails}>
-          <Icon name="credit-card" size={24} color="white" />
           <Text style={styles.buttonText}>Payment Details</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={handlePrivacyPolicy}>
-          <Icon name="lock" size={24} color="white" />
           <Text style={styles.buttonText}>Privacy Policy</Text>
         </TouchableOpacity>
       </View>
