@@ -1,7 +1,15 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState , useEffect} from 'react'; 
+import {StyleSheet,View,TouchableOpacity,
+    Image,Text, FlatList} from 'react-native';
 
-const Favorites = () => {
+import ellipsepink from './../../images/ellipsepink.png';
+import ellipsegrey from './../../images/ellipsegrey.png';
+import HomeHeader from './HomeHeader';
+
+const buttonData = require('./../../data/RussellHouse.json') 
+
+
+const Favorites = ({navigation}) => {
   
 const getimageSource = (id) => {
   switch (id) {
@@ -74,15 +82,6 @@ const renderItem = ({item}) => {
         contentContainerStyle={styles.list}
         numColumns = {2}
       />
-      <TouchableOpacity onPress={()=>navigation.pop()}>
-          <Image source={leftarrow} 
-          style={{ width: 50, 
-          height: 50,
-          right:-9,
-          bottom:25
-
-          }} />
-      </TouchableOpacity>
     </View>
   );
 };

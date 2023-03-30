@@ -36,6 +36,7 @@ import ColloquiumCafe from "../src/screens/EastCampus/ColloquiumCafe.js";
 import HorshoeDeli from "../src/screens/EastCampus/HorshoeDeli";
 import HumanitiesStarbucks from "../src/screens/EastCampus/HumanitiesStarbucks";
 import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKitchen";
+import Favorites from "../src/screens/Favorites";
 
 const Auth = createNativeStackNavigator();
 
@@ -283,7 +284,13 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
-            
+            <Auth.Screen
+                name= "Favorites"
+                component = {Favorites}
+                options = {{
+                    headerShown: false
+                }}
+            />
 
             
         </Auth.Navigator>
