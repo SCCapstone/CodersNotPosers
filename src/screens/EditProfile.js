@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } from 'react-native';
 //import { MaterialIcons } from 'react-native-vector-icons';
 import leftarrow  from './../../images/leftarrow.png';
 import Profile from './Profile';
@@ -10,16 +10,38 @@ import firebase from '@react-native-firebase/app';
 const EditProfile = ({ navigation }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
   const [streetAddress, setStreetAddress] = useState('');
   const [city, setCity] = useState('');
   const [states, setStates]= useState('');
   const [zipCode, setZipCode]= useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
-  const handleSave = () => {
-    // Code to save the user's updated information
+  const handleSave = async () => {
+    const user = firebase.auth().currentUser;
+  
+    try {
+      await firebase.firestore().collection('UserData').doc(user.uid).update({
+        firstName,
+        lastName,
+        streetAddress,
+        city,
+        states: states, // "state" is a reserved keyword in JavaScript, so use "states" instead
+        zipCode,
+        phoneNumber,
+      });
+      
+      // Success message
+      Alert.alert('Success', 'Your information has been updated.');
+  
+      // Navigate back to the profile screen
+      navigation.goBack();
+    } catch (error) {
+      // Error message
+      Alert.alert('Error', 'Failed to update your information.');
+      console.error(error);
+    }
   };
+  
 
   return (
 <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
@@ -51,13 +73,7 @@ const EditProfile = ({ navigation }) => {
       placeholderTextColor="#ccc"
       onChangeText={text => setPhoneNumber(text)}/>
   </View>
-  <View style= {styles.emailView}>
-    <TextInput id='email'
-      style={styles.inputText}
-      placeholder="Email"
-      placeholderTextColor="#ccc"
-      onChangeText={text => setEmail(text)}/>
-  </View>
+ 
   <Text style={styles.Addresstitle}>Address</Text>
   <View style= {styles.addressView}>
     <TextInput id='streetAddress'
@@ -157,18 +173,6 @@ const styles = StyleSheet.create({
         left: 207,
         top: 100,
         width:153,
-        backgroundColor:"#FFFFFF",
-        borderRadius:25,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
-      },
-      emailView:{
-        position: 'absolute',
-        left:30,
-        top:180,
-        width:330,
         backgroundColor:"#FFFFFF",
         borderRadius:25,
         height:50,
