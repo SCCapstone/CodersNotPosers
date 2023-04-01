@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
 //import { MaterialIcons } from 'react-native-vector-icons';
 import leftarrow  from './../../images/leftarrow.png';
+import ellipsepink from './../../images/ellipsepink.png';
+import ellipsegrey from './../../images/ellipsegrey.png';
 import Profile from './Profile';
 import firebase from '@react-native-firebase/app';
-
-
 
 const EditProfile = ({ navigation }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
   const [streetAddress, setStreetAddress] = useState('');
   const [city, setCity] = useState('');
   const [states, setStates]= useState('');
@@ -44,28 +45,32 @@ const EditProfile = ({ navigation }) => {
   
 
   return (
-<SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
-    <View style={styles.header}>
-        <Text style={styles.title}>Edit Profile</Text>
+<SafeAreaView style = {{flex: 1,backgroundColor:'#B6B7E5'}}>
+<Image source={ellipsepink} 
+                    style={{position: 'absolute',
+                    left: -0,
+                    top: -20,
+                    scaleX:-1}}>
+                </Image>
+                
+                <Image source={ellipsegrey} 
+                    style={{position: 'absolute',
+                    right:-40,
+                    bottom:0}}>
+                </Image>
+    <View style={{marginTop: 30,
+      marginLeft:5,}}>
+        <Text style={styles.nameText}>Edit Profile</Text>
       </View>
  <Text style={styles.Infotitle}>Personal Information</Text>
 
   <View style={styles.fView}>
-    <TextInput id='firstName'
+    <TextInput id='Name'
       style={styles.inputText}
-      placeholder="First Name"
+      placeholder="Name"
       placeholderTextColor="#ccc"
-      onChangeText={text => setFirstName(text)}/>
+      onChangeText={text => setName(text)}/>
   </View>
-
-  <View style={styles.lView}>
-    <TextInput id='lastName'
-      style={styles.inputText}
-      placeholder="Last Name"
-      placeholderTextColor="#ccc"
-      onChangeText={text => setLastName(text)}/>
-  </View>
-
   <View style= {styles.phoneView}>
     <TextInput id='phoneNumber'
       style={styles.inputText}
@@ -73,7 +78,13 @@ const EditProfile = ({ navigation }) => {
       placeholderTextColor="#ccc"
       onChangeText={text => setPhoneNumber(text)}/>
   </View>
- 
+  <View style= {styles.emailView}>
+    <TextInput id='email'
+      style={styles.inputText}
+      placeholder="Email"
+      placeholderTextColor="#ccc"
+      onChangeText={text => setEmail(text)}/>
+  </View>
   <Text style={styles.Addresstitle}>Address</Text>
   <View style= {styles.addressView}>
     <TextInput id='streetAddress'
@@ -130,6 +141,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#b6b7e5',
     padding: 45,
   },
+  editProfileNameContainer: {
+    marginTop:0,
+    marginLeft:10,
+  },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -137,7 +152,11 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc',
     marginVertical: 10,
   },
-
+  nameText: {
+    color: 'black',
+    fontSize: 30,
+    fontWeight: '900',
+  },
   inputText: {
     height:40,
     color:"black"
@@ -160,7 +179,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 30,
     top: 100,
-    width:153,
+    width:330,
     backgroundColor:"#FFFFFF",
     borderRadius:25,
     height:50,

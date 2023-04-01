@@ -9,32 +9,22 @@ import mycart from './../../../images/mycart.png';
 import MyCart from './../MyCart';
 import Cart from './../Cart';
 
-const menuData = require('./../../../data/RussellHouseRestaurants/PandaExpress.json') 
 
-const Panda = ({navigation}) => {
+const menuData = require('./../../../data/SouthCampus/CafeVerde.json') 
+
+
+const CafeVerde = ({navigation}) => {
  
-  const [menuType, setMenuType] = useState('Appetizers');
+  const [menuType, setMenuType] = useState('Entrees');
   const menuItems = [
-    { type: "Appetizers" },
     { type: "Entrees" },
-    { type: "Bowls And Plates" },
-    { type: "Sides" },
+    { type: "The Spread" },
+    { type: "Desserts And Sides" },
     { type: "Beverages" },
   ];
   
   const renderCategory = () => {
     switch (menuType) {
-        case 'Appetizers':
-        return (
-          <FlatList
-            data={menuData.appetizers[0].items.map((item, index) => ({
-              item,
-              price: menuData.appetizers[0].prices[index],
-            }))}
-            keyExtractor={(item) => item.item}
-            renderItem={renderItem}
-          />
-        );
       case 'Entrees':
         return (
           <FlatList
@@ -47,31 +37,31 @@ const Panda = ({navigation}) => {
             
           />
         );
-      case 'Bowls And Plates':
+      case 'The Spread':
         return (
           <FlatList
-            data={menuData.bowlsandplates[0].items.map((item, index) => ({
+            data={menuData.theSpread[0].items.map((item, index) => ({
               item,
-              price: menuData.bowlsandplates[0].prices[index],
+              price: menuData.theSpread[0].prices[index],
             }))}
             keyExtractor={(item) => item.item}
             renderItem={renderItem}
             
           />
         );
-      case 'Sides':
+      case 'Desserts And Sides':
         return (
           <FlatList
-            data={menuData.sides[0].items.map((item, index) => ({
+            data={menuData.dessertsAndSides[0].items.map((item, index) => ({
               item,
-              price: menuData.sides[0].prices[index],
+              price: menuData.dessertsAndSides[0].prices[index],
             }))}
             keyExtractor={(item) => item.item}
             renderItem={renderItem}
             
           />
         );
-      case 'Beverages':
+        case 'Beverages':
         return (
           <FlatList
             data={menuData.beverages[0].items.map((item, index) => ({
@@ -116,17 +106,16 @@ const Panda = ({navigation}) => {
                     bottom:0}}>
                 </Image>
     <View style = {{flexDirection:'row'}}>
-    
-<FlatList
-  data={menuItems}
-  horizontal={true}
-  renderItem={({item}) => (
-    <TouchableOpacity onPress={() => setMenuType(item.type)}>
-      <Text style={styles.category}>{item.type}</Text>
-    </TouchableOpacity>
-  )}
-/>
-
+     
+    <FlatList
+      data={menuItems}
+      horizontal={true}
+      renderItem={({item}) => (
+        <TouchableOpacity onPress={() => setMenuType(item.type)}>
+          <Text style={styles.category}>{item.type}</Text>
+        </TouchableOpacity>
+      )}
+    />
       </View>
       <View>
         {renderCategory()}
@@ -198,4 +187,4 @@ const styles = StyleSheet.create({
   }});
 
 
-  export default Panda;
+  export default CafeVerde;

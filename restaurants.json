@@ -517,7 +517,7 @@
                     ],
                     "food": [
                         {
-                            "coffee, tea and more": [
+                            "coffeeTea": [
                                 {
                                     "items": ["Freshly Brewed Coffee", "London Fog Tea Latte", "Chai Latte", "Custom Tea Latte", "Royal English Breakfast Tea Latte", "Matcha Green Tea Latte", "Matcha Soymilk Latte", "Vanilla Cream", "Cinnamon Dolce Cream", "White Hot Chocolate", "Hot Chocolate", "Steamed Milk", "Caramel Apple Spice"],
                                     "prices": [2.65, 2.95, 4.25, 4.25, 4.25, 4.25, 4.25 , 3.45, 3.45, 4.25, 3.45, 2.95, 4.25]

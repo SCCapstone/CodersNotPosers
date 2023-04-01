@@ -6,6 +6,7 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
 import leftarrow  from './../../images/leftarrow.png';
+import TcoopStarbs from './WestCampus/TcoopStarbs';
 
 
 const buttonData = require('./../../data/WestCampus.json') 
@@ -15,7 +16,7 @@ const WestCampus = ({navigation}) => {
       const renderItem = ({item}) => {
         return (
             <TouchableOpacity
-              
+              onPress={() => navigation.navigate(TcoopStarbs)}
               style={{flex: 1, margin: 5}}>
               <View style={styles.item}>
                 <Image source={require('./../../images/WestCampus/starbucksCooper.png')} style={styles.image} />
