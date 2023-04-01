@@ -13,6 +13,7 @@ import RussellHouseRestaurantScreen from "../src/screens/RussellHouseRestaurantS
 import NorthCampus from "../src/screens/NorthCampus";
 import SignUpScreen from "../src/screens/SignUpScreen";
 import ChickfilA from "../src/screens/RussellHouse/ChickfilA";
+import TcoopStarbs from "../src/screens/WestCampus/TcoopStarbs";
 import RatingScreenCFA from "../src/screens/RatingScreenCFA";
 import DriverSignUpScreen from "../src/screens/DriverSignUpScreen";
 import DriverSignInScreen from "../src/screens/DriverSignInScreen";
@@ -20,6 +21,23 @@ import FoodDetail from "../src/screens/FoodDetail";
 import AddressScreen from "../src/screens/AddressScreen";
 import Cart from "../src/screens/Cart";
 import Payment from "../src/screens/Payment";
+import Panda from "../src/screens/RussellHouse/Panda";
+import TwistedTaco from "../src/screens/RussellHouse/TwistedTaco";
+import Einstein from "../src/screens/RussellHouse/Einstein";
+import NachoPapis from "../src/screens/FoodTrucks/NachoPapis";
+import Coop from "../src/screens/FoodTrucks/Coop";
+import Panera from "../src/screens/RussellHouse/Panera";
+import Creamery from "../src/screens/RussellHouse/Creamery"
+import CafeVerde from "../src/screens/SouthCampus/CafeVerde";
+import WiredCafe from "../src/screens/SouthCampus/WiredCafe";
+import CounselorsCafe from "../src/screens/NorthCampus/CounselorsCafe";
+import HamptonStCafe from "../src/screens/NorthCampus/HamptonStCafe";
+import ColloquiumCafe from "../src/screens/EastCampus/ColloquiumCafe.js";
+import HorshoeDeli from "../src/screens/EastCampus/HorshoeDeli";
+import HumanitiesStarbucks from "../src/screens/EastCampus/HumanitiesStarbucks";
+import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKitchen";
+import Profile from "../src/screens/Profile";
+import EditProfile from "../src/screens/EditProfile";
 
 const Auth = createNativeStackNavigator();
 
@@ -107,8 +125,50 @@ export default function AuthStack() {
                 }}
             />
             <Auth.Screen
+                name= "Panda"
+                component = {Panda}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "TwistedTaco"
+                component = {TwistedTaco}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "Einstein"
+                component = {Einstein}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
                 name= "RatingScreenCFA"
                 component = {RatingScreenCFA}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "TcoopStarbs"
+                component = {TcoopStarbs}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "NachoPapis"
+                component = {NachoPapis}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "Coop"
+                component = {Coop}
                 options = {{
                     headerShown: false
                 }}
@@ -123,6 +183,20 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "DriverSignUpScreen"
                 component = {DriverSignUpScreen}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "Profile"
+                component = {Profile}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "EditProfile"
+                component = {EditProfile}
                 options = {{
                     headerShown: false
                 }}
@@ -149,8 +223,85 @@ export default function AuthStack() {
                 }}
             />
             <Auth.Screen
+                name= "Creamery"
+                component = {Creamery}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "Panera"
+                component = {Panera}
+                options = {{
+                    headerShown: false
+                }}
+            />
+           {/*  <Auth.Screen
+                name= "paymentScreen"
+                component = {paymentScreen}
+                options = {{
+                    headerShown: false
+                }}
+            /> */}
+            <Auth.Screen
                 name= "AddressScreen"
                 component = {AddressScreen}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "CafeVerde"
+                component = {CafeVerde}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "WiredCafe"
+                component = {WiredCafe}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "CounselorsCafe"
+                component = {CounselorsCafe}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "HamptonStCafe"
+                component = {HamptonStCafe}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "VillageJuiceAndKitchen"
+                component = {VillageJuiceAndKitchen}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "HumanitiesStarbucks"
+                component = {HumanitiesStarbucks}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "HorshoeDeli"
+                component = {HorshoeDeli}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "ColloquiumCafe"
+                component = {ColloquiumCafe}
                 options = {{
                     headerShown: false
                 }}

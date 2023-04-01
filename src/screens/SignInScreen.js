@@ -6,7 +6,6 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import auth from '@react-native-firebase/auth';
 import DrawerNavigation from '../../navigation/DrawerNavigation';
-import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 import SignUp from './SignUpScreen';
 
 const SignInScreen =  ({navigation}) => {

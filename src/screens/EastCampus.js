@@ -6,6 +6,10 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
 import leftarrow  from './../../images/leftarrow.png';
+import HorshoeDeli from './EastCampus/HorshoeDeli';
+import HumanitiesStarbucks from './EastCampus/HumanitiesStarbucks';
+import VillageJuiceAndKitchen from './EastCampus/VillageJuiceAndKitchen';
+import ColloquiumCafe from './EastCampus/ColloquiumCafe';
 
 
 const buttonData = require('./../../data/EastCampus.json') 
@@ -27,20 +31,16 @@ const EastCampus = ({navigation}) => {
         }
       };
       const handleButtonClick = (item) => {
-        /* switch(item.id) {
+        switch(item.id) {
             case 1:
-                return navigation.navigate(RussellHouseRestaurantScreen);
+                return navigation.navigate(ColloquiumCafe);
             case 2: 
-                return navigation.navigate(NorthCampus);
+                return navigation.navigate(HorshoeDeli);
             case 3:
-                return navigation.navigate(SouthCampus);
+                return navigation.navigate(HumanitiesStarbucks);
             case 4: 
-                return navigation.navigate(EastCampus);
-            case 5: 
-                return navigation.navigate(WestCampus);
-            case 6:
-                return navigation.navigate(FoodTrucks);
-        } */
+                return navigation.navigate(VillageJuiceAndKitchen);
+        } 
       };
       const renderItem = ({item}) => {
         const imageSource = getimageSource(item.id);

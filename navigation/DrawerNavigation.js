@@ -1,6 +1,5 @@
 import React from 'react';
 import { createDrawerNavigator} from '@react-navigation/drawer';
-import { View, Text } from 'react-native';
 
 import Profile from '../src/screens/Profile';
 import DriverSignInScreen from '../src/screens/DriverSignInScreen';

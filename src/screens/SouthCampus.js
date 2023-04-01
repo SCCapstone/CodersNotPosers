@@ -6,6 +6,8 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
 import leftarrow  from './../../images/leftarrow.png';
+import CafeVerde from './SouthCampus/CafeVerde';
+import WiredCafe from './SouthCampus/WiredCafe';
 
 
 const buttonData = require('./../../data/SouthCampus.json') 
@@ -23,12 +25,12 @@ const SouthCampus = ({navigation}) => {
         }
       };
       const handleButtonClick = (item) => {
-        /* switch(item.id) {
+        switch(item.id) {
             case 1:
-                return navigation.navigate(RussellHouseRestaurantScreen);
+                return navigation.navigate(CafeVerde);
             case 2: 
-                return navigation.navigate(NorthCampus);
-        } */
+                return navigation.navigate(WiredCafe);
+        }
       };
       const renderItem = ({item}) => {
         const imageSource = getimageSource(item.id);
