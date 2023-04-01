@@ -39,7 +39,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                                         .catch ((error) => {
                                         alert(error);
                                         console.log(error);                                
-                                        })
+                                    })
 }
     
     const apply = () => {
