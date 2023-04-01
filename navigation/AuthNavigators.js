@@ -36,6 +36,9 @@ import ColloquiumCafe from "../src/screens/EastCampus/ColloquiumCafe.js";
 import HorshoeDeli from "../src/screens/EastCampus/HorshoeDeli";
 import HumanitiesStarbucks from "../src/screens/EastCampus/HumanitiesStarbucks";
 import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKitchen";
+import Profile from "../src/screens/Profile";
+import EditProfile from "../src/screens/EditProfile";
+import paymentScreen from "../src/screens/paymentScreen";
 
 const Auth = createNativeStackNavigator();
 
@@ -181,6 +184,20 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "DriverSignUpScreen"
                 component = {DriverSignUpScreen}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "Profile"
+                component = {Profile}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "EditProfile"
+                component = {EditProfile}
                 options = {{
                     headerShown: false
                 }}
