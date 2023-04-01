@@ -5,6 +5,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null);
+    const [driver,setDriver] = useState(null);
     return (
         <AuthContext.Provider
         value = {{
@@ -45,7 +46,6 @@ export const AuthProvider = ({children}) => {
             registerDriver: async(emailDriver,passwordDriver) => {
                 try {
                     await auth().createDriverWithEmailAndPassword(emailDriver,passwordDriver);
-                    //figure out how to store phone number
                 } catch(e) {
                     console.log(e);
                 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
-Image,Text,Alert} from 'react-native';
+import {SafeAreaView,StyleSheet,View,TextInput,TouchableOpacity,
+Image,Text,Alert,Keyboard} from 'react-native';
 
 
 import auth from '@react-native-firebase/auth';
@@ -10,30 +10,30 @@ import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import { CardStyleInterpolators } from 'react-navigation-stack';
 import DriverSignInScreen from './DriverSignInScreen';
+
 
 const DriverSignUpScreen =  ({navigation}) => {
     const [fnameDriver, setFirstNameDriver] = useState("");
     const [lnameDriver, setLastNameDriver] = useState("");
-    const [emailDriver, setEmailDriver] = useState("");
     const [phoneDriver, setPhoneDriver] = useState("");
+    const [emailDriver, setEmailDriver] = useState("");
     const [passwordDriver, setPasswordDriver] = useState("");
     const [confirmPasswordDriver, setConfirmPasswordDriver] = useState("");
-
-    const todoRef = firebase.firestore().collection('newData');
+   
+    const todoRef = firebase.firestore().collection('DriversData');
     const addData= () => {
         const data = {
-            DriverEmail: emailDriver,
             DriverFirstName: fnameDriver,
             DriverLastName: lnameDriver,
+            DriverEmail: emailDriver,
             DriverPhoneNumber: phoneDriver,
             DriverPassword: passwordDriver,
         };
-        todoRef.add(data).then(() => {setEmailDriver('');
-                                        setFirstNameDriver('');
+        todoRef.add(data).then(() => {setFirstNameDriver('');
                                         setLastNameDriver('');
                                         setPhoneDriver('');
+                                        setEmailDriver('');
                                         setPasswordDriver('');
                                         Keyboard.dismiss();})
                                         .catch ((error) => {
@@ -41,8 +41,8 @@ const DriverSignUpScreen =  ({navigation}) => {
                                         console.log(error);                                
                                     })
 }
-    
-    const apply = () => {
+   
+    const registerDriver = () => {
         if(!emailDriver) {
           Alert.alert("Please enter email");
           return
@@ -52,49 +52,59 @@ const DriverSignUpScreen =  ({navigation}) => {
           return
         }
         else if (passwordDriver != confirmPasswordDriver) {
-          Alert.alert("Passwords does not match");
+          Alert.alert("Passwords do not match");
           return
         }
-        registerDriver(emailDriver,passwordDriver)
+        console.log();
+        createDriver(emailDriver,passwordDriver);
+        //addData();
     }
-    
-    const registerDriver = async (emailDriver,passwordDriver) => {
-    try {
-        let response = await auth().createDriverWithEmailAndPassword(emailDriver,passwordDriver);
-        //store phone number of driver here
-        if(response && response.user) {
-            navigation.navigate("DriverSignInScreen")
+   
+    const createDriver = async (emailDriver,passwordDriver) => {
+        try {
+            console.log();
+            let response = await auth().createDriverWithEmailAndPassword(emailDriver,passwordDriver);
+            console.log();
+            if(response && response.user) {
+                navigation.navigate(DriverSignInScreen)
+            }
+        }
+        catch(e) {
+            console.error(e.message);
         }
     }
-    catch(e) {
-        console.error(e.message);
-    }
-    }
 
-    
+
+   
+
 
     return (
 
+
     <SafeAreaView style = {styles.container}>
 
+
         <View style={styles.container}>
-            <Image source={ellipsepink} 
+            <Image source={ellipsepink}
                 style={{position: 'absolute',
                 left: -210,
                 top: -55}} />
         </View>
 
+
         <View style = {styles.container}>
-            <Image source={logo} 
+            <Image source={logo}
                 style={{ position: 'absolute',
-                width: 109, 
+                width: 109,
                 height: 109,
                 top:-280 }} />
         </View>
 
+
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <Text>   </Text>
         </View>
+
 
         <View style={styles.fView}>
             <TextInput id='firstName'
@@ -104,6 +114,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 onChangeText={text => setFirstNameDriver(text)}/>
         </View>
 
+
         <View style={styles.lView}>
             <TextInput id='lastName'
                 style={styles.inputText}
@@ -111,6 +122,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 placeholderTextColor="#ccc"
                 onChangeText={(text) => setLastNameDriver(text)}/>
         </View>
+
 
         <View style= {styles.phoneView}>
             <TextInput
@@ -120,6 +132,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 onChangeText={(text) => setPhoneDriver(text)}/>
         </View>
 
+
         <View style= {styles.emailView}>
             <TextInput
                 style={styles.inputText}
@@ -127,6 +140,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 placeholderTextColor="#ccc"
                 onChangeText={(text) => setEmailDriver(text)}/>
         </View>
+
 
         <View style= {styles.passwordView}>
             <TextInput
@@ -137,6 +151,7 @@ const DriverSignUpScreen =  ({navigation}) => {
                 onChangeText={(text) => setPasswordDriver(text)}/>
         </View>
 
+
         <View style= {styles.confirmPasswordView}>
             <TextInput
                 style={styles.inputText}
@@ -146,32 +161,38 @@ const DriverSignUpScreen =  ({navigation}) => {
                 onChangeText={(text) => setConfirmPasswordDriver(text)}/>
         </View>
 
+
        
+
 
         <View>
             <TouchableOpacity
-                onPress = {apply}
+                onPress = {registerDriver}
                 style={styles.signupBtn}>
                 <Text style={styles.forgotAndSignUpText}>Submit Application</Text>
             </TouchableOpacity>
 
+
         <TouchableOpacity onPress={()=>navigation.navigate(DriverSignInScreen)}>
-            <Image source={leftarrow} 
-                    style={{ width: 50, 
+            <Image source={leftarrow}
+                    style={{ width: 50,
                     height: 50,
                     top:-10,
                     left:-160}} />
         </TouchableOpacity>
 
-        <Image source={ellipsegrey} 
+
+        <Image source={ellipsegrey}
                 style={{position: 'absolute',
                 right:-200,
                 bottom:0}}/>
         </View>
 
+
     </SafeAreaView>
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -180,6 +201,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+
 
     fView:{
         position: 'absolute',
@@ -194,6 +216,7 @@ const styles = StyleSheet.create({
         padding:20
     },
 
+
     lView:{
         position: 'absolute',
         left: 207,
@@ -206,6 +229,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         padding:20
     },
+
 
     phoneView:{
         position: 'absolute',
@@ -220,6 +244,7 @@ const styles = StyleSheet.create({
         padding:20
     },
 
+
     emailView:{
         position: 'absolute',
         left:30,
@@ -232,6 +257,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         padding:20
     },
+
 
     passwordView:{
         position: 'absolute',
@@ -246,6 +272,7 @@ const styles = StyleSheet.create({
         padding:20
     },
 
+
     confirmPasswordView:{
         position: 'absolute',
         left: 30,
@@ -257,12 +284,13 @@ const styles = StyleSheet.create({
         marginBottom:20,
         justifyContent:"center",
         padding:20
-    }, 
+    },
+
 
     uploadDriversLicenseButton:{
         position: "absolute",
         right:145,
-        top:-200, 
+        top:-200,
         width:115,
         backgroundColor:"#884E7D",
         borderRadius:25,
@@ -270,6 +298,8 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
     },
+
+
 
 
     inputText:{
@@ -277,10 +307,11 @@ const styles = StyleSheet.create({
         color:"black"
     },
 
+
     signupBtn:{
         position: "absolute",
         right:-20,
-        top:-50, 
+        top:-50,
         width:115,
         backgroundColor:"#884E7D",
         borderRadius:25,
@@ -288,6 +319,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
     },
+
 
     passwordsDontMatchTxt:{
         height:60,
@@ -297,3 +329,6 @@ const styles = StyleSheet.create({
     }
 });
 export default DriverSignUpScreen;
+
+
+
