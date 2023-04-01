@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
-//import { MaterialIcons } from 'react-native-vector-icons';
 import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
@@ -8,38 +7,50 @@ import Profile from './Profile';
 import firebase from '@react-native-firebase/app';
 
 const EditProfile = ({ navigation }) => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [streetAddress, setStreetAddress] = useState('');
   const [city, setCity] = useState('');
   const [states, setStates]= useState('');
   const [zipCode, setZipCode]= useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [userData, setUserData] = useState(null);
 
-  const handleSave = async () => {
-    const user = firebase.auth().currentUser;
-  
+
+  useEffect(() => {
     try {
-      await firebase.firestore().collection('UserData').doc(user.uid).update({
-        firstName,
-        lastName,
-        streetAddress,
-        city,
-        states: states, // "state" is a reserved keyword in JavaScript, so use "states" instead
-        zipCode,
-        phoneNumber,
+      const user = firebase.auth().currentUser;
+      console.log(user);
+      firebase.firestore().collection('UserData').doc(user.uid).get().then((doc) => {
+        if (doc.exists) {
+          setName(doc.data().name);
+          setUserData(user);
+          setPhoneNumber(doc.data().phone);
+
+        } else {
+          console.log("No such document!");
+        }
       });
-      
-      // Success message
-      Alert.alert('Success', 'Your information has been updated.');
-  
-      // Navigate back to the profile screen
-      navigation.goBack();
     } catch (error) {
-      // Error message
-      Alert.alert('Error', 'Failed to update your information.');
-      console.error(error);
+      console.error(error.message);
+    }
+  }, []);
+
+  const handleSave = () => {
+    try {
+      const user = firebase.auth().currentUser;
+      firebase.firestore().collection('UserData').doc(user.uid).update({
+        name: name,
+        streetAddress: streetAddress,
+        city: city,
+        state: states,
+        zipCode: zipCode,
+        phoneNumber: phoneNumber,
+      }).then(() => {
+        console.log("User data updated successfully!");
+        navigation.goBack();
+      });
+    } catch (error) {
+      console.error(error.message);
     }
   };
   
@@ -62,13 +73,14 @@ const EditProfile = ({ navigation }) => {
       marginLeft:5,}}>
         <Text style={styles.nameText}>Edit Profile</Text>
       </View>
- <Text style={styles.Infotitle}>Personal Information</Text>
+ <Text style={styles.infotitle}>Personal Information</Text>
 
-  <View style={styles.fView}>
-    <TextInput id='Name'
+  <View style={styles.nameView}>
+    <TextInput id='name'
       style={styles.inputText}
       placeholder="Name"
       placeholderTextColor="#ccc"
+      value = {name}
       onChangeText={text => setName(text)}/>
   </View>
   <View style= {styles.phoneView}>
@@ -78,14 +90,7 @@ const EditProfile = ({ navigation }) => {
       placeholderTextColor="#ccc"
       onChangeText={text => setPhoneNumber(text)}/>
   </View>
-  <View style= {styles.emailView}>
-    <TextInput id='email'
-      style={styles.inputText}
-      placeholder="Email"
-      placeholderTextColor="#ccc"
-      onChangeText={text => setEmail(text)}/>
-  </View>
-  <Text style={styles.Addresstitle}>Address</Text>
+  <Text style={styles.addrtitle}>Address</Text>
   <View style= {styles.addressView}>
     <TextInput id='streetAddress'
       style={styles.inputText}
@@ -98,7 +103,7 @@ const EditProfile = ({ navigation }) => {
       style={styles.inputText}
       placeholder="City"
       placeholderTextColor="#ccc"
-      onChangeText={text => setTown(text)}/>
+      onChangeText={text => setCity(text)}/>
   </View>
 
   <View style= {styles.stateView}>
@@ -125,8 +130,8 @@ const EditProfile = ({ navigation }) => {
                 <Image source={leftarrow} 
                 style={{ width: 50, 
                 height: 50,
-                right:-9,
-                bottom:-235
+                right:-20,
+                bottom:-450
 
                 }} />            
      </TouchableOpacity>
@@ -168,17 +173,17 @@ const styles = StyleSheet.create({
     marginTop: 10,
     alignItems: 'center',
     width:153,
-    top: 220,
+    top: 450,
     right:-125,
   },
   buttonText: {
     color: '#fff',
     fontSize: 16,
   },
-  fView:{
+  nameView:{
     position: 'absolute',
     left: 30,
-    top: 100,
+    top: 185,
     width:330,
     backgroundColor:"#FFFFFF",
     borderRadius:25,
@@ -187,18 +192,6 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     padding:20
     },
-    lView:{
-        position: 'absolute',
-        left: 207,
-        top: 100,
-        width:153,
-        backgroundColor:"#FFFFFF",
-        borderRadius:25,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
-      },
       phoneView:{
         position: 'absolute',
         left: 30,
@@ -232,22 +225,21 @@ const styles = StyleSheet.create({
         top: -230,
         left: -120  },
     
-      Addresstitle: {
+      infotitle: {
           fontSize: 15,
           color: '#333333',
           textAlign: 'center',
           marginBottom: 10,
-          top: 15,
-          left: -140},
-    
-     Infotitle: {
+          top: 80,
+          left: -91},
+        
+      addrtitle: {
             fontSize: 15,
             color: '#333333',
             textAlign: 'center',
             marginBottom: 10,
-            top: -225,
-            left: -95},
-        
+            top: 237,
+            left: -134},
         cityView:{
               position: 'absolute',
               left: 30,
@@ -260,8 +252,8 @@ const styles = StyleSheet.create({
               justifyContent:"center",
               padding:20
               },
-              stateView:{
-                position: 'absolute',
+        stateView:{
+           position: 'absolute',
                 left: 207,
                 top: 440,
                 width:153,

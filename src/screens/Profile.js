@@ -12,7 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const Profile = ({navigation }) => {
   const [userData, setUserData] = useState(null);
-  const [name, setName] = useState('Jessica ');
+  const [name, setName] = useState('Jessica');
 
   // Fetch user data from Firebase`
   useEffect(() => {
@@ -20,7 +20,7 @@ const Profile = ({navigation }) => {
       const user = firebase.auth().currentUser;
       firebase.firestore().collection('UserData').doc(user.uid).get().then((doc) => {
         if (doc.exists) {
-          setName(user.displayName);
+          setName(user.displayName); // <--- Setting the name he
           setUserData(user);
         } else {
           console.log("No such document!");
@@ -31,7 +31,7 @@ const Profile = ({navigation }) => {
     }
   }, []);
   const handleEditProfile = () => {
-    navigation.navigate(EditProfile);
+    navigation.navigate('EditProfile');
     };
 
   const handleOrderHistory = () => {
