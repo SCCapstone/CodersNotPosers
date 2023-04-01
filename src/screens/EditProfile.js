@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView } from 'react-native';
 //import { MaterialIcons } from 'react-native-vector-icons';
+import leftarrow  from './../../images/leftarrow.png';
+import Profile from './Profile';
+
 
 const EditProfile = ({ navigation }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
+  const [streetAddress, setStreetAddress] = useState('');
+  const [town, setTown] = useState('');
+  const [state, setState]= useState('');
+  const [ziCodep, setZipCode]= useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleSave = () => {
@@ -15,9 +21,10 @@ const EditProfile = ({ navigation }) => {
 
   return (
 <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
-    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-    <Text>   </Text>
-  </View>
+    <View style={styles.header}>
+        <Text style={styles.title}>Edit Profile</Text>
+      </View>
+ <Text style={styles.Infotitle}>Personal Information</Text>
 
   <View style={styles.fView}>
     <TextInput id='firstName'
@@ -42,15 +49,6 @@ const EditProfile = ({ navigation }) => {
       placeholderTextColor="#ccc"
       onChangeText={text => setPhoneNumber(text)}/>
   </View>
-
-  <View style= {styles.addressView}>
-    <TextInput
-      style={styles.inputText}
-      placeholder="Address"
-      placeholderTextColor="#ccc"
-      onChangeText={text => setAddress(text)}/>
-  </View>
-
   <View style= {styles.emailView}>
     <TextInput
       style={styles.inputText}
@@ -58,11 +56,50 @@ const EditProfile = ({ navigation }) => {
       placeholderTextColor="#ccc"
       onChangeText={text => setEmail(text)}/>
   </View>
+  <Text style={styles.Addresstitle}>Address</Text>
+  <View style= {styles.addressView}>
+    <TextInput
+      style={styles.inputText}
+      placeholder="Street Address"
+      placeholderTextColor="#ccc"
+      onChangeText={text => setStreetAddress(text)}/>
+  </View>
+  <View style= {styles.townView}>
+    <TextInput
+      style={styles.inputText}
+      placeholder="Town"
+      placeholderTextColor="#ccc"
+      onChangeText={text => setTown(text)}/>
+  </View>
 
+  <View style= {styles.stateView}>
+    <TextInput
+      style={styles.inputText}
+      placeholder="State"
+      placeholderTextColor="#ccc"
+      onChangeText={text => setState(text)}/>
+  </View>
+
+  <View style= {styles.zipView}>
+    <TextInput
+      style={styles.inputText}
+      placeholder="Zip Code"
+      placeholderTextColor="#ccc"
+      onChangeText={text => setZipCode(text)}/>
+  </View>
 
       <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
         <Text style={styles.buttonTex}>Save Changes</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity onPress={()=>navigation.pop()}>
+                <Image source={leftarrow} 
+                style={{ width: 50, 
+                height: 50,
+                right:-9,
+                bottom:2
+                }} />
+            </TouchableOpacity>
     </SafeAreaView>
         );
 };
@@ -80,9 +117,6 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc',
     marginVertical: 10,
   },
-  icon: {
-    marginRight: 10,
-  },
 
   inputText: {
     height:30,
@@ -91,21 +125,16 @@ const styles = StyleSheet.create({
   saveButton: {
     backgroundColor: '#884e7d',
     padding: 20,
-    borderRadius: 25,
+    borderRadius: 26,
     marginTop: 10,
     alignItems: 'center',
     width:330,
-    top: 400
+    top: 190,
+    right:-27,
   },
   buttonText: {
     color: '#fff',
     fontSize: 18,
-  },
-  backButton: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    padding: 20,
   },
   fView:{
     position: 'absolute',
@@ -158,7 +187,7 @@ const styles = StyleSheet.create({
       addressView:{
         position: 'absolute',
         left: 30,
-        top: 350,
+        top: 370,
         width:330,
         backgroundColor:"#FFFFFF",
         borderRadius:25,
@@ -167,6 +196,65 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         padding:20
       },
+      title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#333333',
+        textAlign: 'center',
+        marginBottom: 10,
+        top: -260,
+        left: -120  },
+      Addresstitle: {
+          fontSize: 15,
+          color: '#333333',
+          textAlign: 'center',
+          marginBottom: 10,
+          top: -15,
+          left: -140},
+     Infotitle: {
+            fontSize: 15,
+            color: '#333333',
+            textAlign: 'center',
+            marginBottom: 10,
+            top: -251,
+            left: -95},
+        
+        townView:{
+              position: 'absolute',
+              left: 30,
+              top: 440,
+              width:153,
+              backgroundColor:"#FFFFFF",
+              borderRadius:25,
+              height:50,
+              marginBottom:20,
+              justifyContent:"center",
+              padding:20
+              },
+              stateView:{
+                position: 'absolute',
+                left: 207,
+                top: 440,
+                width:153,
+                backgroundColor:"#FFFFFF",
+                borderRadius:25,
+                height:50,
+                marginBottom:20,
+                justifyContent:"center",
+                padding:20
+              },
+              zipView:{
+                position: 'absolute',
+                left: 30,
+                top: 510,
+                width:153,
+                backgroundColor:"#FFFFFF",
+                borderRadius:25,
+                height:50,
+                marginBottom:20,
+                justifyContent:"center",
+                padding:20
+                },
   
 });
 

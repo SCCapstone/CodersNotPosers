@@ -5,6 +5,10 @@ import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import profile from './../../images/profile.png';
+import EditProfile from './EditProfile';
+import { useNavigation } from '@react-navigation/native';
+
+
 
 const Profile = ({navigation }) => {
   const [userData, setUserData] = useState(null);
@@ -26,9 +30,9 @@ const Profile = ({navigation }) => {
       console.error(error.message);
     }
   }, []);
-
+  const navigation = useNavigation();
   const handleEditProfile = () => {
-    navigation.navigate('Edit Profile');
+    navigation.navigate('EditProfile');
     };
 
   const handleOrderHistory = () => {
@@ -54,10 +58,14 @@ const Profile = ({navigation }) => {
                     bottom:0}}>
                 </Image>
       <View style={{ position: 'absolute', bottom: 14, left: 10 }}>
-              <TouchableOpacity onPress={() => navigation.pop()}>
-                  <Image source={leftarrow}
-                      style={{ width: 50 }} />
-              </TouchableOpacity>
+      <TouchableOpacity onPress={()=>navigation.navigate(Profile)}>
+                <Image source={leftarrow} 
+                style={{ width: 50, 
+                height: 50,
+                right:-9,
+                bottom:2
+                }} />
+        </TouchableOpacity>
       </View>
       <View style={styles.userDetails}>
           <Text style={styles.nameText}>Profile</Text>
