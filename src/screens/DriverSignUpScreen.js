@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,TextuseColorScheme,View,TextInput,TouchableOpacity,
 Image,Text,Alert} from 'react-native';
 
+
 import auth from '@react-native-firebase/auth';
+import {getdatabase, ref, set} from "firebase/database";
+import { firebase } from '@react-native-firebase/firestore';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import { CardStyleInterpolators } from 'react-navigation-stack';
+import DriverSignInScreen from './DriverSignInScreen';
 
 const DriverSignUpScreen =  ({navigation}) => {
     const [fnameDriver, setFirstNameDriver] = useState("");
@@ -16,6 +20,27 @@ const DriverSignUpScreen =  ({navigation}) => {
     const [phoneDriver, setPhoneDriver] = useState("");
     const [passwordDriver, setPasswordDriver] = useState("");
     const [confirmPasswordDriver, setConfirmPasswordDriver] = useState("");
+
+    const todoRef = firebase.firestore().collection('newData');
+    const addData= () => {
+        const data = {
+            DriverEmail: emailDriver,
+            DriverFirstName: fnameDriver,
+            DriverLastName: lnameDriver,
+            DriverPhoneNumber: phoneDriver,
+            DriverPassword: passwordDriver,
+        };
+        todoRef.add(data).then(() => {setEmailDriver('');
+                                        setFirstNameDriver('');
+                                        setLastNameDriver('');
+                                        setPhoneDriver('');
+                                        setPasswordDriver('');
+                                        Keyboard.dismiss();})
+                                        .catch ((error) => {
+                                        alert(error);
+                                        console.log(error);                                
+                                        })
+}
     
     const apply = () => {
         if(!emailDriver) {
@@ -130,12 +155,12 @@ const DriverSignUpScreen =  ({navigation}) => {
                 <Text style={styles.forgotAndSignUpText}>Submit Application</Text>
             </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>navigation.naviagte("DriverSignInScreen")}>
+        <TouchableOpacity onPress={()=>navigation.navigate(DriverSignInScreen)}>
             <Image source={leftarrow} 
                     style={{ width: 50, 
                     height: 50,
                     top:-10,
-                    left:-180}} />
+                    left:-160}} />
         </TouchableOpacity>
 
         <Image source={ellipsegrey} 
@@ -254,8 +279,8 @@ const styles = StyleSheet.create({
 
     signupBtn:{
         position: "absolute",
-        right:5,
-        top:-30, 
+        right:-20,
+        top:-50, 
         width:115,
         backgroundColor:"#884E7D",
         borderRadius:25,
