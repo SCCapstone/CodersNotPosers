@@ -10,7 +10,6 @@ import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 import { useNavigation } from '@react-navigation/native';
 
 
-
 const Profile = ({navigation }) => {
   const [userData, setUserData] = useState(null);
   const [name, setName] = useState('Jessica ');
