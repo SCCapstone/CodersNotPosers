@@ -2,8 +2,7 @@ import React, { useContext, useState } from 'react';
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,View,TextInput,TouchableOpacity,
 Image,Text, Alert, Keyboard} from 'react-native';
 import auth from '@react-native-firebase/auth';
-import {getdatabase, ref, set} from "firebase/database";
-import { firebase } from '@react-native-firebase/firestore';
+import firestore from '@react-native-firebase/firestore';
 
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
@@ -14,32 +13,11 @@ import DrawerNavigation from '../../navigation/DrawerNavigation';
 
 const SignUpScreen =  ({navigation}) => {
   const [email, setEmail] = useState("");
-  const [fname,setFirstName] = useState("");
-  const [lname,setLastName] = useState("");
+  const [name,setName] = useState("");
   const [phone,setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-//const {register}  = useContext(AuthContext);
-  const todoRef = firebase.firestore().collection('newData');
-  const addData= () => {
-    const data = {
-    Useremail: email,
-    FirstName: fname,
-    LastName: lname,
-    PhoneNumber: phone,
-    Password: password,
-    };
-    todoRef.add(data).then(() => {setEmail('');
-                                  setFirstName('');
-                                  setLastName('');
-                                  setPhoneNumber('');
-                                  setPassword('');
-                                Keyboard.dismiss();})
-                                .catch ((error) => {
-                                  alert(error);
-                                  console.log(error);                                
-                                })
-}
+  
   const register = () => {
     if(!email) {
       Alert.alert("Please enter email");
@@ -53,21 +31,32 @@ const SignUpScreen =  ({navigation}) => {
       Alert.alert("Passwords does not match");
       return
     }
-    registerUser(email,password);
-    //addData();
+    
+    registerUser(email, password, name, phone);
   }
 
-  const registerUser = async (email,password) => {
+  const registerUser = async (email, password, name, phone) => {
     try {
         let response = await auth().createUserWithEmailAndPassword(email,password)
         if(response && response.user) {
+          const uid = response.user.uid;
+          await response.user.updateProfile({
+            displayName: name,
+            phoneNumber: phone
+          });
+          firestore().collection('UserData').doc(uid).set({
+            email: email,
+            name: name,
+            phone: phone,
+            password: password
+          })
           navigation.navigate(DrawerNavigation)
         }
     }
     catch(e) {
       console.error(e.message)
     }
-  }
+  };
   return (
 
     <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
@@ -91,27 +80,19 @@ const SignUpScreen =  ({navigation}) => {
         <Text>   </Text>
       </View>
 
-      <View style={styles.fView}>
-        <TextInput id='firstName'
+      <View style={styles.name}>
+        <TextInput id='Name'
           style={styles.inputText}
-          placeholder="First Name"
-          placeholderTextColor="#ccc"
-          onChangeText={text => setFirstName(text)}/>
-      </View>
-
-      <View style={styles.lView}>
-        <TextInput id='lastName'
-          style={styles.inputText}
-          placeholder="Last Name"
-          placeholderTextColor="#ccc"
-          onChangeText={text => setLastName(text)}/>
+          placeholder="Name"
+          placeholderTextColor="#CBC3E3"
+          onChangeText={text => setName(text)}/>
       </View>
 
       <View style= {styles.phoneView}>
         <TextInput
           style={styles.inputText}
           placeholder="Phone"
-          placeholderTextColor="#ccc"
+          placeholderTextColor="#CBC3E3"
           onChangeText={text => setPhoneNumber(text)}/>
       </View>
 
@@ -119,7 +100,7 @@ const SignUpScreen =  ({navigation}) => {
         <TextInput
           style={styles.inputText}
           placeholder="Email"
-          placeholderTextColor="#ccc"
+          placeholderTextColor="#CBC3E3"
           onChangeText={text => setEmail(text)}/>
       </View>
       
@@ -128,7 +109,7 @@ const SignUpScreen =  ({navigation}) => {
           style={styles.inputText}
           secureTextEntry
           placeholder="Password"
-          placeholderTextColor="#ccc"
+          placeholderTextColor="#CBC3E3"
           onChangeText={text => setPassword(text)}/>
       </View>
 
@@ -137,7 +118,7 @@ const SignUpScreen =  ({navigation}) => {
           style={styles.inputText}
           secureTextEntry
           placeholder="Confirm Password"
-          placeholderTextColor="#ccc"
+          placeholderTextColor="#CBC3E3"
           onChangeText={text => setConfirmPassword(text)}/>
       </View>
 
@@ -176,30 +157,17 @@ const SignUpScreen =  ({navigation}) => {
     justifyContent: 'center',
     },
 
-    fView:{
+    name:{
     position: 'absolute',
     left: 30,
     top: 194,
-    width:153,
+    width:330,
     backgroundColor:"#FFFFFF",
     borderRadius:25,
     height:50,
     marginBottom:20,
     justifyContent:"center",
     padding:20
-    },
-
-    lView:{
-      position: 'absolute',
-      left: 207,
-      top: 194,
-      width:153,
-      backgroundColor:"#FFFFFF",
-      borderRadius:25,
-      height:50,
-      marginBottom:20,
-      justifyContent:"center",
-      padding:20
     },
 
     phoneView:{

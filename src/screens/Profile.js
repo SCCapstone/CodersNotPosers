@@ -1,31 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-//import Icon from 'react-native-vector-icons/FontAwesome';
-//import ImagePicker from 'react-native-image-picker';
 import firebase from '@react-native-firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
 import leftarrow  from './../../images/leftarrow.png';
+import ellipsepink from './../../images/ellipsepink.png';
+import ellipsegrey from './../../images/ellipsegrey.png';
+import profile from './../../images/profile.png';
 
 const Profile = ({navigation }) => {
   const [userData, setUserData] = useState(null);
+  const [name, setName] = useState('Jessica ');
 
-  // Fetch user data from Firebase
+  // Fetch user data from Firebase`
   useEffect(() => {
-    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        firebase.firestore().collection('users').doc(user.uid).get()
-          .then(doc => {
-            if (doc.exists) {
-              setUserData(doc.data());
-            } else {
-              console.log('No user data found');
-            }
-          })
-          .catch(error => console.log(error));
-      }
-    });
-    return unsubscribe;
+    try {
+      const user = firebase.auth().currentUser;
+      firebase.firestore().collection('UserData').doc(user.uid).get().then((doc) => {
+        if (doc.exists) {
+          setName(user.displayName);
+          setUserData(user);
+        } else {
+          console.log("No such document!");
+        }
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
   }, []);
 
   const handleEditProfile = () => {
@@ -40,12 +39,20 @@ const Profile = ({navigation }) => {
     console.log('Payment Details clicked');
   };
 
-  const handlePrivacyPolicy = () => {
-    console.log('Privacy Policy clicked');
-  };
-
   return (
     <View style={styles.container}>
+      <Image source={ellipsepink} 
+                    style={{position: 'absolute',
+                    left: -10,
+                    top: -20,
+                    scaleX:-1}}>
+                </Image>
+                
+                <Image source={ellipsegrey} 
+                    style={{position: 'absolute',
+                    right:-40,
+                    bottom:0}}>
+                </Image>
       <View style={{ position: 'absolute', bottom: 14, left: 10 }}>
               <TouchableOpacity onPress={() => navigation.pop()}>
                   <Image source={leftarrow}
@@ -53,12 +60,16 @@ const Profile = ({navigation }) => {
               </TouchableOpacity>
       </View>
       <View style={styles.userDetails}>
-        <TouchableOpacity style={styles.profileImageContainer} onPress={() => console.log('Profile image clicked')}>
-          <Text style={styles.nameText}>Jessica Bricker</Text>
-        </TouchableOpacity>
-        <Text style={styles.userName}>{userData ? userData.name : ''}</Text>
+          <Text style={styles.nameText}>Profile</Text>
       </View>
-      <View style={styles.buttonContainer}>
+        <Image source = {profile}
+        style={{position: 'absolute',
+        width:100,height:100,
+        left:150,top:60,borderRadius:50}}>
+        </Image>
+      <View style = {{alignItems:'center',marginTop:120}}>
+      <Text style={styles.userName}>{name}</Text>
+      </View>
         <TouchableOpacity style={styles.button} onPress={handleEditProfile}>
           <Text style={styles.buttonText}>Edit Profile</Text>
         </TouchableOpacity>
@@ -68,10 +79,7 @@ const Profile = ({navigation }) => {
         <TouchableOpacity style={styles.button} onPress={handlePaymentDetails}>
           <Text style={styles.buttonText}>Payment Details</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handlePrivacyPolicy}>
-          <Text style={styles.buttonText}>Privacy Policy</Text>
-        </TouchableOpacity>
-      </View>
+      
     </View>
   );
 };
@@ -81,35 +89,19 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#b6b7e5',
     },
-    header: {
-      backgroundColor: '#fff',
-      paddingVertical: 15,
-      paddingHorizontal: 20,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      borderBottomWidth: 1,
-      borderBottomColor: '#ccc',
-    },
-    headerTitle: {
-      fontSize: 22,
-      fontWeight: 'bold',
-      marginLeft: 20,
-
-    },
     backButton: {
       marginRight: 20,
     },
-    userImageContainer: {
+    profileNameContainer: {
       marginTop: 30,
       alignItems: 'center',
       justifyContent: 'center',
     },
-    userImage: {
-      width: 150,
-      height: 150,
-      borderRadius: 75,
+    profileContainer: {
+      marginTop: 30,
+      marginLeft:10
     },
+   
     editButton: {
       backgroundColor: '#fff',
       padding: 10,
@@ -119,6 +111,11 @@ const styles = StyleSheet.create({
       position: 'absolute',
       bottom: -20,
       right: 20,
+    },
+    userName: {
+      color: 'black',
+      fontSize: 30,
+      fontWeight: '900',
     },
     editButtonText: {
       fontSize: 16,
@@ -144,9 +141,11 @@ const styles = StyleSheet.create({
     },
     button: {
       backgroundColor:'#884e7d',
-      padding: 10,
-      borderRadius: 25,
-      marginTop: 20,
+      padding: 20,
+      marginHorizontal:20,
+      borderRadius: 35,
+      marginTop: 30,
+      top:100,
       alignItems: 'center',
     },
     buttonText: {
@@ -192,9 +191,9 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
     nameText: {
-        color: '#fff',
-        fontSize: 18,
-        fontWeight: 'bold',
+        color: 'black',
+        fontSize: 30,
+        fontWeight: '900',
       },
     creditButton: {
       backgroundColor:'#884e7d',
