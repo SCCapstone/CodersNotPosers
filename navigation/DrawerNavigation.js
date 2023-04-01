@@ -9,6 +9,7 @@ import CampusSideSelectionScreen from '../src/screens/CampusSideSelectionScreen'
 import Favorites from '../src/screens/Favorites';
 import Order from '../src/screens/Order';
 import SignOutScreen from '../src/screens/SignOutScreen';
+import SearchScreen from '../src/screens/SearchScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -66,6 +67,13 @@ export default function DrawerNavigation() {
         component = {SignOutScreen}
         options = {{
           title: 'Sign out',
+        }}
+        />
+        <Drawer.Screen
+        name = "Search Screen"
+        component = {SearchScreen}
+        options = {{
+          title: 'Search Screen',
         }}
         />
     </Drawer.Navigator>
