@@ -5,14 +5,15 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import Profile from './Profile';
 import firebase from '@react-native-firebase/app';
+import SignUpScreen from './SignUpScreen';
 
 const EditProfile = ({ navigation }) => {
   const [name, setName] = useState('');
-  const [streetAddress, setStreetAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [states, setStates]= useState('');
-  const [zipCode, setZipCode]= useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  //const [streetAddress, setStreetAddress] = useState('');
+  //const [city, setCity] = useState('');
+  //const [states, setStates]= useState('');
+  //const [zipCode, setZipCode]= useState('');
+  const [phone, setPhoneNumber] = useState('');
   const [userData, setUserData] = useState(null);
 
 
@@ -40,11 +41,7 @@ const EditProfile = ({ navigation }) => {
       const user = firebase.auth().currentUser;
       firebase.firestore().collection('UserData').doc(user.uid).update({
         name: name,
-        streetAddress: streetAddress,
-        city: city,
-        state: states,
-        zipCode: zipCode,
-        phoneNumber: phoneNumber,
+        phone: phone,
       }).then(() => {
         console.log("User data updated successfully!");
         navigation.goBack();
@@ -88,6 +85,7 @@ const EditProfile = ({ navigation }) => {
       style={styles.inputText}
       placeholder="Phone"
       placeholderTextColor="#ccc"
+      value={phoneNumber}
       onChangeText={text => setPhoneNumber(text)}/>
   </View>
   <Text style={styles.addrtitle}>Address</Text>
@@ -135,7 +133,6 @@ const EditProfile = ({ navigation }) => {
 
                 }} />            
      </TouchableOpacity>
-
     </SafeAreaView>
         );
 };
