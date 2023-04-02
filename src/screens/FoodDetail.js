@@ -16,6 +16,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 import leftarrow from './../../images/leftarrow.png';
 import MyCart from './MyCart';
+import Payment from './Payment';
 //import paymentScreen from './paymentScreen';
 
 const FoodDetail = ({navigation}) => {
