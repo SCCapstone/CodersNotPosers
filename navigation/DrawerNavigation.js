@@ -5,7 +5,7 @@ import Profile from '../src/screens/Profile';
 import DriverSignInScreen from '../src/screens/DriverSignInScreen';
 import CampusSideSelectionScreen from '../src/screens/CampusSideSelectionScreen';
 import Favorites from '../src/screens/Favorites';
-import Order from '../src/screens/Order';
+//import Order from '../src/screens/Order';
 import SignOutScreen from '../src/screens/SignOutScreen';
 import DriverApplication from '../src/screens/DriverApplication';
 
@@ -30,13 +30,6 @@ export default function DrawerNavigation() {
         component={Profile}
         options={{
           title: 'Profile',
-        }}
-      />
-      <Drawer.Screen
-        name="Order"
-        component={Order}
-        options={{
-          title: 'Orders',
         }}
       />
       <Drawer.Screen
