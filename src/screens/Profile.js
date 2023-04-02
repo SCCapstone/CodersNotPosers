@@ -87,9 +87,6 @@ const Profile = ({navigation }) => {
         <TouchableOpacity style={styles.button} onPress={handlePaymentDetails}>
           <Text style={styles.buttonText}>Payment Details</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handlePaymentDetails}>
-          <Text style={styles.buttonText}>Saved Address</Text>
-        </TouchableOpacity>
         </View>
     </View>
   );

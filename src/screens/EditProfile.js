@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } from 'react-native';
 import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
@@ -9,10 +9,6 @@ import SignUpScreen from './SignUpScreen';
 
 const EditProfile = ({ navigation }) => {
   const [name, setName] = useState('');
-  //const [streetAddress, setStreetAddress] = useState('');
-  //const [city, setCity] = useState('');
-  //const [states, setStates]= useState('');
-  //const [zipCode, setZipCode]= useState('');
   const [phone, setPhoneNumber] = useState('');
   const [userData, setUserData] = useState(null);
 
@@ -44,7 +40,7 @@ const EditProfile = ({ navigation }) => {
         phone: phone,
       }).then(() => {
         console.log("User data updated successfully!");
-        navigation.goBack();
+        Alert.alert('Updated Profile');
       });
     } catch (error) {
       console.error(error.message);
@@ -66,6 +62,15 @@ const EditProfile = ({ navigation }) => {
                     right:-40,
                     bottom:0}}>
                 </Image>
+
+                <TouchableOpacity onPress={()=>navigation.pop()}>
+                <Image source={leftarrow} 
+                style={{ width: 50, 
+                height: 50,
+                right:-20,
+                bottom:-650
+
+                }} /></TouchableOpacity>
     <View style={{marginTop: 30,
       marginLeft:5,}}>
         <Text style={styles.nameText}>Edit Profile</Text>
@@ -81,59 +86,21 @@ const EditProfile = ({ navigation }) => {
       onChangeText={text => setName(text)}/>
   </View>
   <View style= {styles.phoneView}>
-    <TextInput id='phoneNumber'
+    <TextInput id='phone'
       style={styles.inputText}
       placeholder="Phone"
       placeholderTextColor="#ccc"
-      value={phoneNumber}
+      value={phone}
       onChangeText={text => setPhoneNumber(text)}/>
-  </View>
-  <Text style={styles.addrtitle}>Address</Text>
-  <View style= {styles.addressView}>
-    <TextInput id='streetAddress'
-      style={styles.inputText}
-      placeholder="Street Address"
-      placeholderTextColor="#ccc"
-      onChangeText={text => setStreetAddress(text)}/>
-  </View>
-  <View style= {styles.cityView}>
-    <TextInput id='city'
-      style={styles.inputText}
-      placeholder="City"
-      placeholderTextColor="#ccc"
-      onChangeText={text => setCity(text)}/>
-  </View>
-
-  <View style= {styles.stateView}>
-    <TextInput id='states'
-      style={styles.inputText}
-      placeholder="State"
-      placeholderTextColor="#ccc"
-      onChangeText={text => setStates(text)}/>
-  </View>
-
-  <View style= {styles.zipView}>
-    <TextInput id='zipCode'
-      style={styles.inputText}
-      placeholder="Zip Code"
-      placeholderTextColor="#ccc"
-      onChangeText={text => setZipCode(text)}/>
   </View>
 
       <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
         <Text style={styles.buttonText}>Save Changes</Text>
       </TouchableOpacity>
 
-     <TouchableOpacity onPress={()=>navigation.pop()}>
-                <Image source={leftarrow} 
-                style={{ width: 50, 
-                height: 50,
-                right:-20,
-                bottom:-450
 
-                }} />            
-     </TouchableOpacity>
     </SafeAreaView>
+    
         );
 };
 
@@ -142,10 +109,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#b6b7e5',
     padding: 45,
-  },
-  editProfileNameContainer: {
-    marginTop:0,
-    marginLeft:10,
   },
   inputContainer: {
     flexDirection: 'row',
@@ -156,8 +119,9 @@ const styles = StyleSheet.create({
   },
   nameText: {
     color: 'black',
-    fontSize: 30,
+    fontSize: 29,
     fontWeight: '900',
+    top:-40
   },
   inputText: {
     height:40,
@@ -170,8 +134,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     alignItems: 'center',
     width:153,
-    top: 450,
-    right:-125,
+    top: 200,
+    right:-110,
   },
   buttonText: {
     color: '#fff',
@@ -201,78 +165,14 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         padding:20
       },
-      addressView:{
-        position: 'absolute',
-        left: 30,
-        top: 370,
-        width:330,
-        backgroundColor:"#FFFFFF",
-        borderRadius:25,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
-      },
-      title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#333333',
-        textAlign: 'center',
-        marginBottom: 10,
-        top: -230,
-        left: -120  },
     
       infotitle: {
           fontSize: 15,
           color: '#333333',
           textAlign: 'center',
           marginBottom: 10,
-          top: 80,
-          left: -91},
-        
-      addrtitle: {
-            fontSize: 15,
-            color: '#333333',
-            textAlign: 'center',
-            marginBottom: 10,
-            top: 237,
-            left: -134},
-        cityView:{
-              position: 'absolute',
-              left: 30,
-              top: 440,
-              width:153,
-              backgroundColor:"#FFFFFF",
-              borderRadius:25,
-              height:50,
-              marginBottom:20,
-              justifyContent:"center",
-              padding:20
-              },
-        stateView:{
-           position: 'absolute',
-                left: 207,
-                top: 440,
-                width:153,
-                backgroundColor:"#FFFFFF",
-                borderRadius:25,
-                height:50,
-                marginBottom:20,
-                justifyContent:"center",
-                padding:20
-              },
-              zipView:{
-                position: 'absolute',
-                left: 30,
-                top: 510,
-                width:153,
-                backgroundColor:"#FFFFFF",
-                borderRadius:25,
-                height:50,
-                marginBottom:20,
-                justifyContent:"center",
-                padding:20
-                },
+          top: 31,
+          left: -98},
   
 });
 
