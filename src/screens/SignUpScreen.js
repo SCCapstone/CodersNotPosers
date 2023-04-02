@@ -42,7 +42,7 @@ const SignUpScreen =  ({navigation}) => {
           const uid = response.user.uid;
           await response.user.updateProfile({
             displayName: name,
-            phoneNumber: phone
+            phoneNumber: phone,
           });
           firestore().collection('UserData').doc(uid).set({
             email: email,

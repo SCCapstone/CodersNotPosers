@@ -2,12 +2,11 @@ import React from 'react';
 import { createDrawerNavigator} from '@react-navigation/drawer';
 
 import Profile from '../src/screens/Profile';
-import DriverSignInScreen from '../src/screens/DriverSignInScreen';
 import CampusSideSelectionScreen from '../src/screens/CampusSideSelectionScreen';
 import Favorites from '../src/screens/Favorites';
-import Order from '../src/screens/Order';
 import SignOutScreen from '../src/screens/SignOutScreen';
 import DriverApplication from '../src/screens/DriverApplication';
+import SearchScreen from '../src/screens/SearchScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -33,12 +32,12 @@ export default function DrawerNavigation() {
         }}
       />
       <Drawer.Screen
-        name="Order"
-        component={Order}
-        options={{
-          title: 'Orders',
+        name = "Search Screen"
+        component = {SearchScreen}
+        options = {{
+          title: 'Search Screen',
         }}
-      />
+        />
       <Drawer.Screen
         name="Favorites"
         component={Favorites}
@@ -53,13 +52,7 @@ export default function DrawerNavigation() {
           title: 'Driver Application',
         }}
       />
-      <Drawer.Screen
-        name="DriverSignInScreen"
-        component={DriverSignInScreen}
-        options={{
-          title: 'Driver SignIn',
-        }}
-      />
+      
         <Drawer.Screen
         name = "Sign out"
         component = {SignOutScreen}
@@ -67,6 +60,7 @@ export default function DrawerNavigation() {
           title: 'Sign out',
         }}
         />
+        
     </Drawer.Navigator>
   );
 }

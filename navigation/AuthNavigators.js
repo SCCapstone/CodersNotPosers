@@ -15,8 +15,6 @@ import SignUpScreen from "../src/screens/SignUpScreen";
 import ChickfilA from "../src/screens/RussellHouse/ChickfilA";
 import TcoopStarbs from "../src/screens/WestCampus/TcoopStarbs";
 import RatingScreenCFA from "../src/screens/RatingScreenCFA";
-import DriverApplicatonScreen from "../src/screens/DriverApplication";
-import DriverSignInScreen from "../src/screens/DriverSignInScreen";
 import FoodDetail from "../src/screens/FoodDetail";
 import AddressScreen from "../src/screens/AddressScreen";
 import Cart from "../src/screens/Cart";
@@ -39,8 +37,9 @@ import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKit
 import Profile from "../src/screens/Profile";
 import EditProfile from "../src/screens/EditProfile";
 import Favorites from "../src/screens/Favorites";
-import DriverApplication from "../src/screens/DriverApplication";
 import DeliveryStatus from "../src/screens/DeliveryStatus";
+import DriverApplication from "../src/screens/DriverApplication";
+import PaymentDetails from "../src/screens/PaymentDetails";
 
 const Auth = createNativeStackNavigator();
 
@@ -176,13 +175,7 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
-             <Auth.Screen
-                name= "DriverSignInScreen"
-                component = {DriverSignInScreen}
-                options = {{
-                    headerShown: false
-                }}
-            />
+             
             <Auth.Screen
                 name= "DriverApplication"
                 component = {DriverApplication}
@@ -235,6 +228,20 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "Panera"
                 component = {Panera}
+                options = {{
+                    headerShown: false
+                }}
+            />
+             <Auth.Screen
+                name= "PaymentDetails"
+                component = {PaymentDetails}
+                options = {{
+                    headerShown: false
+                }}
+            /> 
+            <Auth.Screen
+                name= "AddressScreen"
+                component = {AddressScreen}
                 options = {{
                     headerShown: false
                 }}
