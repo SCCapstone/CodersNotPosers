@@ -3,9 +3,8 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Imag
 import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import Profile from './Profile';
 import firebase from '@react-native-firebase/app';
-import SignUpScreen from './SignUpScreen';
+
 
 const EditProfile = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -69,7 +68,6 @@ const EditProfile = ({ navigation }) => {
                 height: 50,
                 right:-20,
                 bottom:-650
-
                 }} /></TouchableOpacity>
     <View style={{marginTop: 30,
       marginLeft:5,}}>
