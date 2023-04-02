@@ -40,6 +40,7 @@ import Profile from "../src/screens/Profile";
 import EditProfile from "../src/screens/EditProfile";
 import Favorites from "../src/screens/Favorites";
 import DriverApplication from "../src/screens/DriverApplication";
+import DeliveryStatus from "../src/screens/DeliveryStatus";
 
 const Auth = createNativeStackNavigator();
 
@@ -297,6 +298,13 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "Favorites"
                 component = {Favorites}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "DeliveryStatus"
+                component = {DeliveryStatus}
                 options = {{
                     headerShown: false
                 }}

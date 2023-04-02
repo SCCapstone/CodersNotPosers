@@ -33,6 +33,20 @@ const DeliveryStatus = ({navigation}) => {
               bottom: 0
           }}>
           </Image>
+          <View>
+          <Text
+            style= {{
+                position:'absolute',
+                justifyContent: 'center',
+                fontSize: 50,
+                top: 100,
+                textAlign: 'center',
+                color: "black",
+                flex: 1
+            }}>
+            Your order should arrive in 30 minutes
+          </Text></View>
+
           </View>
     );
 };

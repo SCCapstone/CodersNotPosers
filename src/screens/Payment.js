@@ -21,6 +21,7 @@ import leftarrow from "./../../images/leftarrow.png";
 import ellipsegrey from "./../../images/ellipsegrey.png";
 import firestore from '@react-native-firebase/firestore';
 import hamburger from './../../images/hamburger.png';
+import DeliveryStatus from "./DeliveryStatus";
 
 const Payment = ({navigation}) => {
   const [name, setName] = useState("");
@@ -277,9 +278,14 @@ const Payment = ({navigation}) => {
 
   <TouchableOpacity 
   style={styles.useCardButton} 
-  onPress={useCard}>
-    <Text style={styles.loginText}>Place Order</Text>
-  </TouchableOpacity>
+  onPress={() => {
+    useCard();
+    navigation.navigate('DeliveryStatus');
+  }}
+>
+  <Text style={styles.loginText}>Place Order</Text>
+</TouchableOpacity>
+
   </View>
   <TouchableOpacity onPress={()=>navigation.pop()}>
                 <Image source={leftarrow} 
