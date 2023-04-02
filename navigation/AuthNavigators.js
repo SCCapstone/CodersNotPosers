@@ -20,7 +20,7 @@ import DriverSignInScreen from "../src/screens/DriverSignInScreen";
 import FoodDetail from "../src/screens/FoodDetail";
 import AddressScreen from "../src/screens/AddressScreen";
 import Cart from "../src/screens/Cart";
-//import paymentScreen from "../src/screens/paymentScreen";
+import Payment from "../src/screens/Payment";
 import Panda from "../src/screens/RussellHouse/Panda";
 import TwistedTaco from "../src/screens/RussellHouse/TwistedTaco";
 import Einstein from "../src/screens/RussellHouse/Einstein";
@@ -36,9 +36,10 @@ import ColloquiumCafe from "../src/screens/EastCampus/ColloquiumCafe.js";
 import HorshoeDeli from "../src/screens/EastCampus/HorshoeDeli";
 import HumanitiesStarbucks from "../src/screens/EastCampus/HumanitiesStarbucks";
 import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKitchen";
+import Profile from "../src/screens/Profile";
+import EditProfile from "../src/screens/EditProfile";
 import Favorites from "../src/screens/Favorites";
 import DriverApplication from "../src/screens/DriverApplication";
-import Payment from "../src/screens/Payment";
 
 const Auth = createNativeStackNavigator();
 
@@ -189,6 +190,20 @@ export default function AuthStack() {
                 }}
             />
             <Auth.Screen
+                name= "Profile"
+                component = {Profile}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "EditProfile"
+                component = {EditProfile}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
                 name= "FoodDetail"
                 component = {FoodDetail}
                 options = {{
@@ -203,6 +218,13 @@ export default function AuthStack() {
                 }}
             /> 
             <Auth.Screen
+                name= "Payment"
+                component = {Payment}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
                 name= "Creamery"
                 component = {Creamery}
                 options = {{
@@ -212,20 +234,6 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "Panera"
                 component = {Panera}
-                options = {{
-                    headerShown: false
-                }}
-            />
-            <Auth.Screen
-                name= "Payment"
-                component = {Payment}
-                options = {{
-                    headerShown: false
-                }}
-            /> 
-            <Auth.Screen
-                name= "AddressScreen"
-                component = {AddressScreen}
                 options = {{
                     headerShown: false
                 }}
