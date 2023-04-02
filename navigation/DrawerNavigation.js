@@ -4,11 +4,12 @@ import { View, Text } from 'react-native';
 
 import Profile from '../src/screens/Profile';
 import DriverSignInScreen from '../src/screens/DriverSignInScreen';
-import DriverSignUpScreen from '../src/screens/DriverSignUpScreen';
+import DriverSignUpScreen from '../src/screens/DriverApplication';
 import CampusSideSelectionScreen from '../src/screens/CampusSideSelectionScreen';
 import Favorites from '../src/screens/Favorites';
 import Order from '../src/screens/Order';
 import SignOutScreen from '../src/screens/SignOutScreen';
+import DriverApplication from '../src/screens/DriverApplication';
 
 const Drawer = createDrawerNavigator();
 
@@ -48,8 +49,8 @@ export default function DrawerNavigation() {
         }}
       />
       <Drawer.Screen
-        name="DriverSignUpScreen"
-        component={DriverSignUpScreen}
+        name="DriverApplication"
+        component={DriverApplication}
         options={{
           title: 'Driver Application',
         }}

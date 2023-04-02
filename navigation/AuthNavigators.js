@@ -15,7 +15,7 @@ import SignUpScreen from "../src/screens/SignUpScreen";
 import ChickfilA from "../src/screens/RussellHouse/ChickfilA";
 import TcoopStarbs from "../src/screens/WestCampus/TcoopStarbs";
 import RatingScreenCFA from "../src/screens/RatingScreenCFA";
-import DriverSignUpScreen from "../src/screens/DriverSignUpScreen";
+import DriverApplicatonScreen from "../src/screens/DriverApplication";
 import DriverSignInScreen from "../src/screens/DriverSignInScreen";
 import FoodDetail from "../src/screens/FoodDetail";
 import AddressScreen from "../src/screens/AddressScreen";
@@ -36,6 +36,7 @@ import ColloquiumCafe from "../src/screens/EastCampus/ColloquiumCafe.js";
 import HorshoeDeli from "../src/screens/EastCampus/HorshoeDeli";
 import HumanitiesStarbucks from "../src/screens/EastCampus/HumanitiesStarbucks";
 import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKitchen";
+import DriverApplication from "../src/screens/DriverApplication";
 
 const Auth = createNativeStackNavigator();
 
@@ -179,8 +180,8 @@ export default function AuthStack() {
                 }}
             />
             <Auth.Screen
-                name= "DriverSignUpScreen"
-                component = {DriverSignUpScreen}
+                name= "DriverApplication"
+                component = {DriverApplication}
                 options = {{
                     headerShown: false
                 }}

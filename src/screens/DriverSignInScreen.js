@@ -6,7 +6,6 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import DriversOrder from './DriversOrderScreen';
 import DrawerNavigation from '../../navigation/DrawerNavigation';
-import DriverSignUpScreen from './DriverSignUpScreen';
 
 const DriverSignInScreen =  ({navigation}) => {
 
