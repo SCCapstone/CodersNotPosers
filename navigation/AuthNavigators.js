@@ -216,13 +216,13 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
-           {/*  <Auth.Screen
+            <Auth.Screen
                 name= "Payment"
                 component = {Payment}
                 options = {{
                     headerShown: false
                 }}
-            /> */}
+            /> 
             <Auth.Screen
                 name= "AddressScreen"
                 component = {AddressScreen}
