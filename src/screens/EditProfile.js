@@ -66,8 +66,8 @@ const EditProfile = ({ navigation }) => {
                 <Image source={leftarrow} 
                 style={{ width: 50, 
                 height: 50,
-                right:-20,
-                bottom:-650
+                right:-10,
+                bottom:-610
                 }} /></TouchableOpacity>
     <View style={{marginTop: 30,
       marginLeft:5,}}>

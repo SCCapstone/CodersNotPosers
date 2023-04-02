@@ -92,6 +92,19 @@ const Payment = ({navigation}) => {
       }, [isEnabled,PromoCode]);
 
       const saveCard = async () => {
+        const mealPlancard = {
+          cardtype: 'Meal Plan/Carolina Cash',
+                      studentName: studentname,
+                      studentID: studentID,
+                      studentBarcode: studentBarcode,
+        }
+        const debitcard = {
+          cardtype: 'Credit/Debit',
+                      name: name,
+                      cardNumber: cardNumber,
+                      expDate: expDate,
+                      cvc: cvc,
+        }
         if (isEnabled) {
           if (selectedButton === 'mealPlanCash') {
             const user = firebase.auth().currentUser;
@@ -106,17 +119,13 @@ const Payment = ({navigation}) => {
                   if (userData.studentBarcode === studentBarcode && userData.studentID === studentID) {
                     alert('Card already saved');
                   } else {
-                    firebase.firestore().collection('SavedCards').doc(user.uid).set({
-                      studentName: studentname,
-                      studentID: studentID,
-                      studentBarcode: studentBarcode,
+                    firebase.firestore().collection('SavedCards').doc(user.uid).update({
+                      cards:firebase.firestore.FieldValue.arrayUnion(mealPlancard),
                     });
                   }
                 } else {
                   firebase.firestore().collection('SavedCards').doc(user.uid).set({
-                    studentName: studentname,
-                    studentID: studentID,
-                    studentBarcode: studentBarcode,
+                    cards:[mealPlancard],
                   });
                 }
               })
@@ -136,19 +145,13 @@ const Payment = ({navigation}) => {
                   if (userData.cardNumber === cardNumber) {
                     alert('Card already saved');
                   } else {
-                    firebase.firestore().collection('SavedCards').doc(user.uid).set({
-                      name: name,
-                      cardNumber: cardNumber,
-                      expDate: expDate,
-                      cvc: cvc,
+                    firebase.firestore().collection('SavedCards').doc(user.uid).update({
+                      cards:firebase.firestore.FieldValue.arrayUnion(debitcard),
                     });
                   }
                 } else {
                   firebase.firestore().collection('SavedCards').doc(user.uid).set({
-                    name: name,
-                    cardNumber: cardNumber,
-                    expDate: expDate,
-                    cvc: cvc,
+                    cards:[debitcard],
                   });
                 }
               })

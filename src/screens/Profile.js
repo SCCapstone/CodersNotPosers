@@ -6,6 +6,7 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import profile from './../../images/profile.png';
 import EditProfile from './EditProfile';
+import PaymentDetails from './PaymentDetails';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 import { useNavigation } from '@react-navigation/native';
 
@@ -18,10 +19,10 @@ const Profile = ({navigation }) => {
   useEffect(() => {
     try {
       const user = firebase.auth().currentUser;
+      console.log(user);
       firebase.firestore().collection('UserData').doc(user.uid).get().then((doc) => {
         if (doc.exists) {
-          setName(user.displayName); // <--- Setting the name he
-          setUserData(user);
+          setName(doc.data().name) // <--- Setting the name he
         } else {
           console.log("No such document!");
         }
@@ -31,7 +32,7 @@ const Profile = ({navigation }) => {
     }
   }, []);
   const handleEditProfile = () => {
-    navigation.navigate('EditProfile');
+    navigation.navigate(EditProfile);
     };
 
   const handleOrderHistory = () => {
@@ -39,7 +40,7 @@ const Profile = ({navigation }) => {
   };
 
   const handlePaymentDetails = () => {
-    console.log('Payment Details clicked');
+    navigation.navigate(PaymentDetails);
   };
 
   return (
