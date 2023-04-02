@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import {
   StyleSheet,
   StatusBar,
@@ -14,7 +14,7 @@ import {
   ScrollView
 } from "react-native";
 import { TextInputMask } from 'react-native-masked-text';
-
+import firebase from '@react-native-firebase/app';
 import logo from "./../../images/logo.png";
 import ellipsepink from "./../../images/ellipsepink.png";
 import leftarrow from "./../../images/leftarrow.png";
@@ -71,25 +71,99 @@ const Payment = ({navigation}) => {
         setDropdownOpen(false);
       };
 
-    const saveCard = async () => {
-      if(isEnabled) {
-        try{
-        firestore().collection('SavedCards').add({
-          name: name,
-          orderAt: new Date(),
-          cardNumber: cardNumber,
-          expDate: expDate,
-          cvc : cvc,
-        });
-        // Save logic here when switch is enabled
-      } catch (error)
-      {
-        console.error("Error saving card data: ", error);
+      const handlePayment = async () => {
+        // add logic for payment processing here
+        if (selectedButton === 'mealPlanCash') {
+          // process payment using meal plan cash
+          console.log('Processing payment using meal plan cash');
+          if (isEnabled) {
+            await saveCard();
+          }
+        } else if (selectedButton === 'creditDebit') {
+          // process payment using credit/debit card
+          console.log('Processing payment using credit/debit card');
+          if (isEnabled) {
+            await saveCard();
+          }
+        }
       }
-    }
-  };   
+      
+      useEffect(() => {
+        if (isEnabled) {
+          saveCard();
+        }
+      }, [isEnabled]);
 
-  const useCard = async () => { // added async keyword to enable using await
+      const saveCard = async () => {
+        if (isEnabled) {
+          if (selectedButton === 'mealPlanCash') {
+            const user = firebase.auth().currentUser;
+            firebase
+              .firestore()
+              .collection('SavedCards')
+              .doc(user.uid)
+              .get()
+              .then((doc) => {
+                if (doc.exists) {
+                  const userData = doc.data();
+                  if (userData.studentBarcode === studentBarcode && userData.studentID === studentID) {
+                    alert('Card already saved');
+                  } else {
+                    firebase.firestore().collection('SavedCards').doc(user.uid).set({
+                      studentName: studentname,
+                      studentID: studentID,
+                      studentBarcode: studentBarcode,
+                    });
+                  }
+                } else {
+                  firebase.firestore().collection('SavedCards').doc(user.uid).set({
+                    studentName: studentname,
+                    studentID: studentID,
+                    studentBarcode: studentBarcode,
+                  });
+                }
+              })
+              .catch((error) => {
+                console.error(error.message);
+              });
+          } else if (selectedButton === 'creditDebit') {
+            const user = firebase.auth().currentUser;
+            firebase
+              .firestore()
+              .collection('SavedCards')
+              .doc(user.uid)
+              .get()
+              .then((doc) => {
+                if (doc.exists) {
+                  const userData = doc.data();
+                  if (userData.cardNumber === cardNumber) {
+                    alert('Card already saved');
+                  } else {
+                    firebase.firestore().collection('SavedCards').doc(user.uid).set({
+                      name: name,
+                      cardNumber: cardNumber,
+                      expDate: expDate,
+                      cvc: cvc,
+                    });
+                  }
+                } else {
+                  firebase.firestore().collection('SavedCards').doc(user.uid).set({
+                    name: name,
+                    cardNumber: cardNumber,
+                    expDate: expDate,
+                    cvc: cvc,
+                  });
+                }
+              })
+              .catch((error) => {
+                console.error(error.message);
+              });
+          }
+        }
+      };
+        
+
+  const useCard = async () => { 
 
    try{
     firestore().collection('UsedCards').add({
@@ -122,7 +196,7 @@ const Payment = ({navigation}) => {
          
       </View>
       
-      <View style = {{backgroundColor:'grey',padding:9,borderRadius:13,marginTop:40,marginRight:230,marginBottom:10}}>
+      <View style = {{backgroundColor:'grey',padding:9,borderRadius:13,marginTop:10,marginRight:230,marginBottom:10}}>
       <Text style={{fontWeight:'bold'}}>Deilvery Address</Text>
       </View>
       
@@ -168,7 +242,7 @@ const Payment = ({navigation}) => {
       }}
       onPress={() => setSelectedButton('mealPlanCash')}
       >
-      <Text style={{ color: selectedButton === 'mealPlanCash' ? '#FBEBEB' : '#000' }}>
+      <Text style={{ color: selectedButton === 'mealPlanCash' ? '#FBEBEB' : 'black' }}>
           Meal Plan/Carolina Cash
       </Text>
       </TouchableOpacity>
@@ -263,6 +337,8 @@ const Payment = ({navigation}) => {
 
   <View>
     <View style={styles.saveCardButton}>
+    <TouchableOpacity></TouchableOpacity>
+      <Text style={{textAlign:'center'}}>{isEnabled ? 'Remember Card:Yes' : 'Remember Card:No'}</Text>
       <Switch
         trackColor={{ false: '#767577', true: '#81b0ff' }}
         thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
@@ -270,38 +346,36 @@ const Payment = ({navigation}) => {
         onValueChange={toggleSwitch}
         value={isEnabled}
       />
-      <TouchableOpacity onPress={saveCard}></TouchableOpacity>
-      <Text>{isEnabled ? 'Remember Card' : 'Do Not Remember'}</Text>
-    </View>
+       </View>
   </View>
 
-  <TouchableOpacity 
-  style={styles.useCardButton} 
-  onPress={useCard}>
-    <Text style={styles.loginText}>Place Order</Text>
-  </TouchableOpacity>
-  </View>
+  
   <TouchableOpacity onPress={()=>navigation.pop()}>
                 <Image source={leftarrow} 
                 style={{ width: 50, 
-                height: 50,
-                right:150,
-                bottom:25
-
+                height:50,
+                right:170,
+                bottom:-140
                 }} />
             </TouchableOpacity>
             <Image source={ellipsegrey}
-          style={{
+              style={{
               position: 'absolute',
-              right: -40,
-              bottom: 0
+              right: -150,
+              bottom: 0,
+              zIndex:-1
           }}>
           </Image>
+          <TouchableOpacity 
+  style={styles.useCardButton} 
+  onPress={useCard}>
+    <Text style={{textAlign:'center'}}>Place Order</Text>
+  </TouchableOpacity>
+ 
+          </View>
   </View>
-
   );
-
-}
+};
    
   const styles = StyleSheet.create({
     container: {
@@ -332,29 +406,27 @@ const Payment = ({navigation}) => {
     
     CardHolderName:{
         position: 'absolute',
-        top: 125,
         width:"70%",
+        top:10,
         backgroundColor: "#FBEBEB",
         borderRadius:25,
         height:50,
-        marginBottom:20,
         justifyContent:"center",
         padding:20
         },
      CardNumber:{
         position: 'absolute',
-        top: 190,
+        top: 70,
         width:"70%",
         backgroundColor: "#FBEBEB",
         borderRadius:25,
         height:50,
-        marginBottom:20,
         justifyContent:"center",
         padding:20
         },
     CardExpiration:{
         position: 'absolute',
-        top: 255,
+        top: 130,
         width:"70%",
         backgroundColor: "#FBEBEB",
         borderRadius:25,
@@ -365,7 +437,7 @@ const Payment = ({navigation}) => {
         },
     CVCcolor:{
         position: 'absolute',
-        top: 320,
+        top: 190,
         width:"70%",
         backgroundColor: "#FBEBEB",
         borderRadius:25,
@@ -376,26 +448,27 @@ const Payment = ({navigation}) => {
         },
     saveCardButton: {
       top: 200,
-      width:"70%",
-      right: 100,
+      width:140,
+      marginLeft:-110,
       backgroundColor: "#FBEBEB",
       borderRadius:25,
-      height:100,
-      marginBottom:20,
-      justifyContent:"center",
-      padding:20
+      height:60,
+      marginBottom:30,
+      flexDirection:'row',
+      padding:10
     },
    
     useCardButton: {
-      top: 100,
-      width:"70%",
+      top: 60,
+      width:140,
       left: 100,
       backgroundColor: "#FBEBEB",
       borderRadius:25,
-      height:75,
+      height:60,
       marginBottom:20,
-      justifyContent:"center",
-      padding:20
+      padding:10,
+      zIndex:-1,
+      justifyContent:'center'
     },
   })
   export default Payment;
