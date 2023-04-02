@@ -38,6 +38,7 @@ import HumanitiesStarbucks from "../src/screens/EastCampus/HumanitiesStarbucks";
 import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKitchen";
 import Favorites from "../src/screens/Favorites";
 import DriverApplication from "../src/screens/DriverApplication";
+import Payment from "../src/screens/Payment";
 
 const Auth = createNativeStackNavigator();
 
@@ -216,8 +217,8 @@ export default function AuthStack() {
                 }}
             />
            {/*  <Auth.Screen
-                name= "paymentScreen"
-                component = {paymentScreen}
+                name= "Payment"
+                component = {Payment}
                 options = {{
                     headerShown: false
                 }}
