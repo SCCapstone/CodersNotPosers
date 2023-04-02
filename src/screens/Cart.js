@@ -5,6 +5,7 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import leftarrow  from './../../images/leftarrow.png';
 import MyCart from './MyCart';
+import Payment from './Payment';
 import hamburger from './../../images/hamburger.png';
 
 const Cart = ({navigation}) => {
@@ -108,8 +109,8 @@ const Cart = ({navigation}) => {
               
           </View>
           <TouchableOpacity style ={{backgroundColor: '#884E7D',borderRadius:9,
-            padding: 5, marginLeft:100,marginBottom:20,width:200,height:40}} onPress={() => navigation.navigate()}>
-              <Text style = {{fontSize:20, fontWeight:'bold'}}> Payment      $ {MyCart.getTotalPrice()}</Text>
+            padding: 5, marginLeft:100,marginBottom:20,width:200,height:40}} onPress={() => navigation.navigate(Payment)}>
+              <Text style = {{fontSize:20, fontWeight:'bold'}}> Checkout      $ {MyCart.getTotalPrice()}</Text>
          </TouchableOpacity>
             </View>
     

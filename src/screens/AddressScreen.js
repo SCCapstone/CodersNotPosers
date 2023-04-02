@@ -1,112 +1,94 @@
-import React, {useState} from 'react';
-import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity} from 'react-native';
-import ellipsepink from './../../images/ellipsepink.png';
-import leftarrow from './../../images/leftarrow.png';
-import ellipsegrey from './../../images/ellipsegrey.png';
-import auth from '@react-native-firebase/auth';
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  StatusBar,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  Button,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
-import firebase from '@react-native-firebase/app';
-import { Keyboard } from 'react-native';
+import logo from "./../../images/logo.png";
+import ellipsepink from "./../../images/ellipsepink.png";
+import leftarrow from "./../../images/leftarrow.png";
+import ellipsegrey from "./../../images/ellipsegrey.png";
+import { app } from "../../firebase";
+import firebase from "firebase/app";
+import firestore from '@react-native-firebase/firestore';
 
 
 export default function AddressScreen() {
-  const address = firebase.firestore().collection('New Address');
   const [street, setStreet] = useState("");
   const [town, setTown] = useState("");
   const [state, setState] = useState("");
   const [zipCode, setZipCode] = useState("");
-  // const registerCard = async (name,cardNumber, expDate, cvc) => {
-  //   try {
-  //       let response = await auth().createUserWithEmailAndPassword(email,password)
-  //       if(response && response.user) {
-  //         navigation.navigate(CampusSideSelectionScreen)
-  //       }
-  //   }
-  //   catch(e) {
-  //     console.error(e.message)
-  //   }
-  // }
-  const saveAddress = () => {
-    //const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-    const usersAddress = {
-     street: street,
-     town: town,
-     state: state,
-     zipCode: zipCode,
-    };
-    address
-      .add(usersAddress)
-      .then(() => {
-    // userCard.set(usersCard);
-    setStreet('');
-    setTown('');
-    setState('');
-    setZipCode('');
-    Keyboard.dismiss();
-  })
-  .catch((error) => {
-    alert(error);
-  })
-  }
-  return (
-
-<SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
-
-<View style={styles.container}>
-<Image source={ellipsepink} 
-style={{position: 'absolute',
-left: 2,
-top: -55}} />
-</View>
-
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <View style={styles.CardHolderName}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="street"
-            placeholderTextColor="#884e7d"
-            onChangeText={(street) => setStreet(street)}
-          />
-        </View>
-
-        <View style={styles.CardNumber}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="Town"
-            placeholderTextColor="#884e7d"
-            onChangeText={(town) => setTown(town)}
-          />
-        </View>
-
-        <View style={styles.CardNumber}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="State"
-            placeholderTextColor="#884e7d"
-            onChangeText={(state) => setState(state)}
-          />
-        </View>
-
-        <View style={styles.CVCcolor}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="ZIP"
-            placeholderTextColor="#884e7d"
-            secureTextEntry={true}
-            onChangeText={(zipCode) => setZipCode(zipCode)}
-          />
-        </View>
-   
-        <TouchableOpacity 
-          style={styles.saveCardButton}
-          onPress={saveAddress}>
-          <Text style={styles.loginText}>Save Address</Text>
-        </TouchableOpacity>
-      </View>
-      </SafeAreaView>
-    );
-  }
+ 
+  const saveAddress = async () => { 
+    firestore().collection('SaveAddress').add({
+          street: street,
+          town: town,
+          state: state,
+          zipCode: zipCode,
+        })
+      };   
+      return (
+        <SafeAreaView style={{ flex: 1, justifyContent: 'center', backgroundColor: '#B6B7E5' }}>
+          <View style={styles.container}>
+            <Image source={ellipsepink} style={{ position: 'absolute', left: 2, top: -55 }} />
+          </View>
+    
+          <StatusBar style="auto" />
+    
+          <View style={styles.CardHolderName}>
+            <TextInput
+              style={styles.inputText}
+              placeholder="Cardholder Name"
+              placeholderTextColor="#884e7d"
+              onChangeText={(street) => setStreet(street)}
+            />
+          </View>
+    
+          <View style={styles.CardNumber}>
+            <TextInput
+              style={styles.inputText}
+              placeholder="Card Number"
+              placeholderTextColor="#884e7d"
+              onChangeText={(town) => setTown(town)}
+            />
+          </View>
+    
+          <View style={styles.CardExpiration}>
+            <TextInput
+              style={styles.inputText}
+              placeholder="MM/YYYY"
+              placeholderTextColor="#884e7d"
+              onChangeText={(state) => setState(state)}
+            />
+          </View>
+    
+          <View style={styles.CVCcolor}>
+            <TextInput
+              style={styles.inputText}
+              placeholder="CVC"
+              placeholderTextColor="#884e7d"
+              secureTextEntry={true}
+              onChangeText={(zipCode) => setZipCode(zipCode)}
+            />
+          </View>
+    
+          <View>
+            <View style={styles.saveCardButton}>
+              <TouchableOpacity onPress={saveAddress}>
+                <Text>Save Address</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </SafeAreaView>
+      );
+    }
    
   const styles = StyleSheet.create({
     container: {
@@ -177,14 +159,13 @@ top: -55}} />
         justifyContent:"center",
         padding:20
         },
-   
     saveCardButton: {
-      width: "70%",
-      borderRadius: 25,
-      height: 50,
-      alignItems: "center",
-      justifyContent: "center",
-      marginTop: 25,
-      backgroundColor: "#FBEBEB",
+          width: "70%",
+          borderRadius: 25,
+          height: 50,
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: 10,
+          backgroundColor: "#FBEBEB",
     },
   });
