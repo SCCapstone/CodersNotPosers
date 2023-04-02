@@ -21,11 +21,13 @@ import leftarrow from "./../../images/leftarrow.png";
 import ellipsegrey from "./../../images/ellipsegrey.png";
 import firestore from '@react-native-firebase/firestore';
 import hamburger from './../../images/hamburger.png';
+import MyCart from "./MyCart";
 
 const Payment = ({navigation}) => {
   const [name, setName] = useState("");
   const [studentname,setStudentName] = useState("");
   const [studentID,setStudentID] = useState("");
+  const [PromoCode,setPromoCode] = useState("");
   const [studentBarcode, setStudentBarcode] = useState("");
   const [selectedButton,setSelectedButton] = useState('mealPlanCash');
   const [cardNumber, setCardNumber] = useState("");
@@ -35,6 +37,7 @@ const Payment = ({navigation}) => {
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [total, setTotal] = useState("");
   const options = ["1000 Catawba Street", 
                   "1215 Devine Street",
                   "1233 Washington Street",
@@ -70,29 +73,23 @@ const Payment = ({navigation}) => {
         setSelectedOption(option);
         setDropdownOpen(false);
       };
-
-      const handlePayment = async () => {
-        // add logic for payment processing here
-        if (selectedButton === 'mealPlanCash') {
-          // process payment using meal plan cash
-          console.log('Processing payment using meal plan cash');
-          if (isEnabled) {
-            await saveCard();
-          }
-        } else if (selectedButton === 'creditDebit') {
-          // process payment using credit/debit card
-          console.log('Processing payment using credit/debit card');
-          if (isEnabled) {
-            await saveCard();
-          }
-        }
+      const promoCodePayment = () => {
+        if(PromoCode === 'CEC5') {
+          setTotal(MyCart.getTotalPrice() - 5);
+        } else if (PromoCode === 'CEC1') {
+          setTotal(MyCart.getTotalPrice() - 1);
+          
+        } else if(PromoCode === 'MAIN2') {
+          setTotal(MyCart.getTotalPrice() - 2);
       }
+    };
       
       useEffect(() => {
+        setTotal(MyCart.getTotalPrice());
         if (isEnabled) {
           saveCard();
         }
-      }, [isEnabled]);
+      }, [isEnabled,PromoCode]);
 
       const saveCard = async () => {
         if (isEnabled) {
@@ -164,14 +161,16 @@ const Payment = ({navigation}) => {
         
 
   const useCard = async () => { 
-
+    const user = firebase.auth().currentUser;
    try{
-    firestore().collection('UsedCards').add({
+    firestore().collection('UsedCards').doc(user.uid).set({
       name: name,
       orderAt: new Date(),
       cardNumber: cardNumber,
       expDate: expDate,
       cvc : cvc,
+      total: total,
+      location: selectedOption
    });
    console.log('User added!');
   } catch (error) {
@@ -196,7 +195,7 @@ const Payment = ({navigation}) => {
          
       </View>
       
-      <View style = {{backgroundColor:'grey',padding:9,borderRadius:13,marginTop:10,marginRight:230,marginBottom:10}}>
+      <View style = {{backgroundColor:'grey',padding:9,borderRadius:13,marginTop:7,marginRight:230,marginBottom:10}}>
       <Text style={{fontWeight:'bold'}}>Deilvery Address</Text>
       </View>
       
@@ -229,7 +228,7 @@ const Payment = ({navigation}) => {
         <TextInput 
         style={{backgroundColor:'#FBEBEB',borderRadius:25,width:"70%",padding:10}} placeholder = "Enter Room/Lobby" />
 
-    <View style = {{backgroundColor:'grey',padding:9,borderRadius:13,marginTop:25,marginRight:270,marginBottom:10}}>
+    <View style = {{backgroundColor:'grey',padding:9,borderRadius:13,marginTop:10,marginRight:270,marginBottom:10}}>
       <Text style={{fontWeight:'bold'}}>Payment</Text>
       </View>
 
@@ -334,7 +333,14 @@ const Payment = ({navigation}) => {
     </View>
     </>
 )}
-
+<View style = {styles.Promo}>
+<TextInput
+        style={styles.inputText}
+        placeholder="PromoCode"
+        placeholderTextColor="#884e7d"
+        onChangeText={(PromoCode) => setPromoCode(PromoCode)} onSubmitEditing = {promoCodePayment}
+      />
+</View>
   <View>
     <View style={styles.saveCardButton}>
     <TouchableOpacity></TouchableOpacity>
@@ -355,7 +361,7 @@ const Payment = ({navigation}) => {
                 style={{ width: 50, 
                 height:50,
                 right:170,
-                bottom:-140
+                bottom:-150
                 }} />
             </TouchableOpacity>
             <Image source={ellipsegrey}
@@ -369,7 +375,7 @@ const Payment = ({navigation}) => {
           <TouchableOpacity 
   style={styles.useCardButton} 
   onPress={useCard}>
-    <Text style={{textAlign:'center'}}>Place Order</Text>
+    <Text style={{textAlign:'center'}}>Place Order ${total}</Text>
   </TouchableOpacity>
  
           </View>
@@ -446,8 +452,19 @@ const Payment = ({navigation}) => {
         justifyContent:"center",
         padding:20
         },
+    Promo:{
+        position: 'absolute',
+        top: 250,
+        width:"70%",
+        backgroundColor: "#FBEBEB",
+        borderRadius:25,
+        height:50,
+        marginBottom:20,
+        justifyContent:"center",
+        padding:20
+          },
     saveCardButton: {
-      top: 200,
+      top: 230,
       width:140,
       marginLeft:-110,
       backgroundColor: "#FBEBEB",
@@ -459,7 +476,7 @@ const Payment = ({navigation}) => {
     },
    
     useCardButton: {
-      top: 60,
+      top: 90,
       width:140,
       left: 100,
       backgroundColor: "#FBEBEB",
