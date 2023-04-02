@@ -4,7 +4,6 @@ import { View, Text } from 'react-native';
 
 import Profile from '../src/screens/Profile';
 import DriverSignInScreen from '../src/screens/DriverSignInScreen';
-import DriverSignUpScreen from '../src/screens/DriverApplication';
 import CampusSideSelectionScreen from '../src/screens/CampusSideSelectionScreen';
 import Favorites from '../src/screens/Favorites';
 import Order from '../src/screens/Order';
