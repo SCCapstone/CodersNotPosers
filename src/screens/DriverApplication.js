@@ -121,7 +121,7 @@ const DriverApplication =  ({navigation}) => {
                         addData();
                         Alert.alert(
                           'Thank you!',
-                          'Thank you for submitting your application. If you are a good fit, we will contact you back soon.',
+                          'Thank you for submitting your application. If you are a good fit, we will contact you back through email.',
                           [
                             {
                               text: 'OK',
