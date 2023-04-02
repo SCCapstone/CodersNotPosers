@@ -4,7 +4,6 @@ Image,Text, Alert, Keyboard} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {getdatabase, ref, set} from "firebase/database";
 import { firebase } from '@react-native-firebase/firestore';
-
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
@@ -40,7 +39,6 @@ const SearchScreen = ({navigation}) => {
 
     const filteredData = allRestaurants.filter((restaurant) =>
         restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()));
-
     return (
             <View style = {styles.container}> 
                 <TextInput
@@ -49,35 +47,47 @@ const SearchScreen = ({navigation}) => {
                     keyboardType='search'
                     autoCapitalize='none'
                     autoCorrect={false}
+                    placeholderTextColor="#ccc"
                     onChangeText={setSearchQuery}
                     value = {searchQuery} 
                 />
-                {filteredData.map((restaurant) => (
-                    <View key={restaurant.name} style={styles.itemContainer}>
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(restaurant.screen)}
-                            style={styles.itemName}>
-                            <Text style={styles.loginText}>{restaurant.name}</Text>
-                        </TouchableOpacity>
-                    </View>
-                ))}
+
+
+<View style={{
+  flex: 4.8,
+  alignItems: 'center',
+  top: 17,
+}}>
+  {filteredData.map((restaurant) => (
+    <View key={restaurant.name} style={styles.itemContainer}>
+      <TouchableOpacity 
+        onPress={() => navigation.navigate(restaurant.screen)}
+        style={styles.itemName}>
+        <Text style={styles.loginText}>{restaurant.name}</Text>
+      </TouchableOpacity>
+    </View>
+  ))}
+</View>
                 <View style={styles.container}>
-                    <Image source={ellipsepink}
-                        style={{
-                            position: 'absolute',
-                            left: -180,
-                            top: 0,
-                            scaleX: -1,
-                        }}>
-                    </Image>
 
                     <View style={styles.header}>
                         <TouchableOpacity
                             onPress={() => { navigation.toggleDrawer(); } }>
                             <Image source={hamburger}
-                                style={{ width: 35, height: 35 }}>
+                                style={{ width: 35, height: 35, top: 5, zIndex:90 }}>
                             </Image>
                         </TouchableOpacity>
+
+                        <Image source={ellipsepink}
+                        style={{
+                            position: 'absolute',
+                            left: -12,
+                            top: -650,
+                            scaleX: -1,
+                            zIndex:-100
+                        }}>
+
+                    </Image>
                     </View>
                     <Image source={ellipsegrey}
                         style={{
@@ -86,6 +96,7 @@ const SearchScreen = ({navigation}) => {
                             bottom: 0
                         }}>
                     </Image>
+                    
                 </View>
           </View>
     );
@@ -95,26 +106,21 @@ export default SearchScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor:'#B6B7E5'
+        backgroundColor:'#B6B7E5',
+        zIndex:5
     },
     header:{
         flexDirection:'row',
         position: 'absolute',
         backgroundColor:'white',
         height: 40,
-        borderRadius:10
-    },
-    inputView:{
-        width:"80%",
-        backgroundColor:"#FFFFFF",
-        borderRadius:25,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
+        borderRadius:10,
+        top: -590,
+        zIndex:4,
+        left: 3
     },
     inputText:{
-        height:50,
+        height:55,
         color:"black"
     },
     searchBar: {
@@ -122,15 +128,23 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderColor: 'gray',
         borderWidth: 1,
-        paddingHorizontal: 10,
+        paddingHorizontal: 50,
         borderRadius: 10,
         marginBottom: 10,
+        color: "black",
+        height: 50,
+        width: 410,
+        zIndex:2,
+        top: 20
     },
     itemContainer: {
         marginBottom: 10,
+        justifyContent: "center",
+        zIndex: 4
     },
     itemName: {
         fontWeight: 'bold',
+        justifyContent: "center"
     },
     itemDescription: {
         color: 'gray',
@@ -139,14 +153,5 @@ const styles = StyleSheet.create({
         color:"white",
         fontSize:16
     },
-    loginBtn:{
-        width:"80%",
-        backgroundColor:"#884E7D",
-        borderRadius:25,
-        height:20,
-        alignItems:"center",
-        justifyContent:"center",
-        marginTop:40,
-        marginBottom:10
-    }
+   
 })
