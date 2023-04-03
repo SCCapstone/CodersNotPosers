@@ -19,7 +19,7 @@ const WestCampus = ({navigation}) => {
               onPress={() => navigation.navigate(TcoopStarbs)}
               style={{flex: 1, margin: 5}}>
               <View style={styles.item}>
-                <Image source={require('./../../images/WestCampus/starbucksCooper.png')} style={styles.image} />
+                {/*<Image source={require('./../../images/WestCampus/starbucksCooper.png')} style={styles.image} />*/}
                 <Text style={styles.text}>{item.name}</Text>
               </View>
             </TouchableOpacity>

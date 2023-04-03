@@ -5,6 +5,13 @@ import {StyleSheet,View,TouchableOpacity,
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
+/* import russellhouse from './../../images/russellHouse.png';
+import counselorCafe from './../../images/counselorsCafe.png';
+import cafeVerde from './../../images/cafeVerde.png';
+import colloquiumCafe from './../../images/colloquimCafe.png';
+import starbucks from './../../images/starbucks.png';
+import tcoop from './../../images/tcoop.png';
+ */
 
 import RussellHouseRestaurantScreen from './RussellHouseRestaurantScreen';
 
@@ -19,24 +26,24 @@ const buttonData = require('./../../data/CampusSelection.json')
 
 const CampusSideSelectionScreen = ({navigation}) => {
 
-    const getimageSource = (id) => {
+    /* const getimageSource = (id) => {
         switch (id) {
           case 1:
-            return require('./../../images/russellHouse.png');
+            return russellhouse;
           case 2:
-            return require('./../../images/counselorsCafe.png');
+            return counselorCafe;
           case 3:
-            return require('./../../images/cafeVerde.png');
+            return cafeVerde;
           case 4:
-            return require('./../../images/colloquimCafe.png');
+            return colloquiumCafe;
           case 5:
-            return require('./../../images/starbucks.png');
+            return starbucks;
           case 6:
-            return require('./../../images/tcoop.png');
+            return tcoop;
           default:
             return null;
         }
-      };
+      }; */
       const handleButtonClick = (item) => {
         switch(item.id) {
             case 1:
@@ -61,7 +68,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
               onPress={() => handleButtonClick(item)}
               style={{flex: 1, margin: 5}}>
               <View style={styles.item}>
-                <Image source={imageSource} style={styles.image} />
+                {/*<Image source={imageSource} style={styles.image} />*/}
                 <Text style={styles.text}>{item.name}</Text>
               </View>
             </TouchableOpacity>

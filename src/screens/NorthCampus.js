@@ -14,7 +14,7 @@ const buttonData = require('./../../data/NorthCampus.json');
 const NorthCampus = () => {
   const navigation = useNavigation();
 
-  const getimageSource = (id) => {
+  /* const getimageSource = (id) => {
     switch (id) {
       case 1:
         return require('./../../images/NorthCampus/CounselorCafe.png');
@@ -24,7 +24,7 @@ const NorthCampus = () => {
         return null;
     }
   };
-
+ */
   const handleButtonClick = (item) => {
     switch (item.id) {
       case 1:
@@ -43,7 +43,7 @@ const NorthCampus = () => {
         style={{ flex: 1, margin: 5 }}
       >
         <View style={styles.item}>
-          <Image source={imageSource} style={styles.image} />
+          {/*<Image source={imageSource} style={styles.image} />*/}
           <Text style={styles.text}>{item.name}</Text>
         </View>
       </TouchableOpacity>

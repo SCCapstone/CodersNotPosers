@@ -18,7 +18,7 @@ import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 const buttonData = require('./../../data/RussellHouse.json') 
 
 const RussellHouseRestaurantScreen = ({navigation}) => {
-
+/* 
     const getimageSource = (id) => {
         switch (id) {
           case 1:
@@ -36,7 +36,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
           default:
             return null;
         }
-      };
+      }; */
       const handleButtonClick = (item) => {
          switch(item.id) {
              case 1:
@@ -61,7 +61,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
               onPress={() => handleButtonClick(item)}
               style={{flex: 1, margin: 5}}>
               <View style={styles.item}>
-                <Image source={imageSource} style={styles.image} />
+                {/*<Image source={imageSource} style={styles.image} />*/}
                 <Text style={styles.text}>{item.name}</Text>
               </View>
             </TouchableOpacity>

@@ -14,7 +14,7 @@ const buttonData = require('./../../data/FoodTrucks.json')
 
 const FoodTrucks = ({navigation}) => {
 
-    const getimageSource = (id) => {
+   /*  const getimageSource = (id) => {
         switch (id) {
           case 1:
             return require('./../../images/FoodTrucks/TheCoop.png');
@@ -23,7 +23,7 @@ const FoodTrucks = ({navigation}) => {
           default:
             return null;
         }
-      };
+      }; */
       const handleButtonClick = (item) => {
         switch(item.id) {
             case 1:
@@ -40,7 +40,7 @@ const FoodTrucks = ({navigation}) => {
               onPress={() => handleButtonClick(item)}
               style={{flex: 1, margin: 5}}>
               <View style={styles.item}>
-                <Image source={imageSource} style={styles.image} />
+                {/*<Image source={imageSource} style={styles.image} />*/}
                 <Text style={styles.text}>{item.name}</Text>
               </View>
             </TouchableOpacity>

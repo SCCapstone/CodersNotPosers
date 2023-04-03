@@ -16,7 +16,7 @@ import home from './../../images/home.png';
 const buttonData = require('./../../data/EastCampus.json') 
 
 const EastCampus = ({navigation}) => {
-
+/* 
     const getimageSource = (id) => {
         switch (id) {
           case 1:
@@ -30,7 +30,7 @@ const EastCampus = ({navigation}) => {
           default:
             return null;
         }
-      };
+      }; */
       const handleButtonClick = (item) => {
         switch(item.id) {
             case 1:
@@ -51,7 +51,7 @@ const EastCampus = ({navigation}) => {
               onPress={() => handleButtonClick(item)}
               style={{flex: 1, margin: 5}}>
               <View style={styles.item}>
-                <Image source={imageSource} style={styles.image} />
+               {/* <Image source={imageSource} style={styles.image} />*/}
                 <Text style={styles.text}>{item.name}</Text>
               </View>
             </TouchableOpacity>
