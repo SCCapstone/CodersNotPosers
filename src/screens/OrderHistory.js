@@ -14,8 +14,9 @@ const OrderHistory = ({ navigation }) => {
         const user = firebase.auth().currentUser;
         firebase.firestore().collection('Reciept').doc(user.uid).get().then((doc) => {
           if (doc.exists) {
-            setCartItems(doc.data());
-            console.log(doc.data());
+            const items = Object.values(doc.data());
+            setCartItems(items);
+            console.log(items);
           } else {
             console.log("No such document!");
           }
@@ -50,11 +51,11 @@ return (
                 </TouchableOpacity>
 
                 <View style={{ marginTop: 30 }}>
-        {cartItems && cartItems.map((cartItem, orderAt) => (
+        {cartItems && cartItems.map((cartItem, index) => (
           <View key={index} style={styles.cardContainer}>
-            <Text style={styles.cardTitle}>{card.cardtype}</Text>
-                <Text>Order: {cartItem}</Text>
-                <Text>Time of Order: {orderAt}</Text>
+            <Text style={styles.cardTitle}>{cartItem.item}</Text>
+            <Text >Price: ${cartItem.price}</Text>
+            <Text>Quantity: {cartItem.quantity}</Text>
               
           </View>
         ))}

@@ -201,13 +201,7 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
-            <Auth.Screen
-                name= "OrderHistory"
-                component = {OrderHistory}
-                options = {{
-                    headerShown: false
-                }}
-            />
+           
             <Auth.Screen
                 name= "FoodDetail"
                 component = {FoodDetail}

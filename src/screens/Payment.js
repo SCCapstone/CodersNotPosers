@@ -22,6 +22,7 @@ import ellipsegrey from "./../../images/ellipsegrey.png";
 import firestore from '@react-native-firebase/firestore';
 import hamburger from './../../images/hamburger.png';
 import MyCart from "./MyCart";
+import DeliveryStatus from "./DeliveryStatus";
 
 const Payment = ({navigation}) => {
   const [name, setName] = useState("");
@@ -377,7 +378,7 @@ const Payment = ({navigation}) => {
           </Image>
           <TouchableOpacity 
   style={styles.useCardButton} 
-  onPress={useCard}>
+  onPress = {() => {useCard();navigation.navigate(DeliveryStatus)}}>
     <Text style={{textAlign:'center'}}>Place Order ${total.toFixed(2)}</Text>
   </TouchableOpacity>
  
