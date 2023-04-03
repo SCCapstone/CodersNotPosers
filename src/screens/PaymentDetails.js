@@ -60,7 +60,7 @@ return (
                 <Text>Card Number: {card.cardNumber}</Text>
                 <Text>Expiration Date: {card.expDate}</Text>
               </>
-            ) : card.cardtype === 'Meal Plan' ? (
+            ) : card.cardtype === 'Meal Plan/Carolina Cash' ? (
               <>
                 <Text>Student ID: {card.studentID}</Text>
                 <Text>Barcode: {card.studentBarcode}</Text>
