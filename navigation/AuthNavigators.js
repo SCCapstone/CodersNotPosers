@@ -38,6 +38,7 @@ import Profile from "../src/screens/Profile";
 import EditProfile from "../src/screens/EditProfile";
 import DriverApplication from "../src/screens/DriverApplication";
 import PaymentDetails from "../src/screens/PaymentDetails";
+import OrderHistory from "../src/screens/OrderHistory";
 
 const Auth = createNativeStackNavigator();
 
@@ -191,6 +192,13 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "EditProfile"
                 component = {EditProfile}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "OrderHistory"
+                component = {OrderHistory}
                 options = {{
                     headerShown: false
                 }}

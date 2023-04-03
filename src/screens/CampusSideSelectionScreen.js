@@ -77,6 +77,9 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     scaleX:-1}}>
                 </Image>
                 <HomeHeader navigation = {navigation}/>
+                <View style={styles.profileNameContainer}>
+                  <Text style={styles.nameText}>Campus Side Selection</Text>
+                </View>
                 
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
@@ -120,7 +123,14 @@ const CampusSideSelectionScreen = ({navigation}) => {
             height: 110,
             borderRadius:15,
 
-        }
+        },
+        nameText: {
+          color: 'black',
+          fontSize: 25,
+          fontWeight: '900',
+          top: -40,
+          left: 70
+        },
       });
 
 export default CampusSideSelectionScreen;

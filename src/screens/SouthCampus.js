@@ -4,10 +4,11 @@ import {StyleSheet,View,TouchableOpacity,
 
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import HomeHeader from './HomeHeader';
 import leftarrow  from './../../images/leftarrow.png';
 import CafeVerde from './SouthCampus/CafeVerde';
 import WiredCafe from './SouthCampus/WiredCafe';
+import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+import home from './../../images/home.png';
 
 
 const buttonData = require('./../../data/SouthCampus.json') 
@@ -55,13 +56,23 @@ const SouthCampus = ({navigation}) => {
                     top: -45,
                     scaleX:-1}}>
                 </Image>
-                <HomeHeader navigation = {navigation}/>
                 
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
                     right:-40,
                     bottom:0}}>
                 </Image>
+
+                <View style = {styles.header}>
+            <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+            <Image source={home} 
+                    style = {{ width:35, height:35,marginRight:360, top:5 }}>
+                </Image>
+                <View style={styles.profileNameContainer}>
+                  <Text style={styles.nameText}>South Campus</Text>
+                </View>
+                </TouchableOpacity>              
+              </View>
             <FlatList
               data={buttonData}
               renderItem={renderItem}
@@ -85,6 +96,14 @@ const SouthCampus = ({navigation}) => {
         container: {
           backgroundColor: '#B6B7E5',
         },
+        header:{
+          flexDirection:'row',
+          backgroundColor:'white',
+          height: 45,
+          borderRadius:10,
+          justifyContent:'space-evenly',  
+          zIndex: 0
+      },
         item: {
           marginTop:60,
           marginBottom: 60,
@@ -109,7 +128,14 @@ const SouthCampus = ({navigation}) => {
             height: 110,
             borderRadius:15,
 
-        }
+        },
+        nameText: {
+          color: 'black',
+          fontSize: 25,
+          fontWeight: '900',
+          top: -30,
+          left: 115
+        },
       });
 
 export default SouthCampus;
