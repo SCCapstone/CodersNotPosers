@@ -7,6 +7,7 @@ import leftarrow  from './../../images/leftarrow.png';
 import MyCart from './MyCart';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 import hamburger from './../../images/hamburger.png';
+import { firebase } from '@react-native-firebase/firestore';
 
 
 const Reciept = ({navigation}) => {
@@ -19,7 +20,19 @@ const Reciept = ({navigation}) => {
       setCartItems(updatedCartItems);
     }, []);
 
-    
+    const saveReciept = async () => {
+        const user = firebase.auth().currentUser;
+        firebase
+            .firestore('Reciept')
+            .doc(user.uid)
+            .set()
+            .then((doc) => {
+                if(doc.exists) {
+                    const userData = doc.data();
+                    firebase.firestore().collection('Reciept').doc(user.uid).set({cartItems:[cartItems]})
+                }
+            })
+    }
     
        
     const renderItem = ({ item }) => {
@@ -70,7 +83,7 @@ const Reciept = ({navigation}) => {
               keyExtractor={(item) => item.item} />
               
           <TouchableOpacity
-          onPress = {() => navigation.navigate(CampusSideSelectionScreen)}
+          onPress = {() => {navigation.navigate(CampusSideSelectionScreen); saveReciept}}
           style={styles.deliveredButton}>
           <Text style={styles.forgotAndSignUpText}>Homepage</Text>
           </TouchableOpacity>
