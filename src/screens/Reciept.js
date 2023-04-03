@@ -20,19 +20,16 @@ const Reciept = ({navigation}) => {
       setCartItems(updatedCartItems);
     }, []);
 
-    const saveReciept = async () => {
+    const saveReceipt = async () => {
         const user = firebase.auth().currentUser;
-        firebase
-            .firestore('Reciept')
-            .doc(user.uid)
-            .set()
-            .then((doc) => {
-                if(doc.exists) {
-                    const userData = doc.data();
-                    firebase.firestore().collection('Reciept').doc(user.uid).set({cartItems:[cartItems]})
-                }
-            })
-    }
+        try {
+          const receiptRef = firebase.firestore().collection('Reciept').doc(user.uid);
+          await receiptRef.set({ cartItems, orderAt:new Date() });
+          console.log('Receipt saved successfully');
+        } catch (error) {
+          console.error('Error saving receipt:', error);
+        }
+      };
     
        
     const renderItem = ({ item }) => {
@@ -83,7 +80,7 @@ const Reciept = ({navigation}) => {
               keyExtractor={(item) => item.item} />
               
           <TouchableOpacity
-          onPress = {() => {navigation.navigate(CampusSideSelectionScreen); saveReciept}}
+          onPress = {() => {navigation.navigate(CampusSideSelectionScreen); saveReceipt()}}
           style={styles.deliveredButton}>
           <Text style={styles.forgotAndSignUpText}>Homepage</Text>
           </TouchableOpacity>

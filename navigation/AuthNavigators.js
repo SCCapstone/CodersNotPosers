@@ -43,6 +43,7 @@ import PaymentDetails from "../src/screens/PaymentDetails";
 import Cancel from "../src/screens/Cancel";
 import Reciept from "../src/screens/Reciept";
 import ContactDriver from "../src/screens/ContactDriver";
+import OrderHistory from "../src/screens/OrderHistory";
 
 const Auth = createNativeStackNavigator();
 
@@ -336,6 +337,13 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "ContactDriver"
                 component = {ContactDriver}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "OrderHistory"
+                component = {OrderHistory}
                 options = {{
                     headerShown: false
                 }}

@@ -9,6 +9,7 @@ import EditProfile from './EditProfile';
 import PaymentDetails from './PaymentDetails';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 import { useNavigation } from '@react-navigation/native';
+import OrderHistory from './OrderHistory';
 
 
 const Profile = ({navigation }) => {
@@ -36,6 +37,7 @@ const Profile = ({navigation }) => {
     };
 
   const handleOrderHistory = () => {
+    navigation.navigate(OrderHistory);
     console.log('Order History clicked');
   };
 
