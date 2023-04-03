@@ -14,7 +14,7 @@ const OrderHistory = ({ navigation }) => {
         const user = firebase.auth().currentUser;
         firebase.firestore().collection('Reciept').doc(user.uid).get().then((doc) => {
           if (doc.exists) {
-            setData(doc.data());
+            setCartItems(doc.data());
             console.log(doc.data());
           } else {
             console.log("No such document!");
