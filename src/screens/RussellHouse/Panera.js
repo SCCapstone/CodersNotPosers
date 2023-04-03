@@ -3,12 +3,12 @@ import { View, Text, FlatList, StyleSheet, Dimensions,TouchableOpacity,Image } f
 
 import ellipsepink from './../../../images/ellipsepink.png';
 import ellipsegrey from './../../../images/ellipsegrey.png';
-import HomeHeader from './../HomeHeader';
 import leftarrow  from './../../../images/leftarrow.png';
 import mycart from './../../../images/mycart.png';
 import MyCart from './../MyCart';
 import Cart from './../Cart';
-
+import CampusSideSelectionScreen from './../CampusSideSelectionScreen';
+import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/RussellHouseRestaurants/Panera.json') 
 
@@ -97,13 +97,22 @@ const Panera = ({navigation}) => {
                     top: -45,
                     scaleX:-1}}>
                 </Image>
-                <HomeHeader navigation = {navigation}/>
                 
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
                     right:-40,
                     bottom:0}}>
                 </Image>
+                <View style = {styles.header}>
+            <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+            <Image source={home} 
+                    style = {{ width:35, height:35,marginRight:360, top:5 }}>
+                </Image>
+                <View style={styles.profileNameContainer}>
+                  <Text style={styles.nameText}>Panera</Text>
+                </View>
+                </TouchableOpacity>              
+             </View>
     <View style = {{flexDirection:'row'}}>
     <FlatList
     data={menuItems}
@@ -142,6 +151,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#B6B7E5',
     flex:1
   },
+  header:{
+    flexDirection:'row',
+    backgroundColor:'white',
+    height: 45,
+    borderRadius:10,
+    justifyContent:'space-evenly',  
+    zIndex: 0
+},
   category: {
     fontSize: 20,
     fontWeight: 'bold',
@@ -182,7 +199,15 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 15,
     fontWeight:'bold',
-  }});
+  },
+  nameText: {
+    color: 'black',
+    fontSize: 24,
+    fontWeight: '900',
+    top: -30,
+    left: 150
+  },
+});
 
 
   export default Panera;

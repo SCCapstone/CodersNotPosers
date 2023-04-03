@@ -20,7 +20,7 @@ const Profile = ({navigation }) => {
       const user = firebase.auth().currentUser;
       firebase.firestore().collection('UserData').doc(user.uid).get().then((doc) => {
         if (doc.exists) {
-          setName(user.displayName); // <--- Setting the name he
+          setName(doc.data().name); // <--- Setting the name he
           setUserData(user);
         } else {
           console.log("No such document!");
