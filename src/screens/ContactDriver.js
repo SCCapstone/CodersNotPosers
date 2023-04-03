@@ -4,11 +4,11 @@ import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import hamburger from './../../images/hamburger.png';
-import Cancel from './Cancel.js';
+import Cancel from './Cancel';
 import Reciept from './Reciept';
-import ContactDriver from './ContactDriver';
 
-const DeliveryStatus = ({navigation}) => {
+
+const ContactDriver = ({navigation}) => {
     return(
         <View style={styles.container}>
           <Image source={ellipsepink}
@@ -36,54 +36,45 @@ const DeliveryStatus = ({navigation}) => {
               bottom: 0
           }}>
           </Image>
-          <View>
           <Text
             style= {{
                 position:'absolute',
                 justifyContent: 'center',
-                fontSize: 50,
-                top: 100,
+                fontSize: 25,
+                top: 200,
                 textAlign: 'center',
-                left: 15,
+                left: 50,
                 color: "black",
                 flex: 1
             }}>
-            Your order should arrive in 30 minutes!
-          </Text></View>
-          <View>
+            Driver email: 
+          </Text>
           <Text
             style= {{
                 position:'absolute',
                 justifyContent: 'center',
-                fontSize: 20,
+                fontSize: 25,
                 top: 300,
                 textAlign: 'center',
-                left: 120,
+                left: 50,
                 color: "black",
                 flex: 1
             }}>
-            Having issues?
-          </Text></View>
-
+            Driver cell: 
+          </Text>
           <TouchableOpacity
-          onPress = {() => navigation.navigate(ContactDriver)}
-          style={styles.contactButton}>
-          <Text style={styles.forgotAndSignUpText}>Contact Driver</Text>
+          onPress = {() => navigation.navigate(Cancel)}
+          style={styles.cancelButton}>
+          <Text style={styles.forgotAndSignUpText}>Cancel</Text>
           </TouchableOpacity>
           <TouchableOpacity
           onPress = {() => navigation.navigate(Reciept)}
           style={styles.deliveredButton}>
           <Text style={styles.forgotAndSignUpText}>Food was delivered</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-          onPress = {() => navigation.navigate(Cancel)}
-          style={styles.cancelButton}>
-          <Text style={styles.forgotAndSignUpText}>Cancel</Text>
-          </TouchableOpacity>
-          
 
           </View>
-    );
+    )
 };
 
 const styles = StyleSheet.create({
@@ -140,7 +131,7 @@ const styles = StyleSheet.create({
       height:50,
       alignItems:"center",
       justifyContent:"center",
-      top: 390,
+      top: 500,
       left: 40
     },
     contactButton:{
@@ -160,7 +151,7 @@ const styles = StyleSheet.create({
       height:50,
       alignItems:"center",
       justifyContent:"center",
-      top: 440,
+      top: 470,
       left: 40
     },
     forgotAndSignUpText:{
@@ -172,6 +163,5 @@ const styles = StyleSheet.create({
       fontSize: 15,
       fontWeight:'bold',
 }});
-  
-  
-export default DeliveryStatus; 
+
+export default ContactDriver;

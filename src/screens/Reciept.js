@@ -1,14 +1,51 @@
-import React, {useState} from 'react';
-import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity} from 'react-native';
-import ellipsepink from './../../images/ellipsepink.png';
-import leftarrow from './../../images/leftarrow.png';
-import ellipsegrey from './../../images/ellipsegrey.png';
-import hamburger from './../../images/hamburger.png';
-import Cancel from './Cancel.js';
-import Reciept from './Reciept';
-import ContactDriver from './ContactDriver';
+import React, { useState,useEffect } from 'react';
+import { View, Text, FlatList, StyleSheet, Dimensions,TouchableOpacity,Image} from 'react-native';
 
-const DeliveryStatus = ({navigation}) => {
+import ellipsepink from './../../images/ellipsepink.png';
+import ellipsegrey from './../../images/ellipsegrey.png';
+import leftarrow  from './../../images/leftarrow.png';
+import MyCart from './MyCart';
+import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+import hamburger from './../../images/hamburger.png';
+import { firebase } from '@react-native-firebase/firestore';
+
+
+const Reciept = ({navigation}) => {
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+      const updatedCartItems = MyCart.getItems().filter((item) => {
+        return MyCart.getQuantityByName(item) > 0;
+      });
+      setCartItems(updatedCartItems);
+    }, []);
+
+    const saveReceipt = async () => {
+        const user = firebase.auth().currentUser;
+        try {
+          const receiptRef = firebase.firestore().collection('Reciept').doc(user.uid);
+          await receiptRef.set({ cartItems, orderAt:new Date() });
+          console.log('Receipt saved successfully');
+        } catch (error) {
+          console.error('Error saving receipt:', error);
+        }
+      };
+    
+       
+    const renderItem = ({ item }) => {
+      const itemQuantity = MyCart.getQuantityByName(item);
+
+      if (itemQuantity === 0) {
+      return null;
+      }
+    return(
+      <View style={styles.item}>
+        <Text style={styles.itemText}>{item.item}</Text>
+        <Text style={styles.itemText}>${item.price}</Text>
+        <Text style= {styles.itemText}>{MyCart.getQuantityByName(item)}</Text>
+      </View>
+  );
+};
     return(
         <View style={styles.container}>
           <Image source={ellipsepink}
@@ -36,54 +73,19 @@ const DeliveryStatus = ({navigation}) => {
               bottom: 0
           }}>
           </Image>
-          <View>
-          <Text
-            style= {{
-                position:'absolute',
-                justifyContent: 'center',
-                fontSize: 50,
-                top: 100,
-                textAlign: 'center',
-                left: 15,
-                color: "black",
-                flex: 1
-            }}>
-            Your order should arrive in 30 minutes!
-          </Text></View>
-          <View>
-          <Text
-            style= {{
-                position:'absolute',
-                justifyContent: 'center',
-                fontSize: 20,
-                top: 300,
-                textAlign: 'center',
-                left: 120,
-                color: "black",
-                flex: 1
-            }}>
-            Having issues?
-          </Text></View>
-
-          <TouchableOpacity
-          onPress = {() => navigation.navigate(ContactDriver)}
-          style={styles.contactButton}>
-          <Text style={styles.forgotAndSignUpText}>Contact Driver</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-          onPress = {() => navigation.navigate(Reciept)}
-          style={styles.deliveredButton}>
-          <Text style={styles.forgotAndSignUpText}>Food was delivered</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-          onPress = {() => navigation.navigate(Cancel)}
-          style={styles.cancelButton}>
-          <Text style={styles.forgotAndSignUpText}>Cancel</Text>
-          </TouchableOpacity>
           
-
+          <FlatList
+              data={cartItems}
+              renderItem={renderItem}
+              keyExtractor={(item) => item.item} />
+              
+          <TouchableOpacity
+          onPress = {() => {navigation.navigate(CampusSideSelectionScreen); saveReceipt()}}
+          style={styles.deliveredButton}>
+          <Text style={styles.forgotAndSignUpText}>Homepage</Text>
+          </TouchableOpacity>
           </View>
-    );
+    )
 };
 
 const styles = StyleSheet.create({
@@ -140,7 +142,7 @@ const styles = StyleSheet.create({
       height:50,
       alignItems:"center",
       justifyContent:"center",
-      top: 390,
+      bottom: 50,
       left: 40
     },
     contactButton:{
@@ -172,6 +174,5 @@ const styles = StyleSheet.create({
       fontSize: 15,
       fontWeight:'bold',
 }});
-  
-  
-export default DeliveryStatus; 
+
+export default Reciept;

@@ -2,6 +2,7 @@
     {
         "name": "Starbucks - Thomas Cooper",
         "id" : 1,
+        "isfavorite" : false,
         "location": "1322 Greene Street",
                     "hours": [
                         {

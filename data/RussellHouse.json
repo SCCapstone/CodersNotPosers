@@ -2,6 +2,7 @@
     {
         "name": "Chick-Fil-A",
         "id": 1,
+        "isfavorite" : false,
                     "location": "1400 Greene Street",
                     "hours": [
                         {
@@ -18,6 +19,7 @@
     {
         "name" :"Panera",
         "id": 2,
+        "isfavorite" : false,
         "location": "1400 Greene Street",
         "hours": [
             {
@@ -34,6 +36,7 @@
     {
         "name" :"Panda Express",
         "id": 3,
+        "isfavorite" : false,
         "location": "1400 Greene Street",
         "hours": [
             {
@@ -51,6 +54,7 @@
     {
         "name" :"Twisted Taco",
         "id": 4,
+        "isfavorite" : false,
                     "location": "1400 Greene Street",
                     "hours": [
                         {
@@ -67,6 +71,7 @@
     {
         "name" :"Einstein Bros. Bagels",
         "id": 5,
+        "isfavorite" : false,
                     "location": "1400 Greene Street",
                     "hours": [
                         {
@@ -82,6 +87,7 @@
     },{
         "name" :"Carolina Creamery",
         "id": 6,
+        "isfavorite" : false,
                     "location": "1400 Greene Street",
                     "hours": [
                         {

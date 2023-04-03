@@ -4,11 +4,10 @@ import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import hamburger from './../../images/hamburger.png';
-import Cancel from './Cancel.js';
-import Reciept from './Reciept';
-import ContactDriver from './ContactDriver';
+import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
-const DeliveryStatus = ({navigation}) => {
+
+const Cancel = ({navigation}) => {
     return(
         <View style={styles.container}>
           <Image source={ellipsepink}
@@ -36,56 +35,28 @@ const DeliveryStatus = ({navigation}) => {
               bottom: 0
           }}>
           </Image>
-          <View>
+
           <Text
             style= {{
                 position:'absolute',
                 justifyContent: 'center',
                 fontSize: 50,
-                top: 100,
-                textAlign: 'center',
-                left: 15,
-                color: "black",
-                flex: 1
-            }}>
-            Your order should arrive in 30 minutes!
-          </Text></View>
-          <View>
-          <Text
-            style= {{
-                position:'absolute',
-                justifyContent: 'center',
-                fontSize: 20,
                 top: 300,
                 textAlign: 'center',
-                left: 120,
+                left: 20,
                 color: "black",
                 flex: 1
             }}>
-            Having issues?
-          </Text></View>
-
+            Order Cancelled
+          </Text>
           <TouchableOpacity
-          onPress = {() => navigation.navigate(ContactDriver)}
-          style={styles.contactButton}>
-          <Text style={styles.forgotAndSignUpText}>Contact Driver</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-          onPress = {() => navigation.navigate(Reciept)}
+          onPress = {() => navigation.navigate(CampusSideSelectionScreen)}
           style={styles.deliveredButton}>
-          <Text style={styles.forgotAndSignUpText}>Food was delivered</Text>
+          <Text style={styles.forgotAndSignUpText}>Homepage</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-          onPress = {() => navigation.navigate(Cancel)}
-          style={styles.cancelButton}>
-          <Text style={styles.forgotAndSignUpText}>Cancel</Text>
-          </TouchableOpacity>
-          
-
           </View>
-    );
+    )
 };
-
 const styles = StyleSheet.create({
     container: {
       backgroundColor: '#B6B7E5',
@@ -172,6 +143,5 @@ const styles = StyleSheet.create({
       fontSize: 15,
       fontWeight:'bold',
 }});
-  
-  
-export default DeliveryStatus; 
+
+export default Cancel;

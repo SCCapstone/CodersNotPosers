@@ -1,28 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-//import firebase from '@react-native-firebase/app';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } from 'react-native';
 import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import profile from './../../images/profile.png';
-import EditProfile from './EditProfile';
-import CampusSideSelectionScreen from './CampusSideSelectionScreen';
-import { useNavigation } from '@react-navigation/native';
+import firebase from '@react-native-firebase/app';
 
 
-const Profile = ({navigation }) => {
+const OrderHistory = ({ navigation }) => {
+  const [cartItems, setCartItems] = useState(null);
+  
+  useEffect(() => {
+    try {
+        const user = firebase.auth().currentUser;
+        firebase.firestore().collection('Reciept').doc(user.uid).get().then((doc) => {
+          if (doc.exists) {
+            setCartItems(doc.data());
+            console.log(doc.data());
+          } else {
+            console.log("No such document!");
+          }
+        });
+      } catch (error) {
+        console.error(error.message);
+      }
+  }, []);
 
-
-  // Fetch user data from Firebase`
-  const handleDetails = () => {
-    console.log('View History Clicked');
-  };
-
-  return (
-    <View style={styles.container}>
-      <Image source={ellipsepink} 
+return (
+<SafeAreaView style = {{flex: 1,backgroundColor:'#B6B7E5'}}>
+<Image source={ellipsepink} 
                     style={{position: 'absolute',
-                    left: -10,
+                    left: -0,
                     top: -20,
                     scaleX:-1}}>
                 </Image>
@@ -32,68 +39,50 @@ const Profile = ({navigation }) => {
                     right:-40,
                     bottom:0}}>
                 </Image>
-      <View style={{ position: 'absolute', bottom: 14, left: 10 }}>
-        <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+
+                <TouchableOpacity onPress={()=>navigation.pop()}>
                 <Image source={leftarrow} 
                 style={{ width: 50, 
                 height: 50,
-                right:-9,
-                bottom:20
-                }} />            
-     </TouchableOpacity>
+                right:-10,
+                bottom:-610
+                }} />
+                </TouchableOpacity>
+
+                <View style={{ marginTop: 30 }}>
+        {cartItems && cartItems.map((cartItem, orderAt) => (
+          <View key={index} style={styles.cardContainer}>
+            <Text style={styles.cardTitle}>{card.cardtype}</Text>
+                <Text>Order: {cartItem}</Text>
+                <Text>Time of Order: {orderAt}</Text>
+              
+          </View>
+        ))}
       </View>
-      <View style={styles.profileNameContainer}>
-          <Text style={styles.nameText}>Order{"\n"}History</Text>
-      </View>
-        
-      <View>
-        <TouchableOpacity style={styles.button} onPress={handleDetails}>
-          <Text style={styles.buttonText}>View Details</Text>
-        </TouchableOpacity>
-        </View>
-    </View>
-  );
+    </SafeAreaView>
+    
+        );
 };
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#b6b7e5',
-    },
-    backButton: {
-      marginRight: 20,
-       
-    },
-    profileNameContainer: {
-      marginTop: 30,
-      marginLeft:10,
-    },
-    userName: {
-      color: 'black',
-      fontSize: 30,
-      fontWeight: '900',
-    },
-    button: {
-      backgroundColor:'#884e7d',
-      padding: 20,
-      marginHorizontal:20,
-      borderRadius: 35,
-      marginTop:30,
-      alignItems: 'center',
-      top: 100
-    },
-    buttonText: {
-      color: '#fff',
-      fontSize: 18,
-      fontWeight: 'bold',
-    },
-    nameText: {
-        color: 'black',
-        fontSize: 30,
-        fontWeight: '900',
-        top: 0
-      },
-  });
-export default Profile;
+  container: {
+    flex: 1,
+    backgroundColor: '#b6b7e5',
+    padding: 45,
+  },
+  cardContainer: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 25,
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    marginBottom: 20,
+  },
+  cardTitle: {
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  
+});
 
-
+export default OrderHistory;

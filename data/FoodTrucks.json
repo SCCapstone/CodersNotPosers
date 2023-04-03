@@ -2,6 +2,7 @@
     {
         "name": "The Coop",
         "id" : 1,
+        "isfavorite" : false,
         "location": "1400 Greene Street",
                     "hours": [
                         {
@@ -18,6 +19,7 @@
     {
         "name" :"Nacho Papi's",
         "id" : 2,
+        "isfavorite" : false,
         "location": "1400 Greene Street",
                     "hours": [
                         {

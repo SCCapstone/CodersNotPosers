@@ -37,7 +37,8 @@ const Profile = ({navigation }) => {
     };
 
   const handleOrderHistory = () => {
-    navigation.navigate('OrderHistory');
+    navigation.navigate(OrderHistory);
+    console.log('Order History clicked');
   };
 
   const handlePaymentDetails = () => {
