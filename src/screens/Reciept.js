@@ -18,6 +18,8 @@ const Reciept = ({navigation}) => {
       });
       setCartItems(updatedCartItems);
     }, []);
+
+    
     
        
     const renderItem = ({ item }) => {
