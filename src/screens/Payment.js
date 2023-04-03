@@ -37,7 +37,7 @@ const Payment = ({navigation}) => {
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [total, setTotal] = useState("");
+  const [total, setTotal] = useState(0);
   const options = ["1000 Catawba Street", 
                   "1215 Devine Street",
                   "1233 Washington Street",
@@ -378,7 +378,7 @@ const Payment = ({navigation}) => {
           <TouchableOpacity 
   style={styles.useCardButton} 
   onPress={useCard}>
-    <Text style={{textAlign:'center'}}>Place Order ${total}</Text>
+    <Text style={{textAlign:'center'}}>Place Order ${total.toFixed(2)}</Text>
   </TouchableOpacity>
  
           </View>
