@@ -40,6 +40,9 @@ import Favorites from "../src/screens/Favorites";
 import DeliveryStatus from "../src/screens/DeliveryStatus";
 import DriverApplication from "../src/screens/DriverApplication";
 import PaymentDetails from "../src/screens/PaymentDetails";
+import Cancel from "../src/screens/Cancel";
+import Reciept from "../src/screens/Reciept";
+import ContactDriver from "../src/screens/ContactDriver";
 
 const Auth = createNativeStackNavigator();
 
@@ -312,6 +315,27 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "DeliveryStatus"
                 component = {DeliveryStatus}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "Cancel"
+                component = {Cancel}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "Reciept"
+                component = {Reciept}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "ContactDriver"
+                component = {ContactDriver}
                 options = {{
                     headerShown: false
                 }}

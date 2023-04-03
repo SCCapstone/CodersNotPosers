@@ -338,7 +338,7 @@ const Payment = ({navigation}) => {
     
     CardHolderName:{
         position: 'absolute',
-        top: 125,
+        top: 30,
         width:"70%",
         backgroundColor: "#FBEBEB",
         borderRadius:25,
@@ -349,7 +349,7 @@ const Payment = ({navigation}) => {
         },
      CardNumber:{
         position: 'absolute',
-        top: 190,
+        top: 95,
         width:"70%",
         backgroundColor: "#FBEBEB",
         borderRadius:25,
@@ -360,7 +360,7 @@ const Payment = ({navigation}) => {
         },
     CardExpiration:{
         position: 'absolute',
-        top: 255,
+        top: 160,
         width:"70%",
         backgroundColor: "#FBEBEB",
         borderRadius:25,
@@ -371,7 +371,7 @@ const Payment = ({navigation}) => {
         },
     CVCcolor:{
         position: 'absolute',
-        top: 320,
+        top: 225,
         width:"70%",
         backgroundColor: "#FBEBEB",
         borderRadius:25,
@@ -381,24 +381,24 @@ const Payment = ({navigation}) => {
         padding:20
         },
     saveCardButton: {
-      top: 200,
+      top: 175,
       width:"70%",
       right: 100,
       backgroundColor: "#FBEBEB",
       borderRadius:25,
-      height:100,
+      height:25,
+      width: 80,
       marginBottom:20,
       justifyContent:"center",
       padding:20
     },
    
     useCardButton: {
-      top: 100,
+      top: 115,
       width:"70%",
-      left: 100,
+      left: 25,
       backgroundColor: "#FBEBEB",
       borderRadius:25,
-      height:75,
       marginBottom:20,
       justifyContent:"center",
       padding:20
