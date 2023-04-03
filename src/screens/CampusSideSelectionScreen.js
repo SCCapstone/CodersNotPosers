@@ -101,7 +101,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
           backgroundColor: '#B6B7E5',
         },
         item: {
-          marginTop:33,
+          marginTop:20,
           alignItems: 'center',
           padding: 10,
           borderRadius: 10,
