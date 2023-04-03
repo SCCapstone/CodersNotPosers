@@ -38,6 +38,7 @@ import HumanitiesStarbucks from "../src/screens/EastCampus/HumanitiesStarbucks";
 import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKitchen";
 import Profile from "../src/screens/Profile";
 import EditProfile from "../src/screens/EditProfile";
+import OrderHistory from "../src/screens/OrderHistory";
 import paymentScreen from "../src/screens/paymentScreen";
 
 const Auth = createNativeStackNavigator();
@@ -198,6 +199,13 @@ export default function AuthStack() {
             <Auth.Screen
                 name= "EditProfile"
                 component = {EditProfile}
+                options = {{
+                    headerShown: false
+                }}
+            />
+            <Auth.Screen
+                name= "OrderHistory"
+                component = {OrderHistory}
                 options = {{
                     headerShown: false
                 }}
