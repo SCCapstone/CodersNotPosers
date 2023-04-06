@@ -4,7 +4,7 @@ import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import hamburger from './../../images/hamburger.png';
-import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+//import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 
 const Cancel = ({navigation}) => {
@@ -50,7 +50,7 @@ const Cancel = ({navigation}) => {
             Order Cancelled
           </Text>
           <TouchableOpacity
-          onPress = {() => navigation.navigate(CampusSideSelectionScreen)}
+          //onPress = {() => navigation.navigate(CampusSideSelectionScreen)}
           style={styles.deliveredButton}>
           <Text style={styles.forgotAndSignUpText}>Homepage</Text>
           </TouchableOpacity>

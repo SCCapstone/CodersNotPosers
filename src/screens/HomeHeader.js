@@ -1,8 +1,6 @@
-import {View, Text, StyleSheet,Image} from 'react-native';
-import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import {View, StyleSheet,Image} from 'react-native';
+import { TouchableOpacity} from 'react-native-gesture-handler';
 import hamburger from './../../images/hamburger.png';
-import search from './../../images/search.png';
-import tune from './../../images/tune.png';
 
 export default function HomeHeader({navigation}){
     return(

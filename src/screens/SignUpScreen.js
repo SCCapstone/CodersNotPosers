@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,View,TextInput,TouchableOpacity,
-Image,Text, Alert, Keyboard} from 'react-native';
+import React, { useState } from 'react';
+import {SafeAreaView, StyleSheet,View,TextInput,TouchableOpacity,
+Image,Text, Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
@@ -8,8 +8,6 @@ import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import DrawerNavigation from '../../navigation/DrawerNavigation';
-
 
 const SignUpScreen =  ({navigation}) => {
   const [email, setEmail] = useState("");
@@ -50,7 +48,6 @@ const SignUpScreen =  ({navigation}) => {
             phone: phone,
             password: password
           })
-          navigation.navigate(DrawerNavigation)
         }
     }
     catch(e) {

@@ -6,8 +6,8 @@ import firestore from '@react-native-firebase/firestore';
 import hamburger from './../../images/hamburger.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import DrawerNavigation from '../../navigation/DrawerNavigation';
-import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+//import DrawerNavigation from '../../navigation/DrawerNavigation';
+//import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 
 const DriverApplication =  ({navigation}) => {
@@ -40,7 +40,7 @@ const DriverApplication =  ({navigation}) => {
           });
         }
     
-        navigation.navigate(DrawerNavigation);
+        //navigation.navigate(DrawerNavigation);
       } catch (e) {
         console.error(e.message);
       }
@@ -125,7 +125,7 @@ const DriverApplication =  ({navigation}) => {
                           [
                             {
                               text: 'OK',
-                              onPress: () => navigation.navigate(CampusSideSelectionScreen),
+                              //onPress: () => navigation.navigate(CampusSideSelectionScreen),
                             },
                           ],
                           { cancelable: false }

@@ -201,6 +201,9 @@ android {
             }
         }
     }
+    aaptOptions {
+        cruncherEnabled = false
+    }
 
     splits {
         abi {

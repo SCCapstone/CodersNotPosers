@@ -7,7 +7,7 @@ import leftarrow  from './../../../images/leftarrow.png';
 import mycart from './../../../images/mycart.png';
 import MyCart from '../MyCart';
 import Cart from '../Cart';
-import CampusSideSelectionScreen from './../CampusSideSelectionScreen';
+//import CampusSideSelectionScreen from './../CampusSideSelectionScreen';
 import home  from './../../../images/home.png';
 
 
@@ -120,7 +120,7 @@ const HamptonStCafe = ({navigation}) => {
                 </Image>
 
                 <View style = {styles.header}>
-            <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+            <TouchableOpacity /* onPress={()=>navigation.navigate(CampusSideSelectionScreen)} */>
             <Image source={home} 
                     style = {{ width:35, height:35,marginRight:360, top:5 }}>
                 </Image>

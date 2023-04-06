@@ -60,7 +60,7 @@ const Profile = ({navigation }) => {
                     bottom:0}}>
                 </Image>
       <View style={{ position: 'absolute', bottom: 14, left: 10 }}>
-        <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+        <TouchableOpacity> {/* onPress={()=>navigation.navigate(CampusSideSelectionScreen)}> */}
                 <Image source={leftarrow} 
                 style={{ width: 50, 
                 height: 50,

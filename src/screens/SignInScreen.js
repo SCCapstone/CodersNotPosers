@@ -5,8 +5,8 @@ import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import auth from '@react-native-firebase/auth';
-import DrawerNavigation from '../../navigation/DrawerNavigation';
-import SignUp from './SignUpScreen';
+import SignUpScreen from './SignUpScreen';
+import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 const SignInScreen =  ({navigation}) => {
   
@@ -35,7 +35,7 @@ const SignInScreen =  ({navigation}) => {
     try {
       let response = await auth().signInWithEmailAndPassword(email,password)
       if (response && response.user) {
-        navigation.navigate(DrawerNavigation);
+        navigation.navigate(CampusSideSelectionScreen);
       }
     }
     catch(e) {
@@ -80,7 +80,7 @@ const SignInScreen =  ({navigation}) => {
           
         </TouchableOpacity>
 <TouchableOpacity
-onPress = {() => navigation.navigate(SignUp)}
+onPress = {() => navigation.navigate(SignUpScreen)}
 style={styles.signupBtn}>
 <Text style={styles.forgotAndSignUpText}>Sign Up</Text>
 </TouchableOpacity>

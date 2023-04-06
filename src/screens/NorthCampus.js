@@ -7,7 +7,7 @@ import leftarrow  from './../../images/leftarrow.png';
 import CounselorsCafe from './NorthCampus/CounselorsCafe';
 import HamptonStCafe from './NorthCampus/HamptonStCafe';
 import home from './../../images/home.png';
-import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+//import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 const buttonData = require('./../../data/NorthCampus.json');
 
@@ -70,7 +70,7 @@ const NorthCampus = () => {
         }}/>
 
       <View style = {styles.header}>
-            <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+            <TouchableOpacity> {/* onPress={()=>navigation.navigate(CampusSideSelectionScreen)}> */}
             <Image source={home} 
                     style = {{ width:35, height:35,marginRight:360, top:5 }}>
                 </Image>

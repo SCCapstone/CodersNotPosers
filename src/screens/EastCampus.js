@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react'; 
+import React from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
 
@@ -9,7 +9,7 @@ import HorshoeDeli from './EastCampus/HorshoeDeli';
 import HumanitiesStarbucks from './EastCampus/HumanitiesStarbucks';
 import VillageJuiceAndKitchen from './EastCampus/VillageJuiceAndKitchen';
 import ColloquiumCafe from './EastCampus/ColloquiumCafe';
-import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+//import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 import home from './../../images/home.png';
 
 
@@ -74,7 +74,7 @@ const EastCampus = ({navigation}) => {
                 </Image>
 
                 <View style = {styles.header}>
-            <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+            <TouchableOpacity>{/*  onPress={()=>navigation.navigate(CampusSideSelectionScreen)} */}
             <Image source={home} 
                     style = {{ width:35, height:35,marginRight:360, top:5 }}>
                 </Image>

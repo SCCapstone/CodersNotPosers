@@ -8,7 +8,7 @@ import leftarrow  from './../../images/leftarrow.png';
 import Coop from './FoodTrucks/Coop';
 import NachoPapis from './FoodTrucks/NachoPapis';
 import home from './../../images/home.png';
-import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+//import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 const buttonData = require('./../../data/FoodTrucks.json') 
 
@@ -63,7 +63,7 @@ const FoodTrucks = ({navigation}) => {
                 </Image>
 
                 <View style = {styles.header}>
-            <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+            <TouchableOpacity> {/* onPress={()=>navigation.navigate(CampusSideSelectionScreen)}> */}
             <Image source={home} 
                     style = {{ width:35, height:35,marginRight:360, top:5 }}>
                 </Image>

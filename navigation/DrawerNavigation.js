@@ -3,7 +3,7 @@ import { createDrawerNavigator} from '@react-navigation/drawer';
 
 import Profile from '../src/screens/Profile';
 import CampusSideSelectionScreen from '../src/screens/CampusSideSelectionScreen';
-import Favorites from '../src/screens/Favorites';
+//import Favorites from '../src/screens/Favorites';
 import SignOutScreen from '../src/screens/SignOutScreen';
 import DriverApplication from '../src/screens/DriverApplication';
 import SearchScreen from '../src/screens/SearchScreen';
@@ -38,13 +38,13 @@ export default function DrawerNavigation() {
           title: 'Search Screen',
         }}
         />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name="Favorites"
         component={Favorites}
         options={{
           title: 'Favorites',
         }}
-      />
+      /> */}
       <Drawer.Screen
         name="DriverApplication"
         component={DriverApplication}
