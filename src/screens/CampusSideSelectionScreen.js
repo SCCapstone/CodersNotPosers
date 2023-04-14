@@ -89,7 +89,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
             <FlatList
               data={buttonData}
               renderItem={renderItem}
-              keyExtractor={(item) => item.id}
+              keyExtractor={(item) => parseInt(item.id)}
               contentContainerStyle={styles.list}
               numColumns = {2}
             />
