@@ -102,7 +102,8 @@ const NorthCampus = () => {
     const styles = StyleSheet.create({
         container: {
           backgroundColor: '#B6B7E5',
-          alignContent: 'center'
+          alignContent: 'center',
+          flex:1
         },
         header:{
           flexDirection:'row',

@@ -106,6 +106,7 @@ const EastCampus = ({navigation}) => {
     const styles = StyleSheet.create({
         container: {
           backgroundColor: '#B6B7E5',
+          flex:1
         },
         header:{
           flexDirection:'row',

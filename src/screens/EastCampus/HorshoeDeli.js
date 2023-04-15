@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { View, Text, FlatList, StyleSheet, Dimensions,TouchableOpacity,Image } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 
 import ellipsepink from './../../../images/ellipsepink.png';
 import ellipsegrey from './../../../images/ellipsegrey.png';
@@ -17,6 +18,17 @@ const menuData = require('./../../../data/EastCampus/HorseshoeDeli.json')
 const HorshoeDeli = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Breakfast');
+  const [cartCount, setCartCount] = useState(MyCart.getTotalQuantity());
+  const updateCartCount = useCallback(() => {
+    setCartCount(MyCart.getTotalQuantity());
+  }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      updateCartCount();
+    }, [updateCartCount])
+  );
+
   const menuItems = [
     { type: "Breakfast" },
     { type: "Sandwiches" },
@@ -96,7 +108,7 @@ const HorshoeDeli = ({navigation}) => {
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>
       <Text style={styles.itemText}>${item.price}</Text>
-      <TouchableOpacity style={styles.addButton} onPress={() => MyCart.addToCart(item)}>
+      <TouchableOpacity style={styles.addButton} onPress={() => {MyCart.addToCart(item); setCartCount(MyCart.getTotalQuantity())}}>
       <Text style={styles.addButtonText}>+</Text>
       </TouchableOpacity>
       </View>
@@ -151,13 +163,35 @@ const HorshoeDeli = ({navigation}) => {
                 style={{ width: 50}} />
             </TouchableOpacity>
             </View>
-            <View style = {{ position:'absolute', bottom: 14, right:10}}>
-            <TouchableOpacity onPress={() => navigation.navigate(Cart)}>
-                    <Image source = {mycart}
-                    style = {{width:50, height:45, borderRadius:20, backgroundColor: '#884E7D',}}>
-                 </Image>
-                </TouchableOpacity>
-                </View>
+            <View style={{ position: 'absolute', bottom: 14, right: 10 }}>
+              <TouchableOpacity onPress={() => navigation.navigate(Cart)}>
+                <Image
+                  source={mycart}
+                  style={{
+                    width: 50,
+                    height: 45,
+                    borderRadius: 20,
+                    backgroundColor: '#884E7D',
+                  }}
+                />
+                {cartCount > 0 && (
+                  <View
+                    style={{
+                      position: 'absolute',
+                      top: -5,
+                      right: -5,
+                      backgroundColor: 'red',
+                      borderRadius: 10,
+                      paddingHorizontal: 5,
+                      paddingVertical: 2,
+                    }}
+                  >
+                    <Text style={{ color: 'white', fontSize: 12 }}>{cartCount}</Text>
+                  </View>
+                )}
+              </TouchableOpacity>
+            </View>
+
             </View>
     
   );

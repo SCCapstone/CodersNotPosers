@@ -4,11 +4,13 @@ const MyCart = {
       const exisitngItem = this.items.find(i=> i.item === item.item && i.price === item.price);
       if(exisitngItem) {
         exisitngItem.quantity += quantity;
-        console.log("found item");
-        console.log(this.getQuantityByName(item))
+        alert("Item already in cart. Quantity updated.");
+        console.log(this.getQuantityByName(item));
+      console.log(this.getTotalQuantity());
       } else {
       this.items.push({...item, quantity});
-      console.log("item not found");
+      alert("Item added to cart.");
+      console.log(this.getTotalQuantity());
       ;
     }
   },
@@ -39,6 +41,19 @@ const MyCart = {
     getQuantityByName: function(__item) {
       const _item = MyCart.items.find(i => i.item === __item.item);
       return _item ? _item.quantity : 0;
+    },
+    getTotalQuantity: function() {
+      let totalQuantity = 0;
+      for (let i = 0; i < this.items.length; i++) {
+        totalQuantity++;
+        if (this.items[i].quantity > 1) {
+          for(let j = 2 ; j < this.items[i].quantity;j++) {
+            totalQuantity++;
+          }
+          totalQuantity++;
+        }
+      }
+      return totalQuantity;
     }
   };
   
