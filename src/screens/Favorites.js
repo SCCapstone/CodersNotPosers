@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react'; 
+/* import React, { useState , useEffect} from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
 
@@ -134,3 +134,4 @@ const styles = StyleSheet.create({
 });
 
 export default Favorites;
+ */

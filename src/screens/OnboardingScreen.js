@@ -60,7 +60,7 @@ const OnboardingScreen = ({navigation}) => {
           {
             backgroundColor: '#B6B7E5',
             title: 'Campus Eats',
-            image: <Image style={styles.img} source={require('../../images/onBoardingLogo.png')} />,
+            image: <Image source={require('../../images/onBoardingLogo.png')} />,
             subtitle: 'Hungry? You are at the right place',
           },
           {
@@ -76,17 +76,3 @@ const OnboardingScreen = ({navigation}) => {
 };
 
 export default OnboardingScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1, 
-    alignItems: 'center', 
-    justifyContent: 'center'
-  },
-  img: {
-    flex:-1,
-    width:400,
-    Height:40,
-    top:30
-  }
-});

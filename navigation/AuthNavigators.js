@@ -36,7 +36,6 @@ import HumanitiesStarbucks from "../src/screens/EastCampus/HumanitiesStarbucks";
 import VillageJuiceAndKitchen from "../src/screens/EastCampus/VillageJuiceAndKitchen";
 import Profile from "../src/screens/Profile";
 import EditProfile from "../src/screens/EditProfile";
-import Favorites from "../src/screens/Favorites";
 import DeliveryStatus from "../src/screens/DeliveryStatus";
 import DriverApplication from "../src/screens/DriverApplication";
 import PaymentDetails from "../src/screens/PaymentDetails";
@@ -307,13 +306,7 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
-            <Auth.Screen
-                name= "Favorites"
-                component = {Favorites}
-                options = {{
-                    headerShown: false
-                }}
-            />
+            
             <Auth.Screen
                 name= "DeliveryStatus"
                 component = {DeliveryStatus}

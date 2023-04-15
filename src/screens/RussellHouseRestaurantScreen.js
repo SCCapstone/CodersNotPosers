@@ -88,7 +88,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
             <Image source={home} 
                     style = {{ width:35, height:35,marginRight:360, top:5 }}>
                 </Image>
-                <View style={styles.profileNameContainer}>
+                <View >
                   <Text style={styles.nameText}>Russell House</Text>
                 </View>
                 </TouchableOpacity>              
@@ -113,6 +113,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
       };
     const styles = StyleSheet.create({
         container: {
+          flex:1,
           backgroundColor: '#B6B7E5',
         },
         header:{

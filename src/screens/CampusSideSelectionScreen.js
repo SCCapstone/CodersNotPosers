@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react'; 
+import React from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
 
@@ -19,7 +19,7 @@ const buttonData = require('./../../data/CampusSelection.json')
 
 const CampusSideSelectionScreen = ({navigation}) => {
 
-    const getimageSource = (id) => {
+     const getimageSource = (id) => {
         switch (id) {
           case 1:
             return require('./../../images/russellHouse.png');
@@ -37,20 +37,20 @@ const CampusSideSelectionScreen = ({navigation}) => {
             return null;
         }
       };
-      const handleButtonClick = (item) => {
-        switch(item.id) {
+      const handleButtonClick = (id) => {
+        switch(id) {
             case 1:
-                return navigation.navigate(RussellHouseRestaurantScreen);
+                return navigation.navigate('RussellHouseRestaurantScreen');
             case 2: 
-                return navigation.navigate(NorthCampus);
+                return navigation.navigate('NorthCampus');
             case 3:
-                return navigation.navigate(SouthCampus);
+                return navigation.navigate('SouthCampus');
             case 4: 
-                return navigation.navigate(EastCampus);
+                return navigation.navigate('EastCampus');
             case 5: 
-                return navigation.navigate(WestCampus);
+                return navigation.navigate('WestCampus');
             case 6:
-                return navigation.navigate(FoodTrucks);
+                return navigation.navigate('FoodTrucks');
         }
       };
       const renderItem = ({item}) => {
@@ -58,15 +58,15 @@ const CampusSideSelectionScreen = ({navigation}) => {
     
         return (
             <TouchableOpacity
-              onPress={() => handleButtonClick(item)}
-              style={{flex: 1, margin: 5}}>
-              <View style={styles.item}>
-                <Image source={imageSource} style={styles.image} />
+              onPress={() => handleButtonClick(item.id)} style= {styles.item}>
+              
+              <View>
+                <Image source={imageSource} style={styles.image} ></Image>
                 <Text style={styles.text}>{item.name}</Text>
               </View>
             </TouchableOpacity>
           );
-        };
+        }; 
       
         return (
           <View style= {styles.container}>
@@ -77,34 +77,33 @@ const CampusSideSelectionScreen = ({navigation}) => {
                     scaleX:-1}}>
                 </Image>
                 <HomeHeader navigation = {navigation}/>
-                <View style={styles.profileNameContainer}>
                   <Text style={styles.nameText}>Campus Side Selection</Text>
-                </View>
                 
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
                     right:-40,
                     bottom:0}}>
                 </Image>
-            <FlatList
+              <FlatList
               data={buttonData}
               renderItem={renderItem}
-              keyExtractor={(item) => item.id}
-              contentContainerStyle={styles.list}
+              keyExtractor={(item) => parseInt(item.id)}
               numColumns = {2}
-            />
+            />  
           </View>
         );
       };
     const styles = StyleSheet.create({
         container: {
+          flex:1,
           backgroundColor: '#B6B7E5',
         },
         item: {
-          marginTop:20,
+          marginTop:30,
           alignItems: 'center',
           padding: 10,
           borderRadius: 10,
+          marginLeft:40,
         },
         text: {
           fontSize: 20,
@@ -115,9 +114,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
           width: 15,
           height: 15,
         },
-        list: {
-          padding: 10,
-        },
+       
         image: {
             width: 110,
             height: 110,
@@ -132,6 +129,6 @@ const CampusSideSelectionScreen = ({navigation}) => {
           left: 70
         },
       });
-
+      
 export default CampusSideSelectionScreen;
-    
+     
