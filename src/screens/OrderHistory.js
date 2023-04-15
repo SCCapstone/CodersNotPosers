@@ -1,0 +1,89 @@
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } from 'react-native';
+import leftarrow  from './../../images/leftarrow.png';
+import ellipsepink from './../../images/ellipsepink.png';
+import ellipsegrey from './../../images/ellipsegrey.png';
+import firebase from '@react-native-firebase/app';
+
+
+const OrderHistory = ({ navigation }) => {
+  const [cartItems, setCartItems] = useState(null);
+  
+  useEffect(() => {
+    try {
+        const user = firebase.auth().currentUser;
+        firebase.firestore().collection('Reciept').doc(user.uid).get().then((doc) => {
+          if (doc.exists) {
+            const items = Object.values(doc.data());
+            setCartItems(items);
+            console.log(items);
+          } else {
+            console.log("No such document!");
+          }
+        });
+      } catch (error) {
+        console.error(error.message);
+      }
+  }, []);
+
+return (
+<SafeAreaView style = {{flex: 1,backgroundColor:'#B6B7E5'}}>
+<Image source={ellipsepink} 
+                    style={{position: 'absolute',
+                    left: -0,
+                    top: -20,
+                    scaleX:-1}}>
+                </Image>
+                
+                <Image source={ellipsegrey} 
+                    style={{position: 'absolute',
+                    right:-40,
+                    bottom:0}}>
+                </Image>
+
+                <TouchableOpacity onPress={()=>navigation.pop()}>
+                <Image source={leftarrow} 
+                style={{ width: 50, 
+                height: 50,
+                right:-10,
+                bottom:-610
+                }} />
+                </TouchableOpacity>
+
+                <View style={{ marginTop: 30 }}>
+        {cartItems && cartItems.map((cartItem, index) => (
+          <View key={index} style={styles.cardContainer}>
+            <Text style={styles.cardTitle}>{cartItem.item}</Text>
+            <Text >Price: ${cartItem.price}</Text>
+            <Text>Quantity: {cartItem.quantity}</Text>
+              
+          </View>
+        ))}
+      </View>
+    </SafeAreaView>
+    
+        );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#b6b7e5',
+    padding: 45,
+  },
+  cardContainer: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 25,
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    marginBottom: 20,
+  },
+  cardTitle: {
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  
+});
+
+export default OrderHistory;
