@@ -45,6 +45,21 @@
         padding: 10px;
         flex-shrink: 0;
       }
+
+      #box {
+        border: 1px solid black;
+        padding: 20px;
+        margin: 20px;
+        background-color: #847979;
+        text-align: center;
+        width: 300px;
+        height: 500px;
+      }
+
+      #boxcontainer {
+        display: flex;
+        justify-content: center;
+      }
       
       a {
         color: #FBEBEB;
@@ -58,7 +73,7 @@
       
       img {
         width: 100%;
-        height: auto;
+        height: 200px;
         justify-content: center;
       }
 
@@ -105,10 +120,47 @@
     <!-- <div id="circle1"></div>
     <div id="circle2"></div> -->
     
-    <!-- -->
+    <!-- Below is the code for the content of the about page on our website, which starts with a breif intro of the team and then goes into specific boxes allotted for each one of us -->
     <div id="content">
       <h2>About Us</h2>
-      <p>The members of this team who created this app are Nick Garofalo, Kylie Gore, Jack Hempstead, Vidhee Patel, and Siona Ravi. Below are their personal LinkedIn urls and some information about them.</p>      
+      <p>The members of this team who created this app are Nick Garofalo, Kylie Gore, Jack Hempstead, Vidhee Patel, and Siona Ravi. Below is some information about each of them.</p>      
+    </div>
+
+    <div id="boxcontainer">
+      <div id="box">
+        <h2>Nick Garofalo</h2>
+        <img src="images/colloquimCafe.png" alt="Image">
+        <p>PLEASE INSERT YOUR INFORMATION HERE.</p>
+        <p>LinkedIn URL: <a href="https://www.example.com">Visit Example Website</a></p>
+      </div>
+      <div id="box">
+        <!-- Below is the format we are using for the boxes. Starts off with the name of who is being showcased, then a headshot of them, then a bio, then the URL of their LinkedIn -->
+        <h2>Kylie Gore</h2>
+        <img src="images/website/kylie_headshot.JPG" alt="Image">
+        <p>Kylie is a current senior at the University of South Carolina. She is studying Computer Science with a minor in Business Administration. After graduating in May, Kylie will be working as a Software Engineer at Bank of America in their Finance Technology Department.</p>
+        <p>LinkedIn URL: <a href="https://www.linkedin.com/in/kylie-gore/">Kylie Gore</a></p>
+      </div>
+      <div id="box">
+        <h2>Jack Hempstead</h2>
+        <img src="images/colloquimCafe.png" alt="Image">
+        <p>PLEASE INSERT YOUR INFORMATION HERE.</p>
+        <p>LinkedIn URL: <a href="https://www.example.com">Visit Example Website</a></p>
+      </div>
+    </div>
+
+    <div id="boxcontainer">
+      <div id="box">
+        <h2>Vidhee Patel</h2>
+        <img src="images/colloquimCafe.png" alt="Image">
+        <p>PLEASE INSERT YOUR INFORMATION HERE.</p>
+        <p>LinkedIn URL: <a href="https://www.example.com">Visit Example Website</a></p>
+      </div>
+      <div id="box">
+        <h2>Siona Ravi</h2>        
+        <img src="images/colloquimCafe.png" alt="Image">
+        <p>PLEASE INSERT YOUR INFORMATION HERE.</p>
+        <p>LinkedIn URL: <a href="https://www.example.com">Visit Example Website</a></p>
+      </div>
     </div>
     
     <!--Displays the footer which SHOULD be stagnant on the bottom of the page-->
