@@ -15,7 +15,6 @@ const PaymentDetails = ({ navigation }) => {
         firebase.firestore().collection('SavedCards').doc(user.uid).get().then((doc) => {
           if (doc.exists) {
             setData(doc.data());
-            console.log(doc.data());
           } else {
             console.log("No such document!");
           }
