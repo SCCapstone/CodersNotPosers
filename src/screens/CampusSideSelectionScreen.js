@@ -57,9 +57,8 @@ const CampusSideSelectionScreen = ({navigation}) => {
         const imageSource = getimageSource(item.id);
     
         return (
-            <TouchableOpacity
-              onPress={() => handleButtonClick(item.id)} style= {styles.item}>
-              
+            <TouchableOpacity 
+              onPress={() => handleButtonClick(item.id)} style={styles.item} >
               <View>
                 <Image source={imageSource} style={styles.image} ></Image>
                 <Text style={styles.text}>{item.name}</Text>
@@ -100,7 +99,6 @@ const CampusSideSelectionScreen = ({navigation}) => {
         },
         item: {
           marginTop:30,
-          alignItems: 'center',
           padding: 10,
           borderRadius: 10,
           marginLeft:40,

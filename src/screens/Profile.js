@@ -14,7 +14,7 @@ import OrderHistory from './OrderHistory';
 
 const Profile = ({navigation }) => {
   const [userData, setUserData] = useState(null);
-  const [name, setName] = useState('Jessica');
+  const [name, setName] = useState(null);
 
   // Fetch user data from Firebase`
   useEffect(() => {
@@ -51,7 +51,7 @@ const Profile = ({navigation }) => {
                     style={{position: 'absolute',
                     left: -10,
                     top: -20,
-                    scaleX:-1}}>
+                    }}>
                 </Image>
                 
                 <Image source={ellipsegrey} 

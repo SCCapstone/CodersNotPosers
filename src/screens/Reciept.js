@@ -24,7 +24,11 @@ const Reciept = ({navigation}) => {
         const user = firebase.auth().currentUser;
         try {
           const receiptRef = firebase.firestore().collection('Reciept').doc(user.uid);
-          await receiptRef.set({ cartItems, orderAt:new Date() });
+          const orderRef = receiptRef.collection('Orders').doc();
+          await orderRef.set({
+            cartItems,
+            orderAt : new Date()
+          });
           console.log('Receipt saved successfully');
         } catch (error) {
           console.error('Error saving receipt:', error);
