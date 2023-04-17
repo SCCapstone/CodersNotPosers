@@ -345,9 +345,7 @@ const Payment = ({navigation}) => {
         onChangeText={(PromoCode) => setPromoCode(PromoCode)} onSubmitEditing = {promoCodePayment}
       />
 </View>
-  <View>
     <View style={styles.saveCardButton}>
-    <TouchableOpacity></TouchableOpacity>
       <Text style={{textAlign:'center'}}>{isEnabled ? 'Remember Card:Yes' : 'Remember Card:No'}</Text>
       <Switch
         trackColor={{ false: '#767577', true: '#81b0ff' }}
@@ -355,11 +353,9 @@ const Payment = ({navigation}) => {
         ios_backgroundColor="#3e3e3e"
         onValueChange={toggleSwitch}
         value={isEnabled}
-      />
-       </View>
+      /> 
   </View>
 
-  
   <TouchableOpacity onPress={()=>navigation.pop()}>
                 <Image source={leftarrow} 
                 style={{ width: 50, 
@@ -488,7 +484,6 @@ const Payment = ({navigation}) => {
       height:60,
       marginBottom:20,
       padding:10,
-      zIndex:-1,
       justifyContent:'center'
     },
   })
