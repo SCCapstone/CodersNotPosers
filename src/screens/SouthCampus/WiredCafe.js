@@ -32,7 +32,7 @@ const WiredCafe = ({navigation}) => {
     { type: "Breakfast" },
     { type: "Sandwiches" },
     { type: "Salads" },
-    { type: "Flatbreaks" },
+    { type: "Flatbreads" },
     { type: "Sides" },
   ];
   
