@@ -18,7 +18,13 @@ const SignUpScreen =  ({navigation}) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   
-  const register = () => {
+  const register = async () => {
+    if(!phone) {
+      Alert.alert("Please enter your phone number");
+    }
+    if(!name) {
+      Alert.alert("Please enter your name");
+    }
     if(!email) {
       Alert.alert("Please enter email");
       return
@@ -31,8 +37,17 @@ const SignUpScreen =  ({navigation}) => {
       Alert.alert("Passwords does not match");
       return
     }
-    
-    registerUser(email, password, name, phone);
+    try {
+      const signInMethods = await auth().fetchSignInMethodsForEmail(email);
+      if (signInMethods.length > 0) {
+        Alert.alert('Email already exists');
+        return;
+      }
+  
+      registerUser(email, password, name, phone);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const registerUser = async (email, password, name, phone) => {

@@ -90,7 +90,7 @@ const Cart = ({navigation}) => {
 
           <View style={styles.header}>
               <TouchableOpacity
-                  onPress={() => { navigation.toggleDrawer(); } }>
+                  onPress={() => { navigation.toggleDrawer() } }>
                   <Image source={hamburger}
                       style={{ width: 35, height: 35 }}>
                   </Image>
