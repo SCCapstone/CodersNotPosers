@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet, Dimensions,TouchableOpacity,Image} from 'react-native';
+import { View, Text, FlatList, StyleSheet, Alert,TouchableOpacity,Image} from 'react-native';
 
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
@@ -10,15 +10,50 @@ import hamburger from './../../images/hamburger.png';
 
 const Cart = ({navigation}) => {
     const [cartItems, setCartItems] = useState([]);
-    const [totalPrice, setTotalPrice] = useState();
+    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
       const updatedCartItems = MyCart.getItems().filter((item) => {
         return MyCart.getQuantityByName(item) > 0;
       });
       setCartItems(updatedCartItems);
-      setTotalPrice(MyCart.getTotalPrice());
     }, []);
+
+    const handlePress = () => {
+      if (totalPrice === 0) {
+        Alert.alert('Cannot Checkout', 'Your cart is empty.', [{ text: 'OK' }]);
+      } else {
+        navigation.navigate(Payment);
+      }
+    };
+  
+    const updateCartItems = (item) => {
+      MyCart.addToCart(item);
+      const updatedItems = cartItems.map((cartItem) => {
+        if (cartItem.item === item.item) {
+          return {
+            ...cartItem,
+            quantity: MyCart.getQuantityByName(item),
+          };
+        }
+        return cartItem;
+      });
+      setCartItems(updatedItems);
+    };
+  
+    const removeCartItem = (item) => {
+      MyCart.removeItem(item);
+      const updatedItems = cartItems.map((cartItem) => {
+        if (cartItem.item === item.item) {
+          return {
+            ...cartItem,
+            quantity: MyCart.getQuantityByName(item),
+          };
+        }
+        return cartItem;
+      });
+      setCartItems(updatedItems);
+    };
     
        
     const renderItem = ({ item }) => {
@@ -32,36 +67,10 @@ const Cart = ({navigation}) => {
         <Text style={styles.itemText}>{item.item}</Text>
         <Text style={styles.itemText}>${item.price}</Text>
         <Text style= {styles.itemText}>{MyCart.getQuantityByName(item)}</Text>
-        <TouchableOpacity style={styles.addButton} onPress={() => {
-          MyCart.addToCart(item);
-          const updatedItems = cartItems.map((cartItem) => {
-            if (cartItem.item === item.item) {
-              return {
-                ...cartItem,
-                quantity: MyCart.getQuantityByName(item),
-              };
-            }
-            return cartItem;
-          });
-          setCartItems(updatedItems);
-        }}
-        >
+        <TouchableOpacity style={styles.addButton} onPress={() => updateCartItems(item)}>
         <Text style={styles.addButtonText}>+</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.addButton} onPress={() => {
-            MyCart.removeItem(item);
-            const updatedItems = cartItems.map((cartItem) => {
-              if (cartItem.item === item.item) {
-                return {
-                  ...cartItem,
-                  quantity: MyCart.getQuantityByName(item),
-                };
-              }
-              return cartItem;
-            });
-            setCartItems(updatedItems);
-          }}
-          >
+        <TouchableOpacity style={styles.addButton} onPress={() => removeCartItem(item)}>
         <Text style={styles.addButtonText}>-</Text>
         </TouchableOpacity>
       </View>
@@ -110,9 +119,9 @@ const Cart = ({navigation}) => {
               </TouchableOpacity>
               
           </View>
-          <TouchableOpacity style ={{backgroundColor: '#884E7D',borderRadius:9,
-            padding: 5, marginLeft:100,marginBottom:20,width:200,height:40}} onPress={() => navigation.navigate(Payment)}>
-              <Text style = {{fontSize:20, fontWeight:'bold'}}> Checkout      $ {totalPrice}</Text>
+          <TouchableOpacity style ={{backgroundColor: MyCart.getTotalPrice() === 0 ? 'grey' : '#884E7D', borderRadius:9,
+            padding: 5, marginLeft:100,marginBottom:20,width:200,height:40}} onPress={handlePress}>
+              <Text style = {{fontSize:20, fontWeight:'bold'}}> Checkout  $ {MyCart.getTotalPrice().toFixed(2)}</Text>
          </TouchableOpacity>
             </View>
     
