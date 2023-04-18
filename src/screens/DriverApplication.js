@@ -16,6 +16,47 @@ const DriverApplication =  ({navigation}) => {
   const [phone,setPhoneNumber] = useState("");
   const [UscId, setUSCID] = useState("");
 
+  const register = () => {
+    if(!email) {
+      Alert.alert("Please enter your email");
+    } else if(!name) {
+      Alert.alert("Please enter your name");
+    } else if(!phone) {
+      Alert.alert("Please enter your phone number");
+    } else if(!UscId) {
+      Alert.alert("Please enter your UscId");
+    } else { Alert.alert(
+      'Confirmation',
+      'Are you sure you want to submit your application?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'OK',
+          onPress: () => {
+            // Handle the OK button press here
+            addData();
+            Alert.alert(
+              'Thank you!',
+              'Thank you for submitting your application. If you are a good fit, we will contact you back through email.',
+              [
+                {
+                  text: 'OK',
+                  onPress: () => navigation.navigate(CampusSideSelectionScreen),
+                },
+              ],
+              { cancelable: false }
+            );
+          },
+        },
+      ],
+      { cancelable: false },
+    )
+
+    }
+  }
   const addData = async() => {
     try {
         const user = firebase.auth().currentUser;
@@ -101,40 +142,10 @@ const DriverApplication =  ({navigation}) => {
           placeholderTextColor="#CBC3E3"
           onChangeText={text => setUSCID(text)}/>
       </View>
-
-
       <View>
         
       <TouchableOpacity
-                onPress = {() => Alert.alert(
-                  'Confirmation',
-                  'Are you sure you want to submit your application?',
-                  [
-                    {
-                      text: 'Cancel',
-                      style: 'cancel',
-                    },
-                    {
-                      text: 'OK',
-                      onPress: () => {
-                        // Handle the OK button press here
-                        addData();
-                        Alert.alert(
-                          'Thank you!',
-                          'Thank you for submitting your application. If you are a good fit, we will contact you back through email.',
-                          [
-                            {
-                              text: 'OK',
-                              onPress: () => navigation.navigate(CampusSideSelectionScreen),
-                            },
-                          ],
-                          { cancelable: false }
-                        );
-                      },
-                    },
-                  ],
-                  { cancelable: false },
-                )}
+                onPress = {() => {register()}}
                 style={styles.signupBtn}>
                 <Text style={styles.forgotAndSignUpText}>Submit Application</Text>
             </TouchableOpacity>
@@ -142,7 +153,7 @@ const DriverApplication =  ({navigation}) => {
       <Image source={ellipsegrey} 
         style={{position: 'absolute',
           right:0,
-          bottom:-645}}/>
+          top:610}}/>
           
 </View>
       </View>
@@ -222,7 +233,7 @@ const DriverApplication =  ({navigation}) => {
 
     signupBtn:{
       position: "absolute",
-      right:145,
+      right:125,
       top:440, 
       width:155,
       backgroundColor:"#884E7D",
