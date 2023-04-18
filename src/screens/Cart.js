@@ -10,12 +10,14 @@ import hamburger from './../../images/hamburger.png';
 
 const Cart = ({navigation}) => {
     const [cartItems, setCartItems] = useState([]);
+    const [totalPrice, setTotalPrice] = useState();
 
     useEffect(() => {
       const updatedCartItems = MyCart.getItems().filter((item) => {
         return MyCart.getQuantityByName(item) > 0;
       });
       setCartItems(updatedCartItems);
+      setTotalPrice(MyCart.getTotalPrice());
     }, []);
     
        
@@ -110,7 +112,7 @@ const Cart = ({navigation}) => {
           </View>
           <TouchableOpacity style ={{backgroundColor: '#884E7D',borderRadius:9,
             padding: 5, marginLeft:100,marginBottom:20,width:200,height:40}} onPress={() => navigation.navigate(Payment)}>
-              <Text style = {{fontSize:20, fontWeight:'bold'}}> Checkout      $ {MyCart.getTotalPrice()}</Text>
+              <Text style = {{fontSize:20, fontWeight:'bold'}}> Checkout      $ {totalPrice}</Text>
          </TouchableOpacity>
             </View>
     
