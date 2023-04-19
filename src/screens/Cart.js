@@ -10,7 +10,6 @@ import hamburger from './../../images/hamburger.png';
 
 const Cart = ({navigation}) => {
     const [cartItems, setCartItems] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
       const updatedCartItems = MyCart.getItems().filter((item) => {
@@ -20,7 +19,7 @@ const Cart = ({navigation}) => {
     }, []);
 
     const handlePress = () => {
-      if (totalPrice === 0) {
+      if (MyCart.getTotalPrice() === 0) {
         Alert.alert('Cannot Checkout', 'Your cart is empty.', [{ text: 'OK' }]);
       } else {
         navigation.navigate(Payment);

@@ -5,12 +5,9 @@ import {
   Text,
   Switch,
   View,
-  SafeAreaView,
   Image,
-  Button,
   TextInput,
   TouchableOpacity,
-  Picker,
   ScrollView
 } from "react-native";
 import { TextInputMask } from 'react-native-masked-text';
