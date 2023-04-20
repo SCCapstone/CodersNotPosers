@@ -8,7 +8,7 @@ import MyCart from './MyCart';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 import hamburger from './../../images/hamburger.png';
 import { firebase } from '@react-native-firebase/firestore';
-
+import home from './../../images/home.png'
 
 const Reciept = ({navigation}) => {
     const [cartItems, setCartItems] = useState([]);
@@ -51,25 +51,29 @@ const Reciept = ({navigation}) => {
   );
 };
     return(
-        <View style={styles.container}>
-          <Image source={ellipsepink}
-              style={{
-                  position: 'absolute',
-                  left: -30,
-                  top: -45,
-                  scaleX: -1,
-              }}>
+      <View style= {styles.container}>
+      <Image source={ellipsepink} 
+              style={{position: 'absolute',
+              left: -30,
+              top: -45,
+              scaleX:-1}}>
           </Image>
-
-          <View style={styles.header}>
-              <TouchableOpacity
-                  onPress={() => { navigation.toggleDrawer(); } }>
-                  <Image source={hamburger}
-                      style={{ width: 35, height: 35 }}>
-                  </Image>
-              </TouchableOpacity>
-         
-      </View>
+          
+          <Image source={ellipsegrey} 
+              style={{position: 'absolute',
+              right:-40,
+              bottom:0}}>
+          </Image>
+          <View style = {styles.header}>
+              <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+              <Image source={home} 
+              style = {{ width:35, height:35,marginRight:360, top:5 }}>
+          </Image>
+          <View style={styles.profileNameContainer}>
+            <Text style={styles.nameText}>Chick-Fil-A</Text>
+          </View>
+          </TouchableOpacity>              
+     </View>
       <Image source={ellipsegrey}
           style={{
               position: 'absolute',
