@@ -1,12 +1,7 @@
-import React, { useContext, useState } from 'react';
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,View,TextInput,TouchableOpacity,
-Image,Text, Alert, Keyboard} from 'react-native';
-import auth from '@react-native-firebase/auth';
-import {getdatabase, ref, set} from "firebase/database";
-import { firebase } from '@react-native-firebase/firestore';
-import logo from './../../images/logo.png';
+import React, {  useState } from 'react';
+import {StyleSheet,View,TextInput,TouchableOpacity,
+Image,Text} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
-import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import hamburger from './../../images/hamburger.png';
 import ColloquiumCafe from './EastCampus/ColloquiumCafe';
@@ -41,6 +36,14 @@ const SearchScreen = ({navigation}) => {
         restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()));
     return (
             <View style = {styles.container}> 
+             <View style ={{zIndex:90}}>
+                <TouchableOpacity
+                            onPress={() => { navigation.toggleDrawer(); } }>
+                            <Image source={hamburger}
+                                style={{ width: 35, height: 35, top:6,left:6}}>
+                            </Image>
+                        </TouchableOpacity>
+                        </View>
                 <TextInput
                     style={styles.searchBar}
                     placeholder="What are you looking for?"
@@ -69,25 +72,19 @@ const SearchScreen = ({navigation}) => {
   ))}
 </View>
                 <View style={styles.container}>
-
-                    <View style={styles.header}>
-                        <TouchableOpacity
-                            onPress={() => { navigation.toggleDrawer(); } }>
-                            <Image source={hamburger}
-                                style={{ width: 35, height: 35, top: 5, zIndex:90 }}>
-                            </Image>
-                        </TouchableOpacity>
-
+               
+                
+        
                         <Image source={ellipsepink}
                         style={{
                             position: 'absolute',
-                            left: -12,
-                            top: -650,
-                            scaleX: -1,
-                            zIndex:-100
+                            left: 0,
+                            top: -685
                         }}>
-
-                    </Image>
+                        </Image>
+                        <View style={styles.header}>
+                        
+                   
                     </View>
                     <Image source={ellipsegrey}
                         style={{
@@ -115,9 +112,8 @@ const styles = StyleSheet.create({
         backgroundColor:'white',
         height: 40,
         borderRadius:10,
-        top: -590,
-        zIndex:4,
-        left: 3
+        top: -655,
+        left: 5
     },
     inputText:{
         height:55,
@@ -132,10 +128,12 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginBottom: 10,
         color: "black",
+        textAlign:'center',
         height: 50,
         width: 410,
-        zIndex:2,
-        top: 20
+        zIndex:10,
+        top:-37
+        
     },
     itemContainer: {
         marginBottom: 10,

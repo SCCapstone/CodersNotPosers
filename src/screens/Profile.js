@@ -5,15 +5,15 @@ import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import profile from './../../images/profile.png';
+import hamburger from './../../images/hamburger.png';
+import HomeHeader from './HomeHeader';
 import EditProfile from './EditProfile';
 import PaymentDetails from './PaymentDetails';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
-import { useNavigation } from '@react-navigation/native';
 import OrderHistory from './OrderHistory';
 
 
 const Profile = ({navigation }) => {
-  const [userData, setUserData] = useState(null);
   const [name, setName] = useState(null);
 
   // Fetch user data from Firebase`
@@ -53,6 +53,18 @@ const Profile = ({navigation }) => {
                     top: -20,
                     }}>
                 </Image>
+                {/* <TouchableOpacity style={{marginLeft:5,zIndex:1}}
+            onPress = {() => {navigation.toggleDrawer()}}>
+            <Image source={hamburger} 
+                    style = {{ width:35, height:35}}>
+                </Image>
+        </TouchableOpacity>
+                
+        <Text style = {{fontWeight: '800', fontSize: 29, textAlign:'center', top:-10,}}>
+                Profile
+            </Text> */}
+            <HomeHeader navigation = {navigation}/>
+                  <Text style={styles.nameText}>Profile</Text>
                 
                 <Image source={ellipsegrey} 
                     style={{position: 'absolute',
@@ -69,9 +81,7 @@ const Profile = ({navigation }) => {
                 }} />            
      </TouchableOpacity>
       </View>
-      <View style={styles.profileNameContainer}>
-          <Text style={styles.nameText}>Profile</Text>
-      </View>
+      
         <Image source = {profile}
         style={{position: 'absolute',
         width:100,height:100,
@@ -129,6 +139,8 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 30,
         fontWeight: '900',
+        top: -40,
+        left:150
       },
   });
 export default Profile;
