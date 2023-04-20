@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import Cart from '../Cart';
+import Cart from './Cart';
 
 test('renders checkout button', () => {
   const { getByText } = render(<Cart />);
