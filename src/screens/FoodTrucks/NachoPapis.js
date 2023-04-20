@@ -136,7 +136,7 @@ const NachoPapis = ({navigation}) => {
         )}
         />
       </View>
-      <View>
+      <View style= {{maxHeight:'73%'}}> 
         {renderCategory()}
       </View>
       

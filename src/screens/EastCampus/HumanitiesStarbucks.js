@@ -128,7 +128,7 @@ const HumanitiesStarbucks = ({navigation}) => {
       )}
     />
       </View>
-      <View>
+      <View style = {{maxHeight:'75%'}}>
         {renderCategory()}
       </View>
       
@@ -166,7 +166,7 @@ const HumanitiesStarbucks = ({navigation}) => {
                 )}
               </TouchableOpacity>
             </View>
-
+ 
             </View>
     
   );

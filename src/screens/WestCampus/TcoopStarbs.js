@@ -127,7 +127,7 @@ const TcoopStarbs = ({navigation}) => {
         )}
         />
       </View>
-      <View>
+      <View style = {{maxHeight:'75%'}}>
         {renderCategory()}
       </View>
       

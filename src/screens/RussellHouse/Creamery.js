@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 
 import ellipsepink from './../../../images/ellipsepink.png';
@@ -115,7 +115,7 @@ const Creamery = ({navigation}) => {
                </View>
 
     <View style = {{flexDirection:'row'}}>
-     
+  
     <FlatList
     data={menuItems}
     horizontal={true}
@@ -126,9 +126,11 @@ const Creamery = ({navigation}) => {
   )}
 />
       </View>
-      <View>
+     
+        <View style={{maxHeight:'75%'}}>
         {renderCategory()}
-      </View>
+        </View>
+     
       
       <View style={{position: 'absolute', bottom: 14, left:10}}>
       <TouchableOpacity onPress={()=>navigation.pop()}>

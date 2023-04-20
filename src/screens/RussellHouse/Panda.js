@@ -150,7 +150,7 @@ const Panda = ({navigation}) => {
 />
 
       </View>
-      <View>
+      <View style = {{maxHeight:'76%'}}>
         {renderCategory()}
       </View>
       
