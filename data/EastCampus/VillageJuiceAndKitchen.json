@@ -11,7 +11,7 @@
             "prices": [10.45, 11.45, 12.45, 9.45]
         }
     ],
-    "toastsAndWraps" : [
+    "toastAndWraps" : [
         {
             "items": ["Nut Butter & Banana", "Avo Vegan", "Basil, Bacon & Tomato", "Quit Your Job", "Chicken Bacon & Avocado"],
             "prices": [10.45, 10.45, 10.45, 10.45, 11.45]
