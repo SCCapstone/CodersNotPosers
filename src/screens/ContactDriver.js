@@ -1,5 +1,6 @@
+//Above and below are the images and the other components that I use in this screen and later in the code
 import React from 'react';
-import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import Cancel from './Cancel';
@@ -8,6 +9,10 @@ import Reciept from './Reciept';
 
 const ContactDriver = ({navigation}) => {
     return(
+        /*
+        Below is the code which shows the background like the rest of the screens do. 
+        Eventually, we want to turn this into a component in the future to streamline the code
+        */
         <View style={styles.container}>
           <Image source={ellipsepink}
               style={{
@@ -24,6 +29,8 @@ const ContactDriver = ({navigation}) => {
               bottom: 0
           }}>
           </Image>
+          {/* Below is the display of the drivers email and cell phone number, 
+          This should eventually be pulled from firebase, but we dont have the logic set up for that yet. */}
           <Text
             style= {{
                 position:'absolute',
@@ -50,6 +57,11 @@ const ContactDriver = ({navigation}) => {
             }}>
             Driver Cell: 
           </Text>
+          {/* The code below this line show two buttons, where the user can either cancel 
+          their order or they can say that they got their food and it was delivered to them.
+          Cancel order goes to cancel.js (the cancel confirmation screen)
+          Food delivered takes them to their receipt where they can see an itemized list of what they bought.
+          */}
           <TouchableOpacity
           onPress = {() => navigation.navigate(Cancel)}
           style={styles.cancelButton}>
@@ -65,91 +77,35 @@ const ContactDriver = ({navigation}) => {
     )
 };
 
+//below is the stylesheet used in the component!
 const styles = StyleSheet.create({
-    container: {
-      backgroundColor: '#B6B7E5',
-      flex:1
-    },
-     header:{
-          flexDirection:'row',
-          backgroundColor:'white',
-          height: 40,
-          borderRadius:10
-      },
-    category: {
-      fontSize: 20,
-      fontWeight: 'bold',
-      marginTop: 10,
-      marginBottom: 5,
-      backgroundColor: 'grey',
-      padding: 10,
-      marginHorizontal:7,
-      borderRadius:20,
-    },
-    item: {
-      marginHorizontal: 11,
-      padding: 3,
-      marginVertical: 10,
-      backgroundColor: 'white',
-      borderRadius: 15,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-  
-    },
-    itemText: {
-      alignContent:'center',
-      justifyContent: 'center',
-      fontSize: 16,
-      fontWeight: 'bold',
-      flex: 1,
-    },
-    addButton: {
-      backgroundColor: '#884E7D',
-      borderRadius:9,
-      padding: 5,
-      marginRight:3,
-      width:30,
-      alignItems:'center',
-    },
-    deliveredButton:{
-      width:"80%",
-      backgroundColor:"#884E7D",
-      borderRadius:25,
-      height:50,
-      alignItems:"center",
-      justifyContent:"center",
-      top: 500,
-      left: 40
-    },
-    contactButton:{
-      width:"80%",
-      backgroundColor:"#884E7D",
-      borderRadius:25,
-      height:50,
-      alignItems:"center",
-      justifyContent:"center",
-      top: 340,
-      left: 40
-    },
-    cancelButton:{
-      width:"80%",
-      backgroundColor:"#884E7D",
-      borderRadius:25,
-      height:50,
-      alignItems:"center",
-      justifyContent:"center",
-      top: 470,
-      left: 40
-    },
-    forgotAndSignUpText:{
-      color:"white",
-      fontSize:16
-    },
-    addButtonText: {
-      color: "black",
-      fontSize: 15,
-      fontWeight:'bold',
+  container: {
+    backgroundColor: '#B6B7E5',
+    flex:1
+  },
+  deliveredButton:{
+    width:"80%",
+    backgroundColor:"#884E7D",
+    borderRadius:25,
+    height:50,
+    alignItems:"center",
+    justifyContent:"center",
+    top: 500,
+    left: 40
+  },
+  cancelButton:{
+    width:"80%",
+    backgroundColor:"#884E7D",
+    borderRadius:25,
+    height:50,
+    alignItems:"center",
+    justifyContent:"center",
+    top: 470,
+    left: 40
+  },
+  forgotAndSignUpText:{
+    color:"white",
+    fontSize:16
 }});
 
 export default ContactDriver;
