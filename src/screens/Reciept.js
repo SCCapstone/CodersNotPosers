@@ -6,7 +6,6 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 import leftarrow  from './../../images/leftarrow.png';
 import MyCart from './MyCart';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
-import hamburger from './../../images/hamburger.png';
 import { firebase } from '@react-native-firebase/firestore';
 import home from './../../images/home.png'
 
@@ -70,7 +69,7 @@ const Reciept = ({navigation}) => {
               style = {{ width:35, height:35,marginRight:360, top:5 }}>
           </Image>
           <View style={styles.profileNameContainer}>
-            <Text style={styles.nameText}>Chick-Fil-A</Text>
+            <Text style={styles.nameText}>Receipt</Text>
           </View>
           </TouchableOpacity>              
      </View>
@@ -87,11 +86,7 @@ const Reciept = ({navigation}) => {
               renderItem={renderItem}
               keyExtractor={(item) => item.item} />
               
-          <TouchableOpacity
-          onPress = {() => {navigation.navigate(CampusSideSelectionScreen); saveReceipt()}}
-          style={styles.deliveredButton}>
-          <Text style={styles.forgotAndSignUpText}>Homepage</Text>
-          </TouchableOpacity>
+          
           </View>
     )
 };
@@ -181,6 +176,13 @@ const styles = StyleSheet.create({
       color: "black",
       fontSize: 15,
       fontWeight:'bold',
+},
+nameText: {
+  color: 'black',
+  fontSize: 24,
+  fontWeight: '900',
+  top: -30,
+  left: 150
 }});
 
 export default Reciept;

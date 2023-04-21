@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
-import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
-import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import hamburger from './../../images/hamburger.png';
+import home from './../../images/home.png';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 
@@ -19,15 +18,7 @@ const Cancel = ({navigation}) => {
               }}>
           </Image>
 
-          <View style={styles.header}>
-              <TouchableOpacity
-                  onPress={() => { navigation.toggleDrawer(); } }>
-                  <Image source={hamburger}
-                      style={{ width: 35, height: 35 }}>
-                  </Image>
-              </TouchableOpacity>
-         
-      </View>
+          
       <Image source={ellipsegrey}
           style={{
               position: 'absolute',

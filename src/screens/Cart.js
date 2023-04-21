@@ -6,7 +6,7 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 import leftarrow  from './../../images/leftarrow.png';
 import MyCart from './MyCart';
 import Payment from './Payment';
-import hamburger from './../../images/hamburger.png';
+import home from './../../images/home.png';
 
 const Cart = ({navigation}) => {
     const [cartItems, setCartItems] = useState([]);
@@ -87,19 +87,16 @@ const Cart = ({navigation}) => {
               }}>
           </Image>
 
-          <View style={styles.header}>
-              <TouchableOpacity
-                  onPress={() => { navigation.toggleDrawer() } }>
-                  <Image source={hamburger}
-                      style={{ width: 35, height: 35 }}>
-                  </Image>
-              </TouchableOpacity>
-              
-              <Text style = {{marginTop: 5, fontWeight: '800', fontSize: 29, textAlign:'center', marginRight: 30,flex:1}}>
-                My Cart 
-            </Text>
-         
-      </View>
+          <View style = {styles.header}>
+              <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+              <Image source={home} 
+              style = {{ width:35, height:35,marginRight:360, top:5 }}>
+          </Image>
+          <View style={styles.profileNameContainer}>
+            <Text style={styles.nameText}>Cart</Text>
+          </View>
+          </TouchableOpacity>              
+     </View>
       <Image source={ellipsegrey}
           style={{
               position: 'absolute',
@@ -178,6 +175,13 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 15,
     fontWeight:'bold',
+  },
+  nameText: {
+    color: 'black',
+    fontSize: 24,
+    fontWeight: '900',
+    top: -30,
+    left: 175
   }});
 
 

@@ -17,7 +17,7 @@ import ellipsepink from "./../../images/ellipsepink.png";
 import leftarrow from "./../../images/leftarrow.png";
 import ellipsegrey from "./../../images/ellipsegrey.png";
 import firestore from '@react-native-firebase/firestore';
-import hamburger from './../../images/hamburger.png';
+import home from './../../images/home.png';
 import MyCart from "./MyCart";
 import DeliveryStatus from "./DeliveryStatus";
 
@@ -183,16 +183,14 @@ const Payment = ({navigation}) => {
   <View style={styles.container}>
     <Image source={ellipsepink} style={{ position: 'absolute',  left: -30, top: -45, scaleX: -1, }} />
     <View style={styles.header}>
-              <TouchableOpacity
-                  onPress={() => { navigation.toggleDrawer(); } }>
-                  <Image source={hamburger}
-                      style={{ width: 35, height: 35 }}>
-                  </Image>
-              </TouchableOpacity>
-              
-              <Text style = {{marginTop: 5, fontWeight: '800', fontSize: 29, textAlign:'center', marginRight: 30,flex:1}}>
-                Payment 
-            </Text>
+              <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+              <Image source={home} 
+              style = {{ width:35, height:35,marginRight:360, top:5 }}>
+          </Image>
+          <View style={styles.profileNameContainer}>
+            <Text style={styles.nameText}>Payment</Text>
+          </View>
+          </TouchableOpacity>   
          
       </View>
       
@@ -483,5 +481,11 @@ const Payment = ({navigation}) => {
       padding:10,
       justifyContent:'center'
     },
-  })
+    nameText: {
+      color: 'black',
+      fontSize: 24,
+      fontWeight: '900',
+      top: -30,
+      left: 150
+  }})
   export default Payment;

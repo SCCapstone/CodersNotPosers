@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { StyleSheet,StatusBar, Text, View, SafeAreaView,Image,Button,TextInput,TouchableOpacity} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
-import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import hamburger from './../../images/hamburger.png';
 import Cancel from './Cancel';
 import Reciept from './Reciept';
 
@@ -19,17 +17,7 @@ const ContactDriver = ({navigation}) => {
                   scaleX: -1,
               }}>
           </Image>
-
-          <View style={styles.header}>
-              <TouchableOpacity
-                  onPress={() => { navigation.toggleDrawer(); } }>
-                  <Image source={hamburger}
-                      style={{ width: 35, height: 35 }}>
-                  </Image>
-              </TouchableOpacity>
-         
-      </View>
-      <Image source={ellipsegrey}
+          <Image source={ellipsegrey}
           style={{
               position: 'absolute',
               right: -40,
@@ -47,7 +35,7 @@ const ContactDriver = ({navigation}) => {
                 color: "black",
                 flex: 1
             }}>
-            Driver email: 
+            Driver Email: 
           </Text>
           <Text
             style= {{
@@ -60,17 +48,17 @@ const ContactDriver = ({navigation}) => {
                 color: "black",
                 flex: 1
             }}>
-            Driver cell: 
+            Driver Cell: 
           </Text>
           <TouchableOpacity
           onPress = {() => navigation.navigate(Cancel)}
           style={styles.cancelButton}>
-          <Text style={styles.forgotAndSignUpText}>Cancel</Text>
+          <Text style={styles.forgotAndSignUpText}>Cancel Order</Text>
           </TouchableOpacity>
           <TouchableOpacity
           onPress = {() => navigation.navigate(Reciept)}
           style={styles.deliveredButton}>
-          <Text style={styles.forgotAndSignUpText}>Food was delivered</Text>
+          <Text style={styles.forgotAndSignUpText}>Food was Delivered</Text>
           </TouchableOpacity>
 
           </View>
