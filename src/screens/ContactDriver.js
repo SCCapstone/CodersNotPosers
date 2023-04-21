@@ -1,4 +1,4 @@
-//Above and below are the images and the other components that I use in this screen and later in the code
+//Below are the images and the other components that I use in this screen and later in the code
 import React from 'react';
 import { StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
