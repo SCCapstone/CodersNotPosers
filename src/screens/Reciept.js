@@ -1,18 +1,23 @@
 import React, { useState,useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, Dimensions,TouchableOpacity,Image} from 'react-native';
 
+//Above and below are the images and the other components that I use in this screen and later in the code
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import leftarrow  from './../../images/leftarrow.png';
 import MyCart from './MyCart';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
-import hamburger from './../../images/hamburger.png';
 import { firebase } from '@react-native-firebase/firestore';
+import home from './../../images/home.png'
 
-
+//I spelled receipt wrong and now it just exists like that so I am sorry !
 const Reciept = ({navigation}) => {
+    //This constant is for the cart items which will be displayed in the receipt
     const [cartItems, setCartItems] = useState([]);
 
+    /*
+    This useEffect function returns the list of items as long as the quantity of the item
+    is not 0. It also sets the cart items to it
+    */
     useEffect(() => {
       const updatedCartItems = MyCart.getItems().filter((item) => {
         return MyCart.getQuantityByName(item) > 0;
@@ -20,6 +25,10 @@ const Reciept = ({navigation}) => {
       setCartItems(updatedCartItems);
     }, []);
 
+    /*
+    The saveReciept function saves the list of items into firebase as a reciept. This allows 
+    in Order History to be able to have them pull the receipt down and use it as a representation of an order.
+    */
     const saveReceipt = async () => {
         const user = firebase.auth().currentUser;
         try {
@@ -35,7 +44,8 @@ const Reciept = ({navigation}) => {
         }
       };
     
-       
+    // renderItem pulls the items in which the person ordered from their cart and returns that item formatted as shown below
+    // NAME $PRICE QUANTITY
     const renderItem = ({ item }) => {
       const itemQuantity = MyCart.getQuantityByName(item);
 
@@ -51,25 +61,34 @@ const Reciept = ({navigation}) => {
   );
 };
     return(
-        <View style={styles.container}>
-          <Image source={ellipsepink}
-              style={{
-                  position: 'absolute',
-                  left: -30,
-                  top: -45,
-                  scaleX: -1,
-              }}>
+      /*
+      Below is the code which shows the background like the rest of the screens do. 
+      Eventually, we want to turn this into a component in the future to streamline the code
+      */
+      <View style= {styles.container}>
+      <Image source={ellipsepink} 
+              style={{position: 'absolute',
+              left: -30,
+              top: -45,
+              scaleX:-1}}>
           </Image>
-
-          <View style={styles.header}>
-              <TouchableOpacity
-                  onPress={() => { navigation.toggleDrawer(); } }>
-                  <Image source={hamburger}
-                      style={{ width: 35, height: 35 }}>
-                  </Image>
-              </TouchableOpacity>
-         
-      </View>
+          
+          <Image source={ellipsegrey} 
+              style={{position: 'absolute',
+              right:-40,
+              bottom:0}}>
+          </Image>
+          {/*below is the code which styles the header of the screen, which has an option to take the user back to the homepage and the name of the screen on it*/}
+          <View style = {styles.header}>
+              <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+              <Image source={home} 
+              style = {{ width:35, height:35,marginRight:360, top:5 }}>
+          </Image>
+          <View style={styles.profileNameContainer}>
+            <Text style={styles.nameText}>Receipt</Text>
+          </View>
+          </TouchableOpacity>              
+     </View>
       <Image source={ellipsegrey}
           style={{
               position: 'absolute',
@@ -77,106 +96,52 @@ const Reciept = ({navigation}) => {
               bottom: 0
           }}>
           </Image>
-          
+          {/*This component displays the cart as a receipt*/}
           <FlatList
               data={cartItems}
               renderItem={renderItem}
               keyExtractor={(item) => item.item} />
               
-          <TouchableOpacity
-          onPress = {() => {navigation.navigate(CampusSideSelectionScreen); saveReceipt()}}
-          style={styles.deliveredButton}>
-          <Text style={styles.forgotAndSignUpText}>Homepage</Text>
-          </TouchableOpacity>
+          
           </View>
     )
 };
 
+//the style sheet for the styles used in the components of this screen
 const styles = StyleSheet.create({
-    container: {
-      backgroundColor: '#B6B7E5',
-      flex:1
-    },
-     header:{
-          flexDirection:'row',
-          backgroundColor:'white',
-          height: 40,
-          borderRadius:10
-      },
-    category: {
-      fontSize: 20,
-      fontWeight: 'bold',
-      marginTop: 10,
-      marginBottom: 5,
-      backgroundColor: 'grey',
-      padding: 10,
-      marginHorizontal:7,
-      borderRadius:20,
-    },
-    item: {
-      marginHorizontal: 11,
-      padding: 3,
-      marginVertical: 10,
-      backgroundColor: 'white',
-      borderRadius: 15,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-  
-    },
-    itemText: {
-      alignContent:'center',
-      justifyContent: 'center',
-      fontSize: 16,
-      fontWeight: 'bold',
-      flex: 1,
-    },
-    addButton: {
-      backgroundColor: '#884E7D',
-      borderRadius:9,
-      padding: 5,
-      marginRight:3,
-      width:30,
-      alignItems:'center',
-    },
-    deliveredButton:{
-      width:"80%",
-      backgroundColor:"#884E7D",
-      borderRadius:25,
-      height:50,
-      alignItems:"center",
-      justifyContent:"center",
-      bottom: 50,
-      left: 40
-    },
-    contactButton:{
-      width:"80%",
-      backgroundColor:"#884E7D",
-      borderRadius:25,
-      height:50,
-      alignItems:"center",
-      justifyContent:"center",
-      top: 340,
-      left: 40
-    },
-    cancelButton:{
-      width:"80%",
-      backgroundColor:"#884E7D",
-      borderRadius:25,
-      height:50,
-      alignItems:"center",
-      justifyContent:"center",
-      top: 440,
-      left: 40
-    },
-    forgotAndSignUpText:{
-      color:"white",
-      fontSize:16
-    },
-    addButtonText: {
-      color: "black",
-      fontSize: 15,
-      fontWeight:'bold',
+  container: {
+    backgroundColor: '#B6B7E5',
+    flex:1
+  },
+  header:{
+    flexDirection:'row',
+    backgroundColor:'white',
+    height: 40,
+    borderRadius:10
+  }, 
+  item: {
+    marginHorizontal: 11,
+    padding: 3,
+    marginVertical: 10,
+    backgroundColor: 'white',
+    borderRadius: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  itemText: {
+    alignContent:'center',
+    justifyContent: 'center',
+    fontSize: 16,
+    fontWeight: 'bold',
+    flex: 1,
+  },
+  nameText: {
+    color: 'black',
+    fontSize: 24,
+    fontWeight: '900',
+    top: -30,
+    left: 150
 }});
 
 export default Reciept;
