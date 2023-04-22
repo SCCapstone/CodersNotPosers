@@ -36,8 +36,8 @@ const buttonData = restaurants1.concat(restaurants2).concat(restaurants3).concat
 <RestaurantsList restaurants = {buttonData} />
 
 const RestaurantsList = ({ restaurants, favorites }) => {
-  // filter the restaurants based on whether they're favorited or not
-  const favoriteRestaurants = restaurants.filter(r => favorites.includes(r.id));
+  // in theory this should filter the restaurants based on whether they're favorited or not
+  const favoriteRestaurants = restaurants.filter(r => favorites.includes(r.isFavorite));
 
   return (
     <View>
@@ -52,8 +52,10 @@ const RestaurantsList = ({ restaurants, favorites }) => {
 
 const Favorites = ({navigation}) => {
   
+  //this will be the favorite restaurants list.
   const [favoriteRestaurants, setFavoriteRestaurants] = useState([]);
   
+//this is the images for all of the restaurants and can be called when you determine which one the user has selected as a favorite
 const getimageSource = (id) => {
   switch (id) {
     case 1:
@@ -94,6 +96,7 @@ const getimageSource = (id) => {
       return null;
   }
 };
+//this is the navigation for the buttons to the respective screens
 const handleButtonClick = (item) => {
    switch(item.id) {
        case 1:
@@ -132,7 +135,11 @@ const handleButtonClick = (item) => {
           return navigation.navigate(NachoPapis);
   }  
 };
+//i feel like this is where we should weed out the nonfavorites
+//But this is where we render the item itself
+//i commented out what I think should work but doesnt
 const renderItem = ({item}) => {
+  //if(item.isFavorite) {
   const imageSource = getimageSource(item.id);
 
   return (
@@ -145,6 +152,7 @@ const renderItem = ({item}) => {
         </View>
       </TouchableOpacity>
     );
+  //}
   };
 
   return (
