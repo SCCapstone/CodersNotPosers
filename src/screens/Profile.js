@@ -34,7 +34,11 @@ const Profile = ({navigation }) => {
   }, []);
   const handleEditProfile = () => {
     navigation.navigate(EditProfile);
-    };
+    firebase.firestore().collection('UserData').doc(user.uid).update({
+      name: name,
+      phone: phone,
+    })
+  };
 
   const handleOrderHistory = () => {
     navigation.navigate(OrderHistory);
