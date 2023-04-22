@@ -14,6 +14,17 @@ const MyCart = {
       ;
     }
   },
+    clearCart: function(item) {
+        const index = this.items.findIndex((i) => i.item === item.item);
+        if (index > - 1) {
+            const quantity = this.items[index].quantity;
+            while (this.items.length > 0) {
+                if (quantity > 1) {
+                    this.item[index].quantity = quantity - 1;
+                }
+            }
+        }
+    },
     removeItem: function(_item) {
       const index = this.items.findIndex((i) => i.item === _item.item);
       if (index > -1) {

@@ -10,6 +10,7 @@ const EditProfile = ({ navigation }) => {
   const [name, setName] = useState('');
   const [phone, setPhoneNumber] = useState('');
   const [userData, setUserData] = useState(null);
+  const [IsProfileModified, setIsProfileModified] = useState(false)
 
 
   useEffect(() => {
@@ -31,6 +32,10 @@ const EditProfile = ({ navigation }) => {
     }
   }, []);
 
+  useEffect(() => {
+    setIsProfileModified(name !== '' || phone !== '');
+  }, [name,phone]);
+
   const handleSave = () => {
     try {
       const user = firebase.auth().currentUser;
@@ -48,27 +53,29 @@ const EditProfile = ({ navigation }) => {
   
 
   return (
-<SafeAreaView style = {{flex: 1,backgroundColor:'#B6B7E5'}}>
-<Image source={ellipsepink} 
-                    style={{position: 'absolute',
-                    left: -0,
-                    top: -20,
-                    scaleX:-1}}>
-                </Image>
-                
-                <Image source={ellipsegrey} 
-                    style={{position: 'absolute',
-                    right:-40,
-                    bottom:0}}>
-                </Image>
+<SafeAreaView style = {styles.container} behavior='padding'>
 
-                <TouchableOpacity onPress={()=>navigation.pop()}>
-                <Image source={leftarrow} 
+  <Image source={ellipsepink} 
+          style={{position: 'absolute',
+          left: -0,
+          top: -20,
+          }}>
+      </Image>
+      <Image source={ellipsegrey} 
+                style={{position: 'absolute',
+                right:-40,
+                top:648
+                }}>
+      </Image>
+      
+
+      <TouchableOpacity onPress={()=>navigation.pop()}>
+        <Image source={leftarrow} 
                 style={{ width: 50, 
                 height: 50,
                 right:-10,
-                bottom:-610
-                }} /></TouchableOpacity>
+                bottom:-720
+      }} /></TouchableOpacity>
     <View style={{marginTop: 30,
       marginLeft:5,}}>
         <Text style={styles.nameText}>Edit Profile</Text>
@@ -106,7 +113,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#b6b7e5',
-    padding: 45,
   },
   inputContainer: {
     flexDirection: 'row',
