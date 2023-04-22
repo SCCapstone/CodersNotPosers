@@ -390,7 +390,7 @@ const Payment = ({navigation}) => {
     }
     else if (!cvc) {
       Alert.alert("Need to enter the CVC/Security code for your card.")
-    } }
+    }}
     else if(selectedButton === "mealPlanCash") {
       if (!studentname) {
         Alert.alert("Need to enter the name on your card.")
@@ -402,7 +402,6 @@ const Payment = ({navigation}) => {
         Alert.alert("Need to enter student's ID.")
       }
     }
-
     else {
       useCard();
       navigation.navigate(DeliveryStatus);
