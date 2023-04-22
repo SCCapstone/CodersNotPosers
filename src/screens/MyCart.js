@@ -14,6 +14,11 @@ const MyCart = {
       ;
     }
   },
+    clearCart: function(item) {
+        while (this.items.length > 0) {
+            this.items.pop();
+        }
+    },
     removeItem: function(_item) {
       const index = this.items.findIndex((i) => i.item === _item.item);
       if (index > -1) {
