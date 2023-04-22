@@ -29,8 +29,24 @@ const ContactDriver = ({navigation}) => {
               bottom: 0
           }}>
           </Image>
+          <Text
+            style= {{
+              position:'absolute',
+              justifyContent: 'center',
+              fontSize: 35,
+              top: 125,
+              textAlign: 'center',
+              left: 40,
+              color: "black",
+              flex: 1,
+              fontWeight: 'bold'
+            }}>
+            Contact Information
+          </Text>
           {/* Below is the display of the drivers email and cell phone number, 
-          This should eventually be pulled from firebase, but we dont have the logic set up for that yet. */}
+          This should eventually be pulled from firebase, but we dont have the logic set up for a driver to
+          pick which order they want to do. Until that logic is set there will be an overall email which
+          is shared by drivers where they can contact a driver */}
           <Text
             style= {{
                 position:'absolute',
@@ -38,7 +54,7 @@ const ContactDriver = ({navigation}) => {
                 fontSize: 25,
                 top: 200,
                 textAlign: 'center',
-                left: 50,
+                left: 125,
                 color: "black",
                 flex: 1
             }}>
@@ -49,13 +65,39 @@ const ContactDriver = ({navigation}) => {
                 position:'absolute',
                 justifyContent: 'center',
                 fontSize: 25,
-                top: 300,
+                top: 250,
                 textAlign: 'center',
                 left: 50,
                 color: "black",
                 flex: 1
             }}>
+            driver@campuseats.com    
+          </Text>
+          <Text
+            style= {{
+                position:'absolute',
+                justifyContent: 'center',
+                fontSize: 25,
+                top: 300,
+                textAlign: 'center',
+                left: 135,
+                color: "black",
+                flex: 1
+            }}>
             Driver Cell: 
+          </Text>
+          <Text
+            style= {{
+                position:'absolute',
+                justifyContent: 'center',
+                fontSize: 25,
+                top: 350,
+                textAlign: 'center',
+                left: 120,
+                color: "black",
+                flex: 1
+            }}>
+            803-422-6787
           </Text>
           {/* The code below this line show two buttons, where the user can either cancel 
           their order or they can say that they got their food and it was delivered to them.
