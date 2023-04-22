@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import firebase from '@react-native-firebase/app';
 import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import profile from './../../images/profile.png';
-import hamburger from './../../images/hamburger.png';
 import HomeHeader from './HomeHeader';
 import EditProfile from './EditProfile';
 import PaymentDetails from './PaymentDetails';
@@ -17,7 +17,7 @@ const Profile = ({navigation }) => {
   const [name, setName] = useState(null);
 
   // Fetch user data from Firebase`
-  useEffect(() => {
+  useFocusEffect(() => {
     try {
       const user = firebase.auth().currentUser;
       console.log(user);
@@ -31,7 +31,7 @@ const Profile = ({navigation }) => {
     } catch (error) {
       console.error(error.message);
     }
-  }, []);
+  });
   const handleEditProfile = () => {
     navigation.navigate(EditProfile);
   };
@@ -53,16 +53,7 @@ const Profile = ({navigation }) => {
                     top: -20,
                     }}>
                 </Image>
-                {/* <TouchableOpacity style={{marginLeft:5,zIndex:1}}
-            onPress = {() => {navigation.toggleDrawer()}}>
-            <Image source={hamburger} 
-                    style = {{ width:35, height:35}}>
-                </Image>
-        </TouchableOpacity>
                 
-        <Text style = {{fontWeight: '800', fontSize: 29, textAlign:'center', top:-10,}}>
-                Profile
-            </Text> */}
             <HomeHeader navigation = {navigation}/>
                   <Text style={styles.nameText}>Profile</Text>
                 
