@@ -44,6 +44,11 @@ const Reciept = ({navigation}) => {
         }
       };
     
+    const returnHome = ({navigation}) => {
+        MyCart.clearCart();
+        navigation.navigate(CampusSideSelectionScreen);
+    },
+    
     // renderItem pulls the items in which the person ordered from their cart and returns that item formatted as shown below
     // NAME $PRICE QUANTITY
     const renderItem = ({ item }) => {
@@ -80,7 +85,7 @@ const Reciept = ({navigation}) => {
           </Image>
           {/*below is the code which styles the header of the screen, which has an option to take the user back to the homepage and the name of the screen on it*/}
           <View style = {styles.header}>
-              <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
+              <TouchableOpacity onPress={()=>returnHome}>
               <Image source={home} 
               style = {{ width:35, height:35,marginRight:360, top:5 }}>
           </Image>
