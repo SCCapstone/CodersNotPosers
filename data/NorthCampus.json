@@ -1,7 +1,7 @@
 [
     {
         "name": "Counselor's Cafe",
-        "id" : 1 , 
+        "id" : 7 , 
         "isfavorite" : false,
         "location": "1525 Senate Street",
         "hours": [
@@ -18,7 +18,7 @@
     },
     {
         "name" :"Hampton  St. Cafe",
-        "id" : 2,
+        "id" : 8,
         "isfavorite" : false,
         "location": "1600 Hampton Street",
                     "hours": [

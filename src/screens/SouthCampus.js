@@ -17,9 +17,9 @@ const SouthCampus = ({navigation}) => {
 
     const getimageSource = (id) => {
         switch (id) {
-          case 1:
+          case 9:
             return require('./../../images/SouthCampus/CafeVerde.png');
-          case 2:
+          case 10:
             return require('./../../images/SouthCampus/Wiredcafe.png');
           default:
             return null;
@@ -27,9 +27,9 @@ const SouthCampus = ({navigation}) => {
       };
       const handleButtonClick = (item) => {
         switch(item.id) {
-            case 1:
+            case 9:
                 return navigation.navigate(CafeVerde);
-            case 2: 
+            case 10: 
                 return navigation.navigate(WiredCafe);
         }
       };

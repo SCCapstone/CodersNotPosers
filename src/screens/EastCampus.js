@@ -19,13 +19,13 @@ const EastCampus = ({navigation}) => {
 
     const getimageSource = (id) => {
         switch (id) {
-          case 1:
+          case 11:
             return require('./../../images/EastCampus/ColloquimCafe.png');
-          case 2:
+          case 12:
             return require('./../../images/EastCampus/horshoeDeli.png');
-          case 3:
+          case 13:
             return require('./../../images/EastCampus/starbucksWelsh.png');
-          case 4:
+          case 14:
             return require('./../../images/EastCampus/village.png');
           default:
             return null;
@@ -33,13 +33,13 @@ const EastCampus = ({navigation}) => {
       };
       const handleButtonClick = (item) => {
         switch(item.id) {
-            case 1:
+            case 11:
                 return navigation.navigate(ColloquiumCafe);
-            case 2: 
+            case 12: 
                 return navigation.navigate(HorshoeDeli);
-            case 3:
+            case 13:
                 return navigation.navigate(HumanitiesStarbucks);
-            case 4: 
+            case 14: 
                 return navigation.navigate(VillageJuiceAndKitchen);
         } 
       };

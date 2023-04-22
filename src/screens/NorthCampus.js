@@ -16,9 +16,9 @@ const NorthCampus = () => {
 
   const getimageSource = (id) => {
     switch (id) {
-      case 1:
+      case 7:
         return require('./../../images/NorthCampus/CounselorCafe.png');
-      case 2:
+      case 8:
         return require('./../../images/NorthCampus/Hamptons.png');
       default:
         return null;
@@ -27,9 +27,9 @@ const NorthCampus = () => {
 
   const handleButtonClick = (item) => {
     switch (item.id) {
-      case 1:
+      case 7:
         return navigation.navigate(CounselorsCafe);
-      case 2: 
+      case 8: 
         return navigation.navigate(HamptonStCafe);
     } 
   };

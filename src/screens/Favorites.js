@@ -1,17 +1,23 @@
-/* import React, { useState , useEffect} from 'react'; 
+import React, { useState , useEffect} from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
 
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
+import ChickfilA from './RussellHouse/ChickfilA';
+import Panera from './RussellHouse/Panera';
+import Panda from './RussellHouse/Panda';
+import TwistedTaco from './RussellHouse/TwistedTaco';
+import Einstein from './RussellHouse/Einstein';
+import CarolinaCreamery from './RussellHouse/Creamery';
 
 const restaurants1 = require('./../../data/RussellHouse.json')
-const restaurants2 = require('./../../data/EastCampus.json')
-const restaurants3 = require('./../../data/EastCampus.json')
+const restaurants2 = require('./../../data/NorthCampus.json')
+const restaurants3 = require('./../../data/SouthCampus.json')
 const restaurants4 = require('./../../data/EastCampus.json')
-const restaurants5 = require('./../../data/EastCampus.json')
-const restaurants6 = require('./../../data/EastCampus.json')
+const restaurants5 = require('./../../data/WestCampus.json')
+const restaurants6 = require('./../../data/FoodTrucks.json')
 const buttonData = restaurants1.concat(restaurants2).concat(restaurants3).concat(restaurants4).concat(restaurants5).concat(restaurants6);
 <RestaurantsList restaurants = {buttonData} />
 
@@ -61,6 +67,8 @@ const handleButtonClick = (item) => {
           return navigation.navigate(Einstein);
       case 6:
           return navigation.navigate(CarolinaCreamery);
+      case 7:
+          return navigation.navigate();
   }  
 };
 const renderItem = ({item}) => {
@@ -134,4 +142,3 @@ const styles = StyleSheet.create({
 });
 
 export default Favorites;
- */
