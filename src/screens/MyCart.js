@@ -15,7 +15,6 @@ const MyCart = {
     }
   },
     clearCart: function(item) {
-        const existingItems = this.items.find(i => i.item === item.item && i.price === item.price);
         while (this.items.length > 0) {
             this.items.shift();
         }
