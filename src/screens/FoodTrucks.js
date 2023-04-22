@@ -16,9 +16,9 @@ const FoodTrucks = ({navigation}) => {
 
     const getimageSource = (id) => {
         switch (id) {
-          case 1:
+          case 16:
             return require('./../../images/FoodTrucks/TheCoop.png');
-          case 2:
+          case 17:
             return require('./../../images/FoodTrucks/Nacho.png');          
           default:
             return null;
@@ -26,9 +26,9 @@ const FoodTrucks = ({navigation}) => {
       };
       const handleButtonClick = (item) => {
         switch(item.id) {
-            case 1:
+            case 16:
                 return navigation.navigate(Coop);
-            case 2: 
+            case 17: 
                 return navigation.navigate(NachoPapis);
         }
       };

@@ -57,7 +57,7 @@ const CampusSideSelectionScreen = ({navigation}) => {
         const imageSource = getimageSource(item.id);
     
         return (
-            <TouchableOpacity 
+            <TouchableOpacity  
               onPress={() => handleButtonClick(item.id)} style={styles.item}>
               <View>
                 <Image source={imageSource} style={styles.image} ></Image>

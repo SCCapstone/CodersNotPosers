@@ -369,7 +369,20 @@ const Payment = ({navigation}) => {
           </Image>
           <TouchableOpacity 
   style={styles.useCardButton} 
-  onPress = {() => {useCard();navigation.navigate(DeliveryStatus)}}>
+  onPress = {() => {
+    if (!name) {
+      Alert.alert("Need to enter the name on your card.")
+    }
+    else if (!cardNumber) {
+      Alert.alert("Need to enter a card number.")
+    }
+    else if (!expDate) {
+      Alert.alert("Need to enter an expiration date for your card.")
+    }
+    else if (!cvc) {
+      Alert.alert("Need to enter the CVC/Security code for your card.")
+    }
+    useCard();navigation.navigate(DeliveryStatus)}}>
     <Text style={{textAlign:'center'}}>Place Order ${total.toFixed(2)}</Text>
   </TouchableOpacity>
  

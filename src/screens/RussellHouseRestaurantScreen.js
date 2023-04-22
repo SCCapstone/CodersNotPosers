@@ -13,11 +13,32 @@ import CarolinaCreamery from './RussellHouse/Creamery';
 import Panera from './RussellHouse/Panera';
 import home from './../../images/home.png';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+import restaurant from './../../data/RussellHouse.json';
+
+
 
 
 const buttonData = require('./../../data/RussellHouse.json') 
 
 const RussellHouseRestaurantScreen = ({navigation}) => {
+
+  // Filled Star. You can also give the path from local
+  // const starImageFilled =
+  //   'https://raw.githubusercontent.com/AboutReact/sampleresource/master/star_filled.png';
+  // Empty Star. You can also give the path from local
+  // const starImageCorner =
+  //   'https://raw.githubusercontent.com/AboutReact/sampleresource/master/star_corner.png';
+  
+  //   const FavoriteButton = () => {
+  //     const [isFavorite, setIsFavorite] = useState(false);
+  //     const starImage = isFavorite ? require(starImageFilled) : require(starImageCorner);
+    
+  //     return (
+  //       <TouchableOpacity activeOpacity={0.7} onPress={() => setIsFavorite(!isFavorite)}>
+  //         <Image style={styles.starImageStyle} source={starImage} />
+  //       </TouchableOpacity>
+  //     );
+  //   };
 
     const getimageSource = (id) => {
         switch (id) {
@@ -99,7 +120,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
               keyExtractor={(item) => item.id}
               contentContainerStyle={styles.list}
               numColumns = {2}
-            />
+            /> 
             <TouchableOpacity onPress={()=>navigation.pop()}>
                 <Image source={leftarrow} 
                 style={{ width: 50, 
@@ -108,6 +129,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
                 bottom:25
                 }} />
             </TouchableOpacity>
+            
           </View>
         );
       };
