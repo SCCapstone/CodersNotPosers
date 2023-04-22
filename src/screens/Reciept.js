@@ -47,7 +47,7 @@ const Reciept = ({navigation}) => {
     const returnHome = ({navigation}) => {
         MyCart.clearCart(cartItems);
         navigation.navigate('CampusSideSelectionScreen');
-    },
+    };
     
     // renderItem pulls the items in which the person ordered from their cart and returns that item formatted as shown below
     // NAME $PRICE QUANTITY
