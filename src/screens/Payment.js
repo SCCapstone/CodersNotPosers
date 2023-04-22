@@ -8,11 +8,11 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  Alert
 } from "react-native";
 import { TextInputMask } from 'react-native-masked-text';
 import firebase from '@react-native-firebase/app';
-import logo from "./../../images/logo.png";
 import ellipsepink from "./../../images/ellipsepink.png";
 import leftarrow from "./../../images/leftarrow.png";
 import ellipsegrey from "./../../images/ellipsegrey.png";
@@ -31,6 +31,7 @@ const Payment = ({navigation}) => {
   const [cardNumber, setCardNumber] = useState("");
   const [expDate, setExpDate] = useState("");
   const [cvc, setCVC] = useState("");
+  const [lobby, setLobby] = useState("");
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -225,7 +226,8 @@ const Payment = ({navigation}) => {
       </ScrollView>}
    
         <TextInput 
-        style={{backgroundColor:'#FBEBEB',borderRadius:25,width:"70%",padding:10}} placeholder = "Enter Room/Lobby" />
+        style={{backgroundColor:'#FBEBEB',borderRadius:25,width:"70%",padding:10}} placeholder = "Enter Room/Lobby" 
+        onChangeText={(lobby) => setLobby(lobby)}/>
 
     <View style = {{backgroundColor:'grey',padding:9,borderRadius:13,marginTop:10,marginRight:270,marginBottom:10}}>
       <Text style={{fontWeight:'bold'}}>Payment</Text>
@@ -370,6 +372,13 @@ const Payment = ({navigation}) => {
           <TouchableOpacity 
   style={styles.useCardButton} 
   onPress = {() => {
+    if (!selectedOption) {
+      Alert.alert("Need to select the building.")
+    }
+    else if(!lobby) {
+      Alert.alert("Need to enter the lobby or room.")
+    }
+    else if ( selectedButton === "creditDebit") {
     if (!name) {
       Alert.alert("Need to enter the name on your card.")
     }
@@ -381,8 +390,23 @@ const Payment = ({navigation}) => {
     }
     else if (!cvc) {
       Alert.alert("Need to enter the CVC/Security code for your card.")
+    } }
+    else if(selectedButton === "mealPlanCash") {
+      if (!studentname) {
+        Alert.alert("Need to enter the name on your card.")
+      }
+      else if (!studentBarcode) {
+        Alert.alert("Need to enter student's barcode")
+      }
+      else if (!studentID) {
+        Alert.alert("Need to enter student's ID.")
+      }
     }
-    useCard();navigation.navigate(DeliveryStatus)}}>
+
+    else {
+      useCard();
+      navigation.navigate(DeliveryStatus);
+    }}}>
     <Text style={{textAlign:'center'}}>Place Order ${total.toFixed(2)}</Text>
   </TouchableOpacity>
  
