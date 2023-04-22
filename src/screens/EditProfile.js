@@ -53,26 +53,28 @@ const EditProfile = ({ navigation }) => {
   
 
   return (
-<SafeAreaView style = {{flex: 1,backgroundColor:'#B6B7E5'}}>
+<SafeAreaView style = {styles.container} behavior='padding'>
+
   <Image source={ellipsepink} 
           style={{position: 'absolute',
           left: -0,
           top: -20,
-          scaleX:-1}}>
+          }}>
       </Image>
-      
       <Image source={ellipsegrey} 
                 style={{position: 'absolute',
                 right:-40,
-                bottom:0}}>
+                top:648
+                }}>
       </Image>
+      
 
       <TouchableOpacity onPress={()=>navigation.pop()}>
         <Image source={leftarrow} 
                 style={{ width: 50, 
                 height: 50,
                 right:-10,
-                bottom:-610
+                bottom:-720
       }} /></TouchableOpacity>
     <View style={{marginTop: 30,
       marginLeft:5,}}>
@@ -111,7 +113,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#b6b7e5',
-    padding: 45,
   },
   inputContainer: {
     flexDirection: 'row',
