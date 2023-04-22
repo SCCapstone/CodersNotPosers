@@ -6,6 +6,7 @@ import CampusSideSelectionScreen from '../src/screens/CampusSideSelectionScreen'
 import SignOutScreen from '../src/screens/SignOutScreen';
 import DriverApplication from '../src/screens/DriverApplication';
 import SearchScreen from '../src/screens/SearchScreen';
+import Favorites from '../src/screens/Favorites';
 
 const Drawer = createDrawerNavigator();
 
@@ -42,6 +43,14 @@ export default function DrawerNavigation() {
         component={DriverApplication}
         options={{
           title: 'Driver Application',
+        }}
+      />
+
+      <Drawer.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{
+          title: 'Favorites',
         }}
       />
       
