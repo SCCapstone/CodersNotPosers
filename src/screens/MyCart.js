@@ -15,8 +15,14 @@ const MyCart = {
     }
   },
     clearCart: function(item) {
-        while (this.items.length > 0) {
-            this.items.shift();
+        const index = this.items.findIndex((i) => i.item === item.item);
+        if (index > - 1) {
+            const quantity = this.items[index].quantity;
+            while (this.items.length > 0) {
+                if (quantity > 1) {
+                    this.item[index].quantity = quantity - 1;
+                }
+            }
         }
     },
     removeItem: function(_item) {
