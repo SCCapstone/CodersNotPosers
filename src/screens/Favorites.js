@@ -1,4 +1,6 @@
-import React, { useState , useEffect} from 'react'; 
+//Below are the imports which COULD show up in the favorite screen
+//By could: all of the restaurants are able to be in the screen, but the logic will limit it to only show ones favorited by the user
+import React, {useState} from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
 
@@ -33,10 +35,13 @@ const restaurants6 = require('./../../data/FoodTrucks.json')
 const buttonData = restaurants1.concat(restaurants2).concat(restaurants3).concat(restaurants4).concat(restaurants5).concat(restaurants6);
 <RestaurantsList restaurants = {buttonData} />
 
-const RestaurantsList = ({ restaurants }) => {
+const RestaurantsList = ({ restaurants, favorites }) => {
+  // filter the restaurants based on whether they're favorited or not
+  const favoriteRestaurants = restaurants.filter(r => favorites.includes(r.id));
+
   return (
     <View>
-      {restaurants.map(restaurant => (
+      {favoriteRestaurants.map(restaurant => (
         <RestaurantItem key={restaurant.id} restaurant={restaurant} />
       ))}
     </View>
@@ -46,6 +51,8 @@ const RestaurantsList = ({ restaurants }) => {
 
 
 const Favorites = ({navigation}) => {
+  
+  const [favoriteRestaurants, setFavoriteRestaurants] = useState([]);
   
 const getimageSource = (id) => {
   switch (id) {
