@@ -44,7 +44,7 @@ const Reciept = ({navigation}) => {
         }
       };
     
-    const returnHome = ({}) => {
+    const returnHome = () => {
         MyCart.clearCart(cartItems);
         navigation.navigate('CampusSideSelectionScreen');
     };
