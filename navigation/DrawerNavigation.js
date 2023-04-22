@@ -1,11 +1,12 @@
 import React from 'react';
-import { createDrawerNavigator} from '@react-navigation/drawer';
+//import createDrawerNavigator from '@react-navigation/drawer';
 
 import Profile from '../src/screens/Profile';
 import CampusSideSelectionScreen from '../src/screens/CampusSideSelectionScreen';
 import SignOutScreen from '../src/screens/SignOutScreen';
 import DriverApplication from '../src/screens/DriverApplication';
 import SearchScreen from '../src/screens/SearchScreen';
+const createDrawerNavigator = require('@react-navigation/drawer');
 
 const Drawer = createDrawerNavigator();
 

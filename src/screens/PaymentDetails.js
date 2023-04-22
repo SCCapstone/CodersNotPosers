@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Imag
 import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import firebase from '@react-native-firebase/app';
+const firebase = require('@react-native-firebase/app');
 
 
 const PaymentDetails = ({ navigation }) => {
@@ -29,8 +29,7 @@ return (
 <Image source={ellipsepink} 
                     style={{position: 'absolute',
                     left: -0,
-                    top: -20,
-                    scaleX:-1}}>
+                    top: -20,}}>
                 </Image>
                 
                 <Image source={ellipsegrey} 
@@ -39,7 +38,7 @@ return (
                     bottom:0}}>
                 </Image>
 
-                <TouchableOpacity onPress={()=>navigation.pop()}>
+                <TouchableOpacity onPress={()=>navigation.pop()} testID="backButton">
                 <Image source={leftarrow} 
                 style={{ width: 50, 
                 height: 50,

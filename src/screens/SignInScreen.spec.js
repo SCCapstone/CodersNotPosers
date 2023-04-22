@@ -2,18 +2,34 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import SignInScreen from './SignInScreen';
 
-// mock the firebase module
-jest.mock('@react-native-firebase/auth', () => {
-  const auth = jest.fn();
-  const signInWithEmailAndPassword = jest.fn();
-  auth.signInWithEmailAndPassword = signInWithEmailAndPassword;
-  return () => ({
-    auth,
-  });
+// Mock the firebase module
+jest.mock('@react-native-firebase/app', () => {
+  const currentUser = {
+    uid: 'test-user-uid',
+  };
+  const data = {
+    name: 'Test User',
+  };
+  const doc = {
+    exists: true,
+    data: () => data,
+  };
+  const firestore = {
+    collection: jest.fn().mockReturnThis(),
+    doc: jest.fn().mockReturnThis(),
+    get: jest.fn().mockResolvedValue(doc),
+  };
+  const auth = {
+    currentUser,
+  };
+  return {
+    auth: () => auth,
+    firestore: () => firestore,
+  };
 });
 
 describe('SignInScreen', () => {
-  test('should call signInWithEmailAndPassword when Sign In button is pressed', async () => {
+  it('should call signInWithEmailAndPassword when the Sign In button is pressed', async () => {
     const { getByTestId } = render(<SignInScreen />);
     const emailInput = getByTestId('emailInput');
     const passwordInput = getByTestId('passwordInput');

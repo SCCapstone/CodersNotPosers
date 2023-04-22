@@ -8,6 +8,7 @@ import MyCart from './MyCart';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 import hamburger from './../../images/hamburger.png';
 import { firebase } from '@react-native-firebase/firestore';
+//const firebase = require('@react-native-firebase/firestore');
 
 
 const Reciept = ({navigation}) => {
@@ -43,7 +44,7 @@ const Reciept = ({navigation}) => {
       return null;
       }
     return(
-      <View style={styles.item}>
+      <View style={styles.item} testID="receipt-screen">
         <Text style={styles.itemText}>{item.item}</Text>
         <Text style={styles.itemText}>${item.price}</Text>
         <Text style= {styles.itemText}>{MyCart.getQuantityByName(item)}</Text>
@@ -81,14 +82,16 @@ const Reciept = ({navigation}) => {
           <FlatList
               data={cartItems}
               renderItem={renderItem}
-              keyExtractor={(item) => item.item} />
+              keyExtractor={(item) => item.item}
+              testID="cart-items-list" />
               
           <TouchableOpacity
-          onPress = {() => {navigation.navigate(CampusSideSelectionScreen); saveReceipt()}}
-          style={styles.deliveredButton}>
-          <Text style={styles.forgotAndSignUpText}>Homepage</Text>
+              onPress={() => {navigation.navigate(CampusSideSelectionScreen); saveReceipt()}}
+              style={styles.deliveredButton}
+              testID="homepage-button">
+              <Text style={styles.forgotAndSignUpText}>Homepage</Text>
           </TouchableOpacity>
-          </View>
+        </View>
     )
 };
 
