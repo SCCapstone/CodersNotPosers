@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,View,TextInput,TouchableOpacity,
-Image,Text, Alert, Keyboard} from 'react-native';
+import React, { useState } from 'react';
+import {SafeAreaView,StyleSheet,View,TextInput,TouchableOpacity,
+Image,Text, Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
@@ -74,22 +74,22 @@ const SignUpScreen =  ({navigation}) => {
   };
   return (
 
-    <SafeAreaView style = {{flex: 1, justifyContent: 'center',backgroundColor:'#B6B7E5'}}>
+    <View style = {styles.container}>
 
-      <View style={styles.container}>
         <Image source={ellipsepink} 
           style={{position: 'absolute',
-            left: 2,
-            top: -55}} />
-      </View>
-
-      <View style = {styles.container}>
+          left:-10,
+          top:-10,
+            }} />
+  
+     
         <Image source={logo} 
           style={{ position: 'absolute',
               width: 109, 
               height: 109,
-              top:-280 }} />
-      </View>
+              left:152,
+              top:50,}} />
+      
 
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
         <Text>   </Text>
@@ -149,18 +149,17 @@ const SignUpScreen =  ({navigation}) => {
         <Image source={leftarrow} 
           style={{ width: 50, 
             height: 50,
-            top:-10,
-            left:10}} />
+            left:10,top:670}} />
            
       </TouchableOpacity>
 
       <Image source={ellipsegrey} 
         style={{position: 'absolute',
           right:0,
-          bottom:0}}/>
+          top:635}}/>
       </View>
 
-    </SafeAreaView>
+    </View>
     );
     }
 
@@ -168,8 +167,6 @@ const SignUpScreen =  ({navigation}) => {
     container: {
     flex: 1,
     backgroundColor: '#B6B7E5',
-    alignItems: 'center',
-    justifyContent: 'center',
     },
 
     name:{
@@ -246,7 +243,7 @@ const SignUpScreen =  ({navigation}) => {
     signupBtn:{
       position: "absolute",
       right:145,
-      top:-110, 
+      top:530, 
       width:115,
       backgroundColor:"#884E7D",
       borderRadius:25,
