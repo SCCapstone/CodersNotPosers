@@ -14,7 +14,7 @@ const MyCart = {
       ;
     }
   },
-    clearCart: function(item) {
+    clearCart: function() {
         while (this.items.length > 0) {
             this.items.pop();
         }
