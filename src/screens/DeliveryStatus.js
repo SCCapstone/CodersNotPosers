@@ -67,16 +67,19 @@ const DeliveryStatus = ({navigation}) => {
 
           <TouchableOpacity
           onPress = {() => navigation.navigate(ContactDriver)}
-          style={styles.contactButton}>
+          style={styles.contactButton}
+          testID='contactButton'>
           <Text style={styles.forgotAndSignUpText}>Contact Driver</Text>
           </TouchableOpacity>
           <TouchableOpacity
           onPress = {() => navigation.navigate(Reciept)}
+          testID='deliveredButton'
           style={styles.deliveredButton}>
           <Text style={styles.forgotAndSignUpText}>Food was delivered</Text>
           </TouchableOpacity>
           <TouchableOpacity
           onPress = {() => navigation.navigate(Cancel)}
+          testID='cancelButton'
           style={styles.cancelButton}>
           <Text style={styles.forgotAndSignUpText}>Cancel</Text>
           </TouchableOpacity>

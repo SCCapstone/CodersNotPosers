@@ -97,6 +97,7 @@ const SignUpScreen =  ({navigation}) => {
 
       <View style={styles.name}>
         <TextInput id='Name'
+          testID="name-input"
           style={styles.inputText}
           placeholder="Name"
           placeholderTextColor="#CBC3E3"
@@ -105,6 +106,7 @@ const SignUpScreen =  ({navigation}) => {
 
       <View style= {styles.phoneView}>
         <TextInput
+          testID="phone-input"
           style={styles.inputText}
           placeholder="Phone"
           placeholderTextColor="#CBC3E3"
@@ -113,6 +115,7 @@ const SignUpScreen =  ({navigation}) => {
 
       <View style= {styles.emailView}>
         <TextInput
+          testID="email-input"
           style={styles.inputText}
           placeholder="Email"
           placeholderTextColor="#CBC3E3"
@@ -121,6 +124,7 @@ const SignUpScreen =  ({navigation}) => {
       
       <View style= {styles.passwordView}>
         <TextInput
+          testID="password-input"
           style={styles.inputText}
           secureTextEntry
           placeholder="Password"
@@ -130,6 +134,7 @@ const SignUpScreen =  ({navigation}) => {
 
       <View style= {styles.confirmPasswordView}>
         <TextInput
+          testID="confirm-password-input"
           style={styles.inputText}
           secureTextEntry
           placeholder="Confirm Password"
@@ -140,6 +145,7 @@ const SignUpScreen =  ({navigation}) => {
       <View>
         <TouchableOpacity
           style={styles.signupBtn}
+          testID="signup-button"
           onPress= {register}>
           <Text style={styles.forgotAndSignUpText}>Sign Up</Text>
            

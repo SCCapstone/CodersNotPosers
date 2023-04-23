@@ -3,9 +3,10 @@ import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Image} from 're
 import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import firebase from '@react-native-firebase/app';
+//import firebase from '@react-native-firebase/app';
 import moment from 'moment';
 import { ScrollView } from 'react-native-gesture-handler';
+const firebase = require('@react-native-firebase/app');
 
 const OrderHistory = ({ navigation }) => {
   const [orders, setOrders] = useState([]);

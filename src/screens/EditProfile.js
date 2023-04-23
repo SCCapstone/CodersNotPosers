@@ -5,7 +5,6 @@ const ellipsepink = require('./../../images/ellipsepink.png');
 const ellipsegrey = require('./../../images/ellipsegrey.png');
 import { firebase } from '@react-native-firebase/auth';
 
-
 const EditProfile = ({ navigation }) => {
   const [name, setName] = useState('');
   const [phone, setPhoneNumber] = useState('');

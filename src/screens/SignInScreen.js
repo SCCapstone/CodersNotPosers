@@ -4,10 +4,10 @@ Image,Text, Alert} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-import auth from '@react-native-firebase/auth';
+//import auth from '@react-native-firebase/auth';
 import DrawerNavigation from '../../navigation/DrawerNavigation';
 import SignUp from './SignUpScreen';
-
+const auth = require('@react-native-firebase/auth');
 const SignInScreen =  ({navigation}) => {
   
   const [email,setEmail] = useState('');
@@ -55,6 +55,7 @@ const SignInScreen =  ({navigation}) => {
           <TextInput
             style={styles.inputText}
             placeholder="Email"
+            testID="emailInput"
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
@@ -65,6 +66,7 @@ const SignInScreen =  ({navigation}) => {
         <View style={styles.inputView}>
           <TextInput
             style={styles.inputText}
+            testID="password-input"
             secureTextEntry={true}
             placeholder="Password"
             placeholderTextColor="#ccc"
@@ -75,7 +77,8 @@ const SignInScreen =  ({navigation}) => {
         <TouchableOpacity>
           <Text style={styles.forgotAndSignUpText}>Forgot Password?</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={LoginComponent} style={styles.loginBtn}>
+        <TouchableOpacity onPress={LoginComponent} style={styles.loginBtn} testID="signInButton"
+>
           <Text style={styles.loginText}>Sign In</Text>
           
         </TouchableOpacity>
