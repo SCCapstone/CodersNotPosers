@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Imag
 import leftarrow  from './../../images/leftarrow.png';
 const ellipsepink = require('./../../images/ellipsepink.png');
 const ellipsegrey = require('./../../images/ellipsegrey.png');
-const firebase = require('@react-native-firebase/app');
+import { firebase } from '@react-native-firebase/auth';
 
 
 const EditProfile = ({ navigation }) => {
