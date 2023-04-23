@@ -46,13 +46,13 @@ export default function DrawerNavigation() {
         }}
       />
 
-      <Drawer.Screen
+       <Drawer.Screen
         name="Favorites"
         component={Favorites}
         options={{
           title: 'Favorites',
         }}
-      />
+      /> 
       
         <Drawer.Screen
         name = "Sign out"
