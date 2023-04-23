@@ -1,8 +1,8 @@
-//Screen to show the user menu items for Chick-fil-a
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 
+import firebase from '@react-native-firebase/app';
 import ellipsepink from './../../../images/ellipsepink.png';
 import ellipsegrey from './../../../images/ellipsegrey.png';
 import leftarrow  from './../../../images/leftarrow.png';
@@ -14,11 +14,94 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/RussellHouseRestaurants/ChickfilA.json') 
 
-//Method to properly update the cart dependent on items selected
+
 const ChickfilA = ({navigation}) => {
  
+  const starImageFilled =
+    'https://raw.githubusercontent.com/AboutReact/sampleresource/master/star_filled.png';
+  // Empty Star. You can also give the path from local
+  const starImageCorner =
+    'https://raw.githubusercontent.com/AboutReact/sampleresource/master/star_corner.png';
+
   const [menuType, setMenuType] = useState('Entrees');
   const [cartCount, setCartCount] = useState(MyCart.getTotalQuantity());
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      console.log('User not logged in');
+      return;
+    }
+
+    const favoritesRef = firebase.firestore().collection('Favorites').doc(user.uid).collection('Restaurants');
+
+    const docRef = favoritesRef.doc('Chick-fil-A');
+    docRef.get().then((doc) => {
+      if (doc.exists) {
+        setIsFavorite(doc.data().isFavorite);
+      }
+    }).catch((error) => {
+      console.log('Error getting favorites:', error);
+    });
+  }, []);
+  
+  const toggleFavorite = async () => {
+    setIsFavorite(!isFavorite);
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      console.log('User not logged in');
+      return;
+    }
+    const docRef = firebase.firestore().collection('Favorites').doc(user.uid).collection('Restaurants').doc('Chick-fil-A');
+  
+    const doc = await docRef.get();
+    if (doc.exists) {
+      if (isFavorite === true) {
+        try {
+          await docRef.update({
+            name:'Chick-fil-A',
+            isFavorite: false,
+          });
+        } catch (error) {
+          console.log('Error updating favorites:', error);
+        }
+      } else {
+        try {
+          await docRef.update({
+            name :'Chick-fil-A',
+            isFavorite:true,
+          })
+        } catch (error) {
+          console.log('Error removing favorite:', error);
+        }
+      }
+    } else {
+      if (isFavorite === true) {
+        try {
+          await docRef.update({
+            name:'Chick-fil-A',
+            isFavorite: false,
+          });
+        } catch (error) {
+          console.log('Error updating favorites:', error);
+        }
+      }
+      else {
+        try {
+          await docRef.update({
+            name:'Chick-fil-A',
+            isFavorite:true,
+          })
+        } catch (error) {
+          console.log('Error removing favorite:', error);
+        }
+      }
+      
+    }
+  };
+  
+  
   const updateCartCount = useCallback(() => {
     setCartCount(MyCart.getTotalQuantity());
   }, []);
@@ -29,7 +112,7 @@ const ChickfilA = ({navigation}) => {
     }, [updateCartCount])
   );
 
-  //Navigating user to the appropriate category of food off the menu dependent on the category they have selected
+  
   const renderCategory = () => {
     switch (menuType) {
       case 'Entrees':
@@ -84,7 +167,7 @@ const ChickfilA = ({navigation}) => {
         return null;
     }
   };
-//updating cart with items the user has selected from chick-fil-a menu 
+
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>
@@ -113,12 +196,17 @@ const ChickfilA = ({navigation}) => {
                 <View style = {styles.header}>
             <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
             <Image source={home} 
-                    style = {{ width:35, height:35,marginRight:360, top:5 }}>
+                    style = {{ width:35, height:35,marginRight:320, top:5 }}>
                 </Image>
                 <View style={styles.profileNameContainer}>
                   <Text style={styles.nameText}>Chick-Fil-A</Text>
                 </View>
-                </TouchableOpacity>              
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {toggleFavorite}>
+                <Image 
+                source = {{ uri: isFavorite ? starImageFilled:starImageCorner}}
+                style = {{width:35,height:35,right:5,backgroundColor:'purple',borderRadius:5}}
+                /></TouchableOpacity>              
            </View>
     <View style = {{flexDirection:'row'}}>
      

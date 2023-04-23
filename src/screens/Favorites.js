@@ -1,9 +1,8 @@
-//Below are the imports which COULD show up in the favorite screen
+/* //Below are the imports which COULD show up in the favorite screen
 //By could: all of the restaurants are able to be in the screen, but the logic will limit it to only show ones favorited by the user
 import React, {useState} from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
-
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import HomeHeader from './HomeHeader';
@@ -24,8 +23,6 @@ import ColloquiumCafe from './EastCampus/ColloquiumCafe';
 import TcoopStarbs from './WestCampus/TcoopStarbs';
 import Coop from './FoodTrucks/Coop';
 import NachoPapis from './FoodTrucks/NachoPapis';
-
-
 const restaurants1 = require('./../../data/RussellHouse.json')
 const restaurants2 = require('./../../data/NorthCampus.json')
 const restaurants3 = require('./../../data/SouthCampus.json')
@@ -34,11 +31,9 @@ const restaurants5 = require('./../../data/WestCampus.json')
 const restaurants6 = require('./../../data/FoodTrucks.json')
 const buttonData = restaurants1.concat(restaurants2).concat(restaurants3).concat(restaurants4).concat(restaurants5).concat(restaurants6);
 <RestaurantsList restaurants = {buttonData} />
-
 const RestaurantsList = ({ restaurants, favorites }) => {
   // in theory this should filter the restaurants based on whether they're favorited or not
   const favoriteRestaurants = restaurants.filter(r => favorites.includes(r.isFavorite));
-
   return (
     <View>
       {favoriteRestaurants.map(restaurant => (
@@ -47,9 +42,6 @@ const RestaurantsList = ({ restaurants, favorites }) => {
     </View>
   );
 };
-
-
-
 const Favorites = ({navigation}) => {
   
   //this will be the favorite restaurants list.
@@ -141,7 +133,6 @@ const handleButtonClick = (item) => {
 const renderItem = ({item}) => {
   //if(item.isFavorite) {
   const imageSource = getimageSource(item.id);
-
   return (
       <TouchableOpacity
         onPress={() => handleButtonClick(item)}
@@ -154,7 +145,6 @@ const renderItem = ({item}) => {
     );
   //}
   };
-
   return (
     <View style= {styles.container}>
       <Image source={ellipsepink} 
@@ -207,7 +197,6 @@ const styles = StyleSheet.create({
       width: 110,
       height: 110,
       borderRadius:15,
-
   },
   nameText: {
     color: 'black',
@@ -217,5 +206,48 @@ const styles = StyleSheet.create({
     left: 140
   },
 });
+export default Favorites; */
+import React, { useState, useEffect } from 'react';
+import { View, Text, FlatList } from 'react-native';
+
+import firebase from '@react-native-firebase/app';
+
+const Favorites= () => {
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      console.log('User not logged in');
+      return;
+    }
+
+    const favoritesRef = firebase.firestore().collection('Favorites').doc(user.uid).collection('Restaurants');
+
+    const unsubscribe = favoritesRef.where('isFavorite', '==', true)
+                                     .onSnapshot((querySnapshot) => {
+                                       const favoritesData = [];
+                                       querySnapshot.forEach((doc) => {
+                                         favoritesData.push(doc.data());
+                                       });
+                                       setFavorites(favoritesData);
+                                     }, (error) => {
+                                       console.log('Error getting favorites:', error);
+                                     });
+
+    return () => unsubscribe();
+  }, []);
+
+  return (
+    <View>
+      <Text>Favorite Restaurants</Text>
+      <FlatList
+        data={favorites}
+        keyExtractor={(item) => item.name}
+        renderItem={({ item }) => <Text>{item.name}</Text>}
+      />
+    </View>
+  );
+};
 
 export default Favorites;
