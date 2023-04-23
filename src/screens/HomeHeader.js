@@ -1,8 +1,7 @@
-import {View, Text, StyleSheet,Image} from 'react-native';
-import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import {View, StyleSheet,Image} from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import hamburger from './../../images/hamburger.png';
-import search from './../../images/search.png';
-import tune from './../../images/tune.png';
+
 //Method used to present user with header navigation allowing them to toggle between potential choices we have presented to them
 export default function HomeHeader({navigation}){
     return(

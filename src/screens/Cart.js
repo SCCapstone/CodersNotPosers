@@ -84,8 +84,7 @@ const Cart = ({navigation}) => {
               style={{
                   position: 'absolute',
                   left: -30,
-                  top: -45,
-                  scaleX: -1,
+                  top: -45
               }}>
           </Image>
 

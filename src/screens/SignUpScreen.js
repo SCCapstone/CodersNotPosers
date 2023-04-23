@@ -1,6 +1,6 @@
 //Sign up screen allowing a user to create an account
 import React, { useState } from 'react';
-import {SafeAreaView,StyleSheet,View,TextInput,TouchableOpacity,
+import {StyleSheet,View,TextInput,TouchableOpacity,
 Image,Text, Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';

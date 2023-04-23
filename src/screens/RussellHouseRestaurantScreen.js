@@ -1,5 +1,5 @@
 //Screen for all Russel House Restauraunts
-import React, { useState , useEffect} from 'react'; 
+import React from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
 
@@ -14,8 +14,6 @@ import CarolinaCreamery from './RussellHouse/Creamery';
 import Panera from './RussellHouse/Panera';
 import home from './../../images/home.png';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
-import restaurant from './../../data/RussellHouse.json';
-
 
 
 

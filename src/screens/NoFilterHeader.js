@@ -1,5 +1,5 @@
 import {View, Text, StyleSheet,Image} from 'react-native';
-import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native';
 import home from './../../images/home.png';
 //import search from './../../images/search.png';
 //import tune from './../../images/tune.png';

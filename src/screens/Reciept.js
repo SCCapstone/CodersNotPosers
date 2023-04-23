@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet, Dimensions,TouchableOpacity,Image} from 'react-native';
+import { View, Text, FlatList, StyleSheet,TouchableOpacity,Image} from 'react-native';
 
 //Above and below are the images and the other components that I use in this screen and later in the code
 import ellipsepink from './../../images/ellipsepink.png';

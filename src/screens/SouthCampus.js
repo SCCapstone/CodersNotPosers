@@ -1,5 +1,5 @@
 //Screen to show Cafe Verde and Wired Cafe
-import React, { useState , useEffect} from 'react'; 
+import React from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
 

@@ -1,6 +1,6 @@
 //Screen to check payment details
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Image} from 'react-native';
 import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
