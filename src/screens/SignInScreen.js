@@ -47,7 +47,7 @@ const SignInScreen =  ({navigation}) => {
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: 'center', backgroundColor: '#B6B7E5' }}>
       <View style={styles.container}>
-        <Image source={ellipsepink} style={{ position: 'absolute', left: 2, top: 1 }} />
+        <Image source={ellipsepink} style={{ position: 'absolute', left: -29, top: 1 }} />
         <Image source={logo} style={{ width: 120, height: 120 }} />
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Text> </Text>

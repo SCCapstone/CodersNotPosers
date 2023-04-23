@@ -15,8 +15,6 @@ import SignUpScreen from "../src/screens/SignUpScreen";
 import ChickfilA from "../src/screens/RussellHouse/ChickfilA";
 import TcoopStarbs from "../src/screens/WestCampus/TcoopStarbs";
 import RatingScreenCFA from "../src/screens/RatingScreenCFA";
-import FoodDetail from "../src/screens/FoodDetail";
-import AddressScreen from "../src/screens/AddressScreen";
 import Cart from "../src/screens/Cart";
 import Payment from "../src/screens/Payment";
 import Panda from "../src/screens/RussellHouse/Panda";
@@ -200,14 +198,6 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             />
-           
-            <Auth.Screen
-                name= "FoodDetail"
-                component = {FoodDetail}
-                options = {{
-                    headerShown: false
-                }}
-            />
              <Auth.Screen
                 name= "Cart"
                 component = {Cart}
@@ -243,13 +233,6 @@ export default function AuthStack() {
                     headerShown: false
                 }}
             /> 
-            <Auth.Screen
-                name= "AddressScreen"
-                component = {AddressScreen}
-                options = {{
-                    headerShown: false
-                }}
-            />
             <Auth.Screen
                 name= "CafeVerde"
                 component = {CafeVerde}
