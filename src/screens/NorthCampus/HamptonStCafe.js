@@ -14,7 +14,7 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/NorthCampusResaurants/HamptonStCafe.json') 
 
-
+// Setting Hampton St Cafe options to the null prior to the user making any selections
 const HamptonStCafe = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Salads And Sandwiches');
@@ -28,7 +28,7 @@ const HamptonStCafe = ({navigation}) => {
       updateCartCount();
     }, [updateCartCount])
   );
-
+//Prompting the user with all potential menu categories offerred by the Hampton St Cafe
   const menuItems = [
     { type: "Salads And Sandwiches" },
     { type: "All Day Breakfast" },
@@ -36,7 +36,7 @@ const HamptonStCafe = ({navigation}) => {
     { type: "Flatbreads" },
     { type: "Beverages" },
   ];
-  
+  // Upon selection of a certain category the user is then directed to the approptiate items within that category and if selected the cart is updated accordingly
   const renderCategory = () => {
     switch (menuType) {
       case 'Salads And Sandwiches':
@@ -103,7 +103,7 @@ const HamptonStCafe = ({navigation}) => {
         return null;
     }
   };
-
+// Items that the user has selected are added to the cart within this method below
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

@@ -1,3 +1,4 @@
+//This screen is the first thing the user sees when opening our application.  It mainly is used as an intro page and then directs them to sign in screen.  
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import SignInScreen from './SignInScreen';

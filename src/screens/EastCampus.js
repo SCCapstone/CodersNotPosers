@@ -1,3 +1,4 @@
+//Screen that shows user the potential restauraunts on East Side of campus
 import React, { useState , useEffect} from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
@@ -14,7 +15,7 @@ import home from './../../images/home.png';
 
 
 const buttonData = require('./../../data/EastCampus.json') 
-
+//prompting the potential options a user can select
 const EastCampus = ({navigation}) => {
 
     const getimageSource = (id) => {
@@ -31,6 +32,7 @@ const EastCampus = ({navigation}) => {
             return null;
         }
       };
+      //Navigating user to the appropriate menu dependent on which option they selected
       const handleButtonClick = (item) => {
         switch(item.id) {
             case 11:

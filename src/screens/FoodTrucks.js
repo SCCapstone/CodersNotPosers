@@ -1,3 +1,4 @@
+//Screen to allow users to choose between food trucks on campus
 import React, { useState , useEffect} from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
@@ -11,7 +12,7 @@ import home from './../../images/home.png';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 const buttonData = require('./../../data/FoodTrucks.json') 
-
+//Prompting user with food truck options
 const FoodTrucks = ({navigation}) => {
 
     const getimageSource = (id) => {
@@ -24,6 +25,7 @@ const FoodTrucks = ({navigation}) => {
             return null;
         }
       };
+      //Navigating user to the appropriate food truck menu that they choose to look at
       const handleButtonClick = (item) => {
         switch(item.id) {
             case 16:

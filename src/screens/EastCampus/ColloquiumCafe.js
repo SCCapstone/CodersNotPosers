@@ -13,7 +13,7 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/EastCampus/ColloquiumCafe.json') 
 
-
+//Method setting the states of all constants to null prior to the user making any selections 
 const ColloquiumCafe = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Patio Grill');
@@ -27,7 +27,7 @@ const ColloquiumCafe = ({navigation}) => {
       updateCartCount();
     }, [updateCartCount])
   );
-
+//Prompting the user with all potential menu categories offerred by Colliquium Cafe
   const menuItems = [
     { type: "Patio Grill" },
     { type: "Chicken" },
@@ -35,7 +35,7 @@ const ColloquiumCafe = ({navigation}) => {
     { type: "Sides" },
     { type: "Dessert" },
   ];
-  
+// Upon selection of a certain category the user is then directed to the approptiate items within that category and if selected the cart is updated accordingly
   const renderCategory = () => {
     switch (menuType) {
       case 'Patio Grill':
@@ -102,7 +102,7 @@ const ColloquiumCafe = ({navigation}) => {
         return null;
     }
   };
-
+// Items that the user has selected are added to the cart within this method below
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

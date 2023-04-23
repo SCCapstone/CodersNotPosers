@@ -1,9 +1,10 @@
+// Screen allowing user to sign out
 import React from 'react';
 import { View, Text, Alert, Button,StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import SignInScreen from './SignInScreen';
 import DrawerNavigation from '../../navigation/DrawerNavigation';
-
+//Using firebase to allow a user to sign out and then potentially sign in again with a new account.  
 export default function SignOutScreen({navigation}) {
   async function signOut() {
     try {

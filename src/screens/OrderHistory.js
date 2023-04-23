@@ -1,3 +1,4 @@
+//Screen showing user their order history
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Image} from 'react-native';
 import leftarrow  from './../../images/leftarrow.png';
@@ -6,7 +7,7 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 import firebase from '@react-native-firebase/app';
 import moment from 'moment';
 import { ScrollView } from 'react-native-gesture-handler';
-
+//Method showing the specific users previous orders from firebase and giving errors if no orders exist 
 const OrderHistory = ({ navigation }) => {
   const [orders, setOrders] = useState([]);
   

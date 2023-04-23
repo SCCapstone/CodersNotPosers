@@ -1,3 +1,4 @@
+//Screen to show starbucks information to user.
 import React, { useState , useEffect} from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
@@ -10,7 +11,7 @@ import home from './../../images/home.png';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 const buttonData = require('./../../data/WestCampus.json') 
-
+//Method for navigation to Thomas Cooper Starbucks.  When button is pressed user will be brought to Starbucks page
 const WestCampus = ({navigation}) => {
 
       const renderItem = ({item}) => {
@@ -39,7 +40,7 @@ const WestCampus = ({navigation}) => {
                     right:-40,
                     bottom:0}}>
                 </Image>
-
+  
                 <View style = {styles.header}>
             <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
             <Image source={home} 
@@ -69,6 +70,7 @@ const WestCampus = ({navigation}) => {
           </View>
         );
       };
+      //Style for page 
     const styles = StyleSheet.create({
         container: {
           backgroundColor: '#B6B7E5',

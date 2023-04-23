@@ -1,3 +1,4 @@
+//Sign up screen allowing a user to create an account
 import React, { useState } from 'react';
 import {SafeAreaView,StyleSheet,View,TextInput,TouchableOpacity,
 Image,Text, Alert} from 'react-native';
@@ -10,14 +11,14 @@ import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import DrawerNavigation from '../../navigation/DrawerNavigation';
 
-
+//Method that sets the users information to null while awaiting user input
 const SignUpScreen =  ({navigation}) => {
   const [email, setEmail] = useState("");
   const [name,setName] = useState("");
   const [phone,setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  
+  //Checking to make sure all fields are entered. If a field is missing an alert is thrown prompting the user to enter that information
   const register = async () => {
     if(!phone) {
       Alert.alert("Please enter your phone number");
@@ -37,19 +38,20 @@ const SignUpScreen =  ({navigation}) => {
       Alert.alert("Passwords does not match");
       return
     }
+    //checking to see if an account already exists with the email prompted
     try {
       const signInMethods = await auth().fetchSignInMethodsForEmail(email);
       if (signInMethods.length > 0) {
         Alert.alert('Email already exists');
         return;
       }
-  
+  //calling for program to register new user
       registerUser(email, password, name, phone);
     } catch (error) {
       console.error(error);
     }
   }
-
+//This method stores the users information in firebase and confirms all neccesarry fields have been entered
   const registerUser = async (email, password, name, phone) => {
     try {
         let response = await auth().createUserWithEmailAndPassword(email,password)
@@ -162,7 +164,7 @@ const SignUpScreen =  ({navigation}) => {
     </View>
     );
     }
-
+    //styles for the sign up sheet
     const styles = StyleSheet.create({
     container: {
     flex: 1,

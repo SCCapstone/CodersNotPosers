@@ -14,7 +14,7 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/FoodTrucks/TheCoop.json') 
 
-
+//Method setting the states of all constants to null prior to the user making any selections 
 const Coop = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Entrees');
@@ -28,13 +28,13 @@ const Coop = ({navigation}) => {
       updateCartCount();
     }, [updateCartCount])
   );
-
+//Prompting the user with all potential menu categories offerred by Coop Food Truck
   const menuItems = [
     { type: "Entrees" },
     { type: "Sides" },
     { type: "Beverages" },
   ];
-  
+// Upon selection of a certain category the user is then directed to the approptiate items within that category and if selected the cart is updated accordingly
   const renderCategory = () => {
     switch (menuType) {
       case 'Entrees':
@@ -77,7 +77,7 @@ const Coop = ({navigation}) => {
         return null;
     }
   };
-
+// Items that the user has selected are added to the cart within this method below
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

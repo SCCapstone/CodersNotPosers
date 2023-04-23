@@ -13,7 +13,7 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/RussellHouseRestaurants/Panera.json') 
 
-
+//Prompting users with all menu categories for Panda Express 
 const Panera = ({navigation}) => {
     const menuItems = [
         { type: "Salads" },
@@ -34,7 +34,7 @@ const Panera = ({navigation}) => {
     }, [updateCartCount])
   );
 
-  
+  //upon selecting a category this method will direct the user to the appropriate categories menu items
   const renderCategory = () => {
     switch (menuType) {
       case 'Salads':
@@ -89,7 +89,7 @@ const Panera = ({navigation}) => {
         return null;
     }
   };
-
+// Following selection of any items that the user may have selected the cart is updated to show any new items the user has picked from Panda Express menu
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

@@ -1,3 +1,4 @@
+//Screen to show Cafe Verde and Wired Cafe
 import React, { useState , useEffect} from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
@@ -12,7 +13,7 @@ import home from './../../images/home.png';
 
 
 const buttonData = require('./../../data/SouthCampus.json') 
-
+//Method directs the user to the appropriate restauraun either Cafe Verde or Wired Cafe
 const SouthCampus = ({navigation}) => {
 
     const getimageSource = (id) => {
@@ -33,6 +34,7 @@ const SouthCampus = ({navigation}) => {
                 return navigation.navigate(WiredCafe);
         }
       };
+      //Appropriate items for store selected are showed given what the user selects
       const renderItem = ({item}) => {
         const imageSource = getimageSource(item.id);
     
@@ -92,6 +94,7 @@ const SouthCampus = ({navigation}) => {
           </View>
         );
       };
+      //Style for the page
     const styles = StyleSheet.create({
         container: {
           backgroundColor: '#B6B7E5',

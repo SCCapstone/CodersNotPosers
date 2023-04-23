@@ -1,9 +1,11 @@
+//Method to add items into the cart with the appropriate price alongside it
 const MyCart = {
     items: [],
     addToCart: function(item, quantity = 1) {
       const exisitngItem = this.items.find(i=> i.item === item.item && i.price === item.price);
       if(exisitngItem) {
         exisitngItem.quantity += quantity;
+        //If an item is already in the cart then the quantity of it is increased by one 
         alert("Item already in cart. Quantity updated.");
         console.log(this.getQuantityByName(item));
       console.log(this.getTotalQuantity());
@@ -14,6 +16,7 @@ const MyCart = {
       ;
     }
   },
+  //function used to empty the cart 
     clearCart: function(item) {
         const index = this.items.findIndex((i) => i.item === item.item);
         if (index > - 1) {
@@ -25,6 +28,7 @@ const MyCart = {
             }
         }
     },
+    //function used to remove an item from the cart 
     removeItem: function(_item) {
       const index = this.items.findIndex((i) => i.item === _item.item);
       if (index > -1) {
@@ -39,6 +43,7 @@ const MyCart = {
     getItems: function() {
       return this.items;
     },
+    //Method that adds all the items in the cart together to find a total price 
     getTotalPrice: function() {
       let totalPrice = 0;
       for (let i = 0; i < this.items.length; i++) {
@@ -46,13 +51,16 @@ const MyCart = {
       }
       return totalPrice;
     },
+    //resseting the cart following a purchase so that cart is empty 
     clearCart: function() {
       this.items = [];
     },
+    //Using appropriate item name to find quantity of item ordered
     getQuantityByName: function(__item) {
       const _item = MyCart.items.find(i => i.item === __item.item);
       return _item ? _item.quantity : 0;
     },
+    //Method used to calculate the total quantity of an item ordered
     getTotalQuantity: function() {
       let totalQuantity = 0;
       for (let i = 0; i < this.items.length; i++) {

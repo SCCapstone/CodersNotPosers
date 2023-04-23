@@ -1,3 +1,4 @@
+//This screen lists all the menu items at starbucks and allows the user to select which ones they want and add it to their cart.
 import React, { useState, useCallback } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
@@ -28,13 +29,13 @@ const TcoopStarbs = ({navigation}) => {
       updateCartCount();
     }, [updateCartCount])
   );
-
+//Listing menu items
   const menuItems = [
     { type: "Coffee Tea and More" },
     { type: "Refreshers" },
     { type: "Frappucinos" },
   ];
-  
+  //Showing all options to the user dependent on which category they select 
   const renderCategory = () => {
     switch (menuType) {
       case 'Coffee Tea and More':
@@ -77,7 +78,7 @@ const TcoopStarbs = ({navigation}) => {
         return null;
     }
   };
-
+//Given the item that is selected this method will add that item to the cart and update the quantity of items in the cart
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>
@@ -104,7 +105,6 @@ const TcoopStarbs = ({navigation}) => {
                     right:-40,
                     bottom:0}}>
                 </Image>
-
 
                 <View style = {styles.header}>
             <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>

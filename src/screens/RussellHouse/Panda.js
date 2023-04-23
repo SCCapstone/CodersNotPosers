@@ -12,7 +12,7 @@ import CampusSideSelectionScreen from './../CampusSideSelectionScreen';
 import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/RussellHouseRestaurants/PandaExpress.json') 
-
+//Setting constants for all panda express options prior to user selecting any
 const Panda = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Appetizers');
@@ -26,7 +26,7 @@ const Panda = ({navigation}) => {
       updateCartCount();
     }, [updateCartCount])
   );
-
+//Prompting user with all possible categories in which they could order from
   const menuItems = [
     { type: "Appetizers" },
     { type: "Entrees" },
@@ -34,7 +34,7 @@ const Panda = ({navigation}) => {
     { type: "Sides" },
     { type: "Beverages" },
   ];
-  
+  // upon selecting a category this method will direct the user to the appropriate category they selected and then update the cart with any items they may choose to add
   const renderCategory = () => {
     switch (menuType) {
         case 'Appetizers':
@@ -100,7 +100,7 @@ const Panda = ({navigation}) => {
         return null;
     }
   };
-
+//updating cart with whatever items the user may have selected
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

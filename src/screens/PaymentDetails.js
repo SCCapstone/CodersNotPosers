@@ -1,3 +1,4 @@
+//Screen to check payment details
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } from 'react-native';
 import leftarrow  from './../../images/leftarrow.png';
@@ -5,7 +6,7 @@ import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import firebase from '@react-native-firebase/app';
 
-
+//This method checks to see whether or not the user has saved a card
 const PaymentDetails = ({ navigation }) => {
   const [data,setData] = useState(null);
   
@@ -17,6 +18,7 @@ const PaymentDetails = ({ navigation }) => {
             setData(doc.data());
           } else {
             console.log("No such document!");
+            //If no saved cards under the user then this error is thrown to them
           }
         });
       } catch (error) {

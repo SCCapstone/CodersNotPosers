@@ -1,3 +1,4 @@
+//Screen to show the user menu items for Chick-fil-a
 import React, { useState, useCallback } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
@@ -13,7 +14,7 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/RussellHouseRestaurants/ChickfilA.json') 
 
-
+//Method to properly update the cart dependent on items selected
 const ChickfilA = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Entrees');
@@ -28,7 +29,7 @@ const ChickfilA = ({navigation}) => {
     }, [updateCartCount])
   );
 
-  
+  //Navigating user to the appropriate category of food off the menu dependent on the category they have selected
   const renderCategory = () => {
     switch (menuType) {
       case 'Entrees':
@@ -83,7 +84,7 @@ const ChickfilA = ({navigation}) => {
         return null;
     }
   };
-
+//updating cart with items the user has selected from chick-fil-a menu 
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

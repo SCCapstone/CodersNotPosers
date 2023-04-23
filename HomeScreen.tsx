@@ -1,3 +1,4 @@
+//Code for HomeScreen Greeting page for users
 import { Button, Text, View, useColorScheme } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 function HomeScreen({ navigation }: { navigation: StackNavigationProp<any> }): JSX.Element {

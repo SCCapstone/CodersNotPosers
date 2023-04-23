@@ -9,7 +9,7 @@ import SearchScreen from '../src/screens/SearchScreen';
 import Favorites from '../src/screens/Favorites';
 
 const Drawer = createDrawerNavigator();
-
+//Function that presents the user with all navigaton options from our side menu screen
 export default function DrawerNavigation() {
   return (
     <Drawer.Navigator 

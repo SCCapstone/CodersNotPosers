@@ -3,7 +3,7 @@ import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture
 import hamburger from './../../images/hamburger.png';
 import search from './../../images/search.png';
 import tune from './../../images/tune.png';
-
+//Method used to present user with header navigation allowing them to toggle between potential choices we have presented to them
 export default function HomeHeader({navigation}){
     return(
         <View style = {styles.header}>

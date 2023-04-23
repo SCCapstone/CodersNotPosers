@@ -1,3 +1,4 @@
+// This screen is used to allow a user to enter an address for their delivery
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -25,7 +26,7 @@ export default function AddressScreen() {
   const [town, setTown] = useState("");
   const [state, setState] = useState("");
   const [zipCode, setZipCode] = useState("");
- 
+ //the method below saves the address in firebase 
   const saveAddress = async () => { 
     firestore().collection('SaveAddress').add({
           street: street,

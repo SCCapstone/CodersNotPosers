@@ -7,6 +7,7 @@ export const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null);
     const [driver,setDriver] = useState(null);
     return (
+        //confirming through firebase that the driver is actually within the system and has account information
         <AuthContext.Provider
         value = {{
             user,
@@ -33,6 +34,7 @@ export const AuthProvider = ({children}) => {
                 }
             },   
         }}
+        //authenitcating drivers when they attempt to sign in
         drivers = {{
             driver,
             setDriver,

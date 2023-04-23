@@ -1,3 +1,4 @@
+//Screen to allow user to search for their desired restauraunt
 import React, {  useState } from 'react';
 import {StyleSheet,View,TextInput,TouchableOpacity,
 Image,Text} from 'react-native';
@@ -21,7 +22,7 @@ import TwistedTaco from './RussellHouse/TwistedTaco';
 import CafeVerde from './SouthCampus/CafeVerde';
 import WiredCafe from './SouthCampus/WiredCafe';
 import TcoopStarbs from './WestCampus/TcoopStarbs';
-
+//Method to navigate user to appropriate screen given their search request
 const SearchScreen = ({navigation}) => {
 
     var allRestaurants = [{name: "Colloquium Cafe", screen: ColloquiumCafe}, {name: "Horseshoe Deli", screen: HorshoeDeli}, {name: "Humanities - Starbucks", screen: HumanitiesStarbucks}, 
@@ -31,7 +32,7 @@ const SearchScreen = ({navigation}) => {
                             {name:"Wired Cafe", screen: WiredCafe}, {name: "Thomas Cooper Starbucks", screen: TcoopStarbs}];
 
     const [searchQuery, setSearchQuery] = useState('');
-
+    //method to search for their desired restaraunt ignoring case. 
     const filteredData = allRestaurants.filter((restaurant) =>
         restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()));
     return (
@@ -99,7 +100,7 @@ const SearchScreen = ({navigation}) => {
     );
 };
 export default SearchScreen;
-
+//Style for Search Screen
 const styles = StyleSheet.create({
     container: {
         flex: 1,

@@ -14,7 +14,7 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/EastCampus/HorseshoeDeli.json')
 
-
+//Method setting the states of all constants to null prior to the user making any selections 
 const HorshoeDeli = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Breakfast');
@@ -28,7 +28,7 @@ const HorshoeDeli = ({navigation}) => {
       updateCartCount();
     }, [updateCartCount])
   );
-
+//Prompting the user with all potential menu categories offerred by Horseshoe deli
   const menuItems = [
     { type: "Breakfast" },
     { type: "Sandwiches" },
@@ -36,7 +36,7 @@ const HorshoeDeli = ({navigation}) => {
     { type: "Sides" },
     { type: "Beverages" },
   ];
-  
+// Upon selection of a certain category the user is then directed to the approptiate items within that category and if selected the cart is updated accordingly
   const renderCategory = () => {
     switch (menuType) {
       case 'Breakfast':
@@ -103,7 +103,7 @@ const HorshoeDeli = ({navigation}) => {
         return null;
     }
   };
-
+// Items that the user has selected are added to the cart within this method below
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

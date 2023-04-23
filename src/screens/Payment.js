@@ -1,3 +1,4 @@
+//This screen handles all payment information. Saving, Using, or validating a customers payment information is done on this screen
 import React, { useState ,useEffect} from "react";
 import {
   StyleSheet,
@@ -20,7 +21,7 @@ import firestore from '@react-native-firebase/firestore';
 import home from './../../images/home.png';
 import MyCart from "./MyCart";
 import DeliveryStatus from "./DeliveryStatus";
-
+//Declaring all variables that could be used when setting a users payment information
 const Payment = ({navigation}) => {
   const [name, setName] = useState("");
   const [studentname,setStudentName] = useState("");
@@ -67,11 +68,12 @@ const Payment = ({navigation}) => {
                   "Sumwalt College",
                   "Swearingen Engineering Center",
                   "300 Main Street"]
-    
+    //Method to handle which payment optoion the user is intending on using
       const handleSelectOption = (option) => {
         setSelectedOption(option);
         setDropdownOpen(false);
       };
+      //Assigning promo codes with their appropriate discounts to the users total price
       const promoCodePayment = () => {
         if(PromoCode === 'CEC5') {
           setTotal(MyCart.getTotalPrice() - 5);
@@ -82,14 +84,14 @@ const Payment = ({navigation}) => {
           setTotal(MyCart.getTotalPrice() - 2);
       }
     };
-      
+      //assigning total that is to be charged and saving card if user prompted program to save card
       useEffect(() => {
         setTotal(MyCart.getTotalPrice());
         if (isEnabled) {
           saveCard();
         }
       }, [isEnabled,PromoCode]);
-
+//Saving either credit/debit card or meal plan/ carolina cash if user prompted program to save card
       const saveCard = async () => {
         const mealPlancard = {
           cardtype: 'Meal Plan/Carolina Cash',
@@ -104,6 +106,7 @@ const Payment = ({navigation}) => {
                       expDate: expDate,
                       cvc: cvc,
         }
+        //If user asks to save card this conditional statement stores the payment information in firebase
         if (isEnabled) {
           if (selectedButton === 'mealPlanCash') {
             const user = firebase.auth().currentUser;
@@ -161,7 +164,7 @@ const Payment = ({navigation}) => {
         }
       };
         
-
+//method used if a user is not saving the card but still needs to enter payment for their purchase
   const useCard = async () => { 
     const user = firebase.auth().currentUser;
    try{
@@ -224,7 +227,7 @@ const Payment = ({navigation}) => {
         </TouchableOpacity>
       ))}
       </ScrollView>}
-   
+
         <TextInput 
         style={{backgroundColor:'#FBEBEB',borderRadius:25,width:"70%",padding:10}} placeholder = "Enter Room/Lobby" 
         onChangeText={(lobby) => setLobby(lobby)}/>
@@ -372,6 +375,7 @@ const Payment = ({navigation}) => {
           <TouchableOpacity 
   style={styles.useCardButton} 
   onPress = {() => {
+    //Confirming all appropriate information has been provided for payment.  If not, user will be prompted to fill whatever field thet decided not to
     if (!selectedOption) {
       Alert.alert("Need to select the building.")
     }

@@ -15,7 +15,7 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/EastCampus/HumanitiesStarbucks.json') 
 
-
+//Method setting the states of all constants to null prior to the user making any selections 
 const HumanitiesStarbucks = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Coffee, Tea, & More');
@@ -29,13 +29,13 @@ const HumanitiesStarbucks = ({navigation}) => {
       updateCartCount();
     }, [updateCartCount])
   );
-
+  //Prompting the user with all potential menu categories offerred by Humanities Starbucks
   const menuItems = [
     { type: "Coffee, Tea, & More" },
     { type: "Refreshers" },
     { type: "Frappucinos" },
   ];
-  
+  // Upon selection of a certain category the user is then directed to the approptiate items within that category and if selected the cart is updated accordingly
   const renderCategory = () => {
     switch (menuType) {
       case 'Coffee, Tea, & More':
@@ -78,7 +78,7 @@ const HumanitiesStarbucks = ({navigation}) => {
         return null;
     }
   };
-
+// Items that the user has selected are added to the cart within this method below
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

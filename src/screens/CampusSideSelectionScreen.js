@@ -1,3 +1,4 @@
+//This is the screen allowing a user to select which part of campus they are looking to order from
 import React from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
@@ -16,7 +17,7 @@ import WestCampus from './WestCampus';
 import SouthCampus from './SouthCampus';
 
 const buttonData = require('./../../data/CampusSelection.json') 
-
+//prompting the user with all the options for campus areas and then directing them to whichever area they selected
 const CampusSideSelectionScreen = ({navigation}) => {
 
      const getimageSource = (id) => {

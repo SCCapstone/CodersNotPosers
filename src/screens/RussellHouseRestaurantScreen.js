@@ -1,3 +1,4 @@
+//Screen for all Russel House Restauraunts
 import React, { useState , useEffect} from 'react'; 
 import {StyleSheet,View,TouchableOpacity,
     Image,Text, FlatList} from 'react-native';
@@ -39,7 +40,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
   //       </TouchableOpacity>
   //     );
   //   };
-
+  //Proposing all potential options for user to select when considering Russel House
     const getimageSource = (id) => {
         switch (id) {
           case 1:
@@ -58,6 +59,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
             return null;
         }
       };
+      //Whichever option is clicked the user will be appropriately navigated to their desired screen
       const handleButtonClick = (item) => {
          switch(item.id) {
              case 1:
@@ -133,6 +135,7 @@ const RussellHouseRestaurantScreen = ({navigation}) => {
           </View>
         );
       };
+      //Style for Russel House Screen
     const styles = StyleSheet.create({
         container: {
           flex:1,

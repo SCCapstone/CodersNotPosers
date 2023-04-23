@@ -1,3 +1,4 @@
+//Screen for Carolina Creamery and all menu items they have
 import React, { useState, useCallback } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
@@ -13,7 +14,7 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/RussellHouseRestaurants/CarolinaCreamery.json') 
 
-
+//offering user the multiple menu options
 const Creamery = ({navigation}) => {
     const menuItems = [
         { type: "Ice-creams" },
@@ -32,7 +33,7 @@ const Creamery = ({navigation}) => {
       updateCartCount();
     }, [updateCartCount])
   );
-
+//navigating the user to the correct menu category and allowing the user to add options into their cart
   const renderCategory = () => {
     switch (menuType) {
       case 'Ice-creams':
@@ -75,7 +76,7 @@ const Creamery = ({navigation}) => {
         return null;
     }
   };
-
+//adding items that the user selected into the cart 
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

@@ -13,7 +13,7 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/RussellHouseRestaurants/TwistedTaco.json') 
 
-
+//Constant method set to navigate the user to the Twisted Taco menu and start their order out as empty
 const TwistedTaco = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Tacos');
@@ -27,7 +27,7 @@ const TwistedTaco = ({navigation}) => {
       updateCartCount();
     }, [updateCartCount])
   );
-
+// prompting the user with the appropriate menu categories that Twisted Taco offers
   const menuItems = [
     { type: "Tacos" },
     { type: "Sides" },
@@ -35,7 +35,7 @@ const TwistedTaco = ({navigation}) => {
     { type: "Burrito Bowls and Nachos" },
     { type: "Beverages" },
   ];
-  
+  //upon selecting a category this method will direct the user to the appropriate list of items within the category and update the cart accordingly with any items selected
   const renderCategory = () => {
     switch (menuType) {
       case 'Tacos':
@@ -102,7 +102,7 @@ const TwistedTaco = ({navigation}) => {
         return null;
     }
   };
-
+//Updating the cart with any items that the user selected from panda express
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

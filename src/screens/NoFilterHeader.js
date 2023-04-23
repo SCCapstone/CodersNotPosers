@@ -6,7 +6,7 @@ import home from './../../images/home.png';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 
-
+//This function is here to navigate the user to the Side Selection Screen.  
 export default function NoFilterHeader({navigation}){
 
   

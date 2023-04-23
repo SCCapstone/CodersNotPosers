@@ -1,3 +1,4 @@
+//This screen shows all the information for cafe verde 
 import React, { useState, useCallback } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
@@ -13,7 +14,7 @@ import home  from './../../../images/home.png';
 
 const menuData = require('./../../../data/SouthCampus/WiredCafe.json') 
 
-
+//Method to properly update the cart dependent on items selected
 const WiredCafe = ({navigation}) => {
  
   const [menuType, setMenuType] = useState('Breakfast');
@@ -27,7 +28,7 @@ const WiredCafe = ({navigation}) => {
       updateCartCount();
     }, [updateCartCount])
   );
-
+//listing menu categories 
   const menuItems = [
     { type: "Breakfast" },
     { type: "Sandwiches" },
@@ -35,7 +36,7 @@ const WiredCafe = ({navigation}) => {
     { type: "Flatbreads" },
     { type: "Sides" },
   ];
-  
+//navigaitng user to appropriate menu category dependedent on their selection
   const renderCategory = () => {
     switch (menuType) {
       case 'Breakfast':
@@ -102,7 +103,7 @@ const WiredCafe = ({navigation}) => {
         return null;
     }
   };
-
+//Method used to update the cart with whatever items the user selected
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>

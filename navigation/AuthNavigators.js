@@ -1,5 +1,5 @@
 import React from "react";
-
+//this screen is the main class for our entire program.  It directs the navigation for the entire program and holds every screen we have and is called in App.js
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import OnboardingScreen from "../src/screens/OnboardingScreen";
 import SignInScreen from "../src/screens/SignInScreen";
@@ -45,7 +45,7 @@ import ContactDriver from "../src/screens/ContactDriver";
 import OrderHistory from "../src/screens/OrderHistory";
 
 const Auth = createNativeStackNavigator();
-
+//Function used to call the screens in order of how we present them to our customers
 export default function AuthStack() {
     return(
         <NavigationContainer>

@@ -1,3 +1,4 @@
+//Screen prompting a user to sign in with registered information through sign up
 import React, {useState } from 'react';
 import {SafeAreaView,StyleSheet,View,TextInput,TouchableOpacity,
 Image,Text, Alert} from 'react-native';
@@ -7,13 +8,13 @@ import ellipsegrey from './../../images/ellipsegrey.png';
 import auth from '@react-native-firebase/auth';
 import DrawerNavigation from '../../navigation/DrawerNavigation';
 import SignUp from './SignUpScreen';
-
+//Assigning user email and password to the appropriate account
 const SignInScreen =  ({navigation}) => {
   
   const [email,setEmail] = useState('');
   const[password,setPassword] = useState('');
 
-
+//Method to make sure user has entered email and password prior to signing in
   const LoginComponent = () => {
     if(!email) {
       Alert.alert('Enter Email');
@@ -24,7 +25,7 @@ const SignInScreen =  ({navigation}) => {
     } 
     doSignIn(email,password);
   };
-
+//Method to sign in the user as well as confirm email entered has a valid format
   const doSignIn = async (email,password) => {
     const emailRegex = /\S+@\S+\.\S+/;
     if (!emailRegex.test(email)) {
@@ -89,7 +90,7 @@ style={styles.signupBtn}>
 );
 }
 export default SignInScreen;
-
+//Style for sign in screen
 const styles = StyleSheet.create({
 container: {
 flex: 1,

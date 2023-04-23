@@ -1,3 +1,4 @@
+//This screen is used to present the user with their current cart
 import React, { useState,useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, Alert,TouchableOpacity,Image} from 'react-native';
 
@@ -8,7 +9,7 @@ import MyCart from './MyCart';
 import Payment from './Payment';
 import home from './../../images/home.png';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
-
+//Showing user the items in their cart and specified quantities
 const Cart = ({navigation}) => {
     const [cartItems, setCartItems] = useState([]);
 
@@ -18,7 +19,7 @@ const Cart = ({navigation}) => {
       });
       setCartItems(updatedCartItems);
     }, []);
-
+//If the cart is empty the user is unable to checkout, if it is not the user is taken to the payment screen
     const handlePress = () => {
       if (MyCart.getTotalPrice() === 0) {
         Alert.alert('Cannot Checkout', 'Your cart is empty.', [{ text: 'OK' }]);

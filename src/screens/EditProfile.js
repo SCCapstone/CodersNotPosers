@@ -1,3 +1,4 @@
+//Screen used to edit a users profile after it has been creared
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } from 'react-native';
 import leftarrow  from './../../images/leftarrow.png';
@@ -12,7 +13,7 @@ const EditProfile = ({ navigation }) => {
   const [userData, setUserData] = useState(null);
   const [IsProfileModified, setIsProfileModified] = useState(false)
 
-
+//Method to search users information in firebase and confirm that it exists
   useEffect(() => {
     try {
       const user = firebase.auth().currentUser;
@@ -31,11 +32,11 @@ const EditProfile = ({ navigation }) => {
       console.error(error.message);
     }
   }, []);
-
+//Allowing user to modify the name and phone 
   useEffect(() => {
     setIsProfileModified(name !== '' || phone !== '');
   }, [name,phone]);
-
+//updating edited profile information in profile and telling user that it succesfully changed their profile
   const handleSave = () => {
     try {
       const user = firebase.auth().currentUser;

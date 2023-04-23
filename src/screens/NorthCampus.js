@@ -1,3 +1,4 @@
+// This screen is used to allow the user to decide which restaurant in the North Campus to order from
 import React from 'react'; 
 import { StyleSheet, View, TouchableOpacity, Image, Text, FlatList } from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
@@ -10,7 +11,7 @@ import home from './../../images/home.png';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 const buttonData = require('./../../data/NorthCampus.json');
-
+//Proposing North Campus food options to the user
 const NorthCampus = () => {
   const navigation = useNavigation();
 
@@ -24,7 +25,7 @@ const NorthCampus = () => {
         return null;
     }
   };
-
+//Method that handles which restauraunt in North Campus the user selects and then appropriately navigating to the menu based on their selection
   const handleButtonClick = (item) => {
     switch (item.id) {
       case 7:
