@@ -338,8 +338,7 @@ const handleButtonClick = (item) => {
       <Image source={ellipsepink} 
               style={{position: 'absolute',
               left: -30,
-              top: -45,
-              scaleX:-1}}>
+              top: -45}}>
           </Image>
           <HomeHeader navigation = {navigation}/>
           <Text style={styles.nameText}>Favorites</Text>
@@ -363,6 +362,7 @@ const handleButtonClick = (item) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#B6B7E5',
+    flex:1,
   },
   item: {
     marginTop:14,
