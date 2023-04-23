@@ -1,7 +1,8 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 
+import firebase from '@react-native-firebase/app';
 import ellipsepink from './../../../images/ellipsepink.png';
 import ellipsegrey from './../../../images/ellipsegrey.png';
 import leftarrow  from './../../../images/leftarrow.png';
@@ -15,15 +16,98 @@ const menuData = require('./../../../data/RussellHouseRestaurants/Panera.json')
 
 //Prompting users with all menu categories for Panda Express 
 const Panera = ({navigation}) => {
+
+  const starImageFilled =
+    'https://raw.githubusercontent.com/AboutReact/sampleresource/master/star_filled.png';
+  // Empty Star. You can also give the path from local
+  const starImageCorner =
+    'https://raw.githubusercontent.com/AboutReact/sampleresource/master/star_corner.png';
+
     const menuItems = [
         { type: "Salads" },
         { type: "Soups" },
         { type: "Mac and Cheese" },
         { type: "Beverages"}
       ];
-  const [menuType, setMenuType] = useState('Salads');
 
+  const [menuType, setMenuType] = useState('Salads');
   const [cartCount, setCartCount] = useState(MyCart.getTotalQuantity());
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      console.log('User not logged in');
+      return;
+    }
+
+    const favoritesRef = firebase.firestore().collection('Favorites').doc(user.uid).collection('Restaurants');
+
+    const docRef = favoritesRef.doc('Panera');
+    docRef.get().then((doc) => {
+      if (doc.exists) {
+        setIsFavorite(doc.data().isFavorite);
+      }
+    }).catch((error) => {
+      console.log('Error getting favorites:', error);
+    });
+  }, []);
+
+  const toggleFavorite = async () => {
+    setIsFavorite(!isFavorite);
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      console.log('User not logged in');
+      return;
+    }
+    const docRef = firebase.firestore().collection('Favorites').doc(user.uid).collection('Restaurants').doc('Panera');
+
+    const doc = await docRef.get();
+    if (doc.exists) {
+      if (isFavorite === true) {
+        try {
+          await docRef.update({
+            name:'Panera',
+            isFavorite: false,
+          });
+        } catch (error) {
+          console.log('Error updating favorites:', error);
+        }
+      } else {
+        try {
+          await docRef.update({
+            name :'Panera',
+            isFavorite:true,
+          })
+        } catch (error) {
+          console.log('Error removing favorite:', error);
+        }
+      }
+    } else {
+      if (isFavorite === true) {
+        try {
+          await docRef.set({
+            name:'Panera',
+            isFavorite: false,
+          });
+        } catch (error) {
+          console.log('Error updating favorites:', error);
+        }
+      }
+      else {
+        try {
+          await docRef.set({
+            name:'Panera',
+            isFavorite:true,
+          })
+        } catch (error) {
+          console.log('Error removing favorite:', error);
+        }
+      }
+
+    }
+  };
+
   const updateCartCount = useCallback(() => {
     setCartCount(MyCart.getTotalQuantity());
   }, []);
@@ -119,12 +203,18 @@ const Panera = ({navigation}) => {
                 <View style = {styles.header}>
             <TouchableOpacity onPress={()=>navigation.navigate(CampusSideSelectionScreen)}>
             <Image source={home} 
-                    style = {{ width:35, height:35,marginRight:360, top:5 }}>
+                    style = {{ width:35, height:35,marginRight:320, top:5 }}>
                 </Image>
                 <View style={styles.profileNameContainer}>
                   <Text style={styles.nameText}>Panera</Text>
                 </View>
-                </TouchableOpacity>              
+                </TouchableOpacity>      
+                <TouchableOpacity onPress = {toggleFavorite}>
+                <Image 
+                source = {{ uri: isFavorite ? starImageFilled:starImageCorner}}
+                style = {{width:35,height:35,right:5,top:5,backgroundColor:'purple',borderRadius:5}}
+                />
+                </TouchableOpacity>         
              </View>
     <View style = {{flexDirection:'row'}}>
     <FlatList
