@@ -368,7 +368,7 @@ const Payment = ({navigation}) => {
               style={{
               position: 'absolute',
               right: -150,
-              bottom: 0,
+              top:340,
               zIndex:-1
           }}>
           </Image>
@@ -394,7 +394,12 @@ const Payment = ({navigation}) => {
     }
     else if (!cvc) {
       Alert.alert("Need to enter the CVC/Security code for your card.")
-    }}
+    }
+    else {
+      useCard();
+      navigation.navigate(DeliveryStatus);
+    }
+  }
     else if(selectedButton === "mealPlanCash") {
       if (!studentname) {
         Alert.alert("Need to enter the name on your card.")
@@ -405,15 +410,14 @@ const Payment = ({navigation}) => {
       else if (!studentID) {
         Alert.alert("Need to enter student's ID.")
       }
-    }
-    else {
-      useCard();
-      navigation.navigate(DeliveryStatus);
+      else {
+        useCard();
+        navigation.navigate(DeliveryStatus);
+      }
     }}}>
     <Text style={{textAlign:'center'}}>Place Order ${total.toFixed(2)}</Text>
   </TouchableOpacity>
- 
-          </View>
+    </View>
   </View>
   );
 };
