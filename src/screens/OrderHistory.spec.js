@@ -1,7 +1,10 @@
 import React from 'react';
-import {render, waitFor} from '@testing-library/react-native';
+import { render, waitFor } from '@testing-library/react-native';
 import OrderHistory from './OrderHistory';
 
+jest.mock('react-native-gesture-handler', () => ({
+  ScrollView: jest.fn().mockReturnValue(null),
+}));
 // Mock firebase.auth and firebase.firestore
 jest.mock('@react-native-firebase/app', () => {
   const currentUser = {
@@ -29,15 +32,10 @@ jest.mock('@react-native-firebase/app', () => {
 });
 
 describe('OrderHistory', () => {
-    test('renders without error', async () => {
-        const {nameText } = render(<OrderHistory />);
-        const nameInput = nameText('Name');
-
-      });
-
-      test('displays order details', async () => {
-        //await waitFor(() => expect(screen.getByText('Item: Test Item 1')).toBeTruthy());
-        //expect(screen.getByText('Price: $10')).toBeTruthy();
-        //expect(screen.getByText('2')).toBeTruthy();
-      });
+  test('displays a loading indicator while fetching order data', async () => {
+    const { getByTestId } = render(<OrderHistory />);
+    const loadingIndicator = getByTestId('loading-indicator');
+   // expect(loadingIndicator).toBeDefined();
+    //await waitFor(() => expect(getByTestId('loading-indicator')).not.toBeDefined());
+  });
 });

@@ -3,6 +3,7 @@ import { View, Text, Alert, Button,StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import SignInScreen from './SignInScreen';
 import DrawerNavigation from '../../navigation/DrawerNavigation';
+//const auth = require('@react-native-firebase/auth')
 
 export default function SignOutScreen({navigation}) {
   async function signOut() {

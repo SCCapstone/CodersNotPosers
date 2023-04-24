@@ -14,17 +14,17 @@ import {
   ScrollView
 } from "react-native";
 import { TextInputMask } from 'react-native-masked-text';
-//import firebase from '@react-native-firebase/app';
+import firebase from '@react-native-firebase/app';
 import logo from "./../../images/logo.png";
 import ellipsepink from "./../../images/ellipsepink.png";
 import leftarrow from "./../../images/leftarrow.png";
 import ellipsegrey from "./../../images/ellipsegrey.png";
-//import firestore from '@react-native-firebase/firestore';
+import firestore from '@react-native-firebase/firestore';
 import hamburger from './../../images/hamburger.png';
 import MyCart from "./MyCart";
 import DeliveryStatus from "./DeliveryStatus";
 //const app = require('@react-native-firebase/app');
-const firestore = require('@react-native-firebase/firestore');
+//const firestore = require('@react-native-firebase/firestore');
 
 
 const Payment = ({navigation}) => {

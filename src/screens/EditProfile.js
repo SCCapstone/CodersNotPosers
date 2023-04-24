@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } from 'react-native';
 import leftarrow  from './../../images/leftarrow.png';
-const ellipsepink = require('./../../images/ellipsepink.png');
-const ellipsegrey = require('./../../images/ellipsegrey.png');
-import { firebase } from '@react-native-firebase/auth';
+import ellipsepink from './../../images/ellipsepink.png';
+import ellipsegrey from './../../images/ellipsegrey.png';
+//const firebase = require('@react-native-firebase/app');
+import firebase from '@react-native-firebase/app';
 
 const EditProfile = ({ navigation }) => {
   const [name, setName] = useState('');

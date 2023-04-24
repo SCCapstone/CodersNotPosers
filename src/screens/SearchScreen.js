@@ -1,12 +1,7 @@
-import React, { useContext, useState } from 'react';
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,View,TextInput,TouchableOpacity,
-Image,Text, Alert, Keyboard} from 'react-native';
-import auth from '@react-native-firebase/auth';
-import {getdatabase, ref, set} from "firebase/database";
-import { firebase } from '@react-native-firebase/firestore';
-import logo from './../../images/logo.png';
+import React, { useState } from 'react';
+import {StyleSheet,View,TextInput,TouchableOpacity,
+Image,Text} from 'react-native';
 import ellipsepink from './../../images/ellipsepink.png';
-import leftarrow from './../../images/leftarrow.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
 import hamburger from './../../images/hamburger.png';
 import ColloquiumCafe from './EastCampus/ColloquiumCafe';

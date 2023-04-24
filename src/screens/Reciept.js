@@ -8,92 +8,91 @@ import MyCart from './MyCart';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 import hamburger from './../../images/hamburger.png';
 import { firebase } from '@react-native-firebase/firestore';
-//const firebase = require('@react-native-firebase/firestore');
+//const firebase = require ('@react-native-firebase/firestore');
 
+function Reciept({ navigation }) {
+  const [cartItems, setCartItems] = useState([]);
 
-const Reciept = ({navigation}) => {
-    const [cartItems, setCartItems] = useState([]);
+  useEffect(() => {
+    const updatedCartItems = MyCart.getItems().filter((item) => {
+      return MyCart.getQuantityByName(item) > 0;
+    });
+    setCartItems(updatedCartItems);
+  }, []);
 
-    useEffect(() => {
-      const updatedCartItems = MyCart.getItems().filter((item) => {
-        return MyCart.getQuantityByName(item) > 0;
+  const saveReceipt = async () => {
+    const user = firebase.auth().currentUser;
+    try {
+      const receiptRef = firebase.firestore().collection('Reciept').doc(user.uid);
+      const orderRef = receiptRef.collection('Orders').doc();
+      await orderRef.set({
+        cartItems,
+        orderAt: new Date()
       });
-      setCartItems(updatedCartItems);
-    }, []);
+      console.log('Receipt saved successfully');
+    } catch (error) {
+      console.error('Error saving receipt:', error);
+    }
+  };
 
-    const saveReceipt = async () => {
-        const user = firebase.auth().currentUser;
-        try {
-          const receiptRef = firebase.firestore().collection('Reciept').doc(user.uid);
-          const orderRef = receiptRef.collection('Orders').doc();
-          await orderRef.set({
-            cartItems,
-            orderAt : new Date()
-          });
-          console.log('Receipt saved successfully');
-        } catch (error) {
-          console.error('Error saving receipt:', error);
-        }
-      };
-    
-       
-    const renderItem = ({ item }) => {
-      const itemQuantity = MyCart.getQuantityByName(item);
 
-      if (itemQuantity === 0) {
+  const renderItem = ({ item }) => {
+    const itemQuantity = MyCart.getQuantityByName(item);
+
+    if (itemQuantity === 0) {
       return null;
-      }
-    return(
-      <View style={styles.item} testID="receipt-screen">
+    }
+    return (
+      <View style={styles.item}>
         <Text style={styles.itemText}>{item.item}</Text>
         <Text style={styles.itemText}>${item.price}</Text>
-        <Text style= {styles.itemText}>{MyCart.getQuantityByName(item)}</Text>
+        <Text style={styles.itemText}>{MyCart.getQuantityByName(item)}</Text>
       </View>
-  );
-};
-    return(
-        <View style={styles.container}>
-          <Image source={ellipsepink}
-              style={{
-                  position: 'absolute',
-                  left: -30,
-                  top: -45,
-                  scaleX: -1,
-              }}>
-          </Image>
+    );
+  };
+  return (
+    <View style={styles.container}>
+      <Image source={ellipsepink}
+        style={{
+          position: 'absolute',
+          left: -30,
+          top: -45,
+          scaleX: -1,
+        }}>
+      </Image>
 
-          <View style={styles.header}>
-              <TouchableOpacity
-                  onPress={() => { navigation.toggleDrawer(); } }>
-                  <Image source={hamburger}
-                      style={{ width: 35, height: 35 }}>
-                  </Image>
-              </TouchableOpacity>
-         
+      <View style={styles.header}>
+        <TouchableOpacity
+          onPress={() => { navigation.toggleDrawer(); } }>
+          <Image source={hamburger}
+            style={{ width: 35, height: 35 }}>
+          </Image>
+        </TouchableOpacity>
+
       </View>
       <Image source={ellipsegrey}
-          style={{
-              position: 'absolute',
-              right: -40,
-              bottom: 0
-          }}>
-          </Image>
-          
-          <FlatList
-              data={cartItems}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.item}
-              testID="cart-items-list" />
-              
-          <TouchableOpacity
-              onPress={() => {navigation.navigate(CampusSideSelectionScreen); saveReceipt()}}
-              style={styles.deliveredButton}
-              testID="homepage-button">
-              <Text style={styles.forgotAndSignUpText}>Homepage</Text>
-          </TouchableOpacity>
-        </View>
-    )
-};
+        style={{
+          position: 'absolute',
+          right: -40,
+          bottom: 0
+        }}>
+      </Image>
+
+      <FlatList
+        data={cartItems}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.item}
+        testID="cart-items-list" />
+
+      <TouchableOpacity
+        onPress={() => { navigation.navigate(CampusSideSelectionScreen); saveReceipt(); } }
+        style={styles.deliveredButton}
+        testID="homepage-button">
+        <Text style={styles.forgotAndSignUpText}>Homepage</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
     container: {

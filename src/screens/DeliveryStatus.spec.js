@@ -1,58 +1,38 @@
 import React from 'react';
-import {render, fireEvent} from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 import DeliveryStatus from './DeliveryStatus';
-import Cancel from './Cancel';
 import Reciept from './Reciept';
 import ContactDriver from './ContactDriver';
+import Cancel from './Cancel';
 
-jest.mock('@react-native-firebase/app', () => {
-    const currentUser = {
-      uid: 'test-user-uid',
-    };
-    const data = {
-      name: 'Test User',
-    };
-    const doc = {
-      exists: true,
-      data: () => data,
-    };
-    const firestore = {
-      collection: jest.fn().mockReturnThis(),
-      doc: jest.fn().mockReturnThis(),
-      get: jest.fn().mockResolvedValue(doc),
-    };
-    const auth = {
-      currentUser,
-    };
-    return {
-      auth: () => auth,
-      firestore: () => firestore,
-    };
-  });
-  
-
-describe('DeliveryStatus component', () => {
-  it('renders the DeliveryStatus component correctly', () => {
-    const {getByText} = render(<DeliveryStatus />);
-    expect(getByText('Your order should arrive in 30 minutes!')).toBeTruthy();
+describe('DeliveryStatus', () => {
+  test('renders the "Your order should arrive in 30 minutes!" text', () => {
+    const { getByText } = render(<DeliveryStatus />);
+    const textElement = getByText('Your order should arrive in 30 minutes!');
+    expect(textElement).toBeTruthy();
   });
 
-  it('navigates to the ContactDriver component when the "Contact Driver" button is pressed', () => {
-    const {getByText, getByTestId} = render(<DeliveryStatus />);
-    fireEvent.press(getByTestId('contactButton'));
-    expect(getByText('Contact Driver')).toBeTruthy();
+  test('navigates to Reciept component when "Food was delivered" button is pressed', () => {
+    const navigation = { navigate: jest.fn() };
+    const { getByTestId } = render(<DeliveryStatus navigation={navigation} />);
+    const deliveredButton = getByTestId('deliveredButton');
+    fireEvent.press(deliveredButton);
+    expect(navigation.navigate).toHaveBeenCalledWith(Reciept);
   });
 
-  it('navigates to the Reciept component when the "Food was delivered" button is pressed', () => {
-    const {getByText, getByTestId} = render(<DeliveryStatus />);
-    fireEvent.press(getByTestId('deliveredButton'));
-    expect(getByText('Reciept')).toBeTruthy();
+  test('navigates to ContactDriver component when "Contact Driver" button is pressed', () => {
+    const navigation = { navigate: jest.fn() };
+    const { getByTestId } = render(<DeliveryStatus navigation={navigation} />);
+    const contactButton = getByTestId('contactButton');
+    fireEvent.press(contactButton);
+    expect(navigation.navigate).toHaveBeenCalledWith(ContactDriver);
   });
 
-  it('navigates to the Cancel component when the "Cancel" button is pressed', () => {
-    const {getByText, getByTestId} = render(<DeliveryStatus />);
-    fireEvent.press(getByTestId('cancelButton'));
-    expect(getByText('Cancel Order')).toBeTruthy();
+  test('navigates to Cancel component when "Cancel" button is pressed', () => {
+    const navigation = { navigate: jest.fn() };
+    const { getByTestId } = render(<DeliveryStatus navigation={navigation} />);
+    const cancelButton = getByTestId('cancelButton');
+    fireEvent.press(cancelButton);
+    expect(navigation.navigate).toHaveBeenCalledWith(Cancel);
   });
 });
-

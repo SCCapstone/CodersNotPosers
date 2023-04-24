@@ -4,10 +4,11 @@ Image,Text, Alert} from 'react-native';
 import logo from './../../images/logo.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
-//import auth from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 import DrawerNavigation from '../../navigation/DrawerNavigation';
 import SignUp from './SignUpScreen';
-const auth = require('@react-native-firebase/auth');
+//const auth = require('@react-native-firebase/auth');
+
 const SignInScreen =  ({navigation}) => {
   
   const [email,setEmail] = useState('');

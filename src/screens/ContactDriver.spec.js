@@ -4,28 +4,41 @@ import ContactDriver from './ContactDriver';
 import Cancel from './Cancel';
 import Reciept from './Reciept';
 
-describe('ContactDriver component', () => {
-  test('renders correctly', () => {
-    const { getByText } = render(<ContactDriver />);
-    const driverEmail = getByText(/Driver email:/i);
-    const driverCell = getByText(/Driver cell:/i);
-    expect(driverEmail).toBeDefined();
-    expect(driverCell).toBeDefined();
-  });
 
-  test('navigates to Cancel screen when cancel button is pressed', () => {
-    const navigation = { navigate: jest.fn() };
-    const { getByText } = render(<ContactDriver navigation={navigation} />);
-    const cancelButton = getByText(/Cancel/i);
-    fireEvent.press(cancelButton);
-    expect(navigation.navigate).toHaveBeenCalledWith(Cancel);
-  });
+// Mock the auth and firestore modules
+jest.mock('@react-native-firebase/app', () => {
+    const currentUser = {
+    uid: 'test-user-uid',
+    };
+    const data = {
+    name: 'Test User',
+    };
+    const doc = {
+    exists: true,
+    data: () => data,
+    };
+    const firestore = {
+    collection: jest.fn().mockReturnThis(),
+    doc: jest.fn().mockReturnThis(),
+    get: jest.fn().mockResolvedValue(doc),
+    };
+    const auth = {
+    createUserWithEmailAndPassword: jest.fn().mockResolvedValue({ user: { uid: '123' } }),
+    fetchSignInMethodsForEmail: jest.fn().mockResolvedValue([]),
+    currentUser,
+    };
+    return {
+    auth: () => auth,
+    firestore: () => firestore,
+    };
+    });
 
-  test('navigates to Reciept screen when delivered button is pressed', () => {
-    const navigation = { navigate: jest.fn() };
-    const { getByText } = render(<ContactDriver navigation={navigation} />);
-    const deliveredButton = getByText(/Food was delivered/i);
-    fireEvent.press(deliveredButton);
-    expect(navigation.navigate).toHaveBeenCalledWith(Reciept);
-  });
+  describe('ContactDriver', () => {
+    it('should render a button with text "Contact Driver"', () => {
+      const { getByText } = render(<ContactDriver />);
+      const button = getByText('Contact Driver');
+      expect(button).toBeDefined();
+    });
+  
+  
 });

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-//import firebase from '@react-native-firebase/app';
+import firebase from '@react-native-firebase/app';
 import leftarrow  from './../../images/leftarrow.png';
 import ellipsepink from './../../images/ellipsepink.png';
 import ellipsegrey from './../../images/ellipsegrey.png';
@@ -9,7 +9,7 @@ import EditProfile from './EditProfile';
 import PaymentDetails from './PaymentDetails';
 import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 import OrderHistory from './OrderHistory';
-const firebase = require('@react-native-firebase/app');
+//const firebase = require('@react-native-firebase/firestore').default;
 
 
 const Profile = ({navigation }) => {
@@ -81,13 +81,13 @@ const Profile = ({navigation }) => {
       <Text style={styles.userName}>{name}</Text>
       </View>
       <View>
-        <TouchableOpacity style={styles.button} onPress={handleEditProfile} testID="edit-profile-button">
+        <TouchableOpacity style={styles.button} onPress={handleEditProfile} testID="editButton">
           <Text style={styles.buttonText}>Edit Profile</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handleOrderHistory} testID="order-history-button">
+        <TouchableOpacity style={styles.button} onPress={handleOrderHistory} testID="orderButton">
           <Text style={styles.buttonText}>Order History</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handlePaymentDetails} testID="payment-details-button">
+        <TouchableOpacity style={styles.button} onPress={handlePaymentDetails} testID="payButton">
           <Text style={styles.buttonText}>Payment Details</Text>
         </TouchableOpacity>
         </View>

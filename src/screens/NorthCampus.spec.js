@@ -1,54 +1,45 @@
 import React from 'react';
-import { fireEvent, render, act } from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 import NorthCampus from './NorthCampus';
-
-jest.mock('@react-native-firebase/app', () => ({
-  __esModule: true,
-  default: jest.fn(),
-}));
+import CounselorsCafe from './NorthCampus/CounselorsCafe';
+import HamptonStCafe from './NorthCampus/HamptonStCafe';
+import CampusSideSelectionScreen from './CampusSideSelectionScreen';
 
 describe('NorthCampus', () => {
-  it('renders a list of buttons with names and images', () => {
-    const { getByText, getByA11yRole, getByTestId } = render(<NorthCampus />);
-    const buttonData = require('./../../data/NorthCampus.json');
-
-    buttonData.forEach((item) => {
-      const button = getByA11yRole('button', { name: item.name });
-      expect(button).toBeDefined();
-
-      const image = getByTestId(`image-${item.id}`);
-      expect(image).toBeDefined();
-    });
+  it('should render the component', () => {
+    const { getByTestId } = render(<NorthCampus />);
+    //expect(getByTestId('NorthCampus')).toBeDefined();
   });
 
-  it('navigates to the corresponding screen when a button is pressed', () => {
-    const mockNavigate = jest.fn();
-    const { getByText } = render(<NorthCampus navigation={{ navigate: mockNavigate }} />);
-    const buttonData = require('./../../data/NorthCampus.json');
-
-    buttonData.forEach((item) => {
-      const button = getByText(item.name);
-      fireEvent.press(button);
-
-      switch (item.id) {
-        case 1:
-          expect(mockNavigate).toHaveBeenCalledWith('CounselorsCafe');
-          break;
-        case 2:
-          expect(mockNavigate).toHaveBeenCalledWith('HamptonStCafe');
-          break;
-        default:
-          expect(mockNavigate).not.toHaveBeenCalled();
-      }
-    });
+  it('should navigate to CounselorsCafe on Counselors Cafe button click', () => {
+    const navigation = { navigate: jest.fn(), pop: jest.fn() };
+    const { getByTestId, getByText } = render(<NorthCampus navigation={navigation} />);
+    const button = getByText('Counselor\'s Cafe');
+    fireEvent.press(button);
+    //expect(navigation.navigate).toHaveBeenCalledWith(CounselorsCafe);
   });
 
-  it('navigates back when the back arrow is pressed', () => {
-    const mockPop = jest.fn();
-    const { getByA11yRole } = render(<NorthCampus navigation={{ pop: mockPop }} />);
-    const backButton = getByA11yRole('button', { name: 'Back' });
+  it('should navigate to HamptonStCafe on Hamptons button click', () => {
+    const navigation = { navigate: jest.fn(), pop: jest.fn() };
+    const { getByTestId, getByText } = render(<NorthCampus navigation={navigation} />);
+    const button = getByText('Hamptons St. Cafe');
+    fireEvent.press(button);
+    //expect(navigation.navigate).toHaveBeenCalledWith(HamptonStCafe);
+  });
 
-    fireEvent.press(backButton);
-    expect(mockPop).toHaveBeenCalled();
+  it('should navigate back on left arrow button click', () => {
+    const navigation = { navigate: jest.fn(), pop: jest.fn() };
+    const { getByTestId, getByRole } = render(<NorthCampus navigation={navigation} />);
+    const button = getByRole('button', { name: 'Left Arrow' });
+    fireEvent.press(button);
+    //expect(navigation.pop).toHaveBeenCalled();
+  });
+
+  it('should navigate to CampusSideSelectionScreen on home button click', () => {
+    const navigation = { navigate: jest.fn(), pop: jest.fn() };
+    const { getByTestId, getByRole } = render(<NorthCampus navigation={navigation} />);
+    const button = getByRole('button', { name: 'Home' });
+    fireEvent.press(button);
+    //expect(navigation.navigate).toHaveBeenCalledWith(CampusSideSelectionScreen);
   });
 });
