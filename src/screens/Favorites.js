@@ -41,27 +41,27 @@ const getimageSource = (name) => {
       return require('./../../images/RussellHouse/Einstein.png');
     case "Creamery":
       return require('./../../images/RussellHouse/creamery.png');
-    case 7:
+    case "CounselorsCafe":
       return require('./../../images/NorthCampus/CounselorCafe.png');
-    case 8:
+    case "HamptonSt":
       return require('./../../images/NorthCampus/Hamptons.png');
-    case 9:
+    case "CafeVerde":
       return require('./../../images/SouthCampus/CafeVerde.png');
-    case 10:
+    case "WiredCafe":
       return require('./../../images/SouthCampus/Wiredcafe.png');
-    case 11:
+    case "Colloquium":
       return require('./../../images/EastCampus/ColloquimCafe.png');
-    case 12:
+    case "HorshoeDeli":
       return require('./../../images/EastCampus/horshoeDeli.png');
-    case 13:
+    case "Humanities":
       return require('./../../images/EastCampus/starbucksWelsh.png');
-    case 14:
+    case "Village":
       return require('./../../images/EastCampus/village.png');
-    case 15:
+    case "TcoopStarbs":
       return require('./../../images/WestCampus/starbucksCooper.png');
-    case 16:
+    case "Coop":
         return require('./../../images/FoodTrucks/TheCoop.png');
-    case 17:
+    case "NachoPapis":
         return require('./../../images/FoodTrucks/Nacho.png');
     default:
       return null;
@@ -82,27 +82,27 @@ const handleButtonClick = (item) => {
           return navigation.navigate(Einstein);
       case "Creamery":
           return navigation.navigate(CarolinaCreamery);
-      case 7:
+      case "CounselorsCafe":
           return navigation.navigate(CounselorsCafe);
-      case 8:
+      case "HamptonSt":
           return navigation.navigate(HamptonStCafe);
-      case 9:
+      case "CafeVerde":
           return navigation.navigate(CafeVerde);
-      case 9:
+      case "WiredCafe":
           return navigation.navigate(WiredCafe);
-      case 11:
+      case "Colloquium":
           return navigation.navigate(ColloquiumCafe);
-      case 12: 
+      case "HorshoeDeli": 
           return navigation.navigate(HorshoeDeli);
-      case 13:
+      case "Humanities":
           return navigation.navigate(HumanitiesStarbucks);
-      case 14: 
+      case "Village": 
           return navigation.navigate(VillageJuiceAndKitchen);
-      case 15:
+      case "TcoopStarbs":
           return navigation.navigate(TcoopStarbs);
-      case 16:
+      case "Coop":
           return navigation.navigate(Coop);
-      case 17: 
+      case "NachoPapis": 
           return navigation.navigate(NachoPapis);
   }  
 };
