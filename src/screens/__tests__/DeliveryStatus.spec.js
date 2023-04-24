@@ -5,6 +5,8 @@ import Reciept from '../Reciept';
 import ContactDriver from '../ContactDriver';
 import Cancel from '../Cancel';
 
+
+//Unit Test
 describe('DeliveryStatus', () => {
   test('renders the "Your order should arrive in 30 minutes!" text', () => {
     const { getByText } = render(<DeliveryStatus />);
@@ -12,6 +14,7 @@ describe('DeliveryStatus', () => {
     expect(textElement).toBeTruthy();
   });
 
+  //Behavioral Test
   test('navigates to Reciept component when "Food was delivered" button is pressed', () => {
     const navigation = { navigate: jest.fn() };
     const { getByTestId } = render(<DeliveryStatus navigation={navigation} />);
@@ -20,6 +23,7 @@ describe('DeliveryStatus', () => {
     expect(navigation.navigate).toHaveBeenCalledWith(Reciept);
   });
 
+  //Behavioral Test
   test('navigates to ContactDriver component when "Contact Driver" button is pressed', () => {
     const navigation = { navigate: jest.fn() };
     const { getByTestId } = render(<DeliveryStatus navigation={navigation} />);
@@ -27,7 +31,8 @@ describe('DeliveryStatus', () => {
     fireEvent.press(contactButton);
     expect(navigation.navigate).toHaveBeenCalledWith(ContactDriver);
   });
-
+  
+  //Behavioral Test
   test('navigates to Cancel component when "Cancel" button is pressed', () => {
     const navigation = { navigate: jest.fn() };
     const { getByTestId } = render(<DeliveryStatus navigation={navigation} />);

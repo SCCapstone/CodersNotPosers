@@ -27,6 +27,7 @@ jest.mock('@react-native-firebase/app', () => {
   };
 });
 
+// Unit test
 describe('EditProfile', () => {
   it('updates the name and phone number when the user types in the input fields', () => {
     const { getByPlaceholderText } = render(<EditProfile />);
@@ -43,6 +44,7 @@ describe('EditProfile', () => {
     //expect(phoneInput.props.value).toBe('1234567890');
   });
 
+  //Unit test
   it('calls the handleSave function when the save button is pressed', () => {
     const handleSave = jest.fn();
     const { getByText } = render(<EditProfile handleSave={handleSave} />);

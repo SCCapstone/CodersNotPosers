@@ -51,16 +51,12 @@ emulator or in a physical phone.
 In 492 you will write automated tests. When you do you will need to add a 
 section that explains how to run them.
 
-The unit tests are in `/test/unit`.
+The unit and behavioral tests are in src/screens/__tests__
 
-Sign-In Test:
-   - In order to run this test, you type 'npm test' in the terminal in the main directory, and the test itself can be found in src\screens\___tests___.
+run npm install
 
-The behavioral tests are in `/test/casper/`.
+run npm test
 
-Sign-up Screen test:
-   - In order to run this test, you must type 'npm test' in the terminal in the main directory.
-     This test includes a test on the left arrow button, sign up button, and campus selection button which should all move the user to a different screen.
 
 ## Testing Technology - 492
 

@@ -30,12 +30,7 @@ describe("AddressScreen", () => {
 
     // Assert
     console.log(`saveAddressMock.mock.calls: ${JSON.stringify(saveAddressMock.mock.calls, null, 2)}`);
-    //expect(saveAddressMock).toHaveBeenCalledWith({
-     // street: "John Doe",
-     // town: "1234 5678 9012 3456",
-      //state: "01/2022",
-     // zipCode: "123",
-   // });
+    
   });
 });
 

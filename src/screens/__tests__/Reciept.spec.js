@@ -6,6 +6,8 @@ import { render, fireEvent } from '@testing-library/react-native';
 import Reciept from '../Reciept';
 //import Receipt from '../MyCart';
 
+
+//Behavioral Tests
 describe('Reciept component', () => {
   test('renders a list of cart items', () => {
     // Mock the MyCart module to return some cart items

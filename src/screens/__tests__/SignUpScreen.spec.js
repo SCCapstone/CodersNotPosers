@@ -9,7 +9,7 @@ import firestore from '@react-native-firebase/firestore';
 jest.mock('@react-native-firebase/auth');
 jest.mock('@react-native-firebase/firestore');
 
-
+//Unit tests
 describe('SignUpScreen', () => {
   it('should call createUserWithEmailAndPassword when the user submits the form', async () => {
     const { getByTestId } = render(<SignUpScreen />);

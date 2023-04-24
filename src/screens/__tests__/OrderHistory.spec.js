@@ -31,6 +31,7 @@ jest.mock('@react-native-firebase/app', () => {
   };
 });
 
+//Unit tests
 describe('OrderHistory', () => {
   test('renders OrderHistory component without error', () => {
     render(<OrderHistory />);

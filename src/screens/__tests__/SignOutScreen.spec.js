@@ -6,7 +6,7 @@ import SignOutScreen from '../SignOutScreen';
 // Mock the auth module
 jest.mock('@react-native-firebase/auth');
 
-
+// Unit Tests
 describe('SignOutScreen', () => {
   it('should call signOut when the button is pressed', async () => {
     const { getByText } = render(<SignOutScreen />);

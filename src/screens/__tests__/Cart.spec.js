@@ -39,12 +39,15 @@ jest.mock('@react-native-firebase/auth', () => {
 
 describe('Cart', () => {
 
+
+//Unit Test  
 test('renders checkout button', () => {
   const { getByText } = render(<Cart />);
   const checkoutButton = getByText(/checkout/i);
   //expect(checkoutButton).toBeTruthy();
 });
 
+//Behavioral test
 test('pressing checkout button with empty cart shows alert', () => {
   const { getByText } = render(<Cart />);
   const checkoutButton = getByText(/checkout/i);

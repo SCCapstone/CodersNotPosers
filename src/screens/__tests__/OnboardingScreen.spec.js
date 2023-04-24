@@ -8,7 +8,7 @@ jest.mock('@react-navigation/native', () => ({
     replace: jest.fn(),
   }),
 }));
-
+// Unit Tests
 describe('OnboardingScreen', () => {
   it('renders the onboarding screen without crashing', () => {
     render(<OnboardingScreen />);

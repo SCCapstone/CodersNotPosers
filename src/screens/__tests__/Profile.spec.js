@@ -2,6 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import Profile from '../Profile';
 
+//Unit tests
 test('renders correctly', () => {
   const { getByTestId } = render(<Profile />);
  // expect(getByTestId('profilePage')).toBeDefined();

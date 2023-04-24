@@ -5,6 +5,8 @@ import SignInScreen from '../SignInScreen';
 
 jest.mock('@react-native-firebase/auth');
 
+
+//Unit tests
 describe('SignInScreen', () => {
   afterEach(() => {
     jest.clearAllMocks();

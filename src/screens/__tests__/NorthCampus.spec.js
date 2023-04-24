@@ -5,6 +5,8 @@ import CounselorsCafe from '../NorthCampus/CounselorsCafe';
 import HamptonStCafe from '../NorthCampus/HamptonStCafe';
 import CampusSideSelectionScreen from '../CampusSideSelectionScreen';
 
+
+//Behavioral Tests
 describe('NorthCampus', () => {
   it('should render the component', () => {
     const { getByTestId } = render(<NorthCampus />);
