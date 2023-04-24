@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, act } from '@testing-library/react-native';
-import EditProfile from './EditProfile';
+import EditProfile from '../EditProfile';
 
 jest.mock('@react-native-firebase/app', () => {
   const currentUser = {

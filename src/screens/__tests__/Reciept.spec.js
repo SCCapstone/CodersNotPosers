@@ -3,7 +3,8 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 
 // Import the Receipt component
-import Reciept from './Reciept';
+import Reciept from '../Reciept';
+import Reciept from '../MyCart';
 
 describe('Reciept component', () => {
   test('renders a list of cart items', () => {
@@ -44,7 +45,7 @@ describe('Reciept component', () => {
         currentUser: { uid: '1234' },
       })),
     }));
-    jest.mock('./MyCart', () => ({
+    jest.mock('../MyCart', () => ({
       getItems: jest.fn(() => [
         { item: 'Item 1', price: 5.99 },
         { item: 'Item 2', price: 3.99 },

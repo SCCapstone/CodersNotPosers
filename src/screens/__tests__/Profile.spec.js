@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import Profile from './Profile';
+import Profile from '../Profile';
 
 test('renders correctly', () => {
   const { getByTestId } = render(<Profile />);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import OnboardingScreen, { Skip, Next, Done, Dots } from './OnboardingScreen';
+import OnboardingScreen, { Skip, Next, Done, Dots } from '../OnboardingScreen';
 jest.mock('react-native-onboarding-swiper');
 jest.mock('@react-navigation/native', () => ({
   useNavigation: () => ({

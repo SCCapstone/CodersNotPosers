@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import Cancel from './Cancel';
+import Cancel from '../Cancel';
 
 describe('<Cancel />', () => {
   it('renders the cancel page with the correct text', () => {

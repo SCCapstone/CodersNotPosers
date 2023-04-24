@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import auth from '@react-native-firebase/auth';
-import SignInScreen from './SignInScreen';
+import SignInScreen from '../SignInScreen';
 
 jest.mock('@react-native-firebase/auth');
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import NorthCampus from './NorthCampus';
-import CounselorsCafe from './NorthCampus/CounselorsCafe';
-import HamptonStCafe from './NorthCampus/HamptonStCafe';
-import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+import NorthCampus from '../NorthCampus';
+import CounselorsCafe from '../NorthCampus/CounselorsCafe';
+import HamptonStCafe from '../NorthCampus/HamptonStCafe';
+import CampusSideSelectionScreen from '../CampusSideSelectionScreen';
 
 describe('NorthCampus', () => {
   it('should render the component', () => {

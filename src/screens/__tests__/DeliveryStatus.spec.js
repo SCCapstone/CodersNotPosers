@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import DeliveryStatus from './DeliveryStatus';
-import Reciept from './Reciept';
-import ContactDriver from './ContactDriver';
-import Cancel from './Cancel';
+import DeliveryStatus from '../DeliveryStatus';
+import Reciept from '../Reciept';
+import ContactDriver from '../ContactDriver';
+import Cancel from '../Cancel';
 
 describe('DeliveryStatus', () => {
   test('renders the "Your order should arrive in 30 minutes!" text', () => {

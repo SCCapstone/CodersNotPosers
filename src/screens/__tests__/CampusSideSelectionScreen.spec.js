@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import CampusSideSelectionScreen from './CampusSideSelectionScreen';
+import CampusSideSelectionScreen from '../CampusSideSelectionScreen';
 
 test('renders component without crashing', () => {
   render(<CampusSideSelectionScreen />);

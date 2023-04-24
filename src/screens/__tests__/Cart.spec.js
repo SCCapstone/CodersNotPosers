@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, act } from '@testing-library/react-native';
-import Cart from './Cart';
+import Cart from '../Cart';
 
 // Mock firebase.auth and firebase.firestore
 jest.mock('@react-native-firebase/app', () => {

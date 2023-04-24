@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
-import SignUpScreen from './SignUpScreen';
+import SignUpScreen from '../SignUpScreen';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
