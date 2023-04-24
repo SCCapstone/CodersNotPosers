@@ -48,27 +48,36 @@ emulator or in a physical phone.
 
 # Testing - 492
 
-In 492 you will write automated tests. When you do you will need to add a 
-section that explains how to run them.
+In 492, you will write automated tests. When you do, you will need to add a section that explains how to run them.
 
-The unit tests are in `/test/unit`.
+The unit and behavioral tests are in the __tests__ folder in the unit-testing branch.
 
-Sign-In Test:
-   - In order to run this test, you type 'npm test' in the terminal in the main directory, and the test itself can be found in src\screens\___tests___.
+To download all the required dependencies, run:
 
-The behavioral tests are in `/test/casper/`.
+npm install
 
-Sign-up Screen test:
-   - In order to run this test, you must type 'npm test' in the terminal in the main directory.
-     This test includes a test on the left arrow button, sign up button, and campus selection button which should all move the user to a different screen.
+To run all the tests in the __tests__ folder, run:
+
+npm test
+
 
 ## Testing Technology - 492
 
-In some cases you need to install test runners, etc. Explain how.
+We are using Jest, a popular testing framework for JavaScript applications, to write and execute automated tests for our React Native screens. To install Jest, run:
+
+npm install jest --save-dev
+
 
 ## Running Tests - 492
 
-Explain how to run the automated tests.
+To run the tests using Jest, execute the following command in your terminal:
+
+
+npm test
+
+
+Jest will execute each test case and provide you with the results in the console. If all tests pass, you'll see a green checkmark, indicating that your screen is working as expected. If any tests fail, Jest will provide detailed information about the failure, allowing you to identify and fix any issues.
+
 
 # Authors
 
