@@ -4,7 +4,7 @@ import { render, fireEvent } from '@testing-library/react-native';
 
 // Import the Receipt component
 import Reciept from '../Reciept';
-import Reciept from '../MyCart';
+//import Receipt from '../MyCart';
 
 describe('Reciept component', () => {
   test('renders a list of cart items', () => {

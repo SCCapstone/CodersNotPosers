@@ -15,8 +15,6 @@ import logo from "./../../images/logo.png";
 import ellipsepink from "./../../images/ellipsepink.png";
 import leftarrow from "./../../images/leftarrow.png";
 import ellipsegrey from "./../../images/ellipsegrey.png";
-import { app } from "../../firebase";
-import firebase from "firebase/app";
 import firestore from '@react-native-firebase/firestore';
 
 
@@ -45,6 +43,7 @@ export default function AddressScreen() {
           <View style={styles.CardHolderName}>
             <TextInput
               style={styles.inputText}
+              testID = "card-input"
               placeholder="Cardholder Name"
               placeholderTextColor="#884e7d"
               onChangeText={(street) => setStreet(street)}
@@ -54,6 +53,7 @@ export default function AddressScreen() {
           <View style={styles.CardNumber}>
             <TextInput
               style={styles.inputText}
+              testID = "number-input"
               placeholder="Card Number"
               placeholderTextColor="#884e7d"
               onChangeText={(town) => setTown(town)}
@@ -63,6 +63,7 @@ export default function AddressScreen() {
           <View style={styles.CardExpiration}>
             <TextInput
               style={styles.inputText}
+              testID = "date-input"
               placeholder="MM/YYYY"
               placeholderTextColor="#884e7d"
               onChangeText={(state) => setState(state)}
@@ -72,6 +73,7 @@ export default function AddressScreen() {
           <View style={styles.CVCcolor}>
             <TextInput
               style={styles.inputText}
+              testID = "code-input"
               placeholder="CVC"
               placeholderTextColor="#884e7d"
               secureTextEntry={true}
@@ -81,7 +83,8 @@ export default function AddressScreen() {
     
           <View>
             <View style={styles.saveCardButton}>
-              <TouchableOpacity onPress={saveAddress}>
+              <TouchableOpacity onPress={saveAddress}  testID="save-button">
+               testID="save-button"
                 <Text>Save Address</Text>
               </TouchableOpacity>
             </View>
