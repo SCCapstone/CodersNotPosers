@@ -37,30 +37,25 @@ const SearchScreen = ({navigation}) => {
         restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()));
     return (
             <View style = {styles.container}> 
-             <View style ={{zIndex:90}}>
-                <TouchableOpacity
-                            onPress={() => { navigation.toggleDrawer(); } }>
-                            <Image source={hamburger}
-                                style={{ width: 35, height: 35, top:6,left:6}}>
-                            </Image>
-                        </TouchableOpacity>
-                        </View>
+             
+               
+                        
+                        <View style={{ zIndex: 10 }}>
                 <TextInput
                     style={styles.searchBar}
                     placeholder="What are you looking for?"
-                    keyboardType='search'
                     autoCapitalize='none'
                     autoCorrect={false}
                     placeholderTextColor="#ccc"
                     onChangeText={setSearchQuery}
                     value = {searchQuery} 
                 />
-
+                </View>
 
 <View style={{
-  flex: 4.8,
+  zIndex:20,
   alignItems: 'center',
-  top: 17,
+  top: 10,
 }}>
   {filteredData.map((restaurant) => (
     <View key={restaurant.name} style={styles.itemContainer}>
@@ -72,21 +67,18 @@ const SearchScreen = ({navigation}) => {
     </View>
   ))}
 </View>
-                <View style={styles.container}>
-               
-                
-        
+<TouchableOpacity style ={{zIndex:10}}
+                            onPress={() => { navigation.toggleDrawer(); } }>
+                            <Image source={hamburger}
+                                style={{width: 35, height: 35, top:-585,left:6,backgroundColor:'white'}}>
+                            </Image>
+                        </TouchableOpacity>
                         <Image source={ellipsepink}
                         style={{
                             position: 'absolute',
-                            left: 0,
-                            top: -685
                         }}>
                         </Image>
-                        <View style={styles.header}>
                         
-                   
-                    </View>
                     <Image source={ellipsegrey}
                         style={{
                             position: 'absolute',
@@ -96,7 +88,6 @@ const SearchScreen = ({navigation}) => {
                     </Image>
                     
                 </View>
-          </View>
     );
 };
 export default SearchScreen;
@@ -107,33 +98,19 @@ const styles = StyleSheet.create({
         backgroundColor:'#B6B7E5',
         zIndex:5
     },
-    header:{
-        flexDirection:'row',
-        position: 'absolute',
-        backgroundColor:'white',
-        height: 40,
-        borderRadius:10,
-        top: -655,
-        left: 5
-    },
     inputText:{
         height:55,
         color:"black"
     },
     searchBar: {
-        height: 40,
+        height: 50,
         backgroundColor: 'white',
-        borderColor: 'gray',
-        borderWidth: 1,
-        paddingHorizontal: 50,
         borderRadius: 10,
         marginBottom: 10,
-        color: "black",
         textAlign:'center',
-        height: 50,
-        width: 410,
-        zIndex:10,
-        top:-37
+        width: 310,
+        top:0,
+        marginHorizontal:50
         
     },
     itemContainer: {
@@ -143,13 +120,13 @@ const styles = StyleSheet.create({
     },
     itemName: {
         fontWeight: 'bold',
-        justifyContent: "center"
+        justifyContent: "center",
     },
     itemDescription: {
         color: 'gray',
     },
     loginText:{
-        color:"white",
+        color:"purple",
         fontSize:16
     },
    
