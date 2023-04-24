@@ -108,7 +108,7 @@ const HorshoeDeli = ({navigation}) => {
     <View style={styles.item}>
       <Text style={styles.itemText}>{item.item}</Text>
       <Text style={styles.itemText}>${item.price}</Text>
-      <TouchableOpacity style={styles.addButton} onPress={() => {MyCart.addToCart(item); setCartCount(MyCart.getTotalQuantity())}}>
+      <TouchableOpacity style={styles.addButton} onPress={() => {MyCart.addToCart(item); setCartCount(MyCart.getTotalQuantity()); }} testID={`addButton-${index}`}>
       <Text style={styles.addButtonText}>+</Text>
       </TouchableOpacity>
       </View>
@@ -164,7 +164,7 @@ const HorshoeDeli = ({navigation}) => {
             </TouchableOpacity>
             </View>
             <View style={{ position: 'absolute', bottom: 14, right: 10 }}>
-              <TouchableOpacity onPress={() => navigation.navigate(Cart)}>
+              <TouchableOpacity onPress={() => navigation.navigate(Cart)} testID='addButton-0'>
                 <Image
                   source={mycart}
                   style={{
